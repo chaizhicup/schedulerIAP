@@ -1,0 +1,45 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div >
+  <div >
+    <%= form_for(@useradd) do |f| %>
+      <%= render 'shared/error_messages' %>
+  </div>
+
+   <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+   </div>   
+      <br>
+
+   <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email%>
+   </div >  
+      <br>
+
+    <div class="field">   
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+    </div>
+      <br>
+
+    <div class = "field">
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+    </div>  
+      <br>
+
+    <div class ="action">
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+<%= link_to 'Back', sessions_url %>
+<br>
+<%= link_to 'Back to login', root_url %>

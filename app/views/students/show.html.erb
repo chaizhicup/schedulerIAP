@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Uin:</strong>
+  <%= @student.UIN %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Us citizen:</strong>
+  <%= @student.US_Citizen %>
+</p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @student.degree %>
+</p>
+
+<p>
+  <strong>Position type:</strong>
+  <%= @student.position_type %>
+</p>
+
+<p>
+  <strong>Mock 1:</strong>
+  <%= @student.Mock_1 %>
+</p>
+
+<p>
+  <strong>Mock 2:</strong>
+  <%= @student.Mock_2 %>
+</p>
+
+<p>
+  <strong>Resume 1:</strong>
+  <%= @student.Resume_1 %>
+</p>
+
+<p>
+  <strong>Resume 2:</strong>
+  <%= @student.Resume_2 %>
+</p>
+
+<p>
+  <strong>Resume 3:</strong>
+  <%= @student.Resume_3 %>
+</p>
+
+<p>
+  <strong>Lunch:</strong>
+  <%= @student.Lunch %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

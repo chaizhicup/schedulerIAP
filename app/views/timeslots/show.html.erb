@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Att date:</strong>
+  <%= @timeslot.att_date %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @timeslot.section %>
+</p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @timeslot.slot %>
+</p>
+
+<p>
+  <strong>Stunum:</strong>
+  <%= @timeslot.stunum %>
+</p>
+
+<%= link_to 'Edit', edit_timeslot_path(@timeslot) %> |
+<%= link_to 'Back', timeslots_path %>

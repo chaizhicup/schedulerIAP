@@ -1,0 +1,12 @@
+$ bundle install
+
+$ bundle binstubs rspec-core
+
+$ bundle exec rake db:migrate db:test:prepare
+
+in bin directory:
+chmod +x rspec
+
+run:
+
+bin/rspec

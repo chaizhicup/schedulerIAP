@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact person</th>
+      <th>Contact email</th>
+      <th>Sponsor level</th>
+      <th>Citizenship</th>
+      <th>Job type</th>
+      <th>Student level</th>
+      <th>Rep 1</th>
+      <th>Rep 2</th>
+      <th>Rep 3</th>
+      <th>Rep 4</th>
+      <th>Rep 5</th>
+      <th>Rep 6</th>
+      <th>Intvw 1 rep no</th>
+      <th>Intvw 2 rep no</th>
+      <th>Clinic 1 rep no</th>
+      <th>Clinic 2 rep no</th>
+      <th>Clinic 3 rep no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.contact_person %></td>
+        <td><%= company.contact_email %></td>
+        <td><%= company.sponsor_level %></td>
+        <td><%= company.citizenship %></td>
+        <td><%= company.job_type %></td>
+        <td><%= company.student_level %></td>
+        <td><%= company.rep_1 %></td>
+        <td><%= company.rep_2 %></td>
+        <td><%= company.rep_3 %></td>
+        <td><%= company.rep_4 %></td>
+        <td><%= company.rep_5 %></td>
+        <td><%= company.rep_6 %></td>
+        <td><%= company.intvw_1_rep_no %></td>
+        <td><%= company.intvw_2_rep_no %></td>
+        <td><%= company.clinic_1_rep_no %></td>
+        <td><%= company.clinic_2_rep_no %></td>
+        <td><%= company.clinic_3_rep_no %></td>
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company', new_company_path %>
+<br>
+<%= link_to 'Back', sessions_url %>
