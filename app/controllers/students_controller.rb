@@ -70,7 +70,6 @@ class StudentsController < ApplicationController
         Timeslot.decrease_1(temp1, student_params, :Lunch)
 
         UserMailer.stu_reg(@student).deliver_now
-        UserMailer.welcome_email(@student).deliver_now
 
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
@@ -99,6 +98,8 @@ class StudentsController < ApplicationController
       temp1, temp2 = set_menu('Lunch')
       Timeslot.increase_1(temp1, @student.id, 'Lunch')
       if @student.update(student_params)
+        UserMailer.stu_reg(@student).deliver_now
+        
         temp1, temp2 = set_menu('Mock Interview 1')
         Timeslot.decrease_1(temp1, student_params, :Mock_1)
         temp1, temp2 = set_menu('Mock Interview 2')

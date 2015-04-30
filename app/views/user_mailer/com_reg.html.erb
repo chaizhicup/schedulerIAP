@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Company Name:</td><td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td>Contact Person:</td><td><%= @user.contact_person %></td>
+      </tr>
+      <tr>
+        <td>Contact Email:</td><td><%= @user.contact_email %></td>
+      </tr>
+      <tr>
+        <td>Sponsor level:</td><td><%= @user.sponsor_level %></td>
+      </tr>
+      <tr>
+        <td>Citizenship Requirement:</td><td><%= @user.citizenship %></td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td><%= @user.job_type %></td>
+      </tr>
+      <tr>
+        <td>Degree level Requirement:</td><td><%= @user.student_level %></td>
+      </tr>
+      <tr>
+        <td>Representative 1:</td><td><%= @user.rep_1 %></td>
+      </tr>
+      <tr>
+        <td>Representative 2:</td><td><%= @user.rep_2 %></td>
+      </tr>
+      <tr>
+        <td>Representative 3:</td><td><%= @user.rep_3 %></td>
+      </tr>
+      <tr>
+        <td>Representative 4:</td><td><%= @user.rep_4 %></td>
+      </tr>
+      <tr>
+        <td>Representative 5:</td><td><%= @user.rep_5 %></td>
+      </tr>
+      <tr>
+        <td>Representative 6:</td><td><%= @user.rep_6 %></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 1:</td><td><%= @user.intvw_1_rep_no %></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 2:</td><td><%= @user.intvw_2_rep_no %></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 1:</td><td><%= @user.clinic_1_rep_no %></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 2:</td><td><%= @user.clinic_2_rep_no %></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 3:</td><td><%= @user.clinic_3_rep_no %></td>
+      </tr>
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

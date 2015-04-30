@@ -40,6 +40,8 @@ class CompaniesController < ApplicationController
       if @company.save
         input_session(@company.id)
 
+        UserMailer.com_reg(@company).deliver_now
+
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else
@@ -54,6 +56,8 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
+        UserMailer.com_reg(@company).deliver_now
+        
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
       else

@@ -4,12 +4,51 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com,</h1>
+    <h1>Confirmation for IAP Registration.</h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is:<br>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
     </p>
     
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td><%= @user.UIN %></td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td>US_Citizen or not:</td><td><%= @user.US_Citizen %></td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td><%= @user.degree %></td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td><%= @user.position_type %></td>
+      </tr>
+      <tr>
+        <td>Mock Interview 1:</td><td><%= @user.Mock_1 %></td>
+      </tr>
+      <tr>
+        <td>Mock Interview 2:</td><td><%= @user.Mock_2 %></td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 1:</td><td><%= @user.Resume_1 %></td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 2:</td><td><%= @user.Resume_2 %></td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 3:</td><td><%= @user.Resume_3 %></td>
+      </tr>
+      <tr>
+        <td>Lunch:</td><td><%= @user.Lunch %></td>
+      </tr>
+  </tbody>
+</table>
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
