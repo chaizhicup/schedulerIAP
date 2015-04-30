@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController  
 
-  before_filter :authorize, only: [:index, :destroy, :new, :show], :except => :new_session_path
+  before_filter :authorize, only: [:index, :destroy, :show], :except => :new_session_path
   
   def new  
   end  
