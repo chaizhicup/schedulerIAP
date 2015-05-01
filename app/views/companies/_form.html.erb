@@ -1,7 +1,16 @@
 <%= form_for(@company) do |f| %>
+
+  <div style = "text-align: center">
+  <font size="5px" color=maroon line height = "5px"><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
+  </div>
+
+  <div style = "text-align: center">
+  <font size="5px"><strong><%= "Company Registration"%></strong></font><br><br>
+  </div>
+
   <% if @company.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this timeslot from being saved:</h2>
 
       <ul>
       <% @company.errors.full_messages.each do |message| %>
@@ -11,17 +20,17 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-    <%= "2015 IAP Recruiting Event and Reception/CSE-Only Career Fair - Registration" %>
-  </div>
-
-  <div class="field">
+  <div class="field"><font size="4px">
+    <br><br>•
     <%= f.label :"Enter your company name"%><br>
     <%= f.text_field :name %>
+  </font>
+    <br><br>
   </div>
-  <div class="field">
-    <%= "Enter the names of your company's representatives that will be attending the events. Platinum members may provide up to 6 representatives, Gold 4, and Silver 4" %>
+
+  <div class="field"><font size="4px">•
+    <%= "Enter the names of your company's representatives that will be attending the events. "%>
+    <strong><%="Platinum members may provide up to 6 representatives, Gold 4, and Silver 2" %></strong></font>
   </div>
 
   <div>    
@@ -43,58 +52,68 @@
     <%= "6.)  "%>
     <%= f.text_field :rep_6 %>
     <br>
-  </div>
+  </div><br><br>
 
-  <div class="field">
+  <font size="4px">
+  <div class="field">•
     <%= "Enter your company's contact person for this event" %>
 </div>
-<div class="field">
+  </font>
+  
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :contact_person %>
   </div>
+
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :contact_email %>
   </div>
-  <div class="field">
+
+  <font size="4px">
+  <div class="field"><br>•
     <%= f.label :"Select your company's sponsor level" %><br>
     <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver]), :prompt=>"---Please select---" %>
   </div>
-  <div class="field">
+  <div class="field"><br>•
     <%= "Select if you hire US citizens only, or not"%><br>
     <%= f.select :citizenship, options_for_select(["US Citizen Only", "Any"]), :prompt=>"---Please select---" %>
   </div>
-  <div class="field">
+  <div class="field"><br>•
     <%= f.label :"Select the job type you are offering" %><br>
     <%= f.select :job_type, options_for_select(%w[Internship Full-time Any ]), :prompt=>"---Please select---" %>
   </div>
-  <div class="field">
+  <div class="field"><br>•
     <%= f.label :"Select the student level you are employing"%><br>
     <%= f.select :student_level, options_for_select(%w[B.S. Master's PH.D Any]), :prompt=>"---Please select---" %>
   </div>
   
-  <div class="field">
+  <div class="field"><br>•
     <%= "Choose for each event the number of representatives that is attending. Select 0 for the event you are not attending" %>
-  </div>
+  </font></div>
 
+  <font size = "2.8em">
   <div class="field">
-    <%= "Monday 9:30 - 11:30 a.m. Resume Clinic 1." %>
+    <%= "Resume Clinic 1. Monday 9:30 - 11:30 a.m." %>
     <%= f.label :"Number of representatives attending" %><br>
     <%= f.select :clinic_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Monday 1:00 - 3:00 a.m. Mock Interviews 1." %>
+    <%= "Mock Interviews 1. Monday 1:00 - 3:00 a.m." %>
     <%= f.label :"Number of representatives attending" %><br>
     <%= f.select :intvw_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Monday 3:00 - 5:00 p.m. Resume Clinic 2." %>
+    <%= "Resume Clinic 2. Monday 3:00 - 5:00 p.m." %>
     <%= f.label :"Number of representatives attending" %><br>
     <%= f.select :clinic_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Tuesday 9:30 - 11:30 a.m. Resume Clinic 3." %>
+    <%= "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." %>
     <%= f.label :"Number of representatives attending" %><br>
     <%= f.select :clinic_3_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Tuesday 1:00 - 3:00 p.m. Mock Interviews 2." %>
+    <%= "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." %>
     <%= f.label :"Number of representatives attending" %><br>
     <%= f.select :intvw_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
+  </font>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <br>
+  <div class="actions" >
+    <%= f.submit value = "          Submit          "%>
   </div>
 <% end %>

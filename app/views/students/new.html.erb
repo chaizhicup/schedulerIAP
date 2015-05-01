@@ -1,18 +1,4 @@
-<h1>New Student</h1>
-
 <!-- <p id="notice"><%= notice %></p> -->
-
-<% if flash[:notice] %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flash[:notice].count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% flash[:notice].each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <%= render 'form' %>
 

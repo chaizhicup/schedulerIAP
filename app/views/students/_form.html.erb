@@ -1,68 +1,110 @@
 <%= form_for(@student) do |f| %>
 
+<body><div style="width:800px">
   <div>
-  <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting and Reception/CSE-Only Career Fair"%></strong></font><br><br>
-  <font size="4px" color=maroon><%= "Student Registration"%></font><br><br>
-  <p><font size="3px"><strong><%= "Basic Information"%></strong></font></p>
+  <%=image_tag("title.jpg", alt: "Example Image", :size=>"800x120")%>
+  <div><br>
+
+  <div style = "text-align: center">
+  <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
+  </div>
+
+  <div style = "text-align: center">
+  <font size="5px"><strong><%= "Student Registration"%></strong></font><br><br>
+  </div>
+
+  <% if flash[:notice] %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flash[:notice].count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% flash[:notice].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div><br><br>
+  <font size="4px"><strong><%= "Basic Information"%></strong>
+  </div>
+
+  <div>
+    <br>•
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
-
+    
+    <br>•
     <%= "UIN" %><br>
     <%= f.text_field :UIN %><br>
 
+    <br>•
     <%= f.label :email %><br>
     <%= f.text_field :email %><br>
 
-    <%= "I am a US-Citizen" %>
+    <br>•
+    <%= "I am a US-Citizen" %><br>
     <%= f.check_box :US_Citizen %><br>
 
+    <br>•
     <%= f.label :Student_level_recruiting %><br>
-    <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D]) %><br>
+    <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D]), :prompt=>"---Please select---" %><br>
 
+    <br>•
     <%= f.label :Job_position_recruiting %><br>
-    <%= f.select :position_type, options_for_select(%w[Internship Full-time]) %><br><br>
+    <%= f.select :position_type, options_for_select(%w[Internship Full-time]), :prompt=>"---Please select---" %><br><br>
   </div>
 
 
-  <div>
+  <div><br><br>
   <p><font size="3px"><strong><%= "Event and Time Selection" %></strong></font></p>
   </div>
  
-  <div class="field">
-    <%= "Monday 1:00 - 3:00 a.m. Mock Interviews 1." %><br>
+  <div class="field">•
+    <%= "Mock Interviews 1. Monday 1:00 - 3:00 a.m. " %><br>
     <%= f.select :Mock_1, options_for_select(@mock_1_slots), :prompt=>"---Please select time for Mock Interview 1 ---" %>
   </div>
 
-  <div class="field">
-    <%= "Monday 9:30 - 11:30 a.m. Resume Clinic 1." %><br>
+  <div class="field">•
+    <%= "Resume Clinic 1. Monday 9:30 - 11:30 a.m." %><br>
     <%= f.select :Resume_1, options_for_select(@resume_1_slots), :prompt=>"---Please select time for Resume Clinic 1 ---"%>
   </div>
 
-  <div class="field">
-    <%= "Monday 3:00 - 5:00 p.m. Resume Clinic 2." %><br>
+  <div class="field">•
+    <%= "Resume Clinic 2. Monday 3:00 - 5:00 p.m. " %><br>
     <%= f.select :Resume_2, options_for_select(@resume_2_slots), :prompt=>"---Please select time for Resume Clinic 2 ---"%>
   </div>
 
-  <div class="field">
-    <%= "Tuesday 1:00 - 3:00 p.m. Mock Interviews 2." %><br>
+  <div class="field">•
+    <%= "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. " %><br>
     <%= f.select :Mock_2, options_for_select(@mock_2_slots), :prompt=>"---Please select time for Mock Interview 2 ---" %>
   </div>
 
-  <div class="field">
-    <%= "Tuesday 9:30 - 11:30 a.m. Resume Clinic 3." %><br>
+  <div class="field">•
+    <%= "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. " %><br>
     <%= f.select :Resume_3, options_for_select(@resume_2_slots), :prompt=>"---Please select time for Resume Clinic 3 ---" %>
   </div>
-
-  <div class="field">
+  
+  <br>
+  <div class="field">•
     <%= "Select if you will be attending the Lunch with "%>
-    <strong><%= "Student Organization Leaders"%></strong>
+    <strong><%= "Student Organization Leaders"%></strong><br>
     <%= " and " %>
     <strong><%= " Company Representatives"%></strong>
     <%= " from 11:45am - 12:45pm, "%>
     <strong><%="Monday"%></strong><br>
     <%= f.select :Lunch, options_for_select(@lunch_slots), :prompt=>"---Please select---" %>
+  </font><br><br><br>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="actions" >
+    <%= f.submit value =
+     "                   Register                    "%>
+    </font>
   </div>
+  
+  </div>
+  </body>
+
 <% end %>

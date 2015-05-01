@@ -2,7 +2,7 @@
 
 <% if flash[:notice] && flash[:notice][0] == "Error timeslot Below:" %>
 <p id="notice">
-      <h3>Following time slot doesn't have enough positions for more students. You may want to add more representatives:</h3>
+      <h3>Please check your company information, Following time slots lack enough company or represents to assign each student with a company:</h3>
       <ul>
       <% flash[:notice].each do |message| %>
         <li><%= message %></li>
@@ -26,67 +26,7 @@
   </thead>
 
   <tbody>
-    <% @appointments1.each do |appointment| %>
-      <tr>
-        <td><%= appointment.section %></td>
-        <td><%= appointment.time_slot %></td>
-        <td><%= appointment.company %></td>
-        <td><%= appointment.student %></td>
-        <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% @appointments2.each do |appointment| %>
-      <tr>
-        <td><%= appointment.section %></td>
-        <td><%= appointment.time_slot %></td>
-        <td><%= appointment.company %></td>
-        <td><%= appointment.student %></td>
-        <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% @appointments3.each do |appointment| %>
-      <tr>
-        <td><%= appointment.section %></td>
-        <td><%= appointment.time_slot %></td>
-        <td><%= appointment.company %></td>
-        <td><%= appointment.student %></td>
-        <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% @appointments4.each do |appointment| %>
-      <tr>
-        <td><%= appointment.section %></td>
-        <td><%= appointment.time_slot %></td>
-        <td><%= appointment.company %></td>
-        <td><%= appointment.student %></td>
-        <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% @appointments5.each do |appointment| %>
-      <tr>
-        <td><%= appointment.section %></td>
-        <td><%= appointment.time_slot %></td>
-        <td><%= appointment.company %></td>
-        <td><%= appointment.student %></td>
-        <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    <% @appointments6.each do |appointment| %>
+    <% @appointments.each do |appointment| %>
       <tr>
         <td><%= appointment.section %></td>
         <td><%= appointment.time_slot %></td>
@@ -106,6 +46,3 @@
 <%= link_to 'New Appointment', new_appointment_path %>
 
 <%= link_to 'Generate', generate_path%>
-
-<br>
-<%= link_to 'Back', sessions_url%>

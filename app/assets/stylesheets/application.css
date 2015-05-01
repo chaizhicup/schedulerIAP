@@ -16,9 +16,15 @@
 
 /* sidebar */
 
+html, body {
+   margin-top: 10px ;
+   margin-left: 130px;
+   margin-right: 130px;
+   }
+
 aside {
   section.user_info {
-    margin-top: 20px;
+    margin-top: 10px auto;
   }
   section {
     padding: 10px 0;
@@ -49,11 +55,11 @@ aside {
       margin-bottom: 15px;
       margin-top: 5px;
     }
-
+ 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: auto;
-  margin-left: 20px;
+  margin-left: 5px;
   margin-bottom: 5px;
       margin-top: 5px;
   /*padding-left: 150;*/
@@ -61,7 +67,8 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  height: auto !important;
+  height: auto
+  !important;
 }
 
 #error_explanation {
