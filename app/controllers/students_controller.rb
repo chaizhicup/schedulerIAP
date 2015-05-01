@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @lunch_total =Student.where(Lunch: 'Attend').count
   end
 
   # GET /students/1
@@ -66,8 +67,6 @@ class StudentsController < ApplicationController
         Timeslot.decrease_1(temp1, student_params, :Resume_2)
         emp1, temp2 = set_menu('Resume Clinic 3')
         Timeslot.decrease_1(temp1, student_params, :Resume_3)
-        temp1, temp2 = set_menu('Lunch')
-        Timeslot.decrease_1(temp1, student_params, :Lunch)
 
         UserMailer.stu_reg(@student).deliver_now
 
@@ -95,8 +94,7 @@ class StudentsController < ApplicationController
       Timeslot.increase_1(temp1, @student.id, 'Resume_2')
       temp1, temp2 = set_menu('Resume Clinic 3')
       Timeslot.increase_1(temp1, @student.id, 'Resume_3')
-      temp1, temp2 = set_menu('Lunch')
-      Timeslot.increase_1(temp1, @student.id, 'Lunch')
+      
       if @student.update(student_params)
         UserMailer.stu_reg(@student).deliver_now
         
@@ -110,8 +108,7 @@ class StudentsController < ApplicationController
         Timeslot.decrease_1(temp1, student_params, :Resume_2)
         temp1, temp2 = set_menu('Resume Clinic 3')
         Timeslot.decrease_1(temp1, student_params, :Resume_3)
-        temp1, temp2 = set_menu('Lunch')
-        Timeslot.decrease_1(temp1, student_params, :Lunch)
+        
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -125,8 +122,7 @@ class StudentsController < ApplicationController
         Timeslot.decrease_1_id(temp1, @student.id, :Resume_2)
         temp1, temp2 = set_menu('Resume Clinic 3')
         Timeslot.decrease_1_id(temp1, @student.id, :Resume_3)
-        temp1, temp2 = set_menu('Lunch')
-        Timeslot.decrease_1_id(temp1, @student.id, :Lunch)
+        
         flash[:notice] = @student.errors.full_messages
         format.html { redirect_to edit_student_path}
         format.json { render json: @student.errors, status: :unprocessable_entity }

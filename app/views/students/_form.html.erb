@@ -1,9 +1,6 @@
 <%= form_for(@student) do |f| %>
 
 <body><div style="width:800px">
-  <div>
-  <%=image_tag("title.jpg", alt: "Example Image", :size=>"800x120")%>
-  <div><br>
 
   <div style = "text-align: center">
   <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
@@ -94,7 +91,7 @@
     <strong><%= " Company Representatives"%></strong>
     <%= " from 11:45am - 12:45pm, "%>
     <strong><%="Monday"%></strong><br>
-    <%= f.select :Lunch, options_for_select(@lunch_slots), :prompt=>"---Please select---" %>
+    <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend']), :prompt=>"---Please select---"  %>
   </font><br><br><br>
   </div>
 
