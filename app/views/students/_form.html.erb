@@ -1,6 +1,6 @@
 <%= form_for(@student) do |f| %>
 
-<body><div style="width:800px">
+
 
   <div style = "text-align: center">
   <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
@@ -55,7 +55,7 @@
 
 
   <div><br><br>
-  <p><font size="3px"><strong><%= "Event and Time Selection" %></strong></font></p>
+  <p><font size="4px"><strong><%= "Event and Time Selection" %></strong></font></p>
   </div>
  
   <div class="field">•
@@ -91,13 +91,12 @@
     <strong><%= " Company Representatives"%></strong>
     <%= " from 11:45am - 12:45pm, "%>
     <strong><%="Monday"%></strong><br>
-    <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend']), :prompt=>"---Please select---"  %>
+    <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend']), :prompt=>"---Please select---" %>
   </font><br><br><br>
   </div>
 
   <div class="actions" >
-    <%= f.submit value =
-     "                   Register                    "%>
+    <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />
     </font>
   </div>
   

@@ -1,6 +1,6 @@
 <%= form_for(@company) do |f| %>
 
-  <div style = "text-align: center">
+  <div style = "text-align: center;">
   <font size="5px" color=maroon line height = "5px"><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
   </div>
 
@@ -8,6 +8,7 @@
   <font size="5px"><strong><%= "Company Registration"%></strong></font><br><br>
   </div>
 
+</body>
   <% if @company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@company.errors.count, "error") %> prohibited this timeslot from being saved:</h2>
@@ -111,9 +112,22 @@
     <%= f.select :intvw_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
   </font>
   </div>
+
+  <br>
+  <div class="field">•
+    <%= "Select if you will be attending the Lunch with "%>
+    <strong><%= "Student Organization Leaders"%></strong><br>
+    <%= " and " %>
+    <strong><%= " Company Representatives"%></strong>
+    <%= " from 11:45am - 12:45pm, "%>
+    <strong><%="Monday"%></strong><br>
+    <%= f.select :lunch_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %>
+  </font><br><br>
+  </div>
   
   <br>
   <div class="actions" >
-    <%= f.submit value = "          Submit          "%>
+    <input type="submit" name="Submit" value="Submit" style=" width:180px; font-size: 20px; padding: 10px;" />
+    </font>
   </div>
 <% end %>

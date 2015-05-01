@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Students</h1>
+<div style = "text-align: center">
+  <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
+  </div>
+
+<div style = "text-align: center">
+  <font size="5px" color=maroon><strong><%= "Student List(Administrative View)"%></strong></font><br><br>
+  </div>
+
 <p> Students registered for lunch:
 <%= @lunch_total%>
 </p>
 <br>
 
-<table>
+<table border="3px" cellspacing = "0px" bordercolor = "#000000">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Uin</th>
+      <th>UIN</th>
       <th>Email</th>
-      <th>Us citizen</th>
+      <th>US Citizen</th>
       <th>Degree</th>
-      <th>Position type</th>
+      <th>Position Type</th>
       <th>Mock 1</th>
       <th>Mock 2</th>
       <th>Resume 1</th>
@@ -51,5 +58,5 @@
 <br>
 
 <%= link_to 'New Student', new_student_path %>
-<br>
+<br><br>
 <%= link_to 'Back', sessions_url %>
