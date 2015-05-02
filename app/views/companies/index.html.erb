@@ -4,37 +4,57 @@
   <font size="5px" color=maroon><strong><%= "Company List(Administrative View)"%></strong></font><br><br>
   </div>
 
+<div id="ABComp" style="margin-left:180px">
+  <p>Note:<br>&nbsp&nbsp
+    C.P. - Contact Person  <br>&nbsp&nbsp
+    S.L. - Sponsor Level  <br>&nbsp&nbsp
+    CSh. - Citizenship  <br>&nbsp&nbsp
+    J.T. - Job Type  <br>&nbsp&nbsp
+    Stu.L. - Student Level  <br>&nbsp&nbsp
+    M.1. - Mock 1 Rep No.  <br>&nbsp&nbsp
+    M.2. - Mock 2 Rep No.  <br>&nbsp&nbsp
+    R.1. - Resume 1 Rep No.  <br>&nbsp&nbsp
+    R.2. - Resume 2 Rep No.  <br>&nbsp&nbsp
+    R.3. - Resume 3 Rep No.  <br>&nbsp&nbsp
+    L. - Lunch <br>&nbsp&nbsp
+  </p>
 
-<p> Representives registered for lunch:
-<%= @lunch_total%>
-</p>
+<div>
+  <%= link_to 'New Company', new_company_path %>
+  &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <%= link_to 'Back', sessions_url %>
+</div>
 <br>
 
-<div margin-left= "130px"
-   margin-right= "130px">
-<table border="3px" cellspacing="0px" >
+  <p><strong>Representives registered for lunch:
+  <%= @lunch_total%><strong>
+  </p>
+</div>
+
+
+<table align="center" border="3px" cellspacing="0px">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Contact Person</th>
+      <th>C.P.</th>
       <th>Contact Email</th>
-      <th>Sponsor Level</th>
-      <th>Citizenship</th>
-      <th>Job Type</th>
-      <th>Student Level</th>
+      <th>S.L.</th>
+      <th>CSh.</th>
+      <th>J.T.</th>
+      <th>Stu.L.</th>
       <th>Rep 1</th>
       <th>Rep 2</th>
       <th>Rep 3</th>
       <th>Rep 4</th>
       <th>Rep 5</th>
       <th>Rep 6</th>
-      <th>Mock 1 Rep No.</th>
-      <th>Mock 2 Rep No.</th>
-      <th>Resume 1 Rep No.</th>
-      <th>Resume 2 Rep No.</th>
-      <th>Resume 3 Rep No.</th>
-      <th>Lunch Rep no</th>
-      <th colspan="3"></th>
+      <th>M.1.</th>
+      <th>M.2.</th>
+      <th>R.1.</th>
+      <th>R2.</th>
+      <th>R.3.</th>
+      <th>L.</th>
+      <th colspan="3">Operation</th>
     </tr>
   </thead>
 
@@ -68,10 +88,5 @@
   </tbody>
 </table>
 
-</div>
-
 <br>
 
-<%= link_to 'New Company', new_company_path %>
-<br>
-<%= link_to 'Back', sessions_url %>

@@ -18,8 +18,8 @@
 
 html, body {
    margin-top: 80px ;
-   margin-left: 130px;
-   margin-right: 130px;
+   margin-left: auto;
+   margin-right: auto;
    background-color: #FFEECC;
    }
 

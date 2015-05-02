@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<div style="margin-left:180px">
 <h1>Listing Timeslots</h1>
+
+<br>
+<%= link_to 'New Timeslot', new_timeslot_path %>
+&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+<%= link_to 'Back', sessions_url %>
+<br><br>
 
 <table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
@@ -30,7 +37,4 @@
 
 <br>
 
-<%= link_to 'New Timeslot', new_timeslot_path %>
-
-<br>
-<%= link_to 'Back', sessions_url %>
+</div>

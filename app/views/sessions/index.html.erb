@@ -1,7 +1,8 @@
+<div id="session" style="margin-left:180px">
 <p id="notice"><%= notice %></p>
 
-<h1>Please Choose:</h1>
 
+<h1>Please Choose:</h1>
 <table>
   <thead>
     <tr>
@@ -20,7 +21,7 @@
          <td><%= link_to 'Timeslots Management', timeslots_url %></td>
        </tr>
       <tr>   
-         <td><%= link_to 'Appointments List', appointments_url %></td>
+         <td><%= link_to 'Schedule List', appointments_url %></td>
       </tr>
   </tbody>
 </table>
@@ -31,3 +32,5 @@
 
 <br>    
 <%= link_to 'Log Out', del_path, data: { confirm: 'Are you sure?' } %>
+
+</div>
