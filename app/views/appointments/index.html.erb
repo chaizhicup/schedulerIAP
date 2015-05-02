@@ -13,7 +13,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<table>
+<table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
     <tr>
       <th>Section</th>
@@ -26,6 +26,7 @@
   </thead>
 
   <tbody>
+      <tr><td colspan="8" align = "center" ><font size ="4">Mock Interview 1</font></tbody></tr>
         <% @appointments1.each do |appointment| %>
           <tr>   
             <td><%= appointment.section %></td>    
@@ -36,8 +37,15 @@
             <td><%= link_to 'Show', appointment %></td>    
             <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
             <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-          </tr>    
+          </tr> 
+          <tr></tr>   
         <% end %>    
+        <tr><td>Walk_in 1:</td></tr> 
+        <tr><td>Walk_in 2:</td></tr> 
+        <tr><td>Walk_in 3:</td></tr> 
+        <tr><td>Walk_in 4:</td></tr> 
+        
+    <tr><td colspan="8" align = "center" ><font size ="4">Mock Interview 2</font></tbody></tr>
         <% @appointments2.each do |appointment| %>   
           <tr>   
             <td><%= appointment.section %></td>    
@@ -49,7 +57,14 @@
             <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
             <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
           </tr>    
-        <% end %>    
+          <tr></tr> 
+        <% end %>   
+        <tr><td>Walk_in 1:</td></tr> 
+        <tr><td>Walk_in 2:</td></tr> 
+        <tr><td>Walk_in 3:</td></tr> 
+        <tr><td>Walk_in 4:</td></tr> 
+        
+    <tr><td colspan="8" align = "center" ><font size ="4">Resume Clinic 1</font></tbody></tr>    
         <% @appointments3.each do |appointment| %>   
           <tr>   
             <td><%= appointment.section %></td>    
@@ -60,8 +75,15 @@
             <td><%= link_to 'Show', appointment %></td>    
             <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
             <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-          </tr>    
+          </tr>   
+          <tr></tr>  
         <% end %>    
+        <tr><td>Walk_in 1:</td></tr> 
+        <tr><td>Walk_in 2:</td></tr> 
+        <tr><td>Walk_in 3:</td></tr> 
+        <tr><td>Walk_in 4:</td></tr> 
+
+     <tr><td colspan="8" align = "center" ><font size ="4">Resume Clinic 2</font></tbody></tr>   
         <% @appointments4.each do |appointment| %>   
           <tr>   
             <td><%= appointment.section %></td>    
@@ -73,7 +95,14 @@
             <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
             <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
           </tr>    
-        <% end %>    
+          <tr></tr> 
+        <% end %>   
+        <tr><td>Walk_in 1:</td></tr> 
+        <tr><td>Walk_in 2:</td></tr> 
+        <tr><td>Walk_in 3:</td></tr> 
+        <tr><td>Walk_in 4:</td></tr> 
+
+    <tr><td colspan="8" align = "center" ><font size ="4">Resume Clinic 3</font></tbody></tr>
         <% @appointments5.each do |appointment| %>   
           <tr>   
             <td><%= appointment.section %></td>    
@@ -85,20 +114,13 @@
             <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
             <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
           </tr>    
+          <tr></tr> 
         <% end %>
-     <% @appointments6.each do |appointment| %>   
-          <tr>   
-            <td><%= appointment.section %></td>    
-            <td><%= appointment.time_slot %></td>    
-            <td><%= appointment.company %></td>    
-            <td><%= appointment.student %></td>    
-            <td><%= appointment.UIN %></td>    
-            <td><%= link_to 'Show', appointment %></td>    
-            <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
-            <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-          </tr>    
-    <% end %>
-
+        <tr><td>Walk_in 1:</td></tr> 
+        <tr><td>Walk_in 2:</td></tr> 
+        <tr><td>Walk_in 3:</td></tr> 
+        <tr><td>Walk_in 4:</td></tr> 
+        
   </tbody>
 </table>
 

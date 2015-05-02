@@ -22,6 +22,11 @@ html, body {
    margin-right: 130px;
    }
 
+.button{
+    width: 260px;
+    height: 60px;
+}
+
 aside {
   section.user_info {
     margin-top: 10px auto;

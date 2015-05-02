@@ -1,33 +1,38 @@
 <%= form_for(@timeslot) do |f| %>
-  <% if @timeslot.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@timeslot.errors.count, "error") %> prohibited this timeslot from being saved:</h2>
 
-      <ul>
-      <% @timeslot.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <br><br>
 
+  <font size="4px">
   <div class="field">
-    <%= f.label :Attend_Date %><br>
-    <%= f.text_field :att_date %>
+    <strong><%= f.label :Attend_Date %></strong><br>
+    <font size="2px"><%= "Please enter the date of the event you are adding. The format should be: MM/DD" %><br>
+    <strong>Example: 09/07</strong><%= f.text_field :att_date%></font>
   </div>
-  <div class="field">
-    <%= f.label :Section %><br>
-    <%= f.select :section, options_for_select(["Mock Interview 1", "Mock Interview 2", "Resume Clinic 1", "Resume Clinic 2", "Resume Clinic 3", "Lunch"]) %>
+
+  <div class="field"><br>
+    <strong><%= f.label :Event %></strong><br>
+    <font size="2px"><%= "Please select the event you are adding." %><br></font>
+    <%= f.select :section, options_for_select(["Mock Interview 1", "Mock Interview 2", "Resume Clinic 1", "Resume Clinic 2", "Resume Clinic 3", "Lunch"]), :prompt => "---Please Select---" %>
   </div>
-  <div class="field">
-    <%= f.label :Time_Slot %><br>
+
+  <div class="field"><br>
+    <strong><%= f.label :Time_Slot %></strong><br>
+    <font size="2px"><%= "Please enter the time slots. The format should be: xx:xxam(pm)-xx:xxam(pm), no space in between" %><br>
+    <strong>Example: 10:10am-10:30am, or 1:00pm-1:30pm </strong></font>
     <%= f.text_field :slot %>
-  </div>
-  <div class="field">
-    <%= f.label :Student_Number %><br>
+  </div> 
+
+  <div class="field"><br>
+    <strong><%= f.label :Student_Capacity %></strong><br>
+    <font size="2px"><%= "Please enter the maximum number of students that can attend this event at this time. " %>
+    <strong>Enter a positive integer</strong><br>
     <%= f.number_field :stunum %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </font>
+  <br>
+   
+    <div class="actions" >
+    <input type="submit" name="Submit" value="Create Timeslot" style=" width:180px; font-size: 20px; padding: 10px;" />
+    </font>
   </div>
 <% end %>

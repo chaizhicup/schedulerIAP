@@ -10,7 +10,6 @@ class AppointmentsController < ApplicationController
     @appointments3 = Appointment.where(section: 'Resume_1').group('id','time_slot')
     @appointments4 = Appointment.where(section: 'Resume_2').group('id','time_slot')
     @appointments5 = Appointment.where(section: 'Resume_3').group('id','time_slot')
-    @appointments6 = Appointment.where(section: 'Lunch').group('id','time_slot')
   end
 
   # GET /appointments/1
