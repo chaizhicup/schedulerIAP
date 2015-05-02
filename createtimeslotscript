@@ -16,7 +16,7 @@ Timeslot.create(att_date: "09/09", section: "Resume Clinic 3", slot: "10:10am-10
 Timeslot.create(att_date: "09/09", section: "Resume Clinic 3", slot: "10:30am-10:50am", stunum: "28")
 Timeslot.create(att_date: "09/09", section: "Resume Clinic 3", slot: "10:50am-11:10am", stunum: "28")
 Timeslot.create(att_date: "09/09", section: "Resume Clinic 3", slot: "11:10am-11:30am", stunum: "28")
-Timeslot.create(att_date: "09/08", section: "Mock Interview 1", slot: "1:00pm-1:20pm", stunum: "28")
+Timeslot.create(att_date: "09/08", section: "Mock Interview 1", slot: "1:00pm-1:30pm", stunum: "28")
 Timeslot.create(att_date: "09/08", section: "Mock Interview 1", slot: "1:30pm-2:00pm", stunum: "28")
 Timeslot.create(att_date: "09/08", section: "Mock Interview 1", slot: "2:00pm-2:30pm", stunum: "28")
 Timeslot.create(att_date: "09/08", section: "Mock Interview 1", slot: "2:30pm-3:00pm", stunum: "28")
