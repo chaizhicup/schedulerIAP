@@ -5,11 +5,12 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments1 = Appointment.where(section: 'Mock_1').group('id','time_slot')
-    @appointments2 = Appointment.where(section: 'Mock_2').group('id','time_slot')
-    @appointments3 = Appointment.where(section: 'Resume_1').group('id','time_slot')
-    @appointments4 = Appointment.where(section: 'Resume_2').group('id','time_slot')
-    @appointments5 = Appointment.where(section: 'Resume_3').group('id','time_slot')
+    @appointments1 = Appointment.where(section: 'Mock_1').order(:time_slot)
+
+    @appointments2 = Appointment.where(section: 'Mock_2').order(:time_slot)
+    @appointments3 = Appointment.where(section: 'Resume_1').order(:time_slot)
+    @appointments4 = Appointment.where(section: 'Resume_2').order(:time_slot)
+    @appointments5 = Appointment.where(section: 'Resume_3').order(:time_slot)
   end
 
   # GET /appointments/1
