@@ -84,6 +84,17 @@ input {
   }
 }
 
+#fixed-footer{
+   color:#333333; text-align:center;
+  
+  width:300px;
+  position:fixed; bottom:0; left:75%;
+  margin-right:-300px;
+  _position: absolute; /* position fixed for IE6 */
+  _top:expression(documentElement.scrollTop+documentElement.clientHeight-this.clientHeight-4);
+  z-index:4;
+}
+
 
 
 /*.field_with_errors {*/
