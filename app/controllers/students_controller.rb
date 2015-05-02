@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
   # GET /students.json
 
   def index
-    @students = Student.all
+    @students = Student.all.order(:UIN)
     @lunch_total =Student.where(Lunch: 'Attend').count
   end
 

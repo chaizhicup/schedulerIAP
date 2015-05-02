@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.all.order(:name)
     @lunch_total = Company.sum(:lunch_rep_no)
   end
 

@@ -5,7 +5,7 @@ class TimeslotsController < ApplicationController
   # GET /timeslots
   # GET /timeslots.json
   def index
-    @timeslots = Timeslot.group('section','id')
+    @timeslots = Timeslot.all.order(:section,:slot)
   end
 
   # GET /timeslots/1
