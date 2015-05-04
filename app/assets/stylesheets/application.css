@@ -17,7 +17,7 @@
 /* sidebar */
 
 html, body {
-   margin-top: 80px ;
+   margin-top: 100px ;
    margin-left: auto;
    margin-right: auto;
    background-color: #FFEECC;
@@ -33,7 +33,7 @@ html, body {
   top: 0px ;
   left: 0px;
     width: 100%;
-    height: 120px;
+    height: 170px;
     background-color: #500000;
 }
 
@@ -108,9 +108,9 @@ input {
 
 #globalnav {
   position:relative;
-  float:left;
+  float: bottom;
   width:100%;
-  padding:0 0 1.75em 1em;
+  padding:1em 1em 1.75em 1em;
   margin:0;
   list-style:none;
   line-height:1em;
@@ -133,6 +133,7 @@ input {
   border-left:1px solid #fff;
   border-top:1px solid #fff;
   border-right:1px solid #aaa;
+  border-bottom:1px solid #fff;
 }
 
 #globalnav A:hover,

@@ -11,17 +11,19 @@
   <div style="padding:15px;">
   <center><%=image_tag("csen-logo.png", alt: "Example Image", :size=>"600x90")%></center>
   </div>
+  
+	<ul id="globalnav">
+		<li><%= link_to 'Home', sessions_url %> </li>
+  		<li><%= link_to 'Students Infomation', students_url %> </li>
+  		<li><%= link_to 'Company Infomation', companies_url %> </li>
+  		<li><%= link_to 'Timeslots Management', timeslots_url %></li>
+		<li><%= link_to 'Schedule List', appointments_url %></li>
+		<li> <%= link_to 'New Administrator Account', new_useradd_path %></li>
+		<li> <%= link_to 'Log Out', del_path, data: { confirm: 'Are you sure?' } %></li>
+	</ul>
 </div>
 
-  
-<ul id="globalnav">
-  <li><%= link_to 'Students Infomation', students_url %> </li>
-  <li><%= link_to 'Company Infomation', companies_url %> </li>
-  <li><%= link_to 'Timeslots Management', timeslots_url %></li>
-  <li><%= link_to 'Schedule List', appointments_url %></li>
-  <li> <%= link_to 'New Administrator Account', new_useradd_path %></li>
-  <li> <%= link_to 'Log Out', del_path, data: { confirm: 'Are you sure?' } %></li>
-</ul>
+
 
 
 <div id="fixed-footer"><font color = "9999CC" size="1"><i>Developed by: TAMU Hullabaloo Team <br> Contact: no.reply.cse.careerfair.tamu@gmail.com</i></font></div>
