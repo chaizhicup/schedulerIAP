@@ -109,9 +109,10 @@ input {
 #globalnav {
   position:relative;
   float: left;
-  width:100%;
+  /*width:100%;*/
   padding:1em 1em 1.75em 1em;
-  margin: 0 0 100px 100px;
+  margin-right: auto;
+  margin-left: 100px;
   list-style:none;
   line-height:1em;
 }
