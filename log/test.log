@@ -4248,3 +4248,1224 @@ Processing by StudentsController#destroy as HTML
 Redirected to http://test.host/students
 Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (125.4ms)[0m  [1mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (846.6ms)[0m  CREATE DATABASE "myapp_test" ENCODING = 'unicode'
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (28.0ms)[0m  CREATE TABLE "appointments" ("id" serial primary key, "section" character varying, "time_slot" character varying, "company" character varying, "student" character varying, "UIN" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "contact_person" character varying, "contact_email" character varying, "sponsor_level" character varying, "citizenship" character varying, "job_type" character varying, "student_level" character varying, "rep_1" character varying, "rep_2" character varying, "rep_3" character varying, "rep_4" character varying, "rep_5" character varying, "rep_6" character varying, "intvw_1_rep_no" integer, "intvw_2_rep_no" integer, "clinic_1_rep_no" integer, "clinic_2_rep_no" integer, "clinic_3_rep_no" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "lunch_rep_no" integer) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "sessions" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "name" character varying, "UIN" character varying, "email" character varying, "US_Citizen" boolean, "degree" character varying, "position_type" character varying, "Mock_1" character varying, "Mock_2" character varying, "Resume_1" character varying, "Resume_2" character varying, "Resume_3" character varying, "Lunch" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "timeslots" ("id" serial primary key, "att_date" character varying, "section" character varying, "slot" character varying, "stunum" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "useradds" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "index_useradds_on_email" ON "useradds" USING btree ("email")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.9ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150501203101')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408060026')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150412193412')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150412202303')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150412203049')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150426004041')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150426004120')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150426004444')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150426201432')
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by AppointmentsController#new as HTML
+Redirected to http://test.host/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "appointments"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by CompaniesController#new as HTML
+  Rendered companies/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 15.2ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "companies"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.4ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 4.0ms | ActiveRecord: 4.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by TimeslotsController#new as HTML
+Redirected to http://test.host/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "timeslots"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UseraddsController#new as HTML
+Redirected to http://test.host/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/appointments" for 127.0.0.1 at 2015-05-05 16:20:55 -0500
+Processing by AppointmentsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/companies" for 127.0.0.1 at 2015-05-05 16:20:55 -0500
+Processing by CompaniesController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students" for 127.0.0.1 at 2015-05-05 16:20:55 -0500
+Processing by StudentsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/timeslots" for 127.0.0.1 at 2015-05-05 16:20:55 -0500
+Processing by TimeslotsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["section", "MyString"], ["time_slot", "MyString"], ["company", "MyString"], ["student", "MyString"], ["UIN", "MyString"], ["created_at", "2015-05-05 21:20:55.216704"], ["updated_at", "2015-05-05 21:20:55.216704"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered appointments/_form.html.erb (55.4ms)
+  Rendered appointments/edit.html.erb (78.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["section", "Section"], ["time_slot", "Time Slot"], ["company", "Company"], ["student", "Student"], ["UIN", "Uin"], ["created_at", "2015-05-05 21:20:55.329884"], ["updated_at", "2015-05-05 21:20:55.329884"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["section", "Section"], ["time_slot", "Time Slot"], ["company", "Company"], ["student", "Student"], ["UIN", "Uin"], ["created_at", "2015-05-05 21:20:55.331537"], ["updated_at", "2015-05-05 21:20:55.331537"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered appointments/index.html.erb (17.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Rendered appointments/_form.html.erb (3.7ms)
+  Rendered appointments/new.html.erb (20.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["section", "Section"], ["time_slot", "Time Slot"], ["company", "Company"], ["student", "Student"], ["UIN", "Uin"], ["created_at", "2015-05-05 21:20:55.412573"], ["updated_at", "2015-05-05 21:20:55.412573"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered appointments/show.html.erb (1.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCompany Exists (6.9ms)[0m  SELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('MyString') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mCompany Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('Contact Email') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  Rendered companies/_form.html.erb (11.4ms)
+  Rendered companies/new.html.erb (28.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCompany Exists (0.5ms)[0m  SELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('Contact Email') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mStudent Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35mStudent Exists (0.3ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."email" = 'MyString' LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."UIN" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('Email') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'Email' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = 'Uin' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Rendered students/_form.html.erb (17.2ms)
+  Rendered students/new.html.erb (88.8ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('Email') LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."email" = 'Email' LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."UIN" = 'Uin' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mTimeslot Exists (0.3ms)[0m  SELECT  1 AS one FROM "timeslots" WHERE ("timeslots"."section" = 'MyString' AND "timeslots"."slot" = 'MyString') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "timeslots" ("att_date", "section", "slot", "stunum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["att_date", "MyString"], ["section", "MyString"], ["slot", "MyString"], ["stunum", 1], ["created_at", "2015-05-05 21:20:55.649413"], ["updated_at", "2015-05-05 21:20:55.649413"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered timeslots/_form.html.erb (7.2ms)
+  Rendered timeslots/edit.html.erb (24.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mTimeslot Exists (0.2ms)[0m  SELECT  1 AS one FROM "timeslots" WHERE ("timeslots"."section" = 'Section' AND "timeslots"."slot" = 'Slot') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "timeslots" ("att_date", "section", "slot", "stunum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["att_date", "Att Date"], ["section", "Section"], ["slot", "Slot"], ["stunum", 1], ["created_at", "2015-05-05 21:20:55.692745"], ["updated_at", "2015-05-05 21:20:55.692745"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mTimeslot Exists (0.2ms)[0m  SELECT  1 AS one FROM "timeslots" WHERE ("timeslots"."section" = 'Section' AND "timeslots"."slot" = 'Slot') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  Rendered timeslots/_form.html.erb (3.2ms)
+  Rendered timeslots/new.html.erb (18.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mTimeslot Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "timeslots" WHERE ("timeslots"."section" = 'Section' AND "timeslots"."slot" = 'Slot') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "timeslots" ("att_date", "section", "slot", "stunum", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["att_date", "Att Date"], ["section", "Section"], ["slot", "Slot"], ["stunum", 1], ["created_at", "2015-05-05 21:20:55.733494"], ["updated_at", "2015-05-05 21:20:55.733494"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered timeslots/show.html.erb (1.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:21:32 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.5ms)
+  Rendered students/new.html.erb within layouts/application (81.5ms)
+Completed 200 OK in 2258ms (Views: 2223.4ms | ActiveRecord: 10.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:23:37 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (10.4ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (32.3ms)
+  Rendered students/new.html.erb within layouts/application (97.6ms)
+Completed 200 OK in 429ms (Views: 379.2ms | ActiveRecord: 23.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:26:01 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (34.8ms)
+  Rendered students/new.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 395ms (Views: 356.6ms | ActiveRecord: 12.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:29:53 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (39.5ms)
+  Rendered students/new.html.erb within layouts/application (104.1ms)
+Completed 200 OK in 420ms (Views: 376.6ms | ActiveRecord: 15.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:30:04 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (28.0ms)
+  Rendered students/new.html.erb within layouts/application (86.6ms)
+Completed 200 OK in 336ms (Views: 301.6ms | ActiveRecord: 10.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:30:42 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.8ms)
+  Rendered students/new.html.erb within layouts/application (92.0ms)
+Completed 200 OK in 327ms (Views: 291.5ms | ActiveRecord: 10.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:32:03 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (35.7ms)
+  Rendered students/new.html.erb within layouts/application (106.8ms)
+Completed 200 OK in 409ms (Views: 367.6ms | ActiveRecord: 14.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:33:00 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (27.9ms)
+  Rendered students/new.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 330ms (Views: 294.4ms | ActiveRecord: 10.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:33:33 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (37.9ms)
+  Rendered students/new.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 404ms (Views: 361.1ms | ActiveRecord: 14.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:34:53 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (5.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.5ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.4ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (36.0ms)
+  Rendered students/new.html.erb within layouts/application (100.5ms)
+Completed 200 OK in 481ms (Views: 421.5ms | ActiveRecord: 22.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:35:39 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.2ms)
+  Rendered students/new.html.erb within layouts/application (88.7ms)
+Completed 200 OK in 344ms (Views: 308.5ms | ActiveRecord: 10.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:36:09 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (29.4ms)
+  Rendered students/new.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 346ms (Views: 308.7ms | ActiveRecord: 11.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:37:23 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (30.6ms)
+  Rendered students/new.html.erb within layouts/application (92.8ms)
+Completed 200 OK in 347ms (Views: 311.2ms | ActiveRecord: 10.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:40:03 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (37.1ms)
+  Rendered students/new.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 429ms (Views: 390.6ms | ActiveRecord: 13.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 16:42:47 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (27.5ms)
+  Rendered students/new.html.erb within layouts/application (83.3ms)
+Completed 200 OK in 335ms (Views: 298.3ms | ActiveRecord: 10.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:09:10 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (9.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (31.8ms)
+  Rendered students/new.html.erb within layouts/application (98.0ms)
+Completed 200 OK in 442ms (Views: 393.9ms | ActiveRecord: 19.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:09:51 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.9ms)
+  Rendered students/new.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 333ms (Views: 296.4ms | ActiveRecord: 10.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:10:37 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (27.5ms)
+  Rendered students/new.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 328ms (Views: 292.6ms | ActiveRecord: 11.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:10:52 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (27.1ms)
+  Rendered students/new.html.erb within layouts/application (88.9ms)
+Completed 200 OK in 321ms (Views: 286.1ms | ActiveRecord: 10.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:12:55 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (28.2ms)
+  Rendered students/new.html.erb within layouts/application (85.9ms)
+Completed 200 OK in 326ms (Views: 291.6ms | ActiveRecord: 9.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:15:11 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.9ms)
+  Rendered students/new.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 331ms (Views: 296.1ms | ActiveRecord: 9.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:15:26 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.5ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.6ms)
+  Rendered students/new.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 335ms (Views: 300.1ms | ActiveRecord: 10.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:17:54 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (8.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (51.7ms)
+  Rendered students/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 390ms (Views: 327.9ms | ActiveRecord: 35.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:18:29 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.3ms)
+  Rendered students/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 268ms (Views: 234.3ms | ActiveRecord: 10.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:18:53 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (25.9ms)
+  Rendered students/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 285ms (Views: 251.4ms | ActiveRecord: 9.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:19:41 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.4ms)
+  Rendered students/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 270ms (Views: 235.2ms | ActiveRecord: 9.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:20:14 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.7ms)
+  Rendered students/new.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 275ms (Views: 239.5ms | ActiveRecord: 9.9ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-05 17:20:14 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"", "Resume_1"=>"", "Resume_2"=>"", "Mock_2"=>"", "Resume_3"=>"", "Lunch"=>""}, "Submit"=>"Register"}
+  [1m[36m (6.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (24.8ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/students/new
+Completed 302 Found in 81ms (ActiveRecord: 32.3ms)
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:20:15 -0500
+Processing by StudentsController#new as HTML
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)[0m
+  Rendered students/_form.html.erb (3.4ms)
+  Rendered students/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 1.1ms)
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:21:10 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (25.8ms)
+  Rendered students/new.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 271ms (Views: 235.8ms | ActiveRecord: 10.0ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-05 17:21:10 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"", "Resume_1"=>"", "Resume_2"=>"", "Mock_2"=>"", "Resume_3"=>"", "Lunch"=>""}, "Submit"=>"Register"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (1.1ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/students/new
+Completed 302 Found in 28ms (ActiveRecord: 1.7ms)
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:21:10 -0500
+Processing by StudentsController#new as HTML
+  [1m[35mTimeslot Load (0.9ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)[0m
+  Rendered students/_form.html.erb (6.8ms)
+  Rendered students/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 1.9ms)
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:26:33 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (2.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (35.2ms)
+  Rendered students/new.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 350ms (Views: 311.1ms | ActiveRecord: 13.5ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-05 17:26:33 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"", "Resume_1"=>"", "Resume_2"=>"", "Mock_2"=>"", "Resume_3"=>"", "Lunch"=>""}, "Submit"=>"Register"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (1.6ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/students/new
+Completed 302 Found in 32ms (ActiveRecord: 2.2ms)
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:26:33 -0500
+Processing by StudentsController#new as HTML
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)[0m
+  Rendered students/_form.html.erb (6.1ms)
+  Rendered students/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 1.0ms)
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (124.5ms)[0m  [1mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (781.0ms)[0m  CREATE DATABASE "myapp_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (19.5ms)[0m  CREATE TABLE "appointments" ("id" serial primary key, "section" character varying, "time_slot" character varying, "company" character varying, "student" character varying, "UIN" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "companies" ("id" serial primary key, "name" character varying, "contact_person" character varying, "contact_email" character varying, "sponsor_level" character varying, "citizenship" character varying, "job_type" character varying, "student_level" character varying, "rep_1" character varying, "rep_2" character varying, "rep_3" character varying, "rep_4" character varying, "rep_5" character varying, "rep_6" character varying, "intvw_1_rep_no" integer, "intvw_2_rep_no" integer, "clinic_1_rep_no" integer, "clinic_2_rep_no" integer, "clinic_3_rep_no" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "lunch_rep_no" integer) [0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "sessions" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "name" character varying, "UIN" character varying, "email" character varying, "US_Citizen" boolean, "degree" character varying, "position_type" character varying, "Mock_1" character varying, "Mock_2" character varying, "Resume_1" character varying, "Resume_2" character varying, "Resume_3" character varying, "Lunch" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "timeslots" ("id" serial primary key, "att_date" character varying, "section" character varying, "slot" character varying, "stunum" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "useradds" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX  "index_useradds_on_email" ON "useradds" USING btree ("email")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150501203101')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408060026')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150412193412')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150412202303')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150412203049')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150426004041')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150426004120')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150426004444')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150426201432')
+  [1m[35mActiveRecord::SchemaMigration Load (1.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:45:11 -0500
+Processing by StudentsController#new as HTML
+  [1m[35mTimeslot Load (2.0ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)[0m
+  Rendered students/_form.html.erb (35.8ms)
+  Rendered students/new.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 386ms (Views: 319.5ms | ActiveRecord: 39.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:46:33 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (26.4ms)
+  Rendered students/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 266ms (Views: 231.5ms | ActiveRecord: 9.1ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:47:06 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (27.7ms)
+  Rendered students/new.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 287ms (Views: 252.9ms | ActiveRecord: 9.2ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-05 17:47:07 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"Not Attend", "Resume_1"=>"Not Attend", "Resume_2"=>"Not Attend", "Mock_2"=>"Not Attend", "Resume_3"=>"Not Attend", "Lunch"=>"Not Attend"}, "Submit"=>"Register"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (2.3ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "Mock_1", "Mock_2", "Resume_1", "Resume_2", "Resume_3", "Lunch", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "John"], ["UIN", "123541459"], ["email", "afdldw@alkdfjl.com"], ["US_Citizen", "t"], ["degree", "B.S."], ["position_type", "Internship"], ["Mock_1", "Not Attend"], ["Mock_2", "Not Attend"], ["Resume_1", "Not Attend"], ["Resume_2", "Not Attend"], ["Resume_3", "Not Attend"], ["Lunch", "Not Attend"], ["created_at", "2015-05-05 22:47:07.285873"], ["updated_at", "2015-05-05 22:47:07.285873"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (1.0ms)
+
+UserMailer#stu_reg: processed outbound mail in 365.4ms
+
+Sent mail to afdldw@alkdfjl.com (20.6ms)
+Date: Tue, 05 May 2015 17:47:07 -0500
+From: 2015_IAP@cse.tamu.edu
+To: afdldw@alkdfjl.com
+Message-ID: <5549486ba7e47_169a3fdf1485e20058593@dhcp-10-201-69-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>John</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123541459</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>afdldw@alkdfjl.com</td>
+      </tr>
+      <tr>
+        <td>US_Citizen or not:</td><td>true</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>B.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 3:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Lunch:</td><td>Not Attend</td>
+      </tr>
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://www.example.com/students/1
+Completed 302 Found in 445ms (ActiveRecord: 4.4ms)
+Started GET "/students/1" for 127.0.0.1 at 2015-05-05 17:47:07 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered students/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1[0m
+Started GET "/students/1/edit" for 127.0.0.1 at 2015-05-05 17:47:07 -0500
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (3.0ms)
+  Rendered students/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 1.3ms)
+Started GET "/students" for 127.0.0.1 at 2015-05-05 17:47:07 -0500
+Processing by StudentsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-05 17:47:07 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-05 17:48:27 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (33.9ms)
+  Rendered students/new.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 323ms (Views: 283.4ms | ActiveRecord: 12.5ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-05 17:48:28 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"Not Attend", "Resume_1"=>"Not Attend", "Resume_2"=>"Not Attend", "Mock_2"=>"Not Attend", "Resume_3"=>"Not Attend", "Lunch"=>"Not Attend"}, "Submit"=>"Register"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (3.2ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.4ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "Mock_1", "Mock_2", "Resume_1", "Resume_2", "Resume_3", "Lunch", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "John"], ["UIN", "123541459"], ["email", "afdldw@alkdfjl.com"], ["US_Citizen", "t"], ["degree", "B.S."], ["position_type", "Internship"], ["Mock_1", "Not Attend"], ["Mock_2", "Not Attend"], ["Resume_1", "Not Attend"], ["Resume_2", "Not Attend"], ["Resume_3", "Not Attend"], ["Lunch", "Not Attend"], ["created_at", "2015-05-05 22:48:28.339736"], ["updated_at", "2015-05-05 22:48:28.339736"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (0.6ms)
+
+UserMailer#stu_reg: processed outbound mail in 323.0ms
+
+Sent mail to afdldw@alkdfjl.com (11.8ms)
+Date: Tue, 05 May 2015 17:48:28 -0500
+From: 2015_IAP@cse.tamu.edu
+To: afdldw@alkdfjl.com
+Message-ID: <554948bcaaa03_16b13ff8988601fc8007b@dhcp-10-201-69-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>John</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123541459</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>afdldw@alkdfjl.com</td>
+      </tr>
+      <tr>
+        <td>US_Citizen or not:</td><td>true</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>B.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 3:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Lunch:</td><td>Not Attend</td>
+      </tr>
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://www.example.com/students/2
+Completed 302 Found in 394ms (ActiveRecord: 6.1ms)
+Started GET "/students/2" for 127.0.0.1 at 2015-05-05 17:48:28 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered students/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1[0m
+Started GET "/students/2/edit" for 127.0.0.1 at 2015-05-05 17:48:28 -0500
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (2.8ms)
+  Rendered students/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 1.3ms)
+Started GET "/students" for 127.0.0.1 at 2015-05-05 17:48:28 -0500
+Processing by StudentsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-05 17:48:28 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m

@@ -12,12 +12,19 @@ Feature: Students can enter their Infomation
 Scenario: Enter the student infromation
 	Given I am on the new student page
 	And I fill in "Name" with "John"
-	And I fill in "Uin" with "12354145"
+	And I fill in "UIN" with "123541459"
 	And I fill in "Email" with "afdldw@alkdfjl.com"
-	And I check "Us citizen"
-	And I select "Undergraduate" from "Degree"
-	And I select "Intern" from "Position type"
-	When I press "Create Student"
+	And I check "I am a US-Citizen"
+	And I select "B.S." from "Student level recruiting"
+	And I select "Internship" from "Job position recruiting"
+	And I select "Not Attend" from "Mock Interviews 1. Monday 1:00 - 3:00 p.m."
+	And I select "Not Attend" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m."
+	And I select "Not Attend" from "Resume Clinic 2. Monday 3:00 - 5:00 p.m."
+	And I select "Not Attend" from "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m."
+	And I select "Not Attend" from "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m."
+	And I select "Not Attend" from "Please select:"
+
+	When I press "Register"
 	
 	Given I have entered my information
 	Then I should be on the view student information page

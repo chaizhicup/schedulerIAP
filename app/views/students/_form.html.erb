@@ -28,29 +28,39 @@
   </div>
 
   <div>
-    <br>•
+    <div class="field">•
     <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-    
-    <br>•
-    <%= "UIN" %><br>
-    <%= f.text_field :UIN %><br>
+    <%= f.text_field :name %>
+    </div>
 
-    <br>•
+    <div class="field">•
+    <%= f.label :UIN,"UIN" %><br>
+    <%= f.text_field :UIN %>
+
+    </div>
+
+  <div class="field">•
     <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
+    <%= f.text_field :email %>
 
-    <br>•
-    <%= "I am a US-Citizen" %><br>
-    <%= f.check_box :US_Citizen %><br>
+  </div>
 
-    <br>•
-    <%= f.label :Student_level_recruiting %><br>
-    <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D]), :prompt=>"---Please select---" %><br>
+  <div class="field">•
+    <%= f.label :US_Citizen,"I am a US-Citizen" %><br>
+    <%= f.check_box :US_Citizen %>
 
-    <br>•
-    <%= f.label :Job_position_recruiting %><br>
-    <%= f.select :position_type, options_for_select(%w[Internship Full-time]), :prompt=>"---Please select---" %><br><br>
+    </div>
+
+  <div class="field">•
+    <%= f.label :degree, "Student level recruiting" %><br>
+    <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D])%>
+
+  </div>
+
+  <div class="field">•
+    <%= f.label :position_type, "Job position recruiting" %><br>
+    <%= f.select :position_type, options_for_select(%w[Internship Full-time]), :prompt=>"---Please select---" %>
+  </div>
   </div>
 
 
@@ -59,27 +69,27 @@
   </div>
  
   <div class="field">•
-    <%= "Mock Interviews 1. Monday 1:00 - 3:00 p.m. " %><br>
+    <%= f.label :Mock_1,"Mock Interviews 1. Monday 1:00 - 3:00 p.m." %><br>
     <%= f.select :Mock_1, options_for_select(@mock_1_slots), :prompt=>"---Please select time for Mock Interview 1 ---" %>
   </div>
 
   <div class="field">•
-    <%= "Resume Clinic 1. Monday 9:30 - 11:30 a.m." %><br>
+    <%= f.label :Resume_1,"Resume Clinic 1. Monday 9:30 - 11:30 a.m." %><br>
     <%= f.select :Resume_1, options_for_select(@resume_1_slots), :prompt=>"---Please select time for Resume Clinic 1 ---"%>
   </div>
 
   <div class="field">•
-    <%= "Resume Clinic 2. Monday 3:00 - 5:00 p.m. " %><br>
+    <%= f.label :Resume_2, "Resume Clinic 2. Monday 3:00 - 5:00 p.m." %><br>
     <%= f.select :Resume_2, options_for_select(@resume_2_slots), :prompt=>"---Please select time for Resume Clinic 2 ---"%>
   </div>
 
   <div class="field">•
-    <%= "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. " %><br>
+    <%= f.label :Mock_2, "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." %><br>
     <%= f.select :Mock_2, options_for_select(@mock_2_slots), :prompt=>"---Please select time for Mock Interview 2 ---" %>
   </div>
 
   <div class="field">•
-    <%= "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. " %><br>
+    <%= f.label :Resume_3, "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." %><br>
     <%= f.select :Resume_3, options_for_select(@resume_3_slots), :prompt=>"---Please select time for Resume Clinic 3 ---" %>
   </div>
   
@@ -91,6 +101,7 @@
     <strong><%= " Company Representatives"%></strong>
     <%= " from 11:45am - 12:45pm, "%>
     <strong><%="Monday"%></strong><br>
+    <%= f.label :Lunch, "Please select:"%><br>
     <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend']), :prompt=>"---Please select---" %>
   </font><br><br><br>
   </div>
