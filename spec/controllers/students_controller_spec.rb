@@ -19,16 +19,17 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe StudentsController, type: :controller do
+   before { controller.stub(:authorize).and_return true }
 
   # This should return the minimal set of attributes required to create a valid
   # Student. As you add validations to Student, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+ {name: "Tome", UIN: "122123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +104,14 @@ RSpec.describe StudentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+ 	{name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
       }
 
       it "updates the requested student" do
         student = Student.create! valid_attributes
         put :update, {:id => student.to_param, :student => new_attributes}, valid_session
         student.reload
-        skip("Add assertions for updated state")
+        assert_update_values student.reload, new_attributes
       end
 
       it "assigns the requested student as @student" do

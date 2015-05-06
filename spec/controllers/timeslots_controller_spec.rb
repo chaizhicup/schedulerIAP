@@ -19,22 +19,27 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe TimeslotsController, type: :controller do
+   before { controller.stub(:authorize).and_return true }
 
   # This should return the minimal set of attributes required to create a valid
   # Timeslot. As you add validations to Timeslot, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {att_date: '13', section: 'Mock_1', slot: '11:00am-11:20am', stunum: 28}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+     {att_date: nil,
+      section: nil,
+      slot: nil,
+      stunum: nil}
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # TimeslotsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+
+  let(:valid_session) {{}}
 
   describe "GET #index" do
     it "assigns all timeslots as @timeslots" do
@@ -103,14 +108,14 @@ RSpec.describe TimeslotsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+         {att_date: '13', section: 'Mock_1', slot: '11:00am-11:20am', stunum: 28}
       }
 
       it "updates the requested timeslot" do
         timeslot = Timeslot.create! valid_attributes
         put :update, {:id => timeslot.to_param, :timeslot => new_attributes}, valid_session
         timeslot.reload
-        skip("Add assertions for updated state")
+        assert_update_values timeslot.reload, new_attributes
       end
 
       it "assigns the requested timeslot as @timeslot" do
