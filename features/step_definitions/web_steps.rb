@@ -38,9 +38,37 @@ end
 
 # Multi-line step scoper
 
+Given /^(?:|I )want to test the student management$/ do 
+  @student = Student.new
+  @student.name = "John"
+  @student.UIN = "123541459"
+  @student.email="afdldw@alkdfjl.com"
+  @student.US_Citizen = true
+  @student.degree = "B.S."
+  @student.position_type ="Internship"
+  @student.Mock_1 = "Not Attend"
+  @student.Mock_2 = "Not Attend"
+  @student.Resume_1 = "Not Attend"
+  @student.Resume_2 = "Not Attend"
+  @student.Resume_3 = "Not Attend"
+  @student.Lunch = "Not Attend"
+  @student.save
+end
+
+When /^I enter correct user information$/ do
+  @user = Useradd.new
+  @user.name = "Jay"
+  @user.email = "jay@aa.com"
+  @user.password = "123123"
+  @user.save
+end
+
 
 When(/^I click on "(.*?)"$/) do |link|
-  click_link(link) # express the regexp above with the code you wish you had
+  first(:link, link).click # express the regexp above with the code you wish you had
+end
+
+Then /^(?:|I )confirm to del_path$/ do
 end
 
 
