@@ -6408,3 +6408,463 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
   [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/companies/new" for 127.0.0.1 at 2015-05-06 11:53:28 -0500
+Processing by CompaniesController#new as HTML
+  Rendered companies/_form.html.erb (22.2ms)
+  Rendered companies/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 328ms (Views: 292.9ms | ActiveRecord: 11.3ms)
+Started POST "/companies" for 127.0.0.1 at 2015-05-06 11:53:29 -0500
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "company"=>{"name"=>"Google", "rep_1"=>"Gao Zhuoyang", "rep_2"=>"", "rep_3"=>"", "rep_4"=>"", "rep_5"=>"", "rep_6"=>"", "contact_person"=>"Gao Zhuoyang", "contact_email"=>"gaozhuoyang@gmail.com", "sponsor_level"=>"Gold", "citizenship"=>"Any", "job_type"=>"Internship", "student_level"=>"Any", "clinic_1_rep_no"=>"1", "intvw_1_rep_no"=>"1", "clinic_2_rep_no"=>"0", "clinic_3_rep_no"=>"0", "intvw_2_rep_no"=>"0", "lunch_rep_no"=>"1"}, "Submit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCompany Exists (1.8ms)[0m  SELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('gaozhuoyang@gmail.com') LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "companies" ("name", "contact_person", "contact_email", "sponsor_level", "citizenship", "job_type", "student_level", "rep_1", "rep_2", "rep_3", "rep_4", "rep_5", "rep_6", "intvw_1_rep_no", "intvw_2_rep_no", "clinic_1_rep_no", "clinic_2_rep_no", "clinic_3_rep_no", "lunch_rep_no", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21) RETURNING "id"[0m  [["name", "Google"], ["contact_person", "Gao Zhuoyang"], ["contact_email", "gaozhuoyang@gmail.com"], ["sponsor_level", "Gold"], ["citizenship", "Any"], ["job_type", "Internship"], ["student_level", "Any"], ["rep_1", "Gao Zhuoyang"], ["rep_2", ""], ["rep_3", ""], ["rep_4", ""], ["rep_5", ""], ["rep_6", ""], ["intvw_1_rep_no", 1], ["intvw_2_rep_no", 0], ["clinic_1_rep_no", 1], ["clinic_2_rep_no", 0], ["clinic_3_rep_no", 0], ["lunch_rep_no", 1], ["created_at", "2015-05-06 16:53:29.189904"], ["updated_at", "2015-05-06 16:53:29.189904"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/com_reg.html.erb within layouts/mailer (1.1ms)
+
+UserMailer#com_reg: processed outbound mail in 378.1ms
+
+Sent mail to gaozhuoyang@gmail.com (12.4ms)
+Date: Wed, 06 May 2015 11:53:29 -0500
+From: 2015_IAP@cse.tamu.edu
+To: gaozhuoyang@gmail.com
+Message-ID: <554a47099381b_7b83fd21c8521f86208e@dhcp-10-201-69-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Company Name:</td><td>Google</td>
+      </tr>
+      <tr>
+        <td>Contact Person:</td><td>Gao Zhuoyang</td>
+      </tr>
+      <tr>
+        <td>Contact Email:</td><td>gaozhuoyang@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Sponsor level:</td><td>Gold</td>
+      </tr>
+      <tr>
+        <td>Citizenship Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Degree level Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Representative 1:</td><td>Gao Zhuoyang</td>
+      </tr>
+      <tr>
+        <td>Representative 2:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 3:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 4:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 5:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 6:</td><td></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 1:</td><td>1</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 2:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 1:</td><td>1</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 2:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 3:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Lunch:</td><td>1</td>
+      </tr>
+
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://www.example.com/companies/1
+Completed 302 Found in 452ms (ActiveRecord: 4.2ms)
+Started GET "/companies/1" for 127.0.0.1 at 2015-05-06 11:53:29 -0500
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered companies/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+  [1m[35mCompany Load (1.9ms)[0m  SELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/companies/new" for 127.0.0.1 at 2015-05-06 11:53:52 -0500
+Processing by CompaniesController#new as HTML
+  Rendered companies/_form.html.erb (18.9ms)
+  Rendered companies/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 259ms (Views: 229.3ms | ActiveRecord: 7.0ms)
+Started POST "/companies" for 127.0.0.1 at 2015-05-06 11:53:52 -0500
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "company"=>{"name"=>"Google", "rep_1"=>"Gao Zhuoyang", "rep_2"=>"", "rep_3"=>"", "rep_4"=>"", "rep_5"=>"", "rep_6"=>"", "contact_person"=>"Gao Zhuoyang", "contact_email"=>"gaozhuoyang@gmail.com", "sponsor_level"=>"Gold", "citizenship"=>"Any", "job_type"=>"Internship", "student_level"=>"Any", "clinic_1_rep_no"=>"1", "intvw_1_rep_no"=>"1", "clinic_2_rep_no"=>"0", "clinic_3_rep_no"=>"0", "intvw_2_rep_no"=>"0", "lunch_rep_no"=>"1"}, "Submit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mCompany Exists (1.8ms)[0m  SELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('gaozhuoyang@gmail.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("name", "contact_person", "contact_email", "sponsor_level", "citizenship", "job_type", "student_level", "rep_1", "rep_2", "rep_3", "rep_4", "rep_5", "rep_6", "intvw_1_rep_no", "intvw_2_rep_no", "clinic_1_rep_no", "clinic_2_rep_no", "clinic_3_rep_no", "lunch_rep_no", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21) RETURNING "id"[0m  [["name", "Google"], ["contact_person", "Gao Zhuoyang"], ["contact_email", "gaozhuoyang@gmail.com"], ["sponsor_level", "Gold"], ["citizenship", "Any"], ["job_type", "Internship"], ["student_level", "Any"], ["rep_1", "Gao Zhuoyang"], ["rep_2", ""], ["rep_3", ""], ["rep_4", ""], ["rep_5", ""], ["rep_6", ""], ["intvw_1_rep_no", 1], ["intvw_2_rep_no", 0], ["clinic_1_rep_no", 1], ["clinic_2_rep_no", 0], ["clinic_3_rep_no", 0], ["lunch_rep_no", 1], ["created_at", "2015-05-06 16:53:52.928826"], ["updated_at", "2015-05-06 16:53:52.928826"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/com_reg.html.erb within layouts/mailer (1.3ms)
+
+UserMailer#com_reg: processed outbound mail in 261.5ms
+
+Sent mail to gaozhuoyang@gmail.com (8.8ms)
+Date: Wed, 06 May 2015 11:53:53 -0500
+From: 2015_IAP@cse.tamu.edu
+To: gaozhuoyang@gmail.com
+Message-ID: <554a472136061_7c03ff47e06020420856@dhcp-10-201-69-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Company Name:</td><td>Google</td>
+      </tr>
+      <tr>
+        <td>Contact Person:</td><td>Gao Zhuoyang</td>
+      </tr>
+      <tr>
+        <td>Contact Email:</td><td>gaozhuoyang@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Sponsor level:</td><td>Gold</td>
+      </tr>
+      <tr>
+        <td>Citizenship Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Degree level Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Representative 1:</td><td>Gao Zhuoyang</td>
+      </tr>
+      <tr>
+        <td>Representative 2:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 3:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 4:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 5:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 6:</td><td></td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 1:</td><td>1</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Mock Interview 2:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 1:</td><td>1</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 2:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Resume Clinic 3:</td><td>0</td>
+      </tr>
+      <tr>
+        <td>Number of Representatives attend Lunch:</td><td>1</td>
+      </tr>
+
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://www.example.com/companies/2
+Completed 302 Found in 324ms (ActiveRecord: 2.5ms)
+Started GET "/companies/2" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered companies/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[35mCompany Load (0.5ms)[0m  SELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/students/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#new as HTML
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (24.7ms)
+  Rendered students/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 52ms (Views: 32.7ms | ActiveRecord: 4.5ms)
+Started POST "/students" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "student"=>{"name"=>"John", "UIN"=>"123541459", "email"=>"afdldw@alkdfjl.com", "US_Citizen"=>"1", "degree"=>"B.S.", "position_type"=>"Internship", "Mock_1"=>"Not Attend", "Resume_1"=>"Not Attend", "Resume_2"=>"Not Attend", "Mock_2"=>"Not Attend", "Resume_3"=>"Not Attend", "Lunch"=>"Not Attend"}, "Submit"=>"Register"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (2.5ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "Mock_1", "Mock_2", "Resume_1", "Resume_2", "Resume_3", "Lunch", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "John"], ["UIN", "123541459"], ["email", "afdldw@alkdfjl.com"], ["US_Citizen", "t"], ["degree", "B.S."], ["position_type", "Internship"], ["Mock_1", "Not Attend"], ["Mock_2", "Not Attend"], ["Resume_1", "Not Attend"], ["Resume_2", "Not Attend"], ["Resume_3", "Not Attend"], ["Lunch", "Not Attend"], ["created_at", "2015-05-06 16:53:53.347917"], ["updated_at", "2015-05-06 16:53:53.347917"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (0.6ms)
+
+UserMailer#stu_reg: processed outbound mail in 13.1ms
+
+Sent mail to afdldw@alkdfjl.com (1.6ms)
+Date: Wed, 06 May 2015 11:53:53 -0500
+From: 2015_IAP@cse.tamu.edu
+To: afdldw@alkdfjl.com
+Message-ID: <554a47215a917_7c03ff47e060204209d2@dhcp-10-201-69-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered for 2015 IAP Recruiting and Reception/CSE-Only Career Fair:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>John</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123541459</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>afdldw@alkdfjl.com</td>
+      </tr>
+      <tr>
+        <td>US_Citizen or not:</td><td>true</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>B.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Mock Interview 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 1:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 2:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Resume Clinic 3:</td><td>Not Attend</td>
+      </tr>
+      <tr>
+        <td>Lunch:</td><td>Not Attend</td>
+      </tr>
+  </tbody>
+</table>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://www.example.com/students/12
+Completed 302 Found in 31ms (ActiveRecord: 4.6ms)
+Started GET "/students/12" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered students/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1[0m
+Started GET "/students/12/edit" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mTimeslot Load (0.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Mock Interview 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 1' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 2' AND stunum>0)
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (section = 'Resume Clinic 3' AND stunum>0)[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (section = 'Lunch' AND stunum>0)
+  Rendered students/_form.html.erb (3.0ms)
+  Rendered students/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 1.9ms)
+Started GET "/students" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#index as HTML
+Redirected to http://www.example.com/sessions/new
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"username that does not exist", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUseradd Load (4.8ms)[0m  [1mSELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1[0m  [["email", "username that does not exist"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 3.0ms | ActiveRecord: 5.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUseradd Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "useradds" WHERE LOWER("useradds"."email") = LOWER('jay@aa.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "useradds" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Jay"], ["email", "jay@aa.com"], ["password_digest", "$2a$04$49NmJWh4W1mTgRIY/gD41uik0UX4w1V6Q3QPU6aQAfJTZhkKrnD8K"], ["created_at", "2015-05-06 16:53:53.485389"], ["updated_at", "2015-05-06 16:53:53.485389"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/login" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"jay@aa.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUseradd Load (0.3ms)[0m  SELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1  [["email", "jay@aa.com"]]
+Redirected to http://www.example.com/sessions
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/sessions" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStudent Exists (0.3ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('afdldw@alkdfjl.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'afdldw@alkdfjl.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.2ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123541459' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "Mock_1", "Mock_2", "Resume_1", "Resume_2", "Resume_3", "Lunch", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["name", "John"], ["UIN", "123541459"], ["email", "afdldw@alkdfjl.com"], ["US_Citizen", "t"], ["degree", "B.S."], ["position_type", "Internship"], ["Mock_1", "Not Attend"], ["Mock_2", "Not Attend"], ["Resume_1", "Not Attend"], ["Resume_2", "Not Attend"], ["Resume_3", "Not Attend"], ["Lunch", "Not Attend"], ["created_at", "2015-05-06 16:53:53.516438"], ["updated_at", "2015-05-06 16:53:53.516438"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/students" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "students" WHERE "students"."Lunch" = $1[0m  [["Lunch", "Attend"]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  Rendered students/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.6ms)
+Started GET "/companies" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by CompaniesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT SUM("companies"."lunch_rep_no") FROM "companies"[0m
+  [1m[35mCompany Load (0.3ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  Rendered companies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.7ms)
+Started GET "/timeslots" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by TimeslotsController#index as HTML
+  [1m[36mTimeslot Load (0.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots"  ORDER BY "timeslots"."section" ASC, "timeslots"."slot" ASC[0m
+  Rendered timeslots/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+Started GET "/appointments" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (1.7ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."section" = $1  ORDER BY "appointments"."time_slot" ASC  [["section", "Mock_1"]]
+  [1m[36mAppointment Load (0.7ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."section" = $1  ORDER BY "appointments"."time_slot" ASC[0m  [["section", "Mock_2"]]
+  [1m[35mAppointment Load (0.6ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."section" = $1  ORDER BY "appointments"."time_slot" ASC  [["section", "Resume_1"]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1mSELECT "appointments".* FROM "appointments" WHERE "appointments"."section" = $1  ORDER BY "appointments"."time_slot" ASC[0m  [["section", "Resume_2"]]
+  [1m[35mAppointment Load (0.3ms)[0m  SELECT "appointments".* FROM "appointments" WHERE "appointments"."section" = $1  ORDER BY "appointments"."time_slot" ASC  [["section", "Resume_3"]]
+  Rendered appointments/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 24ms (Views: 16.5ms | ActiveRecord: 4.3ms)
+Started GET "/useradds/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by UseraddsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered useradds/_form.html.erb (5.7ms)
+  Rendered useradds/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+Started GET "/del" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#del as HTML
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2015-05-06 11:53:53 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

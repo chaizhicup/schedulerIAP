@@ -19,9 +19,12 @@ module NavigationHelpers
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
-       when /^the view student information page$/i
+    when /^the view student information page$/i
          #'/students/1'
-         student_path(@student)
+        student_path(@student)
+
+    when /^the view company information page$/i
+         company_path(@company)
 
     when /^the edit information page$/i
          edit_student_path(@student)

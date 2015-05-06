@@ -23,7 +23,7 @@
 
   <div class="field"><font size="4px">
     <br><br>•
-    <%= f.label :"Enter your company name"%><br>
+    <%= f.label :name, "Enter your company name"%><br>
     <%= f.text_field :name %>
   </font>
     <br><br>
@@ -34,23 +34,23 @@
     <strong><%="Platinum members may provide up to 6 representatives, Gold 4, and Silver 2" %></strong></font>
   </div>
 
-  <div>    
-    <%= "1.)  "%>
+  <div class = "field">    
+    <%= f.label :rep_1, "1.)"%>
     <%= f.text_field :rep_1 %>
     <br>
-    <%= "2.)  "%>
+    <%= f.label :rep_2, "2.)"%>
     <%= f.text_field :rep_2 %>
     <br>
-    <%= "3.)  "%>
+    <%= f.label :rep_3, "3.)"%>
     <%= f.text_field :rep_3 %>
     <br>
-    <%= "4.)  "%>
+    <%= f.label :rep_4, "4.)"%>
     <%= f.text_field :rep_4 %>
     <br>
-    <%= "5.)  "%>
+    <%= f.label :rep_5, "5.)"%>
     <%= f.text_field :rep_5 %>
     <br>
-    <%= "6.)  "%>
+    <%= f.label :rep_6, "6.)"%>
     <%= f.text_field :rep_6 %>
     <br>
   </div><br><br>
@@ -62,30 +62,30 @@
   </font>
   
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :contact_person, "Name"%><br>
     <%= f.text_field :contact_person %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :contact_email, "Email"%><br>
     <%= f.text_field :contact_email %>
   </div>
 
   <font size="4px">
   <div class="field"><br>•
-    <%= f.label :"Select your company's sponsor level" %><br>
+    <%= f.label :sponsor_level, "Select your company's sponsor level" %><br>
     <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver]), :prompt=>"---Please select---" %>
   </div>
   <div class="field"><br>•
-    <%= "Select if you hire US citizens only, or not"%><br>
+    <%= f.label :citizenship, "Select if you hire US citizens only, or not"%><br>
     <%= f.select :citizenship, options_for_select(["US Citizen Only", "Any"]), :prompt=>"---Please select---" %>
   </div>
   <div class="field"><br>•
-    <%= f.label :"Select the job type you are offering" %><br>
+    <%= f.label :job_type, "Select the job type you are offering" %><br>
     <%= f.select :job_type, options_for_select(%w[Internship Full-time Any ]), :prompt=>"---Please select---" %>
   </div>
   <div class="field"><br>•
-    <%= f.label :"Select the student level you are employing"%><br>
+    <%= f.label :student_level, "Select the student level you are employing"%><br>
     <%= f.select :student_level, options_for_select(%w[B.S. Master's PH.D Any]), :prompt=>"---Please select---" %>
   </div>
   
@@ -95,20 +95,15 @@
 
   <font size = "2.8em">
   <div class="field">
-    <%= "Resume Clinic 1. Monday 9:30 - 11:30 a.m." %>
-    <%= f.label :"Number of representatives attending" %><br>
+    <%= f.label :clinic_1_rep_no, "Resume Clinic 1. Monday 9:30 - 11:30 a.m. Number of representatives attending" %><br>
     <%= f.select :clinic_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Mock Interviews 1. Monday 1:00 - 3:00 a.m." %>
-    <%= f.label :"Number of representatives attending" %><br>
+    <%= f.label :intvw_1_rep_no, "Mock Interviews 1. Monday 1:00 - 3:00 a.m. Number of representatives attending" %><br>
     <%= f.select :intvw_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Resume Clinic 2. Monday 3:00 - 5:00 p.m." %>
-    <%= f.label :"Number of representatives attending" %><br>
+    <%= f.label :clinic_2_rep_no, "Resume Clinic 2. Monday 3:00 - 5:00 p.m. Number of representatives attending" %><br>
     <%= f.select :clinic_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." %>
-    <%= f.label :"Number of representatives attending" %><br>
+    <%= f.label :clinic_3_rep_no, "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. Number of representatives attending" %><br>
     <%= f.select :clinic_3_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
-    <%= "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." %>
-    <%= f.label :"Number of representatives attending" %><br>
+    <%= f.label :intvw_2_rep_no, "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. Number of representatives attending" %><br>
     <%= f.select :intvw_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %><br>
   </font>
   </div>
@@ -120,7 +115,7 @@
     <%= " and " %>
     <strong><%= " Company Representatives"%></strong>
     <%= " from 11:45am - 12:45pm, "%>
-    <strong><%="Monday"%></strong><br>
+    <strong><%=f.label :lunch_rep_no, "Monday"%></strong><br>
     <%= f.select :lunch_rep_no, options_for_select(%w[0 1 2 3 4 5 6]), :prompt=>"---Please select---" %>
   </font><br><br>
   </div>

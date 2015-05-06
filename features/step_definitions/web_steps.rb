@@ -76,6 +76,10 @@ Given /^I have entered my information$/ do
    @student = Student.last()
 end
 
+Given /^I have entered the company's information$/ do
+   @company = Company.last()
+end
+
 
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
