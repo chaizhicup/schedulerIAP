@@ -26,7 +26,7 @@ RSpec.describe CompaniesController, type: :controller do
   before { controller.stub(:authorize).and_return true }
   
   let(:valid_attributes) {
-    {name: 'wang', contact_person: 'string', contact_email: 'string@da.edu', sponsor_level: 'gold', citizenship: true, job_type: 'Internship', student_level: 'B.S', rep_1: 'string', rep_2: 'string', rep_3: 'string', rep_4: 'string', rep_5: 'string', rep_6: 'string', intvw_1_rep_no: 3, intvw_2_rep_no: 3, clinic_1_rep_no: 3, clinic_2_rep_no: 3, clinic_3_rep_no: 3, lunch_rep_no: 3} 
+    {name: "john", contact_person: "string", contact_email: "string@da.edu", sponsor_level: "gold", citizenship: true, job_type: "Internship", student_level: "B.S", rep_1: "string", rep_2: "string", rep_3: "string", rep_4: "string", rep_5: "string", rep_6: "string", intvw_1_rep_no: 3, intvw_2_rep_no: 3, clinic_1_rep_no: 3, clinic_2_rep_no: 3, clinic_3_rep_no: 3, lunch_rep_no: 3} 
   }
 
   let(:invalid_attributes) {
@@ -56,7 +56,8 @@ RSpec.describe CompaniesController, type: :controller do
 
   describe "GET #new" do
     it "assigns a new company as @company" do
-      get :new, {:id => company.to_param}, valid_session
+
+      get :new, {}, valid_session
       expect(assigns(:company)).to be_a_new(Company)
     end
   end
@@ -64,7 +65,7 @@ RSpec.describe CompaniesController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested company as @company" do
       company = Company.create! valid_attributes
-      get :edit, {}, valid_session
+      get :edit, {:id => company.to_param}, valid_session
       expect(assigns(:company)).to eq(company)
     end
   end
@@ -105,7 +106,7 @@ RSpec.describe CompaniesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-            {name: 'john', contact_person: 'string', contact_email: 'string@da.edu', sponsor_level: 'gold', citizenship: true, job_type: 'Internship', student_level: 'B.S', rep_1: 'string', rep_2: 'string', rep_3: 'string', rep_4: 'string', rep_5: 'string', rep_6: 'string', intvw_1_rep_no: 3, intvw_2_rep_no: 3, clinic_1_rep_no: 3, clinic_2_rep_no: 3, clinic_3_rep_no: 3, lunch_rep_no: 3}
+            {name: "john", contact_person: "string", contact_email: "string@da.edu", sponsor_level: "gold", citizenship: 'true', job_type: "Internship", student_level: "B.S", rep_1: "string", rep_2: "string", rep_3: "string", rep_4: "string", rep_5: "string", rep_6: "string", intvw_1_rep_no: 3, intvw_2_rep_no: 3, clinic_1_rep_no: 3, clinic_2_rep_no: 3, clinic_3_rep_no: 3, lunch_rep_no: 3}
       }
 
       it "updates the requested company" do
