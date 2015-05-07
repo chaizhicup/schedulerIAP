@@ -96,7 +96,7 @@ RSpec.describe StudentsController, type: :controller do
 
       it "re-renders the 'new' template" do
         post :create, {:student => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+        expect(response).to redirect_to(new_student_path)
       end
     end
   end
@@ -137,7 +137,7 @@ RSpec.describe StudentsController, type: :controller do
       it "re-renders the 'edit' template" do
         student = Student.create! valid_attributes
         put :update, {:id => student.to_param, :student => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
+        expect(response).to redirect_to (edit_student_path)
       end
     end
   end

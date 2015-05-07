@@ -19,7 +19,6 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe SessionsController, type: :controller do
-   before { controller.stub(:authorize).and_return true }
 
 #describe SessionController do
   # routes are mapped as:
