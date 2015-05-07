@@ -25,7 +25,7 @@ RSpec.describe TimeslotsController, type: :controller do
   # Timeslot. As you add validations to Timeslot, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {att_date: '13', section: 'Mock_1', slot: '11:00am-11:20am', stunum: 28}
+    {att_date: "13", section: "Mock_1", slot: "11:00am-11:20am", stunum: 28}
   }
 
   let(:invalid_attributes) {
@@ -108,7 +108,7 @@ RSpec.describe TimeslotsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-         {att_date: '13', section: 'Mock_1', slot: '11:00am-11:20am', stunum: 28}
+         {att_date: "13", section: "Mock_1", slot: "11:00am-11:20am", stunum: 28}
       }
 
       it "updates the requested timeslot" do

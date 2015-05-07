@@ -1,5 +1,6 @@
 class Timeslot < ActiveRecord::Base
 	validates_uniqueness_of :section, :scope => :slot
+	validates :att_date, :section, :slot, :stunum, presence: true
 	def self.decrease_1(argu1, argu2, argu3)
 		temp_id = nil
 		argu1.each do |item|
