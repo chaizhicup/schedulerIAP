@@ -73,8 +73,14 @@ class StudentsController < ApplicationController
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
+        @mock_1, @mock_1_slots = set_menu('Mock Interview 1')
+        @mock_2, @mock_2_slots = set_menu('Mock Interview 2')
+        @resume_1, @resume_1_slots = set_menu('Resume Clinic 1')
+        @resume_2, @resume_2_slots = set_menu('Resume Clinic 2')
+        @resume_3, @resume_3_slots = set_menu('Resume Clinic 3')
+        @lunch, @lunch_slots = set_menu('Lunch')
         flash[:notice] = @student.errors.full_messages
-        format.html { redirect_to new_student_path}#render :new } 
+        format.html { render :new } 
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
