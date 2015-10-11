@@ -52,13 +52,13 @@
     </div>
 
   <div class="field">•
-    <%= f.label :degree, "Student level recruiting" %><br>
+    <%= f.label :degree, "Student Level" %><br>
     <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree)%>
 
   </div>
 
   <div class="field">•
-    <%= f.label :position_type, "Job position recruiting" %><br>
+    <%= f.label :position_type, "Job Type" %><br>
     <%= f.select :position_type, options_for_select(%w[Internship Full-time], @student.position_type), :prompt=>"---Please select---" %>
   </div>
   </div>
@@ -94,6 +94,7 @@
   </div>
   
   <br>
+<!--
   <div class="field">•
     <%= "Select if you will be attending the Lunch with "%>
     <strong><%= "Student Organization Leaders"%></strong><br>
@@ -105,6 +106,7 @@
     <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend'], @student.Lunch), :prompt=>"---Please select---" %>
   </font><br><br><br>
   </div>
+  -->
 
   <div class="actions" >
     <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />

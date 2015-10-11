@@ -21,10 +21,12 @@
   <%= link_to 'Back', sessions_url %>
 </div>
 <br>
-
+ 
+  <!--
   <p><strong>Students registered for lunch:
   <%= @lunch_total%></strong>
   </p>
+  -->
 </div>
 
 <table align="center" border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
@@ -41,7 +43,9 @@
         <th>R.1.</th>
         <th>R.2.</th>
         <th>R.3.</th>
+        <!--
         <th>Lunch</th>
+        -->
         <th colspan="3">Operation</th>
       </tr>
     </thead>
@@ -60,7 +64,9 @@
           <td><%= student.Resume_1 %></td>
           <td><%= student.Resume_2 %></td>
           <td><%= student.Resume_3 %></td>
+          <!--
           <td><%= student.Lunch %></td>
+          -->
           <td><%= link_to 'Show', student %></td>
           <td><%= link_to 'Edit', edit_student_path(student) %></td>
           <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
