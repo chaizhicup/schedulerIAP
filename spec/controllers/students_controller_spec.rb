@@ -29,7 +29,7 @@ RSpec.describe StudentsController, type: :controller do
   }
 
   let(:invalid_attributes) {
- {name: "Tome", UIN: "122123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
+ {name: "Tome", UIN: "1289", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -96,8 +96,9 @@ RSpec.describe StudentsController, type: :controller do
 
       it "re-renders the 'new' template" do
         post :create, {:student => invalid_attributes}, valid_session
-        expect(response).to redirect_to(new_student_path)
+        expect(response).to render_template("new")
       end
+
     end
   end
 
