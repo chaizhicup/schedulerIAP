@@ -63,7 +63,7 @@ Scenario: Enter incorrect student information
 	And I fill in "Email" with "trail@.com"
 	And I fill in "UIN" with "123456789"
 	And I uncheck "I am a US-Citizen"
-	And I select "B.S." from "Student Level"
+	And I select "M.S." from "Student Level"
 	And I select "Internship" from "Job Type"
 	And I select "Not Attend" from "Mock Interviews 1. Monday 1:00 - 3:00 p.m."
 	And I select "Not Attend" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m."
@@ -87,7 +87,7 @@ Scenario: Enter incorrect student information
   
   And the "I am a US-Citizen" checkbox should not be checked
   
-  And the "Student Level" field should contain "B.S" 
+  And the "Student Level" field should contain "M.S" 
   And the "Student Level" field should have no error
   
   And the "Job Type" field should contain "Internship" 
