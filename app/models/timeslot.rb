@@ -1,4 +1,5 @@
 class Timeslot < ActiveRecord::Base
+  has_and_belongs_to_many :students
 	validates_uniqueness_of :section, :scope => :slot
 	validates :att_date, :section, :slot, :stunum, presence: true
 	def self.decrease_1(argu1, argu2, argu3)
