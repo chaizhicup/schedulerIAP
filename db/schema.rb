@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501203101) do
+ActiveRecord::Schema.define(version: 20151022220106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,25 @@ ActiveRecord::Schema.define(version: 20150501203101) do
     t.string   "rep_4"
     t.string   "rep_5"
     t.string   "rep_6"
-    t.integer  "intvw_1_rep_no"
-    t.integer  "intvw_2_rep_no"
-    t.integer  "clinic_1_rep_no"
-    t.integer  "clinic_2_rep_no"
-    t.integer  "clinic_3_rep_no"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "companyevents", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "event_id"
+    t.integer  "representatives"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "lunch_rep_no"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string  "name"
+    t.integer "max_students"
+    t.boolean "for_student"
+    t.date    "event_date"
+    t.time    "start_time"
+    t.time    "end_time"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -62,24 +73,24 @@ ActiveRecord::Schema.define(version: 20150501203101) do
     t.boolean  "US_Citizen"
     t.string   "degree"
     t.string   "position_type"
-    t.string   "Mock_1"
-    t.string   "Mock_2"
-    t.string   "Resume_1"
-    t.string   "Resume_2"
-    t.string   "Resume_3"
-    t.string   "Lunch"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
+  create_table "students_timeslots", id: false, force: :cascade do |t|
+    t.integer "student_id",  null: false
+    t.integer "timeslot_id", null: false
+  end
+
   create_table "timeslots", force: :cascade do |t|
-    t.string   "att_date"
-    t.string   "section"
-    t.string   "slot"
-    t.integer  "stunum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "event_id"
   end
+
+  add_index "timeslots", ["event_id"], name: "index_timeslots_on_event_id", using: :btree
 
   create_table "useradds", force: :cascade do |t|
     t.string   "name"
@@ -91,4 +102,5 @@ ActiveRecord::Schema.define(version: 20150501203101) do
 
   add_index "useradds", ["email"], name: "index_useradds_on_email", unique: true, using: :btree
 
+  add_foreign_key "timeslots", "events"
 end

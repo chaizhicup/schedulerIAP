@@ -1,11 +1,11 @@
-class TimeslotsController < ApplicationController
+class EventsController < ApplicationController
   before_action :set_timeslot, only: [:show, :edit, :update, :destroy]
  #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
   before_filter :authorize, only: [:index, :destroy, :new, :show], :except => :new_session_path
   # GET /timeslots
   # GET /timeslots.json
   def index
-    @timeslots = Timeslot.all.order(:section,:slot)
+    @timeslots = Event.all
   end
 
   # GET /timeslots/1
