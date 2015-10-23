@@ -1,11 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!
+ #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
+
   before_filter :authorize, only: [:index, :destroy, :new, :show], :except => :new_session_path
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
+    @event_slots = Hash.new
+    @events.each do |event|
+      @event_slots[event.id] = Timeslot.all.where(event_id: event.id)
+    end
   end
 
   # GET /events/1
@@ -39,6 +44,7 @@ class EventsController < ApplicationController
           timeslot_start_time = timeslot_end_time
           timeslot_end_time = timeslot_start_time.advance(minutes: @event.timeslot_duration)
         end
+
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -84,3 +90,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :event_date, :start_time, :end_time, :for_student, :max_students, :timeslot_duration)
   end
 end
+

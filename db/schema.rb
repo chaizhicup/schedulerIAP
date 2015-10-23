@@ -53,12 +53,13 @@ ActiveRecord::Schema.define(version: 20151022220106) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string  "name"
-    t.integer "max_students"
-    t.boolean "for_student"
-    t.date    "event_date"
-    t.time    "start_time"
-    t.time    "end_time"
+    t.string   "name"
+    t.integer  "max_students"
+    t.boolean  "for_student"
+    t.date     "event_date"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "timeslot_duration"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -85,8 +86,9 @@ ActiveRecord::Schema.define(version: 20151022220106) do
   create_table "timeslots", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "stunum"
     t.integer  "event_id"
   end
 
