@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :students
   resources :timeslots
   resources :appointments
+  resources :events
   get 'useradds/new'
 
   resources :useradds

@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :max_students
       t.boolean :for_student
       t.date :event_date
-      t.time :start_time
-      t.time :end_time
+      t.datetime :start_time
+      t.datetime :end_time
       t.integer :timeslot_duration
     end
   end

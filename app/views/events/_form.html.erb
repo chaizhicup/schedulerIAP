@@ -1,38 +1,57 @@
-<%= form_for(@timeslot) do |f| %>
+<%= form_for(@event) do |f| %>
 
-  <br><br>
+    <br><br>
 
-  <font size="4px">
-  <div class="field">
-    <strong><%= f.label :Attend_Date %></strong><br>
-    <font size="2px"><%= "Please enter the date of the event you are adding. The format should be: MM/DD" %><br>
-    <strong>Example: 09/07</strong><%= f.text_field :att_date%></font>
-  </div>
+    <font size="4px">
+      <br>
+      <div class="field">
+        <strong><%= f.label :Event_Name %></strong><br>
+        <font size="2px"><%= "Enter name of the event you want to add." %></font><br>
+        <%= f.text_field :name%>
+      </div>
 
-  <div class="field"><br>
-    <strong><%= f.label :Event %></strong><br>
-    <font size="2px"><%= "Please select the event you are adding." %><br></font>
-    <%= f.select :section, options_for_select(["Mock Interview 1", "Mock Interview 2", "Resume Clinic 1", "Resume Clinic 2", "Resume Clinic 3", "Lunch"]), :prompt => "---Please Select---" %>
-  </div>
+      <div class="field">
+        <strong><%= f.label :Date %></strong><br>
+        <font size="2px"><%= "Enter the date of the event." %></font><br>
+        <%= f.date_select :event_date%>
+      </div>
 
-  <div class="field"><br>
-    <strong><%= f.label :Time_Slot %></strong><br>
-    <font size="2px"><%= "Please enter the time slots. The format should be: xx:xxam(pm)-xx:xxam(pm), no space in between" %><br>
-    <strong>Example: 10:10am-10:30am, or 01:00pm-01:30pm </strong></font>
-    <%= f.text_field :slot %>
-  </div> 
+      <div class="field">
+        <strong><%= f.label :Start_time %></strong><br>
+        <font size="2px"><%= "Enter the start time of the event." %></font><br>
+        <%= f.time_select :start_time%>
+      </div>
 
-  <div class="field"><br>
-    <strong><%= f.label :Student_Capacity %></strong><br>
-    <font size="2px"><%= "Please enter the maximum number of students that can attend this event at this time. " %>
-    <strong>Enter a positive integer</strong><br>
-    <%= f.number_field :stunum %>
-  </div>
-  </font>
-  <br>
-   
-    <div class="actions" >
-    <input type="submit" name="Submit" value="Create Timeslot" style=" width:180px; font-size: 20px; padding: 10px;" />
+      <div class="field">
+        <strong><%= f.label :End_time %></strong><br>
+        <font size="2px"><%= "Enter the end time of the event." %></font><br>
+        <%= f.time_select :end_time%>
+      </div>
+
+      <div class="field">
+        <strong><%= f.label :For_students %></strong><br>
+        <font size="2px"><%= "Can students attend this event?" %></font><br>
+        <%= f.check_box :for_student%>
+      </div>
+
+      <div class="field"><br>
+        <strong><%= f.label :Student_Capacity %></strong><br>
+        <font size="2px"><%= "Enter the maximum number of students that can attend this event." %>
+          <strong>Enter a positive number</strong></font><br>
+        <%= f.number_field :max_students %>
+      </div>
+
+      <div class="field"><br>
+        <strong><%= f.label :Time_Slot_Duration %></strong><br>
+        <font size="2px"><%= "Please enter the duration(in minutes) of time slots you want to add. Each event can have multiple timeslots depending on the duration of each time slot" %></font><br>
+        <%= f.number_field :timeslot_duration %>
+      </div>
+
+      <br>
+
+      <div class="actions" >
+        <input type="submit" name="Submit" value="Create" style=" width:80px; font-size: 15px; padding: 10px;" />
+      </div>
+
     </font>
-  </div>
 <% end %>
