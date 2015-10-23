@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.date :event_date
       t.time :start_time
       t.time :end_time
+      t.integer :timeslot_duration
     end
   end
 end
