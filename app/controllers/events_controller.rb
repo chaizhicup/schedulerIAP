@@ -20,10 +20,14 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @unedit = false
+    @button_value ="Create"
   end
 
   # GET /events/1/edit
   def edit
+    @unedit = true
+    @button_value ="Edit"
   end
 
   # POST /events
