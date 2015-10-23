@@ -30,7 +30,7 @@
         <td><table cellspacing="opx", border="0px">
           <% @event_slots[event.id].each do |slot| %>
           <tr>
-            <td> <%= slot.start_time.strftime("%I:%M%p") %>-<%= slot.end_time.strftime("%I:%M%p") %></td>
+            <td> <%= slot %></td>
           </tr>
           <% end %>
         </table></td>

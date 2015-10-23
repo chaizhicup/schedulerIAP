@@ -7,10 +7,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @event_slots = Hash.new
-    @events.each do |event|
-      @event_slots[event.id] = Timeslot.all.where(event_id: event.id)
-    end
+    @event_slots = get_timeslots(@events)
   end
 
   # GET /events/1
@@ -85,6 +82,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def get_timeslots(events)
+    event_slots = Hash.new
+    events.each do |event|
+      timeslots = Timeslot.all.where(event_id: event.id)
+      event_slots[event.id]=[]
+      timeslots.each do |slot|
+        event_slots[event.id] << slot.start_time.strftime("%I:%M%p") + "-" + slot.end_time.strftime("%I:%M%p")
+      end
+    end
+    event_slots
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
     params.require(:event).permit(:name, :event_date, :start_time, :end_time, :for_student, :max_students, :timeslot_duration)
