@@ -1,8 +1,8 @@
 class Timeslot < ActiveRecord::Base
 	belongs_to :event
-  has_and_belongs_to_many :students
+  has_and_belongs_to_many :students, :dependent => :destroy
 	#validates_uniqueness_of :section, :scope => :slot
-	#validates :att_date, :section, :slot, :stunum, presence: true
+	validates :start_time, :end_time, :stunum, presence: true
 	def self.decrease_1(argu1, argu2, argu3)
 		temp_id = nil
 		argu1.each do |item|

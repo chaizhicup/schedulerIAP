@@ -19,13 +19,13 @@
       <div class="field">
         <strong><%= f.label :Start_time %></strong><br>
         <font size="2px"><%= "Enter the start time of the event." %></font><br>
-        <%= f.time_select :start_time%>
+        <%= f.time_select :start_time, {:ampm => true}%>
       </div>
 
       <div class="field">
         <strong><%= f.label :End_time %></strong><br>
         <font size="2px"><%= "Enter the end time of the event." %></font><br>
-        <%= f.time_select :end_time%>
+        <%= f.time_select :end_time, {:ampm => true}%>
       </div>
 
       <div class="field">
