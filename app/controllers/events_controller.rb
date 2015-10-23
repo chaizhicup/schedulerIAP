@@ -51,6 +51,8 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
+        @button_value ="Create"
+        @unedit = false
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -66,6 +68,8 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
+        @button_value ="Edit"
+        @unedit = true
         format.html { render :edit }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
