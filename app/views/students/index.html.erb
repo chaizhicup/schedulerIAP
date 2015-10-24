@@ -38,20 +38,15 @@
         <th>US.C</th>
         <th>Degree</th>
         <th>P.T.</th>
-        <th>M.1.</th>
-        <th>M.2.</th>
-        <th>R.1.</th>
-        <th>R.2.</th>
-        <th>R.3.</th>
-        <!--
-        <th>Lunch</th>
-        -->
+        <% @events.each do |event| %>
+        <th><%= event[1] %></th>
+        <% end %>
         <th colspan="3">Operation</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @students.each do |student| %>
+      <% $students.each do |student| %>
         <tr>
           <td><%= student.name %></td>
           <td><%= student.UIN %></td>
@@ -59,14 +54,9 @@
           <td><%= student.US_Citizen %></td>
           <td><%= student.degree %></td>
           <td><%= student.position_type %></td>
-          <td><%= student.Mock_1 %></td>
-          <td><%= student.Mock_2 %></td>
-          <td><%= student.Resume_1 %></td>
-          <td><%= student.Resume_2 %></td>
-          <td><%= student.Resume_3 %></td>
-          <!--
-          <td><%= student.Lunch %></td>
-          -->
+          <% $stu_slot[student.id].each do |slot| %>
+          <td><%= slot[1] %></td>
+          <% end %>
           <td><%= link_to 'Show', student %></td>
           <td><%= link_to 'Edit', edit_student_path(student) %></td>
           <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

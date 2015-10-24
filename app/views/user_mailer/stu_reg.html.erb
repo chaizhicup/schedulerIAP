@@ -29,26 +29,14 @@
       <tr>
         <td>Position Type:</td><td><%= @user.position_type %></td>
       </tr>
+      <% $stu_slot[@user.id].each do |slot| %>
       <tr>
-        <td>Mock Interview 1:</td><td><%= @user.Mock_1 %></td>
+        <td><%= slot[0] %></td><td><%= slot[1] %></td>
       </tr>
-      <tr>
-        <td>Mock Interview 2:</td><td><%= @user.Mock_2 %></td>
-      </tr>
-      <tr>
-        <td>Resume Clinic 1:</td><td><%= @user.Resume_1 %></td>
-      </tr>
-      <tr>
-        <td>Resume Clinic 2:</td><td><%= @user.Resume_2 %></td>
-      </tr>
-      <tr>
-        <td>Resume Clinic 3:</td><td><%= @user.Resume_3 %></td>
-      </tr>
-      <!--
-      <tr>
-        <td>Lunch:</td><td><%= @user.Lunch %></td>
-      </tr>
-      -->
+      <% end %>
+
+      
+
   </tbody>
 </table>
     <p> If you need to cancel or add an event, please contact the IAP Coordinator.</p>

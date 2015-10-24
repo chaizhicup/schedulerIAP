@@ -63,51 +63,18 @@
   </div>
   </div>
 
-
   <div><br><br>
   <p><font size="4px"><strong><%= "Event and Time Selection" %></strong></font></p>
   </div>
- 
-  <div class="field">•
-    <%= f.label :Mock_1,"Mock Interviews 1. Monday 1:00 - 3:00 p.m." %><br>
-    <%= f.select :Mock_1, options_for_select(@mock_1_slots, @student.Mock_1), :prompt=>"---Please select time for Mock Interview 1 ---" %>
-  </div>
 
-  <div class="field">•
-    <%= f.label :Resume_1,"Resume Clinic 1. Monday 9:30 - 11:30 a.m." %><br>
-    <%= f.select :Resume_1, options_for_select(@resume_1_slots, @student.Resume_1), :prompt=>"---Please select time for Resume Clinic 1 ---"%>
-  </div>
 
-  <div class="field">•
-    <%= f.label :Resume_2, "Resume Clinic 2. Monday 3:00 - 5:00 p.m." %><br>
-    <%= f.select :Resume_2, options_for_select(@resume_2_slots, @student.Resume_2), :prompt=>"---Please select time for Resume Clinic 2 ---"%>
+  <div class="field">
+    <% Event.pluck(:id, :name, :event_date, :start_time, :end_time).each do |id,name,date,start,en| %>
+      <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
+      <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
+    <% end %>
   </div>
-
-  <div class="field">•
-    <%= f.label :Mock_2, "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." %><br>
-    <%= f.select :Mock_2, options_for_select(@mock_2_slots, @student.Mock_2), :prompt=>"---Please select time for Mock Interview 2 ---" %>
-  </div>
-
-  <div class="field">•
-    <%= f.label :Resume_3, "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." %><br>
-    <%= f.select :Resume_3, options_for_select(@resume_3_slots, @student.Resume_3), :prompt=>"---Please select time for Resume Clinic 3 ---" %>
-  </div>
-  
   <br>
-<!--
-  <div class="field">•
-    <%= "Select if you will be attending the Lunch with "%>
-    <strong><%= "Student Organization Leaders"%></strong><br>
-    <%= " and " %>
-    <strong><%= " Company Representatives"%></strong>
-    <%= " from 11:45am - 12:45pm, "%>
-    <strong><%="Monday"%></strong><br>
-    <%= f.label :Lunch, "Please select:"%><br>
-    <%= f.select :Lunch, options_for_select(['Attend', 'Not Attend'], @student.Lunch), :prompt=>"---Please select---" %>
-  </font><br><br><br>
-  </div>
-  -->
-
   <div class="actions" >
     <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />
     </font>

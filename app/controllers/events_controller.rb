@@ -35,7 +35,7 @@ class EventsController < ApplicationController
         timeslot_start_time = @event.start_time
         timeslot_end_time = timeslot_start_time.advance(minutes: @event.timeslot_duration)
         while(timeslot_end_time <= @event.end_time)
-          @timeslot = @event.timeslots.create(:start_time => timeslot_start_time, :end_time => timeslot_end_time)
+          @timeslot = @event.timeslots.create(:start_time => timeslot_start_time, :end_time => timeslot_end_time, :stunum => @event.max_students)
           timeslot_start_time = timeslot_end_time
           timeslot_end_time = timeslot_start_time.advance(minutes: @event.timeslot_duration)
         end

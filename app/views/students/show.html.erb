@@ -31,37 +31,15 @@
   <%= @student.position_type %>
 </p>
 
-<p>
-  <strong>Mock 1:</strong>
-  <%= @student.Mock_1 %>
-</p>
 
+  <% $stu_slot[@student.id].each do |slot| %>
 <p>
-  <strong>Mock 2:</strong>
-  <%= @student.Mock_2 %>
+  <strong><%="#{slot[0]} :"%></strong>
+  <%= slot[1] %><br>
 </p>
+  <% end %>
 
-<p>
-  <strong>Resume 1:</strong>
-  <%= @student.Resume_1 %>
-</p>
 
-<p>
-  <strong>Resume 2:</strong>
-  <%= @student.Resume_2 %>
-</p>
-
-<p>
-  <strong>Resume 3:</strong>
-  <%= @student.Resume_3 %>
-</p>
-
-<!--
-<p>
-  <strong>Lunch:</strong>
-  <%= @student.Lunch %>
-</p>
--->
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
