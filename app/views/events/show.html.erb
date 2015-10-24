@@ -1,26 +1,38 @@
 <div id="session" style="margin-left:180px">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Att date:</strong>
-  <%= @timeslot.att_date %>
-</p>
+  <p>
+    <strong>Event name:</strong>
+    <%= @event.name %>
+  </p>
 
-<p>
-  <strong>Section:</strong>
-  <%= @timeslot.section %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @event.event_date %>
+  </p>
 
-<p>
-  <strong>Slot:</strong>
-  <%= @timeslot.slot %>
-</p>
+  <p>
+    <strong>Event duration:</strong>
+    <%= @event.start_time.strftime("%I:%M%p") %> - <%= @event.end_time.strftime("%I:%M%p") %>
+  </p>
 
-<p>
-  <strong>Stunum:</strong>
-  <%= @timeslot.stunum %>
-</p>
+  <p>
+    <strong>Maximum students:</strong>
+    <%= @event.max_students %>
+  </p>
 
-<%= link_to 'Edit', edit_timeslot_path(@timeslot) %> |
-<%= link_to 'Back', timeslots_path %>
+  <p>
+    <strong>Students allowed:</strong>
+    <%= @event.for_student %>
+  </p>
+
+  <p>
+    <strong>Timeslots:</strong><br>
+    <% @event_slots[@event.id].each do |slot| %>
+        <%= slot %><br>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
 </div>

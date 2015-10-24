@@ -1,25 +1,33 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!
+ #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
+
   before_filter :authorize, only: [:index, :destroy, :new, :show], :except => :new_session_path
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
+    @event_slots = get_timeslots(@events)
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = [@event]
+    @event_slots = get_timeslots(@events)
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    @unedit = false
+    @button_value ="Create"
   end
 
   # GET /events/1/edit
   def edit
+    @unedit = true
+    @button_value ="Edit"
   end
 
   # POST /events
@@ -39,9 +47,12 @@ class EventsController < ApplicationController
           timeslot_start_time = timeslot_end_time
           timeslot_end_time = timeslot_start_time.advance(minutes: @event.timeslot_duration)
         end
+
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
+        @button_value ="Create"
+        @unedit = false
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -57,6 +68,8 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
+        @button_value ="Edit"
+        @unedit = true
         format.html { render :edit }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -79,6 +92,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def get_timeslots(events)
+    event_slots = Hash.new
+    events.each do |event|
+      timeslots = Timeslot.all.where(event_id: event.id)
+      event_slots[event.id]=[]
+      timeslots.each do |slot|
+        event_slots[event.id] << slot.start_time.strftime("%I:%M%p") + "-" + slot.end_time.strftime("%I:%M%p")
+      end
+    end
+    event_slots
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
     params.require(:event).permit(:name, :event_date, :start_time, :end_time, :for_student, :max_students, :timeslot_duration)

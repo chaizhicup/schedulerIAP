@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div style="margin-left:180px">
-<h1>Listing Timeslots</h1>
+<h1>Listing Events</h1>
 
 <br>
-<%= link_to 'New Timeslot', new_timeslot_path %>
+<%= link_to 'New Event', new_event_path %>
 &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
 <%= link_to 'Back', sessions_url %>
 <br><br>
@@ -12,24 +12,34 @@
 <table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
     <tr>
-      <th>Att date</th>
-      <th>Section</th>
-      <th>Slot</th>
-      <th>Stunum</th>
+      <th>Event Date</th>
+      <th>Event Name</th>
+      <th>Timeslots</th>
+      <th>Max Students</th>
+      <th>Start Time</th>
+      <th>End Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @timeslots.each do |timeslot| %>
+    <% @events.each do |event| %>
       <tr>
-        <td><%= timeslot.att_date %></td>
-        <td><%= timeslot.section %></td>
-        <td><%= timeslot.slot %></td>
-        <td><%= timeslot.stunum %></td>
-        <td><%= link_to 'Show', timeslot %></td>
-        <td><%= link_to 'Edit', edit_timeslot_path(timeslot) %></td>
-        <td><%= link_to 'Destroy', timeslot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= event.event_date %></td>
+        <td><%= event.name %></td>
+        <td><table cellspacing="opx", border="0px">
+          <% @event_slots[event.id].each do |slot| %>
+          <tr>
+            <td> <%= slot %></td>
+          </tr>
+          <% end %>
+        </table></td>
+        <td><%= event.max_students %></td>
+        <td><%= event.start_time.strftime("%I:%M%p") %></td>
+        <td><%= event.end_time.strftime("%I:%M%p") %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
