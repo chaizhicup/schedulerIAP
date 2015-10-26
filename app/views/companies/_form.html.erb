@@ -93,18 +93,16 @@
     <%= "Choose for each event the number of representatives that is attending. Select 0 for the event you are not attending" %>
   </font></div>
 
-  <font size = "2.8em">
+  <font size = "3.2em">
   <div class="field">
-    <%= f.label :clinic_1_rep_no, "Resume Clinic 1. Monday 9:30 - 11:30 a.m. Number of representatives attending" %><br>
-    <%= f.select :clinic_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.clinic_1_rep_no), :prompt=>"---Please select---" %><br>
-    <%= f.label :intvw_1_rep_no, "Mock Interviews 1. Monday 1:00 - 3:00 a.m. Number of representatives attending" %><br>
-    <%= f.select :intvw_1_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.intvw_1_rep_no), :prompt=>"---Please select---" %><br>
-    <%= f.label :clinic_2_rep_no, "Resume Clinic 2. Monday 3:00 - 5:00 p.m. Number of representatives attending" %><br>
-    <%= f.select :clinic_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.clinic_2_rep_no), :prompt=>"---Please select---" %><br>
-    <%= f.label :clinic_3_rep_no, "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. Number of representatives attending" %><br>
-    <%= f.select :clinic_3_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.clinic_3_rep_no), :prompt=>"---Please select---" %><br>
-    <%= f.label :intvw_2_rep_no, "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. Number of representatives attending" %><br>
-    <%= f.select :intvw_2_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.intvw_2_rep_no), :prompt=>"---Please select---" %><br>
+    <% Event.pluck(:id, :name, :event_date, :start_time, :end_time).each do |id, name, date, start, finish| %>
+      <%= f.fields_for :companyevents do |ff| %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= ff.label :representatives, name + date.strftime(" on %A %d-%m-%Y") + start.strftime(" from %I:%M%p") + finish.strftime(" to %I:%M%p") %><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6] ), :prompt=>"---Please select---" %><br>
+      <% end %>
+    <% end %>
   </font>
   </div>
 
@@ -114,9 +112,6 @@
     <strong><%= "Student Organization Leaders"%></strong><br>
     <%= " and " %>
     <strong><%= " Company Representatives"%></strong>
-    <%= " from 11:45am - 12:45pm, "%>
-    <strong><%=f.label :lunch_rep_no, "Monday"%></strong><br>
-    <%= f.select :lunch_rep_no, options_for_select(%w[0 1 2 3 4 5 6], @company.lunch_rep_no), :prompt=>"---Please select---" %>
   </font><br><br>
   </div>
   
