@@ -101,7 +101,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;
           <%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %d-%m-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6],@reps[@eves[@it][0] - 1] ), :prompt=>"---Please select---" %><br>
+          <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Please select---" %><br>
           <% @it = @it + 1 %>
         <% end %>
       <% end %>
