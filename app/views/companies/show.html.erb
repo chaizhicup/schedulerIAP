@@ -67,12 +67,13 @@
   <%= @company.rep_6 %>
 </p>
 
-
+<% it = 0 %>
 <% @company.events.each do |e| %>
   <p>
     <strong><%= e.name %> rep no: </strong>
-    <%= @reps[e.id - 1] %>
+    <%= @reps[it] %>
   </p>
+<% it = it + 1 %>
 <% end %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
