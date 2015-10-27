@@ -110,17 +110,17 @@ td{
 }
 
 #globalnav {
-  position:relative;
-  float: left;
-  /*width:100%;*/
+  display: block;
+  text-align: center;
   padding:1em 1em 1.75em 1em;
-  margin: 0 0 100px 150px;
+  margin: 0 0 0px 0px;
   list-style:none;
   line-height:1em;
 }
 
 #globalnav LI {
-  float:left;
+  text-align: center;
+  display: inline-block;
   margin:0;
   padding:0;
 }
@@ -155,10 +155,10 @@ td{
 /*subnav*/
 
 #globalnav UL {
-  position:absolute;
+  display: block;
+  text-align: center;
   left:0;
   top:1.5em;
-  float:left;
   background:#bbb;
   width:100%;
   margin:0;

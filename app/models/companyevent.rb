@@ -5,4 +5,5 @@ class Companyevent < ActiveRecord::Base
     accepts_nested_attributes_for :company
     accepts_nested_attributes_for :event
 
+    validates :representatives, presence: true
 end
