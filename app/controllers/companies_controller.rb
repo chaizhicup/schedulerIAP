@@ -9,30 +9,43 @@ class CompaniesController < ApplicationController
     @companies = Company.all.order(:name)
   end
 
+
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @reps = @company.companyevents.collect(&:representatives)
     unless log_in? || cus_indentify(get_id)
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
     end
   end
+
 
   # GET /companies/new
   def new
     @company = Company.new
     @company.companyevents.build
+
+    @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+    @it = 0
+    @new_flag = 1
+    @reps = @company.companyevents.collect(&:representatives)
   end
+
 
   # GET /companies/1/edit
   def edit
-    @company.companyevents.destroy_all
-    @company.companyevents.build
+    @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+    @it = 0
+    @new_flag = 0
+    @reps = @company.companyevents.collect(&:representatives)
+
     unless log_in? || cus_indentify(get_id)
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
     end
   end
+
 
   # POST /companies
   # POST /companies.json
@@ -41,12 +54,12 @@ class CompaniesController < ApplicationController
     eve_id = Event.pluck(:id)
 
     respond_to do |format|
-      if @company.save
+      if @company.save 
         input_session(@company.id)
-        it = 0
+        i = 0
         @company.companyevents.where(company_id: @company.id).each do |ce|
-          ce.update(event_id: eve_id[it])
-          it = it + 1
+          ce.update(event_id: eve_id[i])
+          i = i + 1
         end
 
         UserMailer.com_reg(@company).deliver_now
@@ -54,13 +67,16 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else
-        @company.companyevents.destroy_all
-        @company.companyevents.build
+        @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+        @it = 0
+        @new_flag = 0
+        @reps = @company.companyevents.collect(&:representatives)
         format.html { render "companies/new" }
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
   end
+
 
   # PATCH/PUT /companies/1
   # PATCH/PUT /companies/1.json
@@ -78,23 +94,29 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
       else
-        @company.companyevents.destroy_all
-        @company.companyevents.build
+        @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+        @it = 0
+        @new_flag = 0
+        @reps = @company.companyevents.collect(&:representatives)
+
         format.html { render :edit }
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
   end
 
+
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
+    @company.companyevents.destroy_all
     @company.destroy
     respond_to do |format|
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

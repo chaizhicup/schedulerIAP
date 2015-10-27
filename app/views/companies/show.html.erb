@@ -71,7 +71,7 @@
 <% @company.events.each do |e| %>
   <p>
     <strong><%= e.name %> rep no: </strong>
-    <%= @company.companyevents.where(company_id: @company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %>
+    <%= @reps[e.id - 1] %>
   </p>
 <% end %>
 

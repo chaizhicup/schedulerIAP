@@ -1,24 +1,15 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" style="margin-left:80px"><%= notice %></p>
 
 <div style = "text-align: center">
   <font size="5px" color=maroon><strong><%= "Company List(Administrative View)"%></strong></font><br><br>
   </div>
 
-<div id="ABComp" style="margin-left:180px">
-  <p>Notation:<br>&nbsp&nbsp
-    C.P. - Contact Person  <br>&nbsp&nbsp
-    S.L. - Sponsor Level  <br>&nbsp&nbsp
-    CSh. - Citizenship  <br>&nbsp&nbsp
-    J.T. - Job Type  <br>&nbsp&nbsp
-    Stu.L. - Student Level  <br>&nbsp&nbsp
-  </p>
-
-<div>
-  <%= link_to 'New Company', new_company_path %>
-  &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <%= link_to 'Back', sessions_url %>
-</div>
-<br>
+<div id="ABComp" style="margin-left:120px">
+  <div>
+    <font size="3.2px"><strong><%= link_to 'New Company', new_company_path %>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <%= link_to 'Back', sessions_url %></strong></font><br>
+  </div>
 
   <p><strong>Representives registered for lunch:
   <%= @lunch_total%></strong>
@@ -30,18 +21,21 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>C.P.</th>
+      <th>Contact Person</th>
       <th>Contact Email</th>
-      <th>S.L.</th>
-      <th>CSh.</th>
-      <th>J.T.</th>
-      <th>Stu.L.</th>
-      <th>Rep 1</th>
-      <th>Rep 2</th>
-      <th>Rep 3</th>
-      <th>Rep 4</th>
-      <th>Rep 5</th>
-      <th>Rep 6</th>
+      <th>Sponsor Level</th>
+      <th>Citizenship</th>
+      <th>Job Type</th>
+      <th>Student Level</th>
+      <th>Rep 1 Name</th>
+      <th>Rep 2 Name</th>
+      <th>Rep 3 Name</th>
+      <th>Rep 4 Name</th>
+      <th>Rep 5 Name</th>
+      <th>Rep 6 Name</th>
+      <% Event.pluck(:name).each do |name| %>
+        <th><%= name %> #</th>
+      <% end %>
       <th colspan="3">Operation</th>
     </tr>
   </thead>
@@ -62,6 +56,9 @@
         <td><%= company.rep_4 %></td>
         <td><%= company.rep_5 %></td>
         <td><%= company.rep_6 %></td>
+        <% company.events.each do |e| %>
+          <td><%= company.companyevents.where(company_id: company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %></td>
+        <% end %>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -71,4 +68,3 @@
 </table>
 
 <br>
-
