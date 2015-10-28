@@ -22,15 +22,15 @@ Scenario: Log in with correct user information
 	Then I should be on the sessions page
 	And I should see "Weclome administrator : Jay"
 
-	Then I want to test the student management
+	#Then I want to test the student management
 	When I click on "Students Infomation"
 	Then I should be on the students page
 	
 	When I click on "Company Infomation"
 	Then I should be on the companies page
 
-	When I click on "Timeslots Management"
-	Then I should be on the timeslots page
+	When I click on "Event Management"
+	Then I should be on the events page
 
 	When I click on "Schedule List"
 	Then I should be on the appointments page

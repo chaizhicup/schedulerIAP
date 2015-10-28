@@ -80,6 +80,9 @@ Given /^I have entered the company's information$/ do
    @company = Company.last()
 end
 
+Given /^I have entered the event's information$/ do
+  @event = Event.last()
+end
 
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
@@ -229,16 +232,16 @@ Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_me
   if page.respond_to?(:should)
     if using_formtastic
       error_paragraph = element.find(:xpath, '../*[@class="inline-errors"][1]')
-      error_paragraph.should have_content(error_message)
+      error_paragraph.downcase.should have_content(error_message.downcase)
     else
-      page.should have_content("#{field.titlecase} #{error_message}")
+      page.body.downcase.should have_content("#{field.titlecase.downcase} #{error_message.downcase}")
     end
   else
     if using_formtastic
       error_paragraph = element.find(:xpath, '../*[@class="inline-errors"][1]')
-      assert error_paragraph.has_content?(error_message)
+      assert error_paragraph.downcase.has_content?(error_message.downcase)
     else
-      assert page.has_content?("#{field.titlecase} #{error_message}")
+      assert page.body.downcase.has_content?("#{field.titlecase.downcase} #{error_message.downcase}")
     end
   end
 end
@@ -291,4 +294,22 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+When /^I select "([^"]*)" as the "([^"]*)"$/ do |date, selector|
+  date = Date.parse(date)
+  date_components = selector.split(/\s+/)
+  selector = date_components.join('_').downcase
+  select(date.year.to_s, :from => "event[#{selector}(1i)]")
+  select(date.strftime("%B"), :from => "event[#{selector}(2i)]")
+  select(date.day.to_s, :from => "event[#{selector}(3i)]")
+end
+
+When /^I select "([^"]*)" as "([^"]*)"$/ do |time, selector|
+  #date = Date.parse(date)
+  time_split = time.split(':')
+  time_components = selector.split(/\s+/)
+  selector = time_components.join('_').downcase
+  select(time_split[0], :from => "event[#{selector}(4i)]")
+  select(time_split[1], :from => "event[#{selector}(5i)]")
 end
