@@ -38,6 +38,9 @@ module NavigationHelpers
       when /^the edit event's information page$/i
         edit_event_path(@event)
 
+      when /^the edit company's information page$/i
+        edit_company_path(@company)
+
       else
         begin
           page_name =~ /^the (.*) page$/

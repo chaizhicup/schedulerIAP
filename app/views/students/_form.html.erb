@@ -69,7 +69,7 @@
 
 
   <div class="field">
-    <% Event.pluck(:id, :name, :event_date, :start_time, :end_time).each do |id,name,date,start,en| %>
+    <% @event_details.each do |id,name,date,start,en| %>
       <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
       <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
     <% end %>
