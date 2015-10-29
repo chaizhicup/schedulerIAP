@@ -1,48 +1,60 @@
 <%= form_for(@event) do |f| %>
 
     <br><br>
+    <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <font size="4px">
       <br>
       <div class="field">
-        <strong><%= f.label :Event_Name %></strong><br>
+
+        <strong><%= f.label :name ,"Event Name" %></strong><br>
         <font size="2px"><%= "Enter name of the event you want to add." %></font><br>
         <%= f.text_field :name%>
       </div>
 
       <div class="field">
-        <strong><%= f.label :Date %></strong><br>
+        <strong><%= f.label :event_date ,"Event Date" %></strong><br>
         <font size="2px"><%= "Enter the date of the event." %></font><br>
         <%= f.date_select :event_date, :disabled => @unedit%>
       </div>
 
       <div class="field">
-        <strong><%= f.label :Start_time %></strong><br>
+        <strong><%= f.label :start_time, "Start Time" %></strong><br>
         <font size="2px"><%= "Enter the start time of the event." %></font><br>
         <%= f.time_select :start_time, {:ampm => true}, :disabled => @unedit%>
       </div>
 
       <div class="field">
-        <strong><%= f.label :End_time %></strong><br>
+        <strong><%= f.label :end_time, "End Time" %></strong><br>
         <font size="2px"><%= "Enter the end time of the event." %></font><br>
         <%= f.time_select :end_time, {:ampm => true}, :disabled => @unedit%>
       </div>
 
       <div class="field">
-        <strong><%= f.label :For_students %></strong><br>
+        <strong><%= f.label :for_student, "For Students" %></strong><br>
         <font size="2px"><%= "Can students attend this event?" %></font><br>
         <%= f.check_box :for_student%>
       </div>
 
       <div class="field"><br>
-        <strong><%= f.label :Student_Capacity %></strong><br>
+        <strong><%= f.label :max_students, "Student Capacity" %></strong><br>
         <font size="2px"><%= "Enter the maximum number of students that can attend this event." %>
           <strong>Enter a positive number</strong></font><br>
         <%= f.number_field :max_students , :disabled => @unedit%>
       </div>
 
       <div class="field"><br>
-        <strong><%= f.label :Time_Slot_Duration %></strong><br>
+        <strong><%= f.label :timeslot_duration, "Timeslot Duration" %></strong><br>
         <font size="2px"><%= "Please enter the duration(in minutes) of time slots you want to add. Each event can have multiple timeslots depending on the duration of each time slot" %></font><br>
         <%= f.number_field :timeslot_duration , :disabled => @unedit%>
       </div>

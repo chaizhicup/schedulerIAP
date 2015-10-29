@@ -13,31 +13,40 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home\s?page$/
-      '/sessions/new'
+      when /^the home\s?page$/
+        '/sessions/new'
 
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    when /^the view student information page$/i
-         #'/students/1'
+      # Add more mappings here.
+      # Here is an example that pulls values out of the Regexp:
+      #
+      when /^the view student information page$/i
+        #'/students/1'
         student_path(@student)
 
-    when /^the view company information page$/i
-         company_path(@company)
+      when /^the view company information page$/i
+        company_path(@company)
 
-    when /^the edit information page$/i
-         edit_student_path(@student)
+      when /^the edit information page$/i
+        edit_student_path(@student)
 
-    else
-      begin
-        page_name =~ /^the (.*) page$/
-        path_components = $1.split(/\s+/)
-        self.send(path_components.push('path').join('_').to_sym)
-      rescue NoMethodError, ArgumentError
-        raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
-          "Now, go and add a mapping in #{__FILE__}"
-      end
+      when /^the new event page$/i
+        new_event_path(@event)
+
+      when /^the view event information page$/i
+        event_path(@event)
+
+      when /^the edit event's information page$/i
+        edit_event_path(@event)
+
+      else
+        begin
+          page_name =~ /^the (.*) page$/
+          path_components = $1.split(/\s+/)
+          self.send(path_components.push('path').join('_').to_sym)
+        rescue NoMethodError, ArgumentError
+          raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
+                    "Now, go and add a mapping in #{__FILE__}"
+        end
     end
   end
 end
