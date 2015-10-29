@@ -10,12 +10,6 @@ Scenario: Enter the company information correctly
 	And I select "Any" from "Select if you hire US citizens only, or not"
 	And I select "Internship" from "Select the job type you are offering"
 	And I select "Any" from "Select the student level you are employing"
-	And I select "1" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m. Number of representatives attending"
-	And I select "1" from "Mock Interviews 1. Monday 1:00 - 3:00 a.m. Number of representatives attending"
-	And I select "0" from "Resume Clinic 2. Monday 3:00 - 5:00 p.m. Number of representatives attending"
-	And I select "0" from "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. Number of representatives attending"
-	And I select "0" from "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. Number of representatives attending"
-	And I select "1" from "Monday"
 	And I press "Submit"
 	Given I have entered the company's information
 	Then I should be on the view company information page
@@ -30,12 +24,6 @@ Scenario: Retaining Company information on entering an incorrect data
 	And I select "Any" from "Select if you hire US citizens only, or not"
 	And I select "Internship" from "Select the job type you are offering"
 	And I select "Any" from "Select the student level you are employing"
-	And I select "1" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m. Number of representatives attending"
-	And I select "1" from "Mock Interviews 1. Monday 1:00 - 3:00 a.m. Number of representatives attending"
-	And I select "0" from "Resume Clinic 2. Monday 3:00 - 5:00 p.m. Number of representatives attending"
-	And I select "0" from "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. Number of representatives attending"
-	And I select "0" from "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. Number of representatives attending"
-	And I select "1" from "Monday"
 
   When I press "Submit"
 
@@ -48,9 +36,3 @@ Scenario: Retaining Company information on entering an incorrect data
   And the "Select your company's sponsor level" field should contain "Platinum"
   And the "Select the job type you are offering" field should contain "Internship"
   And the "Select the student level you are employing" field should contain "Any"
-	And the "Resume Clinic 1. Monday 9:30 - 11:30 a.m. Number of representatives attending" field should contain "1"
-	And the "Mock Interviews 1. Monday 1:00 - 3:00 a.m. Number of representatives attending" field should contain "1"
-	And the "Resume Clinic 2. Monday 3:00 - 5:00 p.m. Number of representatives attending" field should contain "0"
-	And the "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m. Number of representatives attending" field should contain "0"
-	And the "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m. Number of representatives attending" field should contain "0"
-	And the "Monday" field should contain "1"
