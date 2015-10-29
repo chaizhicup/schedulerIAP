@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
 
   def index
     
-    @events = Event.pluck(:id,:name)
+    @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
       $students.each do |x|
       @arr = Hash.new([])
@@ -33,8 +33,7 @@ class StudentsController < ApplicationController
            end
          end
        $stu_slot[x.id] = @arr
-       end     
-  #  @lunch_total =Student.where(Lunch: 'Attend').count
+       end
   end
 
   # GET /students/1
@@ -46,7 +45,7 @@ class StudentsController < ApplicationController
       redirect_to new_session_path
     end
   #change
-    @events = Event.pluck(:id,:name)
+    @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
       $students.each do |x|
       @arr = Hash.new([])
@@ -71,45 +70,36 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
+    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
     @student = Student.new
     
     @event_slot = Hash.new([])
     
     
-    @events = Event.pluck(:id)
+    @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
     @event, @event_slot = set_menu(id)
-    $selected_slots[id] = id	
+    $selected_slots[id] = -1	
     $event_slots[id] = @event_slot
     end
     
-    
-
-  #  @mock_1, @mock_1_slots = set_menu('Mock Interview 1')
-  #  @mock_2, @mock_2_slots = set_menu('Mock Interview 2')
-  #  @resume_1, @resume_1_slots = set_menu('Resume Clinic 1')
-  #  @resume_2, @resume_2_slots = set_menu('Resume Clinic 2')
-  #  @resume_3, @resume_3_slots = set_menu('Resume Clinic 3')
-  #  @lunch, @lunch_slots = set_menu('Lunch') 
   end
 
   # GET /students/1/edit
   def edit
     if log_in? || cus_indentify(get_id)
+    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+    @events = Event.where("for_student = true").pluck(:id, :name)
+     @student.timeslots.each do |x| 
+      $selected_slots[x.event_id] = x.id
+    end
 
-    @events = Event.pluck(:id)
+    @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
     @event, @event_slot = set_menu(id)
     $event_slots[id] = @event_slot
     end
 
-
-   #   @mock_1, @mock_1_slots = set_menu('Mock Interview 1')
-   #   @mock_2, @mock_2_slots = set_menu('Mock Interview 2')
-   #   @resume_1, @resume_1_slots = set_menu('Resume Clinic 1')
-   #   @resume_2, @resume_2_slots = set_menu('Resume Clinic 2')
-   #   @resume_3, @resume_3_slots = set_menu('Resume Clinic 3')
-   #   @lunch, @lunch_slots = set_menu('Lunch')
     else
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
@@ -120,36 +110,32 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+
+    @events = Event.where("for_student = true").pluck(:id, :name)
+    @events.each do |id,name|
+      $selected_slots[id] = params[name]
+    end
     
     @event_slots = Hash.new([])
     respond_to do |format|
       if @student.save
         input_session(@student.id)
+	
+	Timeslot.decrease_1(@student.id)
 
-	@events = Event.pluck(:id,:name)
+	@events = Event.where("for_student = true").pluck(:id,:name)
 	@events.each do |id,name|
           temp1, temp2 = set_menu(id)
-	  Timeslot.decrease_1(temp1)
-	  if(params[name] != "0")
+	  if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
 	    @student.timeslots << Timeslot.find(params[name])
 	  end
     	end
 
-
 	#@selected_slots.each { |k, v| puts "Key=#{k}, Value=#{v}"}
 
-        #temp1, temp2 = set_menu('Mock Interview 1')
-        #Timeslot.decrease_1(temp1, student_params, :Mock_1)
-        #temp1, temp2 = set_menu('Mock Interview 2')
-        #Timeslot.decrease_1(temp1, student_params, :Mock_2)
-        #temp1, temp2 = set_menu('Resume Clinic 1')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_1)
-        #temp1, temp2 = set_menu('Resume Clinic 2')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_2)
-        #emp1, temp2 = set_menu('Resume Clinic 3')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_3)
 #change
-    @events = Event.pluck(:id,:name)
+    @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
       $students.each do |x|
       @arr = Hash.new([])
@@ -177,18 +163,12 @@ class StudentsController < ApplicationController
         format.json { render :show, status: :created, location: @student }
       else
 
-	@events = Event.pluck(:id)
+	@events = Event.where("for_student = true").pluck(:id)
 	@events.each do |id|
         @event, @event_slot = set_menu(id)
 	@event_slots[id] = @event_slot
     	end
-	
-        #@mock_1, @mock_1_slots = set_menu('Mock Interview 1')
-        #@mock_2, @mock_2_slots = set_menu('Mock Interview 2')
-        #@resume_1, @resume_1_slots = set_menu('Resume Clinic 1')
-        #@resume_2, @resume_2_slots = set_menu('Resume Clinic 2')
-        #@resume_3, @resume_3_slots = set_menu('Resume Clinic 3')
-        #@lunch, @lunch_slots = set_menu('Lunch')
+
         flash[:notice] = @student.errors.full_messages
         format.html { render :new } 
         format.json { render json: @student.errors, status: :unprocessable_entity }
@@ -200,64 +180,39 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
+    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
       
-      @events = Event.pluck(:id,:name)
-	@events.each do |id,name|
-          temp1, temp2 = set_menu(id)
-	  Timeslot.increase_1(temp1, @student.id, name)
+      @events = Event.where("for_student = true").pluck(:id, :name)
+      @events.each do |id,name|
+        $selected_slots[id] = params[name]
       end
 
-      #temp1, temp2 = set_menu('Mock Interview 1')
-      #Timeslot.increase_1(temp1, @student.id, 'Mock_1')
-      #temp1, temp2 = set_menu('Mock Interview 2')
-      #Timeslot.increase_1(temp1, @student.id, 'Mock_2')
-      #temp1, temp2 = set_menu('Resume Clinic 1')
-      #Timeslot.increase_1(temp1, @student.id, 'Resume_1')
-      #temp1, temp2 = set_menu('Resume Clinic 2')
-      #Timeslot.increase_1(temp1, @student.id, 'Resume_2')
-      #temp1, temp2 = set_menu('Resume Clinic 3')
-      #Timeslot.increase_1(temp1, @student.id, 'Resume_3')
-      
+	Timeslot.increase_1(@student.id)
+	@student.timeslots = []
+	@events = Event.where("for_student = true").pluck(:name)
+	@events.each do |name|
+	if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
+	    @student.timeslots << Timeslot.find(params[name])
+	 end
+	
+    	end
       if @student.update(student_params)
         UserMailer.stu_reg(@student).deliver_now
+	puts("RAJAT")
 
-	@events = Event.pluck(:id,:name)
-	@events.each do |id,name|
-          temp1, temp2 = set_menu(id)
-	  Timeslot.decrease_1(temp1)
-    	end        
+	Timeslot.decrease_1(@student.id)
 
-        #temp1, temp2 = set_menu('Mock Interview 1')
-        #Timeslot.decrease_1(temp1, student_params, :Mock_1)
-        #temp1, temp2 = set_menu('Mock Interview 2')
-        #Timeslot.decrease_1(temp1, student_params, :Mock_2)
-        #temp1, temp2 = set_menu('Resume Clinic 1')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_1)
-        #temp1, temp2 = set_menu('Resume Clinic 2')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_2)
-        #temp1, temp2 = set_menu('Resume Clinic 3')
-        #Timeslot.decrease_1(temp1, student_params, :Resume_3)
+	        
         
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
-
-	@events = Event.pluck(:id,:name)
+	puts("SOM")
+	@events = Event.where("for_student = true").pluck(:id,:name)
 	@events.each do |id,name|
           temp1, temp2 = set_menu(id)
-	  Timeslot.decrease_1(temp1, @student.id, name)
+	  Timeslot.decrease_1_id(temp1, @student.id, name)
     	end
-
-        #temp1, temp2 = set_menu('Mock Interview 1')
-        #Timeslot.decrease_1_id(temp1, @student.id, :Mock_1)
-        #temp1, temp2 = set_menu('Mock Interview 2')
-        #Timeslot.decrease_1_id(temp1, @student.id, :Mock_2)
-        #temp1, temp2 = set_menu('Resume Clinic 1')
-        #Timeslot.decrease_1_id(temp1, @student.id, :Resume_1)
-        #temp1, temp2 = set_menu('Resume Clinic 2')
-        #Timeslot.decrease_1_id(temp1, @student.id, :Resume_2)
-        #temp1, temp2 = set_menu('Resume Clinic 3')
-        #Timeslot.decrease_1_id(temp1, @student.id, :Resume_3)
         
         flash[:notice] = @student.errors.full_messages
         format.html { redirect_to edit_student_path}
@@ -285,9 +240,9 @@ class StudentsController < ApplicationController
       slots['Not Attend'] = 0
 
         result_slots.each do |item|
-	  #puts item[0]
           slots[item[1].strftime("%I:%M%p") + "-" + item[2].strftime("%I:%M%p")] = item[0]
         end
+	slots  = slots.sort
       return result_slots, slots
     end
 

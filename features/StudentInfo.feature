@@ -4,6 +4,15 @@ Feature: Students can enter their Information
   I want to retain the entered information
   So that I can edit them back easily
 
+Background: events have been added to database
+  
+  Given the following events exist:
+  |name   | max_students | for_student |event_date | start_time           |end_time            | timeslot_duration  |
+  |Mock_1 | 10           | true        |2015-10-29 | 2015-10-29 03:24:00  |2015-10-29 05:24:00 | 20                 |
+# |Mock_2 | 25           | false       |2015-10-30 | 2015-10-30 05:24:00  |2015-10-30 07:24:00 | 40                 |
+
+
+
 # Scenario to check Successfull Registration
 # When all fields are entered correctly
 Scenario: Enter the student information
@@ -14,11 +23,9 @@ Scenario: Enter the student information
 	And I check "I am a US-Citizen"
 	And I select "B.S." from "Student Level"
 	And I select "Internship" from "Job Type"
-	And I select "Not Attend" from "Mock Interviews 1. Monday 1:00 - 3:00 p.m."
-	And I select "Not Attend" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m."
-	And I select "Not Attend" from "Resume Clinic 2. Monday 3:00 - 5:00 p.m."
-	And I select "Not Attend" from "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m."
-	And I select "Not Attend" from "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m."
+	And I select "Not Attend" from "Mock_1"
+# And I select "Not Attend" from "Mock_2"
+
 
 	When I press "Register"
 	
@@ -36,7 +43,7 @@ Scenario: Enter correct student information partially
 	Given I am on the new student page
 	And I fill in "Email" with "trail@blazers.com"
   And I check "I am a US-Citizen"
-  And I select "Not Attend" from "Mock Interviews 1. Monday 1:00 - 3:00 p.m."
+  And I select "Not Attend" from "Mock_1"
 
   When I press "Register"
 
@@ -52,9 +59,6 @@ Scenario: Enter correct student information partially
   
   And the "I am a US-Citizen" checkbox should be checked
   
-  And the "Mock Interviews 1. Monday 1:00 - 3:00 p.m." field should contain "Not Attend"
-  And the "Mock Interviews 1. Monday 1:00 - 3:00 p.m." field should have no error
-
 # Scenario to check retaining data
 # When one field is entered incorrectly (others correct)
 Scenario: Enter incorrect student information
@@ -65,11 +69,7 @@ Scenario: Enter incorrect student information
 	And I uncheck "I am a US-Citizen"
 	And I select "M.S." from "Student Level"
 	And I select "Internship" from "Job Type"
-	And I select "Not Attend" from "Mock Interviews 1. Monday 1:00 - 3:00 p.m."
-	And I select "Not Attend" from "Resume Clinic 1. Monday 9:30 - 11:30 a.m."
-	And I select "Not Attend" from "Resume Clinic 2. Monday 3:00 - 5:00 p.m."
-	And I select "Not Attend" from "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m."
-	And I select "Not Attend" from "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m."
+	And I select "Not Attend" from "Mock_1"
 
 	When I press "Register"
 	
@@ -92,18 +92,4 @@ Scenario: Enter incorrect student information
   
   And the "Job Type" field should contain "Internship" 
   And the "Job Type" field should have no error
-	
-  And the "Mock Interviews 1. Monday 1:00 - 3:00 p.m." field should contain "Not Attend"
-  And the "Mock Interviews 1. Monday 1:00 - 3:00 p.m." field should have no error
-	
-  And the "Resume Clinic 1. Monday 9:30 - 11:30 a.m." field should contain "Not Attend"
-  And the "Resume Clinic 1. Monday 9:30 - 11:30 a.m." field should have no error
-	
-  And the "Resume Clinic 2. Monday 3:00 - 5:00 p.m." field should contain "Not Attend"
-  And the "Resume Clinic 2. Monday 3:00 - 5:00 p.m." field should have no error
-	
-  And the "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." field should contain "Not Attend"
-  And the "Mock Interviews 2. Tuesday 1:00 - 3:00 p.m." field should have no error
-	
-  And the "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." field should contain "Not Attend"
-  And the "Resume Clinic 3. Tuesday 9:30 - 11:30 a.m." field should have no error
+  
