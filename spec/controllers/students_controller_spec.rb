@@ -25,25 +25,25 @@ RSpec.describe StudentsController, type: :controller do
   # Student. As you add validations to Student, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
+    {name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship"}
   }
 
   let(:invalid_attributes) {
- {name: "Tome", UIN: "1289", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
+    {name: "nil", UIN: "nil", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship"}
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # StudentsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) {{}}
 
-  describe "GET #index" do
-    it "assigns all students as @students" do
-      student = Student.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:students)).to eq([student])
-    end
-  end
+ describe "GET #index" do
+   it "assigns all students as @students" do
+     student = Student.create! valid_attributes
+     get :index, {}, valid_session
+     expect(assigns(:students)).to eq([student])
+   end
+ end
 
   describe "GET #show" do
     it "assigns the requested student as @student" do
@@ -105,7 +105,7 @@ RSpec.describe StudentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
- 	{name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship", Mock_1: "Not Attend", Mock_2: "Not Attend", Resume_1: "Not Attend", Resume_2: "Not Attend", Resume_3: "Not Attend", Lunch: "Not Attend"}
+ 	{name: "Tome", UIN: "123232123", email: "string@ata.edu", US_Citizen: true, degree: "B.S", position_type: "Internship"}
       }
 
       it "updates the requested student" do
