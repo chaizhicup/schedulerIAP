@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.all.order(:name)
+    @events = Event.all
   end
 
 

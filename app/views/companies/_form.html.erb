@@ -95,7 +95,7 @@
 
   <font size = "3.2em">
   <div class="field">
-    <% args = (@new_flag == 1)? [Event.count(:id)] : [1] %>
+    <% args = (@new_flag == 1)? [@eves.length] : [1] %>
       <% args[0].times do %>
         <%= f.fields_for :companyevents do |ff| %>
           &nbsp;&nbsp;&nbsp;&nbsp;
@@ -108,15 +108,6 @@
   </font>
   </div>
 
-  <br>
-  <div class="field"><font size="4px">•
-    <%= "Select if you will be attending the Lunch with "%>
-    <strong><%= "Student Organization Leaders"%></strong><br>
-    <%= " and " %>
-    <strong><%= " Company Representatives"%></strong>
-  </font><br><br>
-  </div>
-  
   <br>
   <div class="actions" >
     <input type="submit" name="Submit" value="Submit" style=" width:180px; font-size: 20px; padding: 10px;" />
