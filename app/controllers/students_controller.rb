@@ -198,8 +198,6 @@ class StudentsController < ApplicationController
     	end
       if @student.update(student_params)
         UserMailer.stu_reg(@student).deliver_now
-	puts("RAJAT")
-
 	Timeslot.decrease_1(@student.id)
 
 	        
@@ -207,7 +205,6 @@ class StudentsController < ApplicationController
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
-	puts("SOM")
 	@events = Event.where("for_student = true").pluck(:id,:name)
 	@events.each do |id,name|
           temp1, temp2 = set_menu(id)
