@@ -86,6 +86,9 @@ end
 
 Given /^I have entered the appointment information$/ do
   @appointment = Appointment.last()
+
+Given /^I have entered new administrator's information$/ do
+  @useradd = Useradd.last()
 end
 
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|

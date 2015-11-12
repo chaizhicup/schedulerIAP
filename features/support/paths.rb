@@ -47,6 +47,9 @@ module NavigationHelpers
       when /^the edit company's information page$/i
         edit_company_path(@company)
 
+      when /^the show useradd information page$/i
+        useradd_path(@useradd)
+
       else
         begin
           page_name =~ /^the (.*) page$/
