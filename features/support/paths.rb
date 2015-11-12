@@ -35,6 +35,12 @@ module NavigationHelpers
       when /^the view event information page$/i
         event_path(@event)
 
+      when /^the view appointment page$/i
+        appointment_path(@appointment)
+
+      when /^the edit appointment's information page$/i
+        edit_appointment_path(@appointment)
+
       when /^the edit event's information page$/i
         edit_event_path(@event)
 

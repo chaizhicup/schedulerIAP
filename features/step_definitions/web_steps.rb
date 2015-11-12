@@ -84,6 +84,10 @@ Given /^I have entered the event's information$/ do
   @event = Event.last()
 end
 
+Given /^I have entered the appointment information$/ do
+  @appointment = Appointment.last()
+end
+
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
