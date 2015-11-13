@@ -39,6 +39,15 @@ class CompaniesController < ApplicationController
     @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
     @it = 0
     @new_flag = 0
+    eve_ids = Event.pluck(:id)
+    company_events = @company.companyevents.collect(&:event_id)
+    eve_ids.delete_if { |x| company_events.include?(x) }
+    if !eve_ids.empty? 
+      eve_ids.each do |id|
+        @company.companyevents.create(:company_id => @company.id, :event_id => id, :representatives => 0)
+      end
+    end
+
     @reps = @company.companyevents.collect(&:representatives)
 
     unless log_in? || cus_indentify(get_id)
