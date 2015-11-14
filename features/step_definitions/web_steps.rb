@@ -38,7 +38,7 @@ end
 
 # Multi-line step scoper
 
-Given /^(?:|I )want to test the student management$/ do 
+Given /^(?:|I )want to test the student management$/ do
   @student = Student.new
   @student.name = "John"
   @student.UIN = "123541459"
@@ -73,11 +73,11 @@ end
 
 
 Given /^I have entered my information$/ do
-   @student = Student.last()
+  @student = Student.last()
 end
 
 Given /^I have entered the company's information$/ do
-   @company = Company.last()
+  @company = Company.last()
 end
 
 Given /^I have entered the event's information$/ do
@@ -86,6 +86,7 @@ end
 
 Given /^I have entered the appointment information$/ do
   @appointment = Appointment.last()
+end
 
 Given /^I have entered new administrator's information$/ do
   @useradd = Useradd.last()
@@ -276,7 +277,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     find_field(label)['checked'].should eq false
   end
 end
- 
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
@@ -290,8 +291,8 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
   expected_params = {}
-  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')} 
-  
+  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')}
+
   if actual_params.respond_to? :should
     actual_params.should == expected_params
   else
