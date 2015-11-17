@@ -241,6 +241,7 @@ class AppointmentsController < ApplicationController
           appointment.UIN = getone[1]
           stuuin = stuuin << getone[1]
           representatives-=1
+          companies[item] = representatives
           appointment.save
           break
         end

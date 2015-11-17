@@ -1,33 +1,33 @@
 
-    <%= form_for(@useradd) do |f| %>
-      <%= render 'shared/error_messages' %>
+<%= form_for(@useradd) do |f| %>
+    <%= render 'shared/error_messages' %>
 
-   <div class="field">
+    <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name %>
-   </div>   
-      <br>
+    </div>
+    <br>
 
-   <div class="field">
+    <div class="field">
       &nbsp<%= f.label :email %>
       <%= f.email_field :email%>
-   </div >  
-      <br>
+    </div >
+    <br>
 
-    <div class="field">   
+    <div class="field">
       <%= f.label :password %>
       &nbsp&nbsp&nbsp&nbsp<%= f.password_field :password %>
-      
+
     </div>
-      <br>
+    <br>
 
     <div class = "field">
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-    </div>  
-      <br>
+    </div>
+    <br>
 
     <div class ="action">
       <%= f.submit "Create my account", class: "button" %>
     </div>
-    <% end %>
+<% end %>

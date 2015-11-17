@@ -1,85 +1,79 @@
 <%= form_for(@student) do |f| %>
 
-
-
-  <div style = "text-align: center">
-  <font size="5px" color=maroon><strong><%= "2015 IAP Recruiting Events and Reception/CSE-Only Career Fair"%></strong></font><br><br>
-  </div>
-
-  <div style = "text-align: center">
-  <font size="5px"><strong><%= "Student Registration"%></strong></font><br><br>
-  </div>
-
-  <% if flash[:notice] %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flash[:notice].count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% flash[:notice].each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div><br><br>
-  <font size="4px"><strong><%= "Basic Information"%></strong>
-  </div>
-
-  <div>
-    <div class="field">•
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div style = "text-align: center">
+      <font size="5px"><strong><%= "Student Registration"%></strong></font><br><br>
     </div>
 
-    <div class="field">•
-    <%= f.label :UIN,"UIN" %><br>
-    <%= f.text_field :UIN %>
+    <% if flash[:notice] %>
+        <div id="error_explanation">
+          <h2><%= pluralize(flash[:notice].count, "error") %> prohibited this student from being saved:</h2>
 
-    </div>
-
-  <div class="field">•
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-
-  </div>
-
-  <div class="field">•
-    <%= f.label :US_Citizen,"I am a US-Citizen" %><br>
-    <%= f.check_box :US_Citizen %>
-
-    </div>
-
-  <div class="field">•
-    <%= f.label :degree, "Student Level" %><br>
-    <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree)%>
-
-  </div>
-
-  <div class="field">•
-    <%= f.label :position_type, "Job Type" %><br>
-    <%= f.select :position_type, options_for_select(%w[Internship Full-time], @student.position_type), :prompt=>"---Please select---" %>
-  </div>
-  </div>
-
-  <div><br><br>
-  <p><font size="4px"><strong><%= "Event and Time Selection" %></strong></font></p>
-  </div>
-
-
-  <div class="field">
-    <% @event_details.each do |id,name,date,start,en| %>
-      <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
-      <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
+          <ul>
+            <% flash[:notice].each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
     <% end %>
-  </div>
-  <br>
-  <div class="actions" >
-    <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />
-    </font>
-  </div>
-  
-  </body>
+
+
+    <div><br><br>
+      <font size="4px"><strong><%= "Basic Information"%></strong></font>
+    </div>
+
+    <div>
+      <div class="field">•
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">•
+        <%= f.label :UIN,"UIN" %><br>
+        <%= f.text_field :UIN %>
+
+      </div>
+
+      <div class="field">•
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+
+      </div>
+
+      <div class="field">•
+        <%= f.label :US_Citizen,"I am a US-Citizen" %><br>
+        <%= f.check_box :US_Citizen %>
+
+      </div>
+
+      <div class="field">•
+        <%= f.label :degree, "Student Level" %><br>
+        <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree)%>
+
+      </div>
+
+      <div class="field">•
+        <%= f.label :position_type, "Job Type" %><br>
+        <%= f.select :position_type, options_for_select(%w[Internship Full-time], @student.position_type), :prompt=>"---Please select---" %>
+      </div>
+    </div>
+
+    <div><br><br>
+      <p><font size="4px"><strong><%= "Event and Time Selection" %></strong></font></p>
+    </div>
+
+
+    <div class="field">
+      <% @event_details.each do |id,name,date,start,en| %>
+          <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
+          <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
+      <% end %>
+    </div>
+    <br>
+    <div class="actions" >
+      <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />
+      </font>
+    </div>
+
+    </body>
 
 <% end %>

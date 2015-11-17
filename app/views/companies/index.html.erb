@@ -1,17 +1,17 @@
 <p id="notice" style="margin-left:80px"><%= notice %></p>
 
 <div style="margin-left:180px">
-<h1>Companies List</h1>
+  <h1>Companies List</h1>
 
-<br>
-<%= link_to 'New Company', new_company_path %>
-&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<%= link_to 'Back', sessions_url %>
-<br><br>
+  <br>
+  <%= link_to 'New Company', new_company_path %>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to 'Back', sessions_url %>
+  <br><br>
 
 
-<table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
-  <thead>
+  <table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
+    <thead>
     <tr>
       <th>Name</th>
       <th>Contact Person</th>
@@ -21,35 +21,37 @@
       <th>Job Type</th>
       <th>Student Level</th>
       <% @events.each do |e| %>
-        <th><%= e.name %> #</th>
+          <th><%= e.name %> #</th>
       <% end %>
       <th colspan="3">Operation</th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.name %></td>
-        <td><%= company.contact_person %></td>
-        <td><%= company.contact_email %></td>
-        <td><%= company.sponsor_level %></td>
-        <td><%= company.citizenship %></td>
-        <td><%= company.job_type %></td>
-        <td><%= company.student_level.join(" , ") %></td>
-        <% @events.each do |e| %>
-          <% rep = company.companyevents.where(company_id: company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %>
-          <% if rep.empty? then rep = 0 end %>
-          <td><%= rep %></td>
-        <% end %>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+        <tr>
+          <td><%= company.name %></td>
+          <td><%= company.contact_person %></td>
+          <td><%= company.contact_email %></td>
+          <td><%= company.sponsor_level %></td>
+          <td><%= company.citizenship %></td>
+          <td><%= company.job_type %></td>
+          <td><%= company.student_level.join(" , ") %></td>
+          <% @events.each do |e| %>
+              <% rep = company.companyevents.where(company_id: company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %>
+              <% if rep.empty? then rep = 0 end %>
+              <td><%= rep %></td>
+          <% end %>
+          <td><%= link_to 'Show', company, class: "link-color" %></td>
+          <td><%= link_to 'Edit', edit_company_path(company), class: "link-color" %></td>
+          <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
+        </tr>
+
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
 
 </div>

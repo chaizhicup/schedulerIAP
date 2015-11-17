@@ -1,29 +1,29 @@
 
 <div style="margin-left:180px">
-<h1>Schedule List</h1>
-<br>
+  <h1>Schedule List</h1>
+  <br>
 
-<%= link_to 'New Appointment', new_appointment_path %>
-&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-<%= link_to 'Generate', generate_path%>
-<br>    
-<%= link_to 'Back', sessions_url%> 
+  <%= link_to 'New Appointment', new_appointment_path, class: "link-color-all" %>
+  &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+  <%= link_to 'Generate', generate_path, class: "link-color-all" %>
+  <br>
+  <%= link_to 'Back', sessions_url, class: "link-color-all" %>
 
-<% if flash[:notice] && flash[:notice][0] == "Error timeslot Below:" %>
-<p id="notice">
-      <h3>Please check your company information, Following time slots lack enough company or represents to assign each student with a company:</h3>
+  <% if flash[:notice] && flash[:notice][0] == "Error timeslot Below:" %>
+      <p id="notice">
+      <h3>Please check your company information, Following time slots lack enough representatives to assign each student with a company:</h3>
       <ul>
-      <% flash[:notice].each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% flash[:notice].each do |message| %>
+            <li><%= message %></li>
+        <% end %>
       </ul>
-</p>
-<% else %>
-<p id="notice"><%= notice %></p>
-<% end %>
+      </p>
+  <% else %>
+      <p id="notice"><%= notice %></p>
+  <% end %>
 
-<table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
-  <thead>
+  <table border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
+    <thead>
     <tr>
       <th>Section</th>
       <th>Time slot</th>
@@ -32,27 +32,27 @@
       <th>Uin</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
-      <tr><td colspan="8" align = "center" ></tr></tbody>
-        <% @appointments.each do |appointment| %>
-          <tr>   
-            <td><%= appointment.section %></td>    
-            <td><%= appointment.time_slot %></td>    
-            <td><%= appointment.company %></td>    
-            <td><%= appointment.student %></td>    
-            <td><%= appointment.UIN %></td>    
-            <td><%= link_to 'Show', appointment %></td>    
-            <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>   
-            <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
-          </tr> 
-          <tr></tr>   
-        <% end %>
+    <tbody>
+    <tr><td colspan="8" align = "center" ></tr></tbody>
+    <% @appointments.each do |appointment| %>
+        <tr>
+          <td><%= appointment.section %></td>
+          <td><%= appointment.time_slot %></td>
+          <td><%= appointment.company %></td>
+          <td><%= appointment.student %></td>
+          <td><%= appointment.UIN %></td>
+          <td><%= link_to 'Show', appointment, class: "link-color" %></td>
+          <td><%= link_to 'Edit', edit_appointment_path(appointment), class: "link-color" %></td>
+          <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
+        </tr>
+        <tr></tr>
+    <% end %>
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
 </div>

@@ -1,81 +1,81 @@
 <div style="margin-left:180px">
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
-
-<p>
-  <strong>Contact person:</strong>
-  <%= @company.contact_person %>
-</p>
-
-<p>
-  <strong>Contact email:</strong>
-  <%= @company.contact_email %>
-</p>
-
-<p>
-  <strong>Sponsor level:</strong>
-  <%= @company.sponsor_level %>
-</p>
-
-<p>
-  <strong>Citizenship:</strong>
-  <%= @company.citizenship %>
-</p>
-
-<p>
-  <strong>Job type:</strong>
-  <%= @company.job_type %>
-</p>
-
-<p>
-  <strong>Student level:</strong>
-  <%= @company.student_level.join(" , ") %>
-</p>
-
-<p>
-  <strong>Rep 1:</strong>
-  <%= @company.rep_1 %>
-</p>
-
-<p>
-  <strong>Rep 2:</strong>
-  <%= @company.rep_2 %>
-</p>
-
-<p>
-  <strong>Rep 3:</strong>
-  <%= @company.rep_3 %>
-</p>
-
-<p>
-  <strong>Rep 4:</strong>
-  <%= @company.rep_4 %>
-</p>
-
-<p>
-  <strong>Rep 5:</strong>
-  <%= @company.rep_5 %>
-</p>
-
-<p>
-  <strong>Rep 6:</strong>
-  <%= @company.rep_6 %>
-</p>
-
-<% it = 0 %>
-<% @company.events.each do |e| %>
   <p>
-    <strong><%= e.name %> rep no: </strong>
-    <%= @reps[it] %>
+    <strong>Name:</strong>
+    <%= @company.name %>
   </p>
-<% it = it + 1 %>
-<% end %>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+  <p>
+    <strong>Contact person:</strong>
+    <%= @company.contact_person %>
+  </p>
+
+  <p>
+    <strong>Contact email:</strong>
+    <%= @company.contact_email %>
+  </p>
+
+  <p>
+    <strong>Sponsor level:</strong>
+    <%= @company.sponsor_level %>
+  </p>
+
+  <p>
+    <strong>Citizenship:</strong>
+    <%= @company.citizenship %>
+  </p>
+
+  <p>
+    <strong>Job type:</strong>
+    <%= @company.job_type %>
+  </p>
+
+  <p>
+    <strong>Student level:</strong>
+    <%= @company.student_level.join(" , ") %>
+  </p>
+
+  <p>
+    <strong>Rep 1:</strong>
+    <%= @company.rep_1 %>
+  </p>
+
+  <p>
+    <strong>Rep 2:</strong>
+    <%= @company.rep_2 %>
+  </p>
+
+  <p>
+    <strong>Rep 3:</strong>
+    <%= @company.rep_3 %>
+  </p>
+
+  <p>
+    <strong>Rep 4:</strong>
+    <%= @company.rep_4 %>
+  </p>
+
+  <p>
+    <strong>Rep 5:</strong>
+    <%= @company.rep_5 %>
+  </p>
+
+  <p>
+    <strong>Rep 6:</strong>
+    <%= @company.rep_6 %>
+  </p>
+
+  <% it = 0 %>
+  <% @company.events.each do |e| %>
+      <p>
+        <strong><%= e.name %> rep no: </strong>
+        <%= @reps[it] %>
+      </p>
+      <% it = it + 1 %>
+  <% end %>
+
+  <%= link_to 'Edit', edit_company_path(@company) %> |
+  <%= link_to 'Back', companies_path %>
 </div>

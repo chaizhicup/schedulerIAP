@@ -2576,3 +2576,1506 @@ Processing by StudentsController#edit as HTML
   Rendered students/_form.html.erb (6.6ms)
   Rendered students/edit.html.erb within layouts/application (8.4ms)
 Completed 200 OK in 156ms (Views: 119.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-15 15:25:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (55.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (379.3ms)
+Completed 200 OK in 4100ms (Views: 3962.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-11-15 15:27:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0HXgBxIZVzn1ktiZ8z9418ZWqN6ezg71kxsZpTP3CnmSZFjvbtSd3coUXroe9K2V4Ju1vMmM8VGzmB7XG4clgw==", "session"=>{"email"=>"itsvaibhavmittal@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUseradd Load (172.3ms)[0m  SELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1  [["email", "itsvaibhavmittal@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 2350ms (ActiveRecord: 613.3ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-11-15 15:27:05 -0400
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 1068ms (Views: 1033.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 15:30:05 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (91.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mTimeslot Load (12.8ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  [["event_id", 6]]
+  [1m[36mTimeslot Load (0.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 1034ms (Views: 464.0ms | ActiveRecord: 115.4ms)
+
+
+Started DELETE "/events/6" for 127.0.0.1 at 2015-11-15 15:30:12 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Uhfaxza0hsjSQZ0cRovxBXRwM1kuztP78IDJHCiognoQBmIvSnlMLO3HGz+rQCRHUr0uO3mMLF/QA85uANitgA==", "id"=>"6"}
+  [1m[35mEvent Load (13.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mTimeslot Load (0.9ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  [["event_id", 6]]
+  [1m[36mSQL (32.2ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 24]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "timeslots" WHERE "timeslots"."id" = $1  [["id", 24]]
+  [1m[36mSQL (4.9ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 25]]
+  [1m[35mSQL (4.5ms)[0m  DELETE FROM "timeslots" WHERE "timeslots"."id" = $1  [["id", 25]]
+  [1m[36mSQL (2.8ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 26]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "timeslots" WHERE "timeslots"."id" = $1  [["id", 26]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 27]]
+  [1m[35mSQL (3.7ms)[0m  DELETE FROM "timeslots" WHERE "timeslots"."id" = $1  [["id", 27]]
+  [1m[36mSQL (36.0ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 6]]
+  [1m[35m (67.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/events
+Completed 302 Found in 865ms (ActiveRecord: 170.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 15:30:13 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (4.9ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mTimeslot Load (1.8ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  [["event_id", 7]]
+  Rendered events/index.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 860ms (Views: 833.3ms | ActiveRecord: 6.6ms)
+
+
+Started DELETE "/events/7" for 127.0.0.1 at 2015-11-15 15:30:19 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZAa5racCOmcCxzd5v9qfj35NM/9seGL3t3arnfBWmcomFwFF28/wgz1BsVpSEUrNWIAunTs6nVOX9azv2Ca2MA==", "id"=>"7"}
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (3.2ms)[0m  BEGIN
+  [1m[36mTimeslot Load (3.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 7]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "students_timeslots" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 28]]
+  [1m[36mSQL (4.9ms)[0m  [1mDELETE FROM "timeslots" WHERE "timeslots"."id" = $1[0m  [["id", 28]]
+  [1m[35mSQL (4.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 7]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 92ms (ActiveRecord: 23.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 15:30:19 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 1397ms (Views: 1299.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 15:30:22 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (37.0ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (133.8ms)
+Completed 200 OK in 655ms (Views: 555.0ms | ActiveRecord: 43.8ms)
+
+
+Started DELETE "/appointments/24" for 127.0.0.1 at 2015-11-15 15:30:26 -0400
+Processing by AppointmentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E1y5d8BOuOaoSi/h3Y/ZOiq+nM1Rp82GyTD23l4AnL1RTQGfvINyApfMqcIwRAx4DHOBrwblMiLps/GsdnCzRw==", "id"=>"24"}
+  [1m[35mAppointment Load (46.2ms)[0m  SELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  DELETE FROM "appointments" WHERE "appointments"."id" = $1  [["id", 24]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/appointments
+Completed 302 Found in 218ms (ActiveRecord: 55.6ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 15:30:26 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (1.3ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC
+  Rendered appointments/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 1115ms (Views: 1107.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 15:30:32 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (1.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (18.3ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  Rendered companies/index.html.erb within layouts/application (181.3ms)
+Completed 200 OK in 1014ms (Views: 859.0ms | ActiveRecord: 37.0ms)
+
+
+Started DELETE "/companies/1" for 127.0.0.1 at 2015-11-15 15:30:36 -0400
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fC4ZfTVtv7/QATusJAW0+j+xxdE8m9kANtmRmEEcwBQ+P6GVSaB1W++HvY/JzmG4GXzYs2vZJqQWWpbqaWzv7g==", "id"=>"1"}
+  [1m[36mCompany Load (30.3ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCompanyevent Load (2.7ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36m (3.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (56.2ms)[0m  DELETE FROM "companyevents" WHERE "companyevents"."id" = $1  [["id", 1]]
+  [1m[36m (61.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (8.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/companies
+Completed 302 Found in 382ms (ActiveRecord: 170.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 15:30:37 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (3.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  Rendered companies/index.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 1081ms (Views: 1074.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:30:40 -0400
+Processing by StudentsController#index as HTML
+  [1m[36m (3.7ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (20.4ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  Rendered students/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 1065ms (Views: 724.0ms | ActiveRecord: 29.4ms)
+
+
+Started DELETE "/students/1" for 127.0.0.1 at 2015-11-15 15:30:44 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Bg45aJliF15KEmKsQegPYj7ZTSUk1ZK329xvHK/NX0BEH4GA5a/dunWU5I+sI9ogGBRQR3OXbRP7X2huh71wug==", "id"=>"1"}
+  [1m[36mStudent Load (75.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (6.5ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "students" WHERE "students"."id" = $1  [["id", 1]]
+  [1m[36m (30.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 152ms (ActiveRecord: 114.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:30:44 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (3.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  Rendered students/index.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 1200ms (Views: 1103.6ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/students/2" for 127.0.0.1 at 2015-11-15 15:30:48 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RyyLUhwJ9ZmIavRuqWmvuRYKP2x852p9L3OofovTOqQFPTO6YMQ/fbfsck1Eonr7MMciDiulldkP8K8Mo6MVXg==", "id"=>"2"}
+  [1m[35mStudent Load (7.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (4.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  DELETE FROM "students_timeslots" WHERE "students_timeslots"."student_id" = $1  [["student_id", 2]]
+  [1m[36mSQL (8.5ms)[0m  [1mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 2]]
+  [1m[35m (3.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/students
+Completed 302 Found in 115ms (ActiveRecord: 27.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:30:49 -0400
+Processing by StudentsController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (7.0ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  Rendered students/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 849ms (Views: 831.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 15:30:52 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 520ms (Views: 505.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2015-11-15 15:30:55 -0400
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.erb (122.1ms)
+  Rendered events/new.html.erb within layouts/application (230.6ms)
+Completed 200 OK in 720ms (Views: 717.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2015-11-15 15:32:06 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6oonk9J9687SYLTL2Uf02WBeH/Aidu6ZIm6utsJWvxaom597rrAhKu3mMug0jCGbRpMCknU0ET0C7anE6iaQ7A==", "event"=>{"name"=>"Rsume Clinic 1", "event_date(1i)"=>"2016", "event_date(2i)"=>"9", "event_date(3i)"=>"6", "start_time(1i)"=>"2015", "start_time(2i)"=>"11", "start_time(3i)"=>"15", "start_time(4i)"=>"09", "start_time(5i)"=>"30", "end_time(1i)"=>"2015", "end_time(2i)"=>"11", "end_time(3i)"=>"15", "end_time(4i)"=>"11", "end_time(5i)"=>"30", "for_student"=>"1", "max_students"=>"40", "timeslot_duration"=>"20"}, "commit"=>"Create"}
+  [1m[35m (7.7ms)[0m  BEGIN
+  [1m[36mEvent Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "events" WHERE "events"."name" = 'Rsume Clinic 1' LIMIT 1[0m
+  [1m[35mSQL (28.1ms)[0m  INSERT INTO "events" ("name", "for_student", "max_students", "timeslot_duration", "event_date", "start_time", "end_time") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Rsume Clinic 1"], ["for_student", "t"], ["max_students", 40], ["timeslot_duration", 20], ["event_date", "2016-09-06"], ["start_time", "2016-09-06 09:30:00.000000"], ["end_time", "2016-09-06 11:30:00.000000"]]
+  [1m[36m (51.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (45.4ms)[0m  [1mINSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_time", "2016-09-06 09:30:00.000000"], ["end_time", "2016-09-06 09:50:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.190359"], ["updated_at", "2015-11-15 19:32:07.190359"]]
+  [1m[35m (13.8ms)[0m  COMMIT
+  [1m[36m (3.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_time", "2016-09-06 09:50:00.000000"], ["end_time", "2016-09-06 10:10:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.295961"], ["updated_at", "2015-11-15 19:32:07.295961"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (21.4ms)[0m  BEGIN
+  [1m[36mSQL (19.6ms)[0m  [1mINSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_time", "2016-09-06 10:10:00.000000"], ["end_time", "2016-09-06 10:30:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.362828"], ["updated_at", "2015-11-15 19:32:07.362828"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_time", "2016-09-06 10:30:00.000000"], ["end_time", "2016-09-06 10:50:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.404889"], ["updated_at", "2015-11-15 19:32:07.404889"]]
+  [1m[36m (5.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_time", "2016-09-06 10:50:00.000000"], ["end_time", "2016-09-06 11:10:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.438154"], ["updated_at", "2015-11-15 19:32:07.438154"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_time", "2016-09-06 11:10:00.000000"], ["end_time", "2016-09-06 11:30:00.000000"], ["stunum", 40], ["event_id", 8], ["created_at", "2015-11-15 19:32:07.475844"], ["updated_at", "2015-11-15 19:32:07.475844"]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events/8
+Completed 302 Found in 677ms (ActiveRecord: 245.9ms)
+
+
+Started GET "/events/8" for 127.0.0.1 at 2015-11-15 15:32:07 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mTimeslot Load (0.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 8]]
+  Rendered events/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 750ms (Views: 670.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 15:32:11 -0400
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (7.1ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mTimeslot Load (7.5ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 8]]
+  Rendered events/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 888ms (Views: 848.1ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2015-11-15 15:32:14 -0400
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.erb (101.3ms)
+  Rendered events/new.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 606ms (Views: 596.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2015-11-15 15:33:24 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OM6WMt5f2zThbJFRqqwjgOtNZzCXnc8obZYXSUyvVTt63y7aopIR0N7qF3JHZ/bCzYB6UsDfMIxNFRA7ZN96wQ==", "event"=>{"name"=>"Mock Interviews 1", "event_date(1i)"=>"2016", "event_date(2i)"=>"9", "event_date(3i)"=>"6", "start_time(1i)"=>"2015", "start_time(2i)"=>"11", "start_time(3i)"=>"15", "start_time(4i)"=>"13", "start_time(5i)"=>"00", "end_time(1i)"=>"2015", "end_time(2i)"=>"11", "end_time(3i)"=>"15", "end_time(4i)"=>"15", "end_time(5i)"=>"00", "for_student"=>"1", "max_students"=>"40", "timeslot_duration"=>"30"}, "commit"=>"Create"}
+  [1m[35m (12.9ms)[0m  BEGIN
+  [1m[36mEvent Exists (7.6ms)[0m  [1mSELECT  1 AS one FROM "events" WHERE "events"."name" = 'Mock Interviews 1' LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "events" ("name", "for_student", "max_students", "timeslot_duration", "event_date", "start_time", "end_time") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "Mock Interviews 1"], ["for_student", "t"], ["max_students", 40], ["timeslot_duration", 30], ["event_date", "2016-09-06"], ["start_time", "2016-09-06 13:00:00.000000"], ["end_time", "2016-09-06 15:00:00.000000"]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (3.7ms)[0m  BEGIN
+  [1m[36mSQL (9.2ms)[0m  [1mINSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_time", "2016-09-06 13:00:00.000000"], ["end_time", "2016-09-06 13:30:00.000000"], ["stunum", 40], ["event_id", 9], ["created_at", "2015-11-15 19:33:24.991747"], ["updated_at", "2015-11-15 19:33:24.991747"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (6.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_time", "2016-09-06 13:30:00.000000"], ["end_time", "2016-09-06 14:00:00.000000"], ["stunum", 40], ["event_id", 9], ["created_at", "2015-11-15 19:33:25.120024"], ["updated_at", "2015-11-15 19:33:25.120024"]]
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (6.6ms)[0m  BEGIN
+  [1m[36mSQL (9.7ms)[0m  [1mINSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_time", "2016-09-06 14:00:00.000000"], ["end_time", "2016-09-06 14:30:00.000000"], ["stunum", 40], ["event_id", 9], ["created_at", "2015-11-15 19:33:25.154855"], ["updated_at", "2015-11-15 19:33:25.154855"]]
+  [1m[35m (4.5ms)[0m  COMMIT
+  [1m[36m (6.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "timeslots" ("start_time", "end_time", "stunum", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_time", "2016-09-06 14:30:00.000000"], ["end_time", "2016-09-06 15:00:00.000000"], ["stunum", 40], ["event_id", 9], ["created_at", "2015-11-15 19:33:25.214298"], ["updated_at", "2015-11-15 19:33:25.214298"]]
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events/9
+Completed 302 Found in 369ms (ActiveRecord: 96.6ms)
+
+
+Started GET "/events/9" for 127.0.0.1 at 2015-11-15 15:33:25 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (7.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTimeslot Load (0.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 9]]
+  Rendered events/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 1020ms (Views: 900.1ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 15:44:00 -0400
+Processing by CompaniesController#index as HTML
+  [1m[35mEvent Load (102.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mCompany Load (1.4ms)[0m  [1mSELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC[0m
+  Rendered companies/index.html.erb within layouts/application (318.8ms)
+Completed 200 OK in 1858ms (Views: 1449.9ms | ActiveRecord: 171.0ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2015-11-15 15:44:11 -0400
+Processing by CompaniesController#new as HTML
+  [1m[35m (1.4ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events"
+  Rendered companies/_form.html.erb (482.9ms)
+  Rendered companies/new.html.erb within layouts/application (544.4ms)
+Completed 200 OK in 1376ms (Views: 1076.0ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2015-11-15 15:45:16 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NMHns1eAYY4prHlCffwwSZP2+BdiStZyL1jb84yLdXZ20F9bK02rahYq/2GQN+ULtTvldTUIKdYP29yBpPtajA==", "company"=>{"name"=>"company1", "rep_1"=>"A", "rep_2"=>"B", "rep_3"=>"", "rep_4"=>"", "rep_5"=>"", "rep_6"=>"", "contact_person"=>"A", "contact_email"=>"a@company1.com", "sponsor_level"=>"Bronze", "citizenship"=>"Any", "job_type"=>"Any", "student_level"=>"Any", "companyevents_attributes"=>{"0"=>{"representatives"=>"2"}, "1"=>{"representatives"=>"2"}}}, "Submit"=>"Submit"}
+  [1m[36m (1.3ms)[0m  [1mSELECT "events"."id" FROM "events"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mCompany Exists (97.6ms)[0m  [1mSELECT  1 AS one FROM "companies" WHERE LOWER("companies"."contact_email") = LOWER('a@company1.com') LIMIT 1[0m
+  [1m[35mSQL (93.1ms)[0m  INSERT INTO "companies" ("name", "contact_person", "contact_email", "sponsor_level", "citizenship", "job_type", "student_level", "rep_1", "rep_2", "rep_3", "rep_4", "rep_5", "rep_6", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["name", "company1"], ["contact_person", "A"], ["contact_email", "a@company1.com"], ["sponsor_level", "Bronze"], ["citizenship", "Any"], ["job_type", "Any"], ["student_level", "Any"], ["rep_1", "A"], ["rep_2", "B"], ["rep_3", ""], ["rep_4", ""], ["rep_5", ""], ["rep_6", ""], ["created_at", "2015-11-15 19:45:16.787629"], ["updated_at", "2015-11-15 19:45:16.787629"]]
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "companyevents" ("representatives", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["representatives", 2], ["company_id", 2], ["created_at", "2015-11-15 19:45:16.913354"], ["updated_at", "2015-11-15 19:45:16.913354"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "companyevents" ("representatives", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["representatives", 2], ["company_id", 2], ["created_at", "2015-11-15 19:45:16.973312"], ["updated_at", "2015-11-15 19:45:16.973312"]]
+  [1m[36m (21.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mCompanyevent Load (33.5ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2  [["company_id", 2], ["company_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "companyevents" SET "event_id" = $1, "updated_at" = $2 WHERE "companyevents"."id" = $3  [["event_id", 8], ["updated_at", "2015-11-15 19:45:17.072748"], ["id", 2]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (5.7ms)[0m  [1mUPDATE "companyevents" SET "event_id" = $1, "updated_at" = $2 WHERE "companyevents"."id" = $3[0m  [["event_id", 9], ["updated_at", "2015-11-15 19:45:17.110537"], ["id", 3]]
+  [1m[35m (3.4ms)[0m  COMMIT
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[35mCompanyevent Load (0.6ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[36mCompanyevent Load (2.4ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered user_mailer/com_reg.html.erb within layouts/mailer (568.1ms)
+
+UserMailer#com_reg: processed outbound mail in 2713.4ms
+
+Sent mail to a@company1.com (2836.1ms)
+Date: Sun, 15 Nov 2015 15:45:20 -0400
+From: 2015_IAP@cse.tamu.edu
+To: a@company1.com
+Message-ID: <5648e0d057697_cc15a72fa6569d2@saasbook.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered.<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Company Name:</td><td>company1</td>
+      </tr>
+      <tr>
+        <td>Contact Person:</td><td>A</td>
+      </tr>
+      <tr>
+        <td>Contact Email:</td><td>a@company1.com</td>
+      </tr>
+      <tr>
+        <td>Sponsor level:</td><td>Bronze</td>
+      </tr>
+      <tr>
+        <td>Citizenship Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Degree level Requirement:</td><td>Any</td>
+      </tr>
+      <tr>
+        <td>Representative 1:</td><td>A</td>
+      </tr>
+      <tr>
+        <td>Representative 2:</td><td>B</td>
+      </tr>
+      <tr>
+        <td>Representative 3:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 4:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 5:</td><td></td>
+      </tr>
+      <tr>
+        <td>Representative 6:</td><td></td>
+      </tr>
+        <tr>
+          <td>Number of Representatives for Rsume Clinic 1:</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Number of Representatives for Mock Interviews 1:</td>
+          <td>2</td>
+        </tr>
+
+  </tbody>
+</table>
+    <p>Thanks for participating and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/companies/2
+Completed 302 Found in 6572ms (ActiveRecord: 271.4ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2015-11-15 15:45:23 -0400
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.7ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompanyevent Load (0.6ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1[0m  [["company_id", 2]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 2]]
+  Rendered companies/show.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 928ms (Views: 851.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:45:32 -0400
+Processing by StudentsController#index as HTML
+  [1m[36m (1.4ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (7.5ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  Rendered students/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 453ms (Views: 406.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-15 15:45:36 -0400
+Processing by StudentsController#new as HTML
+  [1m[36m (8.7ms)[0m  [1mSELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)[0m
+  [1m[35m (2.6ms)[0m  SELECT "events"."id" FROM "events" WHERE (for_student = true)
+  [1m[36mTimeslot Load (7.5ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)[0m
+  [1m[35mTimeslot Load (1.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)
+  Rendered students/_form.html.erb (76.0ms)
+  Rendered students/new.html.erb within layouts/application (96.6ms)
+Completed 200 OK in 1030ms (Views: 599.1ms | ActiveRecord: 37.6ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-11-15 15:46:35 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+ly475y1tx+oihIGFFMkTqQR3V+wnxbG7ruWva1rrwV+MoLwr8cOEEkrmv1mpnTHF1aFymAg/87Oeko3sWBRg==", "student"=>{"name"=>"student1", "UIN"=>"12345", "email"=>"me@student1.com", "US_Citizen"=>"1", "degree"=>"M.S.", "position_type"=>"Internship"}, "Rsume Clinic 1"=>"31", "Mock Interviews 1"=>"", "Submit"=>"Register"}
+  [1m[36m (1.0ms)[0m  [1mSELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)[0m
+  [1m[35m (6.5ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36m (4.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Exists (4.7ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('me@student1.com') LIMIT 1
+  [1m[36mStudent Exists (5.9ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'me@student1.com' LIMIT 1[0m
+  [1m[35mStudent Exists (6.1ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '12345' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (6.2ms)[0m  SELECT "events"."id" FROM "events" WHERE (for_student = true)
+  [1m[36mTimeslot Load (4.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)[0m
+  [1m[35mTimeslot Load (3.0ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)
+  Rendered students/_form.html.erb (40.1ms)
+  Rendered students/new.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 1008ms (Views: 874.1ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-11-15 15:47:00 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BN6ECKXgKJ9Ci4Ria5GfA4nyOLl152VmiMre1x3GlllGzzzg2S3ie30NAkGGWkpBrz8l2yKlmsKoSdmlNba5ow==", "student"=>{"name"=>"student1", "UIN"=>"123456789", "email"=>"me@student1.com", "US_Citizen"=>"1", "degree"=>"M.S.", "position_type"=>"Internship"}, "Rsume Clinic 1"=>"31", "Mock Interviews 1"=>"", "Submit"=>"Register"}
+  [1m[36m (1.4ms)[0m  [1mSELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)[0m
+  [1m[35m (2.8ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Exists (69.0ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('me@student1.com') LIMIT 1
+  [1m[36mStudent Exists (22.6ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'me@student1.com' LIMIT 1[0m
+  [1m[35mStudent Exists (30.3ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123456789' LIMIT 1
+  [1m[36mSQL (25.7ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "student1"], ["UIN", "123456789"], ["email", "me@student1.com"], ["US_Citizen", "t"], ["degree", "M.S."], ["position_type", "Internship"], ["created_at", "2015-11-15 19:47:00.699448"], ["updated_at", "2015-11-15 19:47:00.699448"]]
+  [1m[35m (7.5ms)[0m  COMMIT
+  [1m[36mStudent Load (6.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTimeslot Load (0.6ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  [1m[36m (4.8ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (1.0ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)
+  [1m[36mTimeslot Load (0.7ms)[0m  [1mSELECT  "timeslots".* FROM "timeslots" WHERE "timeslots"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  [1m[35m (2.3ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "students_timeslots" ("student_id", "timeslot_id") VALUES ($1, $2)[0m  [["student_id", 3], ["timeslot_id", 31]]
+  [1m[35m (3.7ms)[0m  COMMIT
+  [1m[36mTimeslot Load (1.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)[0m
+  [1m[35m (1.3ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (3.4ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (3.5ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (8.1ms)
+
+UserMailer#stu_reg: processed outbound mail in 177.0ms
+
+Sent mail to me@student1.com (1326.4ms)
+Date: Sun, 15 Nov 2015 15:47:01 -0400
+From: 2015_IAP@cse.tamu.edu
+To: me@student1.com
+Message-ID: <5648e13555f53_cc1262ecf52570a9@saasbook.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered.<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>student1</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123456789</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>me@student1.com</td>
+      </tr>
+      <tr>
+        <td>US Citizen:</td><td>true</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>M.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Rsume Clinic 1</td><td>10:10AM-10:30AM</td>
+      </tr>
+      <tr>
+        <td>Mock Interviews 1</td><td>Not Attend</td>
+      </tr>
+
+      
+
+  </tbody>
+</table>
+    <p> If you need to cancel or add an event, please contact the IAP Coordinator.</p>
+    <p>Thanks for participating  and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 2162ms (ActiveRecord: 204.2ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2015-11-15 15:47:02 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (2.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (4.0ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (3.9ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (1.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 652ms (Views: 569.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:47:08 -0400
+Processing by StudentsController#index as HTML
+  [1m[36m (1.8ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (7.6ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (6.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 729ms (Views: 673.7ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-15 15:47:11 -0400
+Processing by StudentsController#new as HTML
+  [1m[35m (6.6ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (2.2ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (4.1ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)
+  [1m[36mTimeslot Load (1.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)[0m
+  Rendered students/_form.html.erb (17.4ms)
+  Rendered students/new.html.erb within layouts/application (103.7ms)
+Completed 200 OK in 637ms (Views: 571.9ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-11-15 15:47:42 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"djoDN9DgKzXxL67wi0W52UdwzKuieSopjm+mKy0ry/w0K7vfrC3h0c6pKNNmjmybYb3RyfU71Y2u7KFZBVvkBg==", "student"=>{"name"=>"student2", "UIN"=>"123456700", "email"=>"me@student2.com", "US_Citizen"=>"0", "degree"=>"B.S.", "position_type"=>"Internship"}, "Rsume Clinic 1"=>"31", "Mock Interviews 1"=>"", "Submit"=>"Register"}
+  [1m[35m (4.5ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (6.3ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mStudent Exists (4.9ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('me@student2.com') LIMIT 1[0m
+  [1m[35mStudent Exists (4.7ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."email" = 'me@student2.com' LIMIT 1
+  [1m[36mStudent Exists (4.6ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123456700' LIMIT 1[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "student2"], ["UIN", "123456700"], ["email", "me@student2.com"], ["US_Citizen", "f"], ["degree", "B.S."], ["position_type", "Internship"], ["created_at", "2015-11-15 19:47:42.317091"], ["updated_at", "2015-11-15 19:47:42.317091"]]
+  [1m[36m (6.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (2.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mTimeslot Load (9.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 4]]
+  [1m[35m (0.9ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mTimeslot Load (1.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)[0m
+  [1m[35mTimeslot Load (4.1ms)[0m  SELECT  "timeslots".* FROM "timeslots" WHERE "timeslots"."id" = $1 LIMIT 1  [["id", 31]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "students_timeslots" ("student_id", "timeslot_id") VALUES ($1, $2)  [["student_id", 4], ["timeslot_id", 31]]
+  [1m[36m (4.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mTimeslot Load (3.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)
+  [1m[36m (6.4ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (54.6ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (2.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 4]]
+  [1m[35mTimeslot Load (2.6ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (4.9ms)
+
+UserMailer#stu_reg: processed outbound mail in 113.3ms
+
+Sent mail to me@student2.com (1527.8ms)
+Date: Sun, 15 Nov 2015 15:47:42 -0400
+From: 2015_IAP@cse.tamu.edu
+To: me@student2.com
+Message-ID: <5648e15eb0ad9_cc12519764e571b@saasbook.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered.<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>student2</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123456700</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>me@student2.com</td>
+      </tr>
+      <tr>
+        <td>US Citizen:</td><td>false</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>B.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Internship</td>
+      </tr>
+      <tr>
+        <td>Rsume Clinic 1</td><td>10:10AM-10:30AM</td>
+      </tr>
+      <tr>
+        <td>Mock Interviews 1</td><td>Not Attend</td>
+      </tr>
+
+      
+
+  </tbody>
+</table>
+    <p> If you need to cancel or add an event, please contact the IAP Coordinator.</p>
+    <p>Thanks for participating  and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/students/4
+Completed 302 Found in 2037ms (ActiveRecord: 133.6ms)
+
+
+Started GET "/students/4" for 127.0.0.1 at 2015-11-15 15:47:44 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.7ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (2.0ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (16.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (0.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered students/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 567ms (Views: 531.8ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:47:48 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (6.5ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (12.6ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (4.5ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (3.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 657ms (Views: 591.1ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-15 15:47:52 -0400
+Processing by StudentsController#new as HTML
+  [1m[35m (2.7ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (10.5ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (1.6ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)
+  [1m[36mTimeslot Load (1.6ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)[0m
+  Rendered students/_form.html.erb (27.7ms)
+  Rendered students/new.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 815ms (Views: 754.4ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-11-15 15:48:41 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ny2+Lx6FKmfUzrbFnA4fApM3vviALdTwjjTJdpfeglx1PAbHYkjgg+tIMOZxxcpAtfqjmtdvK1Sut84Ev66tpg==", "student"=>{"name"=>"student3", "UIN"=>"123456701", "email"=>"me@student3.com", "US_Citizen"=>"0", "degree"=>"PH.D", "position_type"=>"Full-time"}, "Rsume Clinic 1"=>"31", "Mock Interviews 1"=>"", "Submit"=>"Register"}
+  [1m[35m (3.8ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (10.4ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35m (6.7ms)[0m  BEGIN
+  [1m[36mStudent Exists (2.8ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('me@student3.com') LIMIT 1[0m
+  [1m[35mStudent Exists (4.6ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."email" = 'me@student3.com' LIMIT 1
+  [1m[36mStudent Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."UIN" = '123456701' LIMIT 1[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "student3"], ["UIN", "123456701"], ["email", "me@student3.com"], ["US_Citizen", "f"], ["degree", "PH.D"], ["position_type", "Full-time"], ["created_at", "2015-11-15 19:48:41.272449"], ["updated_at", "2015-11-15 19:48:41.272449"]]
+  [1m[36m (37.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mTimeslot Load (5.4ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 5]]
+  [1m[35m (20.3ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mTimeslot Load (1.5ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)[0m
+  [1m[35mTimeslot Load (0.6ms)[0m  SELECT  "timeslots".* FROM "timeslots" WHERE "timeslots"."id" = $1 LIMIT 1  [["id", 31]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students_timeslots" ("student_id", "timeslot_id") VALUES ($1, $2)  [["student_id", 5], ["timeslot_id", 31]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mTimeslot Load (1.4ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)
+  [1m[36m (1.0ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.9ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 4]]
+  [1m[35mTimeslot Load (1.0ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 5]]
+  [1m[36mTimeslot Load (0.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (0.4ms)
+
+UserMailer#stu_reg: processed outbound mail in 74.2ms
+
+Sent mail to me@student3.com (1290.6ms)
+Date: Sun, 15 Nov 2015 15:48:41 -0400
+From: 2015_IAP@cse.tamu.edu
+To: me@student3.com
+Message-ID: <5648e199893c8_cc126111dea572e5@saasbook.mail>
+Subject: Confirmation for Registration.
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for IAP Registration.</h1>
+    <p>
+      You have successfully registered.<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>student3</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>123456701</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>me@student3.com</td>
+      </tr>
+      <tr>
+        <td>US Citizen:</td><td>false</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>PH.D</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Full-time</td>
+      </tr>
+      <tr>
+        <td>Rsume Clinic 1</td><td>10:10AM-10:30AM</td>
+      </tr>
+      <tr>
+        <td>Mock Interviews 1</td><td>Not Attend</td>
+      </tr>
+
+      
+
+  </tbody>
+</table>
+    <p> If you need to cancel or add an event, please contact the IAP Coordinator.</p>
+    <p>Thanks for participating  and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/students/5
+Completed 302 Found in 1699ms (ActiveRecord: 124.8ms)
+
+
+Started GET "/students/5" for 127.0.0.1 at 2015-11-15 15:48:42 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (1.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 4]]
+  [1m[35mTimeslot Load (0.7ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 5]]
+  [1m[36mTimeslot Load (11.5ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered students/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 518ms (Views: 468.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 15:48:49 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (11.6ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (5.6ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (1.5ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (3.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 5]]
+  [1m[35mTimeslot Load (3.7ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 575ms (Views: 503.3ms | ActiveRecord: 26.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 15:48:55 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (4.0ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (2.6ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[35mCompanyevent Load (5.5ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered companies/index.html.erb within layouts/application (215.9ms)
+Completed 200 OK in 902ms (Views: 883.0ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 15:48:59 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (3.5ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 642ms (Views: 600.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 15:49:03 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (2.2ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC
+  Rendered appointments/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 1145ms (Views: 1135.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/generate" for 127.0.0.1 at 2015-11-15 15:49:09 -0400
+Processing by AppointmentsController#generate as HTML
+  [1m[36mSQL (6.1ms)[0m  [1mDELETE FROM "appointments"[0m
+  [1m[35mEvent Load (7.6ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mTimeslot Load (1.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[35mStudent Load (0.9ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 29]]
+  [1m[36mCompanyevent Load (0.7ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 8]]
+  [1m[35mCompany Load (0.9ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (4.2ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 30]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (1.7ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 31]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 8]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (1.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (21.5ms)[0m  INSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["section", "Rsume Clinic 1"], ["time_slot", "10:10AM-10:30AM"], ["company", "company1"], ["student", "student1"], ["UIN", "123456789"], ["created_at", "2015-11-15 19:49:10.102181"], ["updated_at", "2015-11-15 19:49:10.102181"]]
+  [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["section", "Rsume Clinic 1"], ["time_slot", "10:10AM-10:30AM"], ["company", "company1"], ["student", "student2"], ["UIN", "123456700"], ["created_at", "2015-11-15 19:49:10.151356"], ["updated_at", "2015-11-15 19:49:10.151356"]]
+  [1m[35m (3.1ms)[0m  COMMIT
+  [1m[36mStudent Load (6.4ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 32]]
+  [1m[35mCompanyevent Load (1.4ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 8]]
+  [1m[36mCompany Load (25.8ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (0.7ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 33]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 8]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 34]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTimeslot Load (1.3ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  [["event_id", 9]]
+  [1m[36mStudent Load (13.1ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 35]]
+  [1m[35mCompanyevent Load (7.1ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 9]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (7.6ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 36]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 9]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (1.2ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 37]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 9]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (1.4ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 38]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/appointments
+Completed 302 Found in 770ms (ActiveRecord: 131.6ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 15:49:10 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (3.4ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 758ms (Views: 752.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-15 18:04:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (355.9ms)
+Completed 200 OK in 3730ms (Views: 3560.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-11-15 18:04:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Koa4IhcGV0Bch8yiI/iV5mx2WPdYaSrnjXrc5PmzoSlolwDKa8udpGMBSoHOM0CkSrtFlQ8r1UOt+duW0cOO0w==", "session"=>{"email"=>"itsvaibhavmittal@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUseradd Load (1.1ms)[0m  SELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1  [["email", "itsvaibhavmittal@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 1706ms (ActiveRecord: 66.1ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-11-15 18:04:51 -0400
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 1027ms (Views: 1025.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 18:05:05 -0400
+Processing by StudentsController#index as HTML
+  [1m[36m (2.6ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (3.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.8ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 4]]
+  [1m[35mTimeslot Load (1.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 5]]
+  [1m[36mTimeslot Load (1.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 894ms (Views: 423.4ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-15 18:05:10 -0400
+Processing by StudentsController#new as HTML
+  [1m[35m (1.5ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (1.3ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (1.7ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)
+  [1m[36mTimeslot Load (1.3ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)[0m
+  Rendered students/_form.html.erb (98.3ms)
+  Rendered students/new.html.erb within layouts/application (148.4ms)
+Completed 200 OK in 633ms (Views: 586.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-15 18:16:11 -0400
+Processing by StudentsController#new as HTML
+  [1m[35m (4.6ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events" WHERE (for_student = true)
+  [1m[36m (7.7ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (13.7ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 8 AND stunum > 0)
+  [1m[36mTimeslot Load (5.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE (event_id = 9 AND stunum > 0)[0m
+  Rendered students/_form.html.erb (59.2ms)
+  Rendered students/new.html.erb within layouts/application (86.3ms)
+Completed 200 OK in 1823ms (Views: 1602.5ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/application.self-59a82fc4422285f217aff67a556ae730dd40dd5f2b815c58e608f190584ff4de.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:13 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 18:16:14 -0400
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 18:17:05 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (1.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.6ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (0.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 5]]
+  [1m[35mTimeslot Load (0.8ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 329ms (Views: 302.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2015-11-15 18:17:09 -0400
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mTimeslot Load (0.7ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  [["event_id", 8]]
+  [1m[36mTimeslot Load (0.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 9]]
+  Rendered events/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 496ms (Views: 429.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 18:17:14 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (1.0ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (1.0ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 5]]
+  [1m[35mTimeslot Load (0.9ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 465ms (Views: 422.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 18:17:17 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (1.6ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (0.5ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[35mCompanyevent Load (1.2ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered companies/index.html.erb within layouts/application (162.0ms)
+Completed 200 OK in 459ms (Views: 421.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2015-11-15 18:21:31 -0400
+Processing by CompaniesController#new as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events"[0m
+  Rendered companies/_form.html.erb (49.6ms)
+  Rendered companies/new.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 499ms (Views: 456.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 18:39:51 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (2.3ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC
+  Rendered appointments/index.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 449ms (Views: 430.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 18:40:29 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (3.7ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 577ms (Views: 571.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/application.self-59a82fc4422285f217aff67a556ae730dd40dd5f2b815c58e608f190584ff4de.css?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 18:40:30 -0400
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 19:11:41 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (7.7ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC
+  Rendered appointments/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 1614ms (Views: 1602.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/appointments.self-f54fd14caa78596d027c69d2e837aaad15f7376928c77fedabdaa6dc02c6f83e.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:43 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:43 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:43 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:43 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:43 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/application.self-59a82fc4422285f217aff67a556ae730dd40dd5f2b815c58e608f190584ff4de.css?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 19:11:44 -0400
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 19:13:56 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (3.6ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 836ms (Views: 829.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/appointments.self-055c3736bef59e4ff572213051e686aaa6fceca23b27d3d14a0b439e46e9b1f1.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/application.self-59a82fc4422285f217aff67a556ae730dd40dd5f2b815c58e608f190584ff4de.css?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:57 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:58 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:58 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:58 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 19:13:58 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 19:13:58 -0400
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 19:14:32 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (4.1ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC
+  Rendered appointments/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 519ms (Views: 513.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/appointments.self-055c3736bef59e4ff572213051e686aaa6fceca23b27d3d14a0b439e46e9b1f1.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:32 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:32 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/application.self-59a82fc4422285f217aff67a556ae730dd40dd5f2b815c58e608f190584ff4de.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 19:14:33 -0400
+
+
+Started GET "/appointments" for 127.0.0.1 at 2015-11-15 19:15:10 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (0.7ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 565ms (Views: 563.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/application.self-681491f52ba892c7558b786c74393b3640104999dfa1446305044b4accd1298e.css?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:11 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 19:15:12 -0400
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-15 19:17:57 -0400
+Processing by StudentsController#index as HTML
+  [1m[35m (4.0ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (5.9ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (1.9ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 4]]
+  [1m[36mTimeslot Load (5.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 5]]
+  [1m[35mTimeslot Load (5.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/index.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 1039ms (Views: 998.7ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 19:18:01 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (0.7ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (0.6ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[35mCompanyevent Load (0.7ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered companies/index.html.erb within layouts/application (89.1ms)
+Completed 200 OK in 545ms (Views: 539.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/companies/2/edit" for 127.0.0.1 at 2015-11-15 19:18:06 -0400
+Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time" FROM "events"
+  [1m[36m (5.0ms)[0m  [1mSELECT "events"."id" FROM "events"[0m
+  [1m[35mCompanyevent Load (0.3ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1  [["company_id", 2]]
+  Rendered companies/_form.html.erb (65.0ms)
+  Rendered companies/edit.html.erb within layouts/application (70.7ms)
+Completed 200 OK in 447ms (Views: 424.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 19:18:08 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (4.0ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (3.3ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[35mCompanyevent Load (0.4ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered companies/index.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 382ms (Views: 371.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2015-11-15 19:18:10 -0400
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (6.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mCompany Load (6.0ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (1.0ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 2], ["company_id", 2], ["event_id", 8]]
+  [1m[35mCompanyevent Load (0.9ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 2], ["company_id", 2], ["event_id", 9]]
+  Rendered companies/index.html.erb within layouts/application (242.3ms)
+Completed 200 OK in 1572ms (Views: 1554.8ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:12 -0400
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:12 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:12 -0400
+
+
+Started GET "/assets/scaffolds.self-2e6ec9648c7ceb579a440ee2360309134986dc8214e7a7a11888295ce0d09359.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/application.self-681491f52ba892c7558b786c74393b3640104999dfa1446305044b4accd1298e.css?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-15 19:18:13 -0400
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for 127.0.0.1 at 2015-11-15 19:18:13 -0400

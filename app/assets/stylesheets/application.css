@@ -188,3 +188,11 @@ td{
 #globalnav UL A.here:visited {
   color:#444;
 }
+
+.link-color{
+    color: #FF0000;
+}
+
+.link-color-all{
+    color: #0000FF;
+}
