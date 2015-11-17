@@ -36,7 +36,7 @@
         <td><%= company.sponsor_level %></td>
         <td><%= company.citizenship %></td>
         <td><%= company.job_type %></td>
-        <td><%= company.student_level %></td>
+        <td><%= company.student_level.join(" , ") %></td>
         <% @events.each do |e| %>
           <% rep = company.companyevents.where(company_id: company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %>
           <% if rep.empty? then rep = 0 end %>
