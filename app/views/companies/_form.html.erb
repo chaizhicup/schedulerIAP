@@ -86,7 +86,10 @@
   </div>
   <div class="field"><br>•
     <%= f.label :student_level, "Select the student level you are employing"%><br>
-    <%= f.select :student_level, options_for_select(%w[B.S. M.S. PH.D Any], @company.student_level), :prompt=>"---Please select---" %>
+    <font size = "3.2em">
+    <%= f.check_box(:student_level, { :multiple => true }, "B.S.", nil) %>&nbsp; <%= "B.S." %><br>
+    <%= f.check_box(:student_level, { :multiple => true }, "M.S.", nil) %>&nbsp; <%= "M.S." %><br>
+    <%= f.check_box(:student_level, { :multiple => true }, "PH.D", nil) %>&nbsp; <%= "PH.D" %><br></font>
   </div>
   
   <div class="field"><br>•
@@ -98,9 +101,7 @@
     <% args = (@new_flag == 1)? [@eves.length] : [1] %>
       <% args[0].times do %>
         <%= f.fields_for :companyevents do |ff| %>
-          &nbsp;&nbsp;&nbsp;&nbsp;
           <%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %d-%m-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;
           <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Please select---" %><br>
           <% @it = @it + 1 %>
         <% end %>
