@@ -15,7 +15,7 @@
 
 
 <% if flash[:notice] && flash[:notice][0] == "Error timeslot Below:" %>
-    <p id="notice">
+    <p id="notice" align="center">
     <h3>Please check your company information, Following time slots lack enough representatives to assign each student with a company:</h3>
     <ul>
       <% flash[:notice].each do |message| %>
@@ -24,7 +24,7 @@
     </ul>
     </p>
 <% else %>
-    <p id="notice"><%= notice %></p>
+    <p id="notice" align="center"><%= notice %></p>
 <% end %>
 
 <table align="center" border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">

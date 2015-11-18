@@ -140,44 +140,44 @@ class AppointmentsController < ApplicationController
         @companysilver[company] = item[1]
       elsif(company.sponsor_level == 'Bronze')
         @companybronze[company] = item[1]
-
       end
-
-      if @companyplat.length>0 && @students.length>0
-        matchappoint(timeslot, event, @companyplat)
-      end
-
-      if @companygold.length>0 && @students.length>0
-        matchappoint(timeslot, event, @companygold)
-      end
-
-      if @companysilver.length>0 && @students.length>0
-        matchappoint(timeslot, event, @companysilver)
-      end
-
-      if @companybronze.length>0 && @students.length>0
-        matchappoint(timeslot, event, @companybronze)
-      end
-
-      @comremain = {}
-      @comremain.merge!(@companyplat).merge!(@companygold).merge!(@companysilver).merge!(@companybronze)
-
-      @comremain.delete_if{|_,x| !x.nil? and x<=0}
-
-      if @comremain.length>0 && @students.length>0
-        matchappointwithout(timeslot, event, @comremain)
-      end
-
-      finish = @students.length>0
-
-      if @students.length > 0
-        error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%I:%M%p")}"
-        #error = arg
-        @errormessage << error
-      end
-
-      @studentfinish << finish
     end
+
+    if @companyplat.length>0 && @students.length>0
+      matchappoint(timeslot, event, @companyplat)
+    end
+
+    if @companygold.length>0 && @students.length>0
+      matchappoint(timeslot, event, @companygold)
+    end
+
+    if @companysilver.length>0 && @students.length>0
+      matchappoint(timeslot, event, @companysilver)
+    end
+
+    if @companybronze.length>0 && @students.length>0
+      matchappoint(timeslot, event, @companybronze)
+    end
+
+    @comremain = {}
+    @comremain.merge!(@companyplat).merge!(@companygold).merge!(@companysilver).merge!(@companybronze)
+
+    @comremain.delete_if{|_,x| !x.nil? and x<=0}
+
+    if @comremain.length>0 && @students.length>0
+      matchappointwithout(timeslot, event, @comremain)
+    end
+
+    finish = @students.length>0
+
+    puts @students.length
+    if @students.length > 0
+      error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%I:%M%p")}"
+      #error = arg
+      @errormessage << error
+    end
+
+    @studentfinish << finish
   end
 
 
