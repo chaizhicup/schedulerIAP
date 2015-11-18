@@ -27,6 +27,11 @@
   </p>
 
   <p>
+    <strong>Companies allowed:</strong>
+    <%= @event.for_company %>
+  </p>
+
+  <p>
     <strong>Timeslots:</strong><br>
     <% @event_slots[@event.id].each do |slot| %>
         <%= slot %><br>

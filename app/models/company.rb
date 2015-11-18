@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  has_many :companyevents
+  has_many :companyevents, :dependent => :destroy
   has_many :events, :through => :companyevents
   
   accepts_nested_attributes_for :companyevents

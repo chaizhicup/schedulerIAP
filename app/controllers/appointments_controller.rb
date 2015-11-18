@@ -87,7 +87,6 @@ class AppointmentsController < ApplicationController
       redirect_to appointments_url, notice: 'Appointment was successfully generated.'
     else
       redirect_to appointments_url, notice: 'Appointment was successfully generated, however lack of company, some student failed, check your company status'
-      #flash[:notice] =  "Appointment was generated, Some students failed to generate an appointment due to the lack of campany represents for the following time slots"
       flash[:notice] = @errormessage
     end
   end
@@ -116,7 +115,6 @@ class AppointmentsController < ApplicationController
       puts timeslot
       puts ' '
       matchapp(timeslot, event)
-      #matchapp('11:30am-12:30am', mockselect)
     end
   end
 
@@ -173,7 +171,7 @@ class AppointmentsController < ApplicationController
       finish = @students.length>0
 
       if @students.length > 0
-        error = "#{event.name}"+ ':  '+ "#{timeslot.start_time}" + '-' + "#{timeslot.end_time}"
+        error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%I:%M%p")}"
         #error = arg
         @errormessage << error
       end
@@ -204,7 +202,8 @@ class AppointmentsController < ApplicationController
             appointment.student = getone[0]
             appointment.UIN = getone[1]
             stuuin = stuuin << getone[1]
-            representatives-=1
+            representatives -= 1
+            companies[item] = representatives
             totalrep-=1
             appointment.save
             break
@@ -227,7 +226,7 @@ class AppointmentsController < ApplicationController
 
         usif= item.citizenship=="US Citizen Only"? true:false
         conjobtype = item.job_type == student[5] || item.job_type == 'Any' || item.job_type == nil
-        condegree = item.student_level == student[4] || item.student_level == 'Any' || item.student_level == nil
+        condegree = item.student_level.include? student[4] || item.student_level.nil? || item.student_level.empty?
         concitizen = usif == student[3] || usif == false || usif == nil
 
         if (representatives > 0 && conjobtype && condegree && concitizen)

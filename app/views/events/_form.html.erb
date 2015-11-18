@@ -46,6 +46,12 @@
         <%= f.check_box :for_student%>
       </div>
 
+      <div class="field">
+        <strong><%= f.label :for_company, "For Companies" %></strong><br>
+        <font size="2px"><%= "Can companies attend this event?" %></font><br>
+        <%= f.check_box :for_company%>
+      </div>
+
       <div class="field"><br>
         <strong><%= f.label :max_students, "Student Capacity" %></strong><br>
         <font size="2px"><%= "Enter the maximum number of students that can attend this event." %>
