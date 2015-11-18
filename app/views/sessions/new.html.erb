@@ -1,18 +1,20 @@
 
-<div id="session" style="margin-left:180px">
+<div id="session" style="margin-left:150px; margin-right:150px">
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1>Welcome to IAP Administration page</h1>
+<p>Please Log in to continue.</p>
 <div class="notice"><%= flash[:danger] %></div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
+      <%= f.label :email %><br>
       <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
+      <br>
+      <%= f.label :password %><br>
       <%= f.password_field :password, class: 'form-control' %>
-
+      <br>
+      <br>
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
