@@ -1,29 +1,28 @@
-
-    <%= form_for(@useradd) do |f| %>
-      <%= render 'shared/error_messages' %>
-   <br>
-   <div class="field">
+<%= form_for(@useradd) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <br>
+    <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
-   </div>   
+    </div>
 
-   <div class="field">
+    <div class="field">
       <%= f.label :email %><br>
       <%= f.email_field :email%>
-   </div >  
+    </div >
 
-    <div class="field">   
+    <div class="field">
       <%= f.label :password %><br>
       <%= f.password_field :password %>
     </div>
 
     <div class = "field">
-      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.label :password_confirmation, "Re-type Password" %><br>
       <%= f.password_field :password_confirmation %>
-    </div>  
+    </div>
     <br>
 
-    <div class ="action">
-      <%= f.submit "Create my account", class: "button" %>
+    <div class="actions" >
+      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
     </div>
-    <% end %>
+<% end %>

@@ -1,7 +1,7 @@
 <%= form_for(@student) do |f| %>
 
     <div style = "text-align: center">
-      <font size="5px"><strong><%= "Student Registration"%></strong></font><br><br>
+      <font size="5px" color="maroon"><strong><%= "Student Registration"%></strong></font><br><br>
     </div>
 
     <% if flash[:notice] %>
@@ -17,7 +17,7 @@
     <% end %>
 
 
-    <div><br><br>
+    <div><br>
       <font size="4px"><strong><%= "Basic Information"%></strong></font>
     </div>
 
@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div><br><br>
+    <div><br>
       <p><font size="4px"><strong><%= "Event and Time Selection" %></strong></font></p>
     </div>
 
@@ -69,9 +69,9 @@
       <% end %>
     </div>
     <br>
+
     <div class="actions" >
-      <input type="submit" name="Submit" value="Register" style=" width:180px; font-size: 20px; padding: 10px;" />
-      </font>
+      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
     </div>
 
     </body>

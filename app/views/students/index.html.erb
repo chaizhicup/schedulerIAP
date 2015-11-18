@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <div style = "text-align: center">
-  <font size="5px" color=maroon><strong><%= "Student List(Administrative View)"%></strong></font><br><br>
-  </div>
+  <font size="5px" color=maroon><strong><%= "Students List"%></strong></font><br><br>
+</div>
 
-<div id="ABC" style="margin-left:150px; margin-right:150px">
-  <p>Notation:<br>&nbsp&nbsp
+<div id="ABC" style="margin-left:150px; margin-right:150px" align="center">
+  <p><strong>Notation:</strong><br>&nbsp&nbsp
     P.T. - Position Type  <br>&nbsp&nbsp
     US.C. - US Citizen  <br>&nbsp&nbsp
   </p>
 
-<div id="ABC1" >
-  <%= link_to 'New Student', new_student_path %>
+  <div id="ABC1" >
+    <%= link_to 'New Student', new_student_path %>
     &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
-  <%= link_to 'Back', sessions_url %>
-</div>
-<br>
- 
+    <%= link_to 'Back', sessions_url %>
+  </div>
+  <br>
+
   <!--
   <p><strong>Students registered for lunch:
   <%= @lunch_total%></strong>
@@ -25,39 +25,39 @@
 </div>
 
 <table align="center" border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>UIN</th>
-        <th>Email</th>
-        <th>US.C</th>
-        <th>Degree</th>
-        <th>P.T.</th>
-        <% @events.each do |event| %>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>UIN</th>
+    <th>Email</th>
+    <th>US.C</th>
+    <th>Degree</th>
+    <th>P.T.</th>
+    <% @events.each do |event| %>
         <th><%= event[1] %></th>
-        <% end %>
-        <th colspan="3">Operation</th>
-      </tr>
-    </thead>
+    <% end %>
+    <th colspan="3">Operation</th>
+  </tr>
+  </thead>
 
-    <tbody>
-      <% $students.each do |student| %>
-        <tr>
-          <td><%= student.name %></td>
-          <td><%= student.UIN %></td>
-          <td><%= student.email %></td>
-          <td><%= student.US_Citizen %></td>
-          <td><%= student.degree %></td>
-          <td><%= student.position_type %></td>
-          <% $stu_slot[student.id].each do |slot| %>
-          <td><%= slot[1] %></td>
-          <% end %>
-          <td><%= link_to 'Show', student, class: "link-color" %></td>
-          <td><%= link_to 'Edit', edit_student_path(student), class: "link-color" %></td>
-          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
-        </tr>
-      <% end %>
-    </tbody>
+  <tbody>
+  <% $students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.UIN %></td>
+        <td><%= student.email %></td>
+        <td><%= student.US_Citizen %></td>
+        <td><%= student.degree %></td>
+        <td><%= student.position_type %></td>
+        <% $stu_slot[student.id].each do |slot| %>
+            <td><%= slot[1] %></td>
+        <% end %>
+        <td><%= link_to 'Show', student, class: "link-color" %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class: "link-color" %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
+      </tr>
+  <% end %>
+  </tbody>
 </table>
 <br>
 
