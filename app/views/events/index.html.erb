@@ -11,7 +11,7 @@
 </div>
 <br>
 
-<table align="center" border="3px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
+<table align="center" border="2px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
   <tr>
     <th>Event Date</th>
@@ -29,7 +29,7 @@
       <tr>
         <td><%= event.event_date %></td>
         <td><%= event.name %></td>
-        <td><table cellspacing="opx", border="0px">
+        <td><table cellspacing="0px", border="0px">
           <% @event_slots[event.id].each do |slot| %>
               <tr>
                 <td> <%= slot %></td>

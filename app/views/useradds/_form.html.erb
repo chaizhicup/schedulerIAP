@@ -1,28 +1,24 @@
-<%= form_for(@useradd) do |f| %>
-    <%= render 'shared/error_messages' %>
-    <br>
-    <div class="field">
+
+    <%= form_for(@useradd) do |f| %>
+      <%= render 'shared/error_messages' %>
+   <br>
+   <div class="col-xs-4">
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
+      <%= f.text_field :name, class: 'form-control no-radius' %><br>
 
-    <div class="field">
       <%= f.label :email %><br>
-      <%= f.email_field :email%>
-    </div >
+      <%= f.email_field :email, class: 'form-control no-radius'%><br>
 
-    <div class="field">
       <%= f.label :password %><br>
-      <%= f.password_field :password %>
-    </div>
+      <%= f.password_field :password, class: 'form-control no-radius' %><br>
 
-    <div class = "field">
-      <%= f.label :password_confirmation, "Re-type Password" %><br>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, "Confirm Password" %><br>
+      <%= f.password_field :password_confirmation, class: 'form-control no-radius' %><br>
+		<br> 
+    <div class ="action">
+      <%= f.submit "Create my account", class: "btn btn-primary no-radius" %>
     </div>
-    <br>
-
-    <div class="actions" >
-      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
+		<br>
+		<br>
     </div>
-<% end %>
+    <% end %>

@@ -1,23 +1,23 @@
+
 <div id="session" style="margin-left:150px; margin-right:150px">
-  <% provide(:title, "Log in") %>
-  <font size="5px" color="maroon"><strong><%="Welcome to IAP Administration page"%></strong></font><br><br>
+<% provide(:title, "Log in") %>
+<font size="5px" color="maroon"><strong><%="Welcome to IAP Administration page"%></strong></font><br><br>
+<p>Please Log in to continue.</p>
+<div class="notice"><%= flash[:danger] %></div>
+<div class="row">
+  <div class="col-xs-4">
+    <%= form_for(:session, url: login_path) do |f| %>
 
-  <p><strong>Please Log in to continue.</strong></p>
-  <div class="notice"><%= flash[:danger] %></div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, class: 'form-control no-radius' %>
+      <br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control no-radius' %>
+      <br>
+      <br>
+      <%= f.submit "Log in", class: "btn btn-primary no-radius" %>
+    <% end %>
 
-          <%= f.label :email %><br>
-          <%= f.email_field :email, class: 'form-control' %>
-          <br>
-          <%= f.label :password %><br>
-          <%= f.password_field :password, class: 'form-control' %>
-          <br>
-          <br>
-          <%= f.submit "Log in", class: "btn btn-primary" %>
-      <% end %>
-
-    </div>
-  </div>
+   </div>
+</div>
 </div>
