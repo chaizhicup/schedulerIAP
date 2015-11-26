@@ -46,9 +46,9 @@
         <td><%= appointment.company %></td>
         <td><%= appointment.student %></td>
         <td><%= appointment.UIN %></td>
-        <td><%= link_to 'Show', appointment, class: "link-color" %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment), class: "link-color" %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
+        <td><%= link_to 'Show', appointment %></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <tr></tr>
   <% end %>

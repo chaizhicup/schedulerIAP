@@ -52,9 +52,9 @@
         <% $stu_slot[student.id].each do |slot| %>
             <td><%= slot[1] %></td>
         <% end %>
-        <td><%= link_to 'Show', student, class: "link-color" %></td>
-        <td><%= link_to 'Edit', edit_student_path(student), class: "link-color" %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-color" %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>
