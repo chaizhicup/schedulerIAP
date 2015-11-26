@@ -20,7 +20,7 @@
     <div class="field"><font size="4px">
       <br>•
       <%= f.label :name, "Enter your company name"%><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :placeholder => "Company Name", class: 'form-control no-radius width_300'  %>
     </font>
       <br><br>
     </div>
@@ -31,24 +31,12 @@
     </div>
 
     <div class = "field"><font size="3.2px">
-      <%= f.label :rep_1, "1.)"%>
-      <%= f.text_field :rep_1 %>
-      <br>
-      <%= f.label :rep_2, "2.)"%>
-      <%= f.text_field :rep_2 %>
-      <br>
-      <%= f.label :rep_3, "3.)"%>
-      <%= f.text_field :rep_3 %>
-      <br>
-      <%= f.label :rep_4, "4.)"%>
-      <%= f.text_field :rep_4 %>
-      <br>
-      <%= f.label :rep_5, "5.)"%>
-      <%= f.text_field :rep_5 %>
-      <br>
-      <%= f.label :rep_6, "6.)"%>
-      <%= f.text_field :rep_6 %>
-      <br>
+      <%= f.text_field :rep_1, :placeholder => "Representative 1 (Mandatory)", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_2, :placeholder => "Representative 2", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_3, :placeholder => "Representative 3", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_4, :placeholder => "Representative 4", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_5, :placeholder => "Representative 5", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_6, :placeholder => "Representative 6", class: 'form-control no-radius width_300'  %>
     </font></div><br>
 
     <font size="4px">
@@ -59,12 +47,12 @@
 
     <div class="field"><font size="3.2px">
       <%= f.label :contact_person, "Name"%><br>
-      <%= f.text_field :contact_person %>
+      <%= f.text_field :contact_person, :placeholder => "Contact Person Name", class: 'form-control no-radius width_300'  %>
     </font></div>
 
     <div class="field"><font size="3.2px">
       <%= f.label :contact_email, "Email"%><br>
-      <%= f.text_field :contact_email %>
+      <%= f.text_field :contact_email, :placeholder => "Contact Person Email", class: 'form-control no-radius width_300'  %>
     </font></div>
 
     <font size="4px">
@@ -107,6 +95,6 @@
 
     <br>
     <div class="actions" >
-      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
+      <%= f.submit "Submit", class: "btn btn-primary no-radius" %>
     </div>
 <% end %>

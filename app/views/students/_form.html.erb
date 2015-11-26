@@ -21,37 +21,39 @@
       <font size="4px"><strong><%= "Basic Information"%></strong></font>
     </div>
 
+		<br>
+
     <div>
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: 'form-control no-radius width_300' %>
       </div>
 
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :UIN,"UIN" %><br>
-        <%= f.text_field :UIN %>
+        <%= f.text_field :UIN, class: 'form-control no-radius width_300' %>
 
       </div>
 
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :email %><br>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, class: 'form-control no-radius width_300' %>
 
       </div>
 
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :US_Citizen,"I am a US-Citizen" %><br>
-        <%= f.check_box :US_Citizen %>
+        <%= f.check_box :US_Citizen, class: 'checkbox no-radius' %>
 
       </div>
 
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :degree, "Student Level" %><br>
         <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree)%>
 
       </div>
 
-      <div class="field">•
+      <div class="field"><font size="3.2px">•
         <%= f.label :position_type, "Job Type" %><br>
         <%= f.select :position_type, options_for_select(%w[Internship Full-time], @student.position_type), :prompt=>"---Please select---" %>
       </div>
@@ -62,7 +64,7 @@
     </div>
 
 
-    <div class="field">
+    <div class="field"><font size="3.2px">
       <% @event_details.each do |id,name,date,start,en| %>
           <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
           <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
@@ -71,7 +73,7 @@
     <br>
 
     <div class="actions" >
-      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
+      <%= f.submit "Submit", class: "btn btn-primary no-radius" %>
     </div>
 
     </body>

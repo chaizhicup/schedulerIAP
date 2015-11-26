@@ -31,6 +31,10 @@ html, body {
 		border-radius: 0;
 }
 
+.width_300{
+width: 300px;
+}
+
 #header_back{
   position: absolute;
   top: 0px ;

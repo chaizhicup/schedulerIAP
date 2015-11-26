@@ -13,25 +13,25 @@
 
     <div class="field">
       <%= f.label :section %><br>
-      <%= f.text_field :section %>
+      <%= f.text_field :section, class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :time_slot %><br>
-      <%= f.text_field :time_slot %>
+      <%= f.text_field :time_slot, class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :company %><br>
-      <%= f.text_field :company %>
+      <%= f.text_field :company, class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :student %><br>
-      <%= f.text_field :student %>
+      <%= f.text_field :student, class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
-      <%= f.label :UIN %><br>
-      <%= f.text_field :UIN %>
+      <%= f.label :UIN, "UIN" %><br>
+      <%= f.text_field :UIN, class: 'form-control no-radius width_300' %>
     </div>
     <div class="actions" >
-      <%= f.submit "Submit" , :style=>" width:80px; font-size: 15px; padding: 10px;" %>
+      <%= f.submit "Submit" , class: "btn btn-primary no-radius" %>
     </div>
 <% end %>
