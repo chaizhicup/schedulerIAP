@@ -13,23 +13,23 @@
 
     <div class="field">
       <%= f.label :section %><br>
-      <%= f.text_field :section, class: 'form-control no-radius width_300' %>
+      <%= f.text_field :section, :placeholder => "Name of an existing event", class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :time_slot %><br>
-      <%= f.text_field :time_slot, class: 'form-control no-radius width_300' %>
+      <%= f.text_field :time_slot, :placeholder => "Timeslot in event (e.g. 1:30PM-2:00PM)", class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :company %><br>
-      <%= f.text_field :company, class: 'form-control no-radius width_300' %>
+      <%= f.text_field :company, :placeholder => "Company Name", class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :student %><br>
-      <%= f.text_field :student, class: 'form-control no-radius width_300' %>
+      <%= f.text_field :student, :placeholder => "Student Name", class: 'form-control no-radius width_300' %>
     </div>
     <div class="field">
       <%= f.label :UIN, "UIN" %><br>
-      <%= f.text_field :UIN, class: 'form-control no-radius width_300' %>
+      <%= f.text_field :UIN, :placeholder => "Student UIN", class: 'form-control no-radius width_300' %>
     </div>
     <div class="actions" >
       <%= f.submit "Submit" , class: "btn btn-primary no-radius" %>

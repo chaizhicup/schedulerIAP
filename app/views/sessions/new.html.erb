@@ -9,10 +9,10 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %><br>
-      <%= f.email_field :email, class: 'form-control no-radius' %>
+      <%= f.email_field :email, :placeholder => "Admin Email", class: 'form-control no-radius' %>
       <br>
       <%= f.label :password %><br>
-      <%= f.password_field :password, class: 'form-control no-radius' %>
+      <%= f.password_field :password, :placeholder => "Admin Password", class: 'form-control no-radius' %>
       <br>
       <br>
       <%= f.submit "Log in", class: "btn btn-primary no-radius" %>

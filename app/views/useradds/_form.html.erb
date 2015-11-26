@@ -4,16 +4,16 @@
    <br>
    <div class="col-xs-4">
       <%= f.label :name %><br>
-      <%= f.text_field :name, class: 'form-control no-radius' %><br>
+      <%= f.text_field :name, :placeholder => "Admin Name", class: 'form-control no-radius' %><br>
 
       <%= f.label :email %><br>
-      <%= f.email_field :email, class: 'form-control no-radius'%><br>
+      <%= f.email_field :email, :placeholder => "Admin Email", class: 'form-control no-radius'%><br>
 
       <%= f.label :password %><br>
-      <%= f.password_field :password, class: 'form-control no-radius' %><br>
+      <%= f.password_field :password, :placeholder => "Password", class: 'form-control no-radius' %><br>
 
       <%= f.label :password_confirmation, "Confirm Password" %><br>
-      <%= f.password_field :password_confirmation, class: 'form-control no-radius' %><br>
+      <%= f.password_field :password_confirmation, :placeholder => "Re-type password", class: 'form-control no-radius' %><br>
 		<br> 
     <div class ="action">
       <%= f.submit "Create my account", class: "btn btn-primary no-radius" %>

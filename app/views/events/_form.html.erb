@@ -18,7 +18,7 @@
 
         <strong><%= f.label :name ,"Event Name" %></strong><br>
         <font size="2px"><%= "Enter name of the event you want to add." %></font><br>
-        <%= f.text_field :name, class: 'form-control no-radius width_300' %>
+        <%= f.text_field :name, :placeholder => "Event Name", class: 'form-control no-radius width_300' %>
       </div>
 
       <div class="field">
@@ -55,13 +55,13 @@
         <strong><%= f.label :max_students, "Student Capacity" %></strong><br>
         <font size="2px"><%= "Enter the maximum number of students that can attend this event." %>
           <strong>Enter a positive number</strong></font><br>
-        <%= f.number_field :max_students , :disabled => @unedit, class: 'form-control no-radius width_300' %>
+        <%= f.number_field :max_students , :disabled => @unedit, :placeholder => "Max number of students for this event", class: 'form-control no-radius width_300' %>
       </div>
 
       <div class="field"><br>
         <strong><%= f.label :timeslot_duration, "Timeslot Duration" %></strong><br>
         <font size="2px"><%= "Please enter the duration(in minutes) of time slots you want to add. Each event can have multiple timeslots depending on the duration of each time slot" %></font><br>
-        <%= f.number_field :timeslot_duration , :disabled => @unedit, class: 'form-control no-radius width_300' %>
+        <%= f.number_field :timeslot_duration , :disabled => @unedit, :placeholder => "Duration (in minutes)", class: 'form-control no-radius width_300' %>
       </div>
 
       <br>
