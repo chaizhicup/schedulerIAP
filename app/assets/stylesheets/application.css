@@ -31,6 +31,11 @@ html, body {
 		border-radius: 0;
 }
 
+th, td {
+    padding: 4px;
+		text-align: center;
+}
+
 .width_300{
 width: 300px;
 }
