@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order(:event_date, :name)
     @event_slots = get_timeslots(@events)
   end
 
