@@ -5,7 +5,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = Appointment.all.order(:section)
+    @appointments = Appointment.all.order(:section, :time_slot)
   end
 
   # GET /appointments/1
