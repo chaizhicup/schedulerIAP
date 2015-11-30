@@ -22,10 +22,15 @@
       <%= f.label :name, "Enter your company name"%><br>
       <%= f.text_field :name, :placeholder => "Company Name", class: 'form-control no-radius width_300'  %>
     </font>
-      <br><br>
+      <br>
     </div>
 
     <div class="field"><font size="4px">•
+      <%= f.label :sponsor_level, "Select your company's sponsor level" %><br></font>
+      <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver Bronze], @company.sponsor_level), :prompt=>"---Please select---" %>
+    </div>
+
+    <div class="field"><font size="4px"><br>•
       <%= "Enter the names of your company's representatives that will be attending the events. "%>
       <strong><%="Platinum members may provide up to 6 representatives, Gold 4, Silver 3 and Bronze 2" %></strong></font>
     </div>
@@ -56,10 +61,6 @@
     </font></div>
 
     <font size="4px">
-      <div class="field"><br>•
-        <%= f.label :sponsor_level, "Select your company's sponsor level" %><br>
-        <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver Bronze], @company.sponsor_level), :prompt=>"---Please select---" %>
-      </div>
       <div class="field"><br>•
         <%= f.label :citizenship, "Select if you hire US citizens only, or not"%><br>
         <%= f.select :citizenship, options_for_select(["US Citizen Only", "Any"], @company.citizenship), :prompt=>"---Please select---" %>
