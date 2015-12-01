@@ -8,8 +8,8 @@ class UserMailer < ApplicationMailer
 		a = @user.email.split('@')[0]
 		@user.email = a + "@email.tamu.edu"
 	end
-		mail(to: @user.email, subject: 'Confirmation for Registration.')
-end
+		mail(to: @user.email, subject: 'Confirmation for Registration')
+  end
 
 	def com_reg(arg)
 		@user = arg
@@ -17,7 +17,24 @@ end
 			a = @user.contact_email.split('@')[0]
 			@user.contact_email = a + "@email.tamu.edu"
 		end
-		mail(to: @user.contact_email, subject: 'Confirmation for Registration.')
+		mail(to: @user.contact_email, subject: 'Confirmation for Registration')
 	end
 
+  def stu_del(arg)
+	@user = arg
+	if @user.email.split('@')[1] == "tamu.edu"
+		a = @user.email.split('@')[0]
+		@user.email = a + "@email.tamu.edu"
+	end
+		mail(to: @user.email, subject: 'Registration Cancelled')
+  end
+
+	def com_del(arg)
+		@user = arg
+		if @user.contact_email.split('@')[1] == "tamu.edu"
+			a = @user.contact_email.split('@')[0]
+			@user.contact_email = a + "@email.tamu.edu"
+		end
+		mail(to: @user.contact_email, subject: 'Registration Cancelled')
+	end
 end

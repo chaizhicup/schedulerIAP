@@ -122,6 +122,7 @@ class CompaniesController < ApplicationController
     @company.companyevents.destroy_all
     @company.destroy
     respond_to do |format|
+      UserMailer.com_del(@company).deliver_now
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end
