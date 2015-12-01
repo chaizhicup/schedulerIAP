@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Confirmation for IAP Registration.</h1>
+    <h1>Confirmation for Registration.</h1>
     <p>
       You have successfully registered.<br>
     </p>
@@ -30,26 +30,38 @@
         <td>Position Type:</td><td><%= @user.job_type %></td>
       </tr>
       <tr>
-        <td>Degree level Requirement:</td><td><%= @user.student_level %></td>
+        <td>Degree level Requirement:</td><td><%= @user.student_level.join(" , ") %></td>
       </tr>
+      <% if !(@user.rep_1.blank?)%>
       <tr>
         <td>Representative 1:</td><td><%= @user.rep_1 %></td>
       </tr>
+      <% end %>
+      <% if !(@user.rep_2.blank?)%>
       <tr>
         <td>Representative 2:</td><td><%= @user.rep_2 %></td>
       </tr>
+      <% end %>
+      <% if !(@user.rep_3.blank?)%>
       <tr>
         <td>Representative 3:</td><td><%= @user.rep_3 %></td>
       </tr>
+      <% end %>
+      <% if !(@user.rep_4.blank?)%>
       <tr>
         <td>Representative 4:</td><td><%= @user.rep_4 %></td>
       </tr>
+      <% end %>
+      <% if !(@user.rep_5.blank?)%>
       <tr>
         <td>Representative 5:</td><td><%= @user.rep_5 %></td>
       </tr>
+      <% end %>
+      <% if !(@user.rep_6.blank?)%>
       <tr>
         <td>Representative 6:</td><td><%= @user.rep_6 %></td>
       </tr>
+      <% end %>
       <% @user.events.each do |e| %> 
         <tr>
           <td>Number of Representatives for <%= e.name %>:</td>

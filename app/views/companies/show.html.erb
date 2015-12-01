@@ -36,42 +36,57 @@
     <strong>Student level:</strong>
     <%= @company.student_level.join(" , ") %>
   </p>
-
+  <% if !(@company.rep_1.blank?) %>
   <p>
-    <strong>Rep 1:</strong>
+    <strong>Representative 1:</strong>
     <%= @company.rep_1 %>
   </p>
+  <% end %>
 
+  <% if !(@company.rep_2.blank?) %>
   <p>
-    <strong>Rep 2:</strong>
+    <strong>Representative 2:</strong>
     <%= @company.rep_2 %>
   </p>
+  <% end %>
 
+  <% if !(@company.rep_3.blank?) %>
   <p>
-    <strong>Rep 3:</strong>
+    <strong>Representative 3:</strong>
     <%= @company.rep_3 %>
   </p>
+  <% end %>
 
+  <% if !(@company.rep_4.blank?) %>
   <p>
-    <strong>Rep 4:</strong>
+    <strong>Representative 4:</strong>
     <%= @company.rep_4 %>
   </p>
+  <% end %>
 
+  <% if !(@company.rep_5.blank?) %>
   <p>
-    <strong>Rep 5:</strong>
+    <strong>Representative 5:</strong>
     <%= @company.rep_5 %>
   </p>
+  <% end %>
 
+  <% if !(@company.rep_6.blank?) %>
   <p>
-    <strong>Rep 6:</strong>
+    <strong>Representative 6:</strong>
     <%= @company.rep_6 %>
   </p>
-
+  <% end %>
   <% it = 0 %>
   <% @company.events.each do |e| %>
       <p>
-        <strong><%= e.name %> rep no: </strong>
+        <strong><%= e.name %>: </strong>
         <%= @reps[it] %>
+        <% if @reps[it] == 1 %>
+          <%= " Representative" %>
+        <% else %>
+          <%= " Representatives" %>
+        <% end %>
       </p>
       <% it = it + 1 %>
   <% end %>
