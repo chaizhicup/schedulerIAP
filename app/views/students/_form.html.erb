@@ -49,7 +49,7 @@
 
       <div class="field"><font size="3.2px">•
         <%= f.label :degree, "Student Level" %><br>
-        <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree)%>
+        <%= f.select :degree, options_for_select(%w[B.S. M.S. PH.D], @student.degree), :prompt=>"---Please select---" %>
 
       </div>
 
@@ -66,7 +66,7 @@
 
     <div class="field"><font size="3.2px">
       <% @event_details.each do |id,name,date,start,en| %>
-          <%= f.label  "#{name}" , "• "+name+" "+start.strftime("%I:%M%p")+" to "+en.strftime("%I:%M%p")+" on "+date.to_s %><br>
+          <%= f.label  "#{name}" , "• " + name + DateTime.parse("#{date}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{start}").strftime(" from %I:%M%p") + DateTime.parse("#{en}").strftime(" to %I:%M%p")  %><br>
           <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), :prompt=>"---Please select time for "+name+" ---" %> <br>
       <% end %>
     </div>

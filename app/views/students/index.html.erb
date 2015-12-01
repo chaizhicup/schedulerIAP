@@ -5,34 +5,24 @@
 </div>
 
 <div id="ABC" style="margin-left:150px; margin-right:150px" align="center">
-  <p><strong>Notation:</strong><br>&nbsp&nbsp
-    P.T. - Position Type  <br>&nbsp&nbsp
-    US.C. - US Citizen  <br>&nbsp&nbsp
-  </p>
-
   <div id="ABC1" >
     <%= link_to 'New Student', new_student_path %>
-    &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <%= link_to 'Back', sessions_url %>
   </div>
   <br>
-
-  <!--
-  <p><strong>Students registered for lunch:
-  <%= @lunch_total%></strong>
-  </p>
-  -->
 </div>
 
+<div style="margin-left:50px; margin-right:50px;">
 <table align="center" border="2px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
   <tr>
     <th>Name</th>
     <th>UIN</th>
     <th>Email</th>
-    <th>US.C</th>
+    <th>Citizenship</th>
     <th>Degree</th>
-    <th>P.T.</th>
+    <th>Position Type</th>
     <% @events.each do |event| %>
         <th><%= event[1] %></th>
     <% end %>
@@ -46,7 +36,11 @@
         <td><%= student.name %></td>
         <td><%= student.UIN %></td>
         <td><%= student.email %></td>
-        <td><%= student.US_Citizen %></td>
+        <%if student.US_Citizen %>
+        <td><%= "U.S. Citizen" %></td>
+        <%else%>
+        <td><%= "International" %></td>
+        <%end%>
         <td><%= student.degree %></td>
         <td><%= student.position_type %></td>
         <% $stu_slot[student.id].each do |slot| %>
@@ -59,5 +53,6 @@
   <% end %>
   </tbody>
 </table>
+</div>
 <br>
 

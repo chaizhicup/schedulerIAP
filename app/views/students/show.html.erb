@@ -17,8 +17,12 @@
 </p>
 
 <p>
-  <strong>Us citizen:</strong>
-  <%= @student.US_Citizen %>
+  <strong>Citizenship:</strong>
+  <%if @student.US_Citizen %>
+  <%= "U.S. Citizen" %>
+  <%else %>
+  <%= "International" %>
+  <%end %>
 </p>
 
 <p>
