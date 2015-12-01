@@ -31,7 +31,7 @@
     </div>
 
     <div class="field"><font size="4px"><br>•
-      <%= "Enter the names of your company's representatives that will be attending the events. "%>
+      <%= "Enter the names of your company's representatives that will be attending the events. "%><br>&nbsp;
       <strong><%="Platinum members may provide up to 6 representatives, Gold 4, Silver 3 and Bronze 2" %></strong></font>
     </div>
 
@@ -50,12 +50,12 @@
       </div>
     </font>
 
-    <div class="field"><font size="3.2px">
+    <div class="field"><font size="3.2px">&nbsp;
       <%= f.label :contact_person, "Name"%><br>
       <%= f.text_field :contact_person, :placeholder => "Contact Person Name", class: 'form-control no-radius width_300'  %>
     </font></div>
 
-    <div class="field"><font size="3.2px">
+    <div class="field"><font size="3.2px">&nbsp;
       <%= f.label :contact_email, "Email"%><br>
       <%= f.text_field :contact_email, :placeholder => "Contact Person Email", class: 'form-control no-radius width_300'  %>
     </font></div>
@@ -86,8 +86,8 @@
         <% args = (@new_flag == 1)? [@eves.length] : [1] %>
         <% args[0].times do %>
             <%= f.fields_for :companyevents do |ff| %>
-                <%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %d-%m-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
-                <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Please select---" %><br>
+                <%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
+                <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Number of Representatives---" %><br>
                 <% @it = @it + 1 %>
             <% end %>
         <% end %>
