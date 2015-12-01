@@ -26,8 +26,8 @@
     </div>
 
     <div class="field"><font size="4px">•
-      <%= f.label :sponsor_level, "Select your company's sponsor level" %><br></font>
-      <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver Bronze], @company.sponsor_level), :prompt=>"---Please select---" %>
+      <%= f.label :sponsor_level, "Select your company's sponsor level" %><br>
+      <%= f.select :sponsor_level, options_for_select(%w[Platinum Gold Silver Bronze], @company.sponsor_level), :prompt=>"---Please select---" %></font>
     </div>
 
     <div class="field"><font size="4px"><br>•
@@ -86,7 +86,7 @@
         <% args = (@new_flag == 1)? [@eves.length] : [1] %>
         <% args[0].times do %>
             <%= f.fields_for :companyevents do |ff| %>
-                <%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
+                &nbsp;<%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
                 <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Number of Representatives---" %><br>
                 <% @it = @it + 1 %>
             <% end %>

@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.all.order(:name)
-    @events = Event.all
+    @events = Event.where("for_company = true")
   end
 
 
@@ -27,7 +27,7 @@ class CompaniesController < ApplicationController
     @company = Company.new
     @company.companyevents.build
 
-    @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
     @it = 0
     @new_flag = 1
     @reps = @company.companyevents.collect(&:representatives)
@@ -36,10 +36,10 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
     @it = 0
     @new_flag = 0
-    eve_ids = Event.pluck(:id)
+    eve_ids = Event.where("for_company = true").pluck(:id)
     company_events = @company.companyevents.collect(&:event_id)
     eve_ids.delete_if { |x| company_events.include?(x) }
     if !eve_ids.empty? 
@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
-    eve_id = Event.pluck(:id)
+    eve_id = Event.where("for_company = true").pluck(:id)
 
     respond_to do |format|
       if @company.save 
@@ -77,7 +77,7 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else
-        @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
         @it = 0
         @new_flag = 0
         @reps = @company.companyevents.collect(&:representatives)
@@ -93,7 +93,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        eve_id = Event.pluck(:id)
+        eve_id = Event.where("for_company = true").pluck(:id)
         it = 0
         @company.companyevents.where(company_id: @company.id).each do |ce|
           ce.update(event_id: eve_id[it])
@@ -104,7 +104,7 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
       else
-        @eves = Event.pluck(:id, :name, :event_date, :start_time, :end_time)
+        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
         @it = 0
         @new_flag = 0
         @reps = @company.companyevents.collect(&:representatives)
