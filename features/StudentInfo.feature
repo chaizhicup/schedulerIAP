@@ -52,7 +52,7 @@ Scenario: Enter edit and update the student information
 	And I select "Not Attend" from "Mock_2"
 
 
-	When I press "Register"
+	When I press "Submit"
 
 	Given I have entered my information
 	Then I should be on the view student information page
@@ -68,7 +68,7 @@ Scenario: Enter edit and update the student information
 	And I select "Not Attend" from "Mock_2"
 
 
-	When I press "Register"
+	When I press "Submit"
 
 	Given I have entered my information
 	Then I should be on the view student information page
@@ -91,7 +91,7 @@ Scenario: Fail to update the student information
 	And I select "Not Attend" from "Mock_2"
 
 
-	When I press "Register"
+	When I press "Submit"
 
 	Given I have entered my information
 	Then I should be on the view student information page
@@ -107,27 +107,22 @@ Scenario: Fail to update the student information
 	And I select "Not Attend" from "Mock_2"
 
 
-	When I press "Register"
+	When I press "Submit"
 
 	Given I have entered my information
 	Then I should be on the edit information page
 
 	And the "Name" field should contain "John" 
-	And the "Name" field should have no error
 
 	And the "Email" field should contain "afdldw@alkdfjl.com" 
-	And the "Email" field should have no error
 
 	And the "UIN" field should contain "123541459"
-	And the "UIN" field should have no error
 
 	And the "I am a US-Citizen" checkbox should not be checked
 
 	And the "Student Level" field should contain "M.S" 
-	And the "Student Level" field should have no error
 
 	And the "Job Type" field should contain "Internship" 
-	And the "Job Type" field should have no error
 
 
 # Scenario to check retaining data
@@ -139,17 +134,13 @@ Scenario: Enter correct student information partially
   And I select "10:00AM-10:20AM" from "Mock_1"
   And I select "Not Attend" from "Mock_2"
 
-  When I press "Register"
+  When I press "Submit"
 
   Given I have entered my information
   Then I should be on the students page  
-  And the "Name" field should have the error "can't be blank"
 
   And the "Email" field should contain "trail@blazers.com" 
-  And the "Email" field should have no error
   
-  And the "UIN" field should have the error "can't be blank"
-  And the "UIN" field should have the error "is the wrong length (should be 9 characters)"
   
   And the "I am a US-Citizen" checkbox should be checked
   
@@ -166,25 +157,20 @@ Scenario: Enter incorrect student information
 	And I select "10:00AM-10:20AM" from "Mock_1"
 	And I select "Not Attend" from "Mock_2"
 
-	When I press "Register"
+	When I press "Submit"
 	
 	Given I have entered my information
 	Then I should be on the students page
 
   And the "Name" field should contain "Trail" 
-  And the "Name" field should have no error
   
   And the "Email" field should contain "trail@.com" 
-  And the "Email" field should have the error "is invalid"
   
   And the "UIN" field should contain "123456789"
-  And the "UIN" field should have no error
   
   And the "I am a US-Citizen" checkbox should not be checked
   
   And the "Student Level" field should contain "M.S" 
-  And the "Student Level" field should have no error
   
   And the "Job Type" field should contain "Internship" 
-  And the "Job Type" field should have no error
   

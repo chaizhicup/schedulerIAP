@@ -20,6 +20,7 @@ Feature: Administrator can manage Companies
     And I select "10 AM:00" as "Start Time"
     And I select "11 AM:00" as "End Time"
     And I check "For Students"
+		And I check "For Companies"
     And I fill in "Student Capacity" with "20"
     And I fill in "Timeslot Duration" with "20"
     When I press "Create"
@@ -27,13 +28,13 @@ Feature: Administrator can manage Companies
     Then I should be on the view event information page
 		Given I am on the new company page
 		And I fill in "Enter your company name" with "Google"
-		And I fill in "1.)" with "Gao Zhuoyang"
+		And I fill in "company[rep_1]" with "Gao Zhuoyang"
 		And I fill in "Name" with "Gao Zhuoyang"
 		And I fill in "Email" with "gaozhuoyang@gmail.com"
 		And I select "Gold" from "Select your company's sponsor level"
 		And I select "Any" from "Select if you hire US citizens only, or not"
 		And I select "Internship" from "Select the job type you are offering"
-		And I select "Any" from "Select the student level you are employing"
+		And I check "company_student_level_ms"
 		And I select "2" from "Mock Interview on Wednesday 11-11-2015 from 10:00AM to 11:00AM"
 		And I press "Submit"
 		Given I have entered the company's information
@@ -45,13 +46,13 @@ Feature: Administrator can manage Companies
 		Scenario: Enter the company information, edit wrongly and save
 		Given I am on the new company page
 		And I fill in "Enter your company name" with "Google"
-		And I fill in "1.)" with "Gao Zhuoyang"
+		And I fill in "company[rep_1]" with "Gao Zhuoyang"
 		And I fill in "Name" with "Gao Zhuoyang"
 		And I fill in "Email" with "gaozhuoyang@gmail.com"
 		And I select "Gold" from "Select your company's sponsor level"
 		And I select "Any" from "Select if you hire US citizens only, or not"
 		And I select "Internship" from "Select the job type you are offering"
-		And I select "Any" from "Select the student level you are employing"
+		And I check "company_student_level_ms"
 		And I press "Submit"
 		Given I have entered the company's information
 		Then I should be on the view company information page

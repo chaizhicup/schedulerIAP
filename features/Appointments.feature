@@ -18,6 +18,7 @@ Feature: Administrator can manage Appointments
     And I select "10 AM:00" as "Start Time"
     And I select "11 AM:00" as "End Time"
     And I check "For Students"
+		And I check "For Companies"
     And I fill in "Student Capacity" with "20"
     And I fill in "Timeslot Duration" with "20"
     When I press "Create"
@@ -26,14 +27,14 @@ Feature: Administrator can manage Appointments
 
     Given I am on the new company page
     And I fill in "Enter your company name" with "Google"
-    And I fill in "1.)" with "Gao Zhuoyang"
-    And I fill in "2.)" with "Vaibhav Mittal"
+    And I fill in "company[rep_1]" with "Gao Zhuoyang"
+    And I fill in "company[rep_2]" with "Vaibhav Mittal"
     And I fill in "Name" with "Gao Zhuoyang"
     And I fill in "Email" with "trailblaze@tamu.edu"
     And I select "Gold" from "Select your company's sponsor level"
     And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
     And I select "Internship" from "Select the job type you are offering"
-    And I select "B.S." from "Select the student level you are employing"
+  	And I check "company_student_level_bs"
     And I select "2" from "Mock Interview on Wednesday 11-11-2015 from 10:00AM to 11:00AM"
     And I press "Submit"
     Given I have entered the company's information
@@ -47,7 +48,7 @@ Feature: Administrator can manage Appointments
     And I select "B.S." from "Student Level"
     And I select "Internship" from "Job Type"
     And I select "10:00AM-10:20AM" from "Mock Interview"
-    When I press "Register"
+    When I press "Submit"
     Given I have entered my information
     Then I should be on the view student information page
 
@@ -59,7 +60,7 @@ Feature: Administrator can manage Appointments
     And I select "M.S." from "Student Level"
     And I select "Full-time" from "Job Type"
     And I select "10:00AM-10:20AM" from "Mock Interview"
-    When I press "Register"
+    When I press "Submit"
     Given I have entered my information
     Then I should be on the view student information page
 
@@ -69,8 +70,8 @@ Feature: Administrator can manage Appointments
     And I fill in "Time slot" with "10:30AM-11:00AM"
     And I fill in "Company" with "Microsoft"
     And I fill in "Student" with "Vaibhav"
-    And I fill in "Uin" with "123009876"
-    When I press "Create"
+    And I fill in "UIN" with "123009876"
+    When I press "Submit"
     Given I have entered the appointment information
     Then I should be on the view appointment page
     When I click on "Edit"
@@ -81,7 +82,7 @@ Feature: Administrator can manage Appointments
   Scenario: Enter the partial appointment information
     Given I am on the new appointment page
     And I fill in "Section" with "Resume Clinic 1"
-    When I press "Create"
+    When I press "Submit"
     Given I have entered the appointment information
     Then I should be on the appointments page
 

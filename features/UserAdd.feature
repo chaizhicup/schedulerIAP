@@ -17,7 +17,7 @@ Feature: Administrator can add new Administrator Account
     And I fill in "Name" with "John"
     And I fill in "Email" with "afdldw@alkdfjl.com"
     And I fill in "Password" with "abcabc"
-    And I fill in "Confirmation" with "abcabc"
+    And I fill in "Confirm Password" with "abcabc"
 
 
     When I press "Create my account"
@@ -32,7 +32,7 @@ Feature: Administrator can add new Administrator Account
     And I fill in "Name" with "John"
     And I fill in "Email" with "afdldw@alkdfjl.com"
     And I fill in "Password" with "abc"
-    And I fill in "Confirmation" with "abc"
+    And I fill in "Confirm Password" with "abc"
 
 
     When I press "Create my account"

@@ -23,7 +23,7 @@ Scenario: Log in with correct user information
 	And I should see "Weclome administrator : Jay"
 
 	#Then I want to test the student management
-	When I click on "Students Infomation"
+	When I click on "Student Infomation"
 	Then I should be on the students page
 	
 	When I click on "Company Infomation"
