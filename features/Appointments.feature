@@ -31,7 +31,7 @@ Feature: Administrator can manage Appointments
     And I fill in "company[rep_2]" with "Vaibhav Mittal"
     And I fill in "Name" with "Gao Zhuoyang"
     And I fill in "Email" with "trailblaze@tamu.edu"
-    And I select "Gold" from "Select your company's sponsor level"
+    And I select "Silver" from "Select your company's sponsor level"
     And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
     And I select "Internship" from "Select the job type you are offering"
   	And I check "company_student_level_bs"
@@ -40,6 +40,52 @@ Feature: Administrator can manage Appointments
     Given I have entered the company's information
     Then I should be on the view company information page
 
+    Given I am on the new company page
+    And I fill in "Enter your company name" with "Apple"
+    And I fill in "company[rep_1]" with "Gao Zhuoyang"
+    And I fill in "company[rep_2]" with "Vaibhav Mittal"
+    And I fill in "Name" with "Gao Zhuoyang"
+    And I fill in "Email" with "tralblaz@tamu.edu"
+    And I select "Silver" from "Select your company's sponsor level"
+    And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
+    And I select "Internship" from "Select the job type you are offering"
+  	And I check "company_student_level_bs"
+    And I select "2" from "Mock Interview on Wednesday 11-11-2015 from 10:00AM to 11:00AM"
+    And I press "Submit"
+    Given I have entered the company's information
+    Then I should be on the view company information page
+    
+    Given I am on the new company page
+    And I fill in "Enter your company name" with "Facebook"
+    And I fill in "company[rep_1]" with "Gao Zhuoyang"
+    And I fill in "company[rep_2]" with "Vaibhav Mittal"
+    And I fill in "Name" with "Gao Zhuoyang"
+    And I fill in "Email" with "trailblaz@tamu.edu"
+    And I select "Bronze" from "Select your company's sponsor level"
+    And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
+    And I select "Internship" from "Select the job type you are offering"
+  	And I check "company_student_level_bs"
+    And I select "2" from "Mock Interview on Wednesday 11-11-2015 from 10:00AM to 11:00AM"
+    And I press "Submit"
+    Given I have entered the company's information
+    Then I should be on the view company information page
+    
+    Given I am on the new company page
+    And I fill in "Enter your company name" with "Microsoft"
+    And I fill in "company[rep_1]" with "Gao Zhuoyang"
+    And I fill in "company[rep_2]" with "Vaibhav Mittal"
+    And I fill in "Name" with "Gao Zhuoyang"
+    And I fill in "Email" with "trailblze@tamu.edu"
+    And I select "Platinum" from "Select your company's sponsor level"
+    And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
+    And I select "Internship" from "Select the job type you are offering"
+  	And I check "company_student_level_bs"
+    And I select "2" from "Mock Interview on Wednesday 11-11-2015 from 10:00AM to 11:00AM"
+    And I press "Submit"
+    Given I have entered the company's information
+    Then I should be on the view company information page
+    
+    
     Given I am on the new student page
     And I fill in "Name" with "John"
     And I fill in "UIN" with "123541459"

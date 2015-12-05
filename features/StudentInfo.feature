@@ -44,7 +44,7 @@ Scenario: Enter edit and update the student information
 	Given I am on the new student page
 	And I fill in "Name" with "John"
 	And I fill in "UIN" with "123541459"
-	And I fill in "Email" with "afdldw@alkdfjl.com"
+	And I fill in "Email" with "komanduri1289@tamu.edu"
 	And I check "I am a US-Citizen"
 	And I select "B.S." from "Student Level"
 	And I select "Internship" from "Job Type"
