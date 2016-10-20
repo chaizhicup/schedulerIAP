@@ -72,7 +72,7 @@ class CompaniesController < ApplicationController
           i = i + 1
         end
 
-        UserMailer.com_reg(@company).deliver_now
+        # UserMailer.com_reg(@company).deliver_now
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
@@ -99,7 +99,7 @@ class CompaniesController < ApplicationController
           ce.update(event_id: eve_id[it])
           it = it + 1
         end
-        UserMailer.com_reg(@company).deliver_now
+        # UserMailer.com_reg(@company).deliver_now
         
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
@@ -122,7 +122,7 @@ class CompaniesController < ApplicationController
     @company.companyevents.destroy_all
     @company.destroy
     respond_to do |format|
-      UserMailer.com_del(@company).deliver_now
+      # UserMailer.com_del(@company).deliver_now
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end

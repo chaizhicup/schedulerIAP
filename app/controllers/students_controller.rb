@@ -157,7 +157,7 @@ class StudentsController < ApplicationController
        end
   #change end
 
-        UserMailer.stu_reg(@student).deliver_now
+        # UserMailer.stu_reg(@student).deliver_now
 
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
@@ -197,7 +197,7 @@ class StudentsController < ApplicationController
 	
     	end
       if @student.update(student_params)
-        UserMailer.stu_reg(@student).deliver_now
+        # UserMailer.stu_reg(@student).deliver_now
 	Timeslot.decrease_1(@student.id)
 
 	        
@@ -224,7 +224,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      UserMailer.stu_del(@student).deliver_now
+      # UserMailer.stu_del(@student).deliver_now
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
