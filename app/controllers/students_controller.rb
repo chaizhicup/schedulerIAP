@@ -13,59 +13,59 @@ class StudentsController < ApplicationController
   # GET /students.json
 
   def index
-    
     @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
-      $students.each do |x|
+    $students.each do |x|
       @arr = Hash.new([])
+      # evaluate timeslots
       @tslots = x.timeslots
-        @events.each do |ev|
-            @check = FALSE
-            @tslots.each do |t|
-              if(t.event_id == ev[0])
-                @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
-                @check = TRUE
-                break
-              end
-             end
-           if(@check == FALSE)
-             @arr[ev[1]] = ("Not Attend")
-           end
-         end
-       $stu_slot[x.id] = @arr
-       end
+      @events.each do |ev|
+        @check = FALSE
+        @tslots.each do |t|
+          if(t.event_id == ev[0])
+            @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
+            @check = TRUE
+            break
+          end
+        end
+        if(@check == FALSE)
+          @arr[ev[1]] = ("Not Attend")
+        end
+      end
+      $stu_slot[x.id] = @arr
+    end
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
-   
+    # Verify login
     unless log_in? || cus_indentify(get_id)
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
     end
-  #change
+    # Get Single Student
     @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
-      $students.each do |x|
+    $students.each do |x|
       @arr = Hash.new([])
+      # Select correct timeslots
       @tslots = x.timeslots
-        @events.each do |ev|
-            @check = FALSE
-            @tslots.each do |t|
-              if(t.event_id == ev[0])
-                @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
-                @check = TRUE
-                break
-              end
-             end
-           if(@check == FALSE)
-             @arr[ev[1]] = ("Not Attend")
-           end
-         end
-       $stu_slot[x.id] = @arr
-       end
-  #change end
+      @events.each do |ev|
+        @check = FALSE
+        @tslots.each do |t|
+          if(t.event_id == ev[0])
+            @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
+            @check = TRUE
+            break
+          end
+        end
+        if(@check == FALSE)
+          @arr[ev[1]] = ("Not Attend")
+        end
+      end
+      $stu_slot[x.id] = @arr
+    end
   end
 
   # GET /students/new
@@ -75,30 +75,32 @@ class StudentsController < ApplicationController
     
     @event_slot = Hash.new([])
     
-    
+    #List Events
     @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
-    @event, @event_slot = set_menu(id)
-    $selected_slots[id] = -1	
-    $event_slots[id] = @event_slot
+      @event, @event_slot = set_menu(id)
+      $selected_slots[id] = -1	
+      $event_slots[id] = @event_slot
     end
-    
   end
 
   # GET /students/1/edit
   def edit
+    # Verify login
     if log_in? || cus_indentify(get_id)
-    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
-    @events = Event.where("for_student = true").pluck(:id, :name)
-     @student.timeslots.each do |x| 
-      $selected_slots[x.event_id] = x.id
-    end
-
-    @events = Event.where("for_student = true").pluck(:id)
-    @events.each do |id|
-    @event, @event_slot = set_menu(id)
-    $event_slots[id] = @event_slot
-    end
+      @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+      @events = Event.where("for_student = true").pluck(:id, :name)
+      # Show Timeslots
+      @student.timeslots.each do |x| 
+        $selected_slots[x.event_id] = x.id
+      end
+      
+      # Show Events
+      @events = Event.where("for_student = true").pluck(:id)
+      @events.each do |id|
+        @event, @event_slot = set_menu(id)
+        $event_slots[id] = @event_slot
+      end
 
     else
       flash[:danger] = "Please Log in!"
@@ -121,54 +123,52 @@ class StudentsController < ApplicationController
     respond_to do |format|
       if @student.save
         input_session(@student.id)
-	
-	Timeslot.decrease_1(@student.id)
+	      Timeslot.decrease_1(@student.id)
 
-	@events = Event.where("for_student = true").pluck(:id,:name)
-	@events.each do |id,name|
+      	@events = Event.where("for_student = true").pluck(:id,:name)
+      	@events.each do |id,name|
           temp1, temp2 = set_menu(id)
-	  if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
-	    @student.timeslots << Timeslot.find(params[name])
-	  end
-    	end
+      	  if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
+      	    @student.timeslots << Timeslot.find(params[name])
+      	  end
+        end
 
-	#@selected_slots.each { |k, v| puts "Key=#{k}, Value=#{v}"}
-
-#change
-    @events = Event.where("for_student = true").pluck(:id,:name)
-    $students = Student.all.order(:UIN)
-      $students.each do |x|
-      @arr = Hash.new([])
-      @tslots = x.timeslots
-        @events.each do |ev|
+	      #@selected_slots.each { |k, v| puts "Key=#{k}, Value=#{v}"}
+        
+        # Show all students
+        @events = Event.where("for_student = true").pluck(:id,:name)
+        $students = Student.all.order(:UIN)
+        $students.each do |x|
+          @arr = Hash.new([])
+          @tslots = x.timeslots
+          @events.each do |ev|
             @check = FALSE
+            # Nicely show all time slots
             @tslots.each do |t|
               if(t.event_id == ev[0])
                 @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
                 @check = TRUE
                 break
               end
-             end
-           if(@check == FALSE)
-             @arr[ev[1]] = ("Not Attend")
-           end
-         end
-       $stu_slot[x.id] = @arr
-       end
-  #change end
+            end
+            if(@check == FALSE)
+              @arr[ev[1]] = ("Not Attend")
+            end
+          end
+          $stu_slot[x.id] = @arr
+        end
 
         # UserMailer.stu_reg(@student).deliver_now
 
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
-
-	@events = Event.where("for_student = true").pluck(:id)
-	@events.each do |id|
-        @event, @event_slot = set_menu(id)
-	@event_slots[id] = @event_slot
-    	end
-
+      	@events = Event.where("for_student = true").pluck(:id)
+      	@events.each do |id|
+          @event, @event_slot = set_menu(id)
+      	  @event_slots[id] = @event_slot
+        end
+      
         flash[:notice] = @student.errors.full_messages
         format.html { render :new } 
         format.json { render json: @student.errors, status: :unprocessable_entity }
@@ -180,41 +180,38 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
-    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
-      
+      @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
       @events = Event.where("for_student = true").pluck(:id, :name)
       @events.each do |id,name|
         $selected_slots[id] = params[name]
       end
-
-	Timeslot.increase_1(@student.id)
-	@student.timeslots = []
-	@events = Event.where("for_student = true").pluck(:name)
-	@events.each do |name|
-	if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
-	    @student.timeslots << Timeslot.find(params[name])
-	 end
-	
-    	end
+    
+      # When updating, release timeslots
+    	Timeslot.increase_1(@student.id)
+    	@student.timeslots = []
+    	@events = Event.where("for_student = true").pluck(:name)
+    	@events.each do |name|
+      	if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
+      	    @student.timeslots << Timeslot.find(params[name])
+      	end
+      end
+      
       if @student.update(student_params)
         # UserMailer.stu_reg(@student).deliver_now
-	Timeslot.decrease_1(@student.id)
-
-	        
+	      Timeslot.decrease_1(@student.id)
         
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
-	@events = Event.where("for_student = true").pluck(:id,:name)
-	@events.each do |id,name|
+      	@events = Event.where("for_student = true").pluck(:id,:name)
+      	@events.each do |id,name|
           temp1, temp2 = set_menu(id)
-	  Timeslot.decrease_1_id(temp1, @student.id, name)
-    	end
+      	  Timeslot.decrease_1_id(temp1, @student.id, name)
+        end
         
         flash[:notice] = @student.errors.full_messages
         format.html { redirect_to edit_student_path}
         format.json { render json: @student.errors, status: :unprocessable_entity }
-
       end
     end
   end
@@ -231,16 +228,15 @@ class StudentsController < ApplicationController
   end
 
   private
-    
     def set_menu(arg)
       result_slots= Timeslot.where("event_id = ? AND stunum > 0", arg).collect{|item| [item.id, item.start_time, item.end_time, item.stunum]}
       slots = Hash.new([])
       slots['Not Attend'] = 0
 
-        result_slots.each do |item|
-          slots[item[1].strftime("%I:%M%p") + "-" + item[2].strftime("%I:%M%p")] = item[0]
-        end
-	slots  = slots.sort
+      result_slots.each do |item|
+        slots[item[1].strftime("%I:%M%p") + "-" + item[2].strftime("%I:%M%p")] = item[0]
+      end
+	    slots  = slots.sort
       return result_slots, slots
     end
 
