@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  # Before these actions (show, edit, update, and destroy) are run
+  #   :set_student will run
 
   #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
   before_filter :authorize, only: [:destroy, :index], :except => :new_session_path
@@ -11,8 +13,9 @@ class StudentsController < ApplicationController
 
   # GET /students
   # GET /students.json
-
+  # Returns the list of all students and their respective timeslots
   def index
+    puts "index"
     @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
     $students.each do |x|
@@ -38,13 +41,16 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   # GET /students/1.json
+  # Returns a single student as well as information
+  #   like email and events attending
   def show
+    puts "show"
     # Verify login
     unless log_in? || cus_indentify(get_id)
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
     end
-    # Get Single Student
+    
     @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
     $students.each do |x|
@@ -69,7 +75,10 @@ class StudentsController < ApplicationController
   end
 
   # GET /students/new
+  # View where a new student can be created
+  #   Calls create to actually create student
   def new
+    puts "new"
     @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
     @student = Student.new
     
@@ -85,7 +94,10 @@ class StudentsController < ApplicationController
   end
 
   # GET /students/1/edit
+  # View where student information can be updated
+  #   Calls update to actually update student
   def edit
+    puts "edit"
     # Verify login
     if log_in? || cus_indentify(get_id)
       @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
@@ -110,7 +122,9 @@ class StudentsController < ApplicationController
 
   # POST /students
   # POST /students.json
+  # New student is created based on parameters
   def create
+    puts "create"
     @student = Student.new(student_params)
     @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
 
@@ -121,6 +135,7 @@ class StudentsController < ApplicationController
     
     @event_slots = Hash.new([])
     respond_to do |format|
+      # Try to save new information
       if @student.save
         input_session(@student.id)
 	      Timeslot.decrease_1(@student.id)
@@ -178,7 +193,9 @@ class StudentsController < ApplicationController
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
+  # Student is updated with new information
   def update
+    puts "update"
     respond_to do |format|
       @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time)
       @events = Event.where("for_student = true").pluck(:id, :name)
@@ -186,7 +203,7 @@ class StudentsController < ApplicationController
         $selected_slots[id] = params[name]
       end
     
-      # When updating, release timeslots
+      # When updating, temporarily release timeslots
     	Timeslot.increase_1(@student.id)
     	@student.timeslots = []
     	@events = Event.where("for_student = true").pluck(:name)
@@ -196,6 +213,7 @@ class StudentsController < ApplicationController
       	end
       end
       
+      # Ensure that the student was updated
       if @student.update(student_params)
         # UserMailer.stu_reg(@student).deliver_now
 	      Timeslot.decrease_1(@student.id)
@@ -218,7 +236,9 @@ class StudentsController < ApplicationController
 
   # DELETE /students/1
   # DELETE /students/1.json
+  # Deletes the current student
   def destroy
+    puts "destroy"
     @student.destroy
     respond_to do |format|
       # UserMailer.stu_del(@student).deliver_now
@@ -228,7 +248,9 @@ class StudentsController < ApplicationController
   end
 
   private
+    # Creates drop down menus with all time slots
     def set_menu(arg)
+      puts "set menu"
       result_slots= Timeslot.where("event_id = ? AND stunum > 0", arg).collect{|item| [item.id, item.start_time, item.end_time, item.stunum]}
       slots = Hash.new([])
       slots['Not Attend'] = 0
@@ -244,7 +266,8 @@ class StudentsController < ApplicationController
     def get_id
       params[:id]
     end
-
+  
+    # Stores student in variable
     def set_student
       @student = Student.find(params[:id])
     end
