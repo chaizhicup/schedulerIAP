@@ -107,6 +107,10 @@ input, textarea, select, .uneditable-input {
   /*@include box_sizing;*/
 }
 
+select:disabled {
+    color: #999;
+}
+
 input {
   height: auto
   !important;

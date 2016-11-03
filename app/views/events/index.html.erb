@@ -15,6 +15,7 @@
 <table align="center" border="2px" cellspacing = "0px" bordercolor = "#000000" cellpadding = "4">
   <thead>
   <tr>
+    <th>Editable for Students</th>
     <th>Event Date</th>
     <th>Event Name</th>
     <th>Timeslots</th>
@@ -28,6 +29,11 @@
   <tbody>
   <% @events.each do |event| %>
       <tr>
+        <%if event.editable %>
+        <td><%= "✓" %></td>
+        <%else%>
+        <td><%= "X" %></td>
+        <%end%>
         <td><%= event.event_date %></td>
         <td><%= event.name %></td>
         <td><table cellspacing="0px", border="0px">
