@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20161102174312) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "timeslot_duration"
-    t.boolean  "editable"
+    t.boolean  "editable",          default: true
   end
 
   create_table "sessions", force: :cascade do |t|

@@ -7,6 +7,7 @@ gem 'bcrypt', '3.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 
 gem 'rails_12factor', group: :production
