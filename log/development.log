@@ -1365,3 +1365,2064 @@ Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/signin/con
   Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (76.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-07 18:04:50 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (50.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.1) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.1) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddEdithashToStudents (20161031150927)
+  [1m[35m (3.8ms)[0m  BEGIN
+  [1m[36m (80.0ms)[0m  [1mALTER TABLE "students" ADD "edithash" character varying[0m
+  [1m[35mSQL (40.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161031150927"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddEditableToEvents (20161102174312)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (144.8ms)[0m  [1mALTER TABLE "events" ADD "editable" boolean DEFAULT 't'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161102174312"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'appointments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companyevents'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sessions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students_timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'useradds'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-11-07 18:05:28 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 420ms (Views: 396.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/appointments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/bootstrap.min.self-edb718bc1c52da9662e2fa124704605fd79e1ac4e591b2782dad231782a388cb.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/companies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/scaffolds.self-81c27700e34a9b4d3deabb7fbb3c0ab84f8ba845cc9385cfb14bfa9ca9ccb9ca.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/timeslots.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/useradds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/application.self-0d0367ac692d18fe758ac5ae4c14893fe1937df4085039c7e3bc06b695e51c4f.css?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for ::1 at 2016-11-07 18:05:28 -0600
+
+
+Started POST "/login" for ::1 at 2016-11-07 18:05:31 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PtK9qiLMflfwuIsUZuyucRjVYgZOPSwc/K2qKI7ezruld05q0olVLFtuNUdAkNePyB2M9pwIcASeRDJbxbsSxw==", "session"=>{"email"=>"bain607@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUseradd Load (17.6ms)[0m  SELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1  [["email", "bain607@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 154ms (ActiveRecord: 19.6ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:05:31 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:05:41 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for ::1 at 2016-11-07 18:05:43 -0600
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE (for_company = true)[0m
+  [1m[35mCompany Load (42.0ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (101.7ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (174.5ms)
+Completed 200 OK in 232ms (Views: 44.7ms | ActiveRecord: 146.3ms)
+
+
+Started GET "/students" for ::1 at 2016-11-07 18:05:43 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (41.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (42.4ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 126ms (Views: 18.9ms | ActiveRecord: 85.5ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:05:44 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:08:29 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:08:31 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:17:48 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:17:56 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:18:31 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:19:51 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:20:07 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views/layouts/application.html.erb:37: syntax error, unexpected =>, expecting ')'
+...tput_buffer.append=( link_to => sessions_url );@output_buffe...
+...                               ^):
+  app/views/layouts/application.html.erb:37: syntax error, unexpected =>, expecting ')'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.3ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:20:14 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:20:47 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-07 18:21:34 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions_url" for ::1 at 2016-11-07 18:21:37 -0600
+
+ActionController::RoutingError (No route matches [GET] "/sessions_url"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.4ms)
+
+
+Started GET "/sessions_url" for ::1 at 2016-11-07 18:21:58 -0600
+
+ActionController::RoutingError (No route matches [GET] "/sessions_url"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (48.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-07 18:22:02 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-07 18:22:05 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-07 18:22:48 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-07 18:29:53 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 117ms (Views: 116.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:04:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (83.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "        > ": expected expression (e.g. 1px, bold), was ".dropdown-menu {"):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:27
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (75.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:04:55 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:287
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (67.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:05:58 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:287
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:06:20 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:286
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.0ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:06:31 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:283
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:07:48 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:283
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:08:47 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 409ms (Views: 408.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/application.self-29dd534b2618b4000891f83eddb8ea7f1a85abc66c09bd6495f369aa3376d038.css?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:08:48 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:10:06 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Undefined variable: "$primary".):
+    2: <html>
+    3: <head>
+    4: 	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:6
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212707401140'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:10:38 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 70.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b5746a0b654aa8424f312ae2202cfd3bebf0aa69c82c31c452d83130cf5cfb44.css?body=1" for ::1 at 2016-11-08 10:10:38 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:10:38 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:10:38 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:11:15 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-39c88aec48179295a25047a6ad331a6a9c055677d9b44211ce4ddff8dd141592.css?body=1" for ::1 at 2016-11-08 10:11:15 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:11:15 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:11:15 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:11:18 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:11:18 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:11:18 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:11:19 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:11:20 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:11:20 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:11:36 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-dcb1636e882794c8c6d8c0ccd05ce8d95a989cfb8f5b2c04d429be30266bcec4.css?body=1" for ::1 at 2016-11-08 10:11:36 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:11:36 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:11:36 -0600
+
+
+Started GET "/" for ::1 at 2016-11-08 10:11:39 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:11:39 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:11:39 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:12:00 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (31.9ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (42.8ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 335ms (Views: 22.7ms | ActiveRecord: 256.4ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:15:23 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:15:23 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:15:23 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:15:37 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:15:37 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:15:37 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:03 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:03 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:03 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:04 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:05 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:05 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:06 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:06 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:06 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:32 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:32 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:32 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:40 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:40 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:40 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:42 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:42 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:42 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:16:53 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:16:53 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:16:53 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:17:26 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:17:26 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:17:26 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:17:28 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:17:28 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:17:28 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:17:30 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:17:30 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:17:30 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:19:30 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:19:30 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:19:30 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:20:20 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-63945a6b226d8b1554cb60a50cd2d8bdbcdd75277e16d6e2a54f7056aa378613.css?body=1" for ::1 at 2016-11-08 10:20:20 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:20:20 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:20:20 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:20:22 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:20:22 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:20:22 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:20:52 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-57aff9116e7f655c21f1a50e2dfc3f6f465fe3250a8d5e30d26b10df65a8c623.css?body=1" for ::1 at 2016-11-08 10:20:52 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:20:52 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:20:52 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:20:54 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:20:54 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:20:54 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:22:22 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:22:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:22:22 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:22:51 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 67.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-5bb6653fdb7b4c4e507454fffa46c5c16595e9fb24d0c9bbf7c80033e49e7e7e.css?body=1" for ::1 at 2016-11-08 10:22:51 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:22:51 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:22:51 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:22:59 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-a2a720d12ae2a8d705cc1ed13a9c145bc10cccca96c99cceb02d1cd5ec0ee161.css?body=1" for ::1 at 2016-11-08 10:22:59 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:22:59 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:22:59 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:23:11 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 72ms (Views: 70.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-3130c2cf67a6a74bc67a85bb12646bd888b1c7af702981e8f95ea47c04d36e97.css?body=1" for ::1 at 2016-11-08 10:23:11 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:23:11 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:23:11 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:26:37 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 72ms (Views: 69.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-37828e2d54f3ba086a197d7d2613543241ddf9bd1d2d72bd1f7c605eac73a3a9.css?body=1" for ::1 at 2016-11-08 10:26:37 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:26:37 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:26:37 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:27:33 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-0b7874d297a5b24e0a4f51e1d7f33f0af975509b2724944afb2fa62ea1b43060.css?body=1" for ::1 at 2016-11-08 10:27:33 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:27:33 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:27:33 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:28:55 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 67ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-c9f353f0bc02ba23b8408f24d8bfc1d268c382955a3ea33645b46faf2f99db74.css?body=1" for ::1 at 2016-11-08 10:28:55 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:28:55 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:28:55 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:29:26 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-dba2780f2d830b04f06d4583c6d33c0c826010843724f6edb3979a53e19db9ab.css?body=1" for ::1 at 2016-11-08 10:29:26 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:29:26 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:29:26 -0600
+
+
+Started GET "/events" for ::1 at 2016-11-08 10:29:30 -0600
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (40.3ms)[0m  SELECT "events".* FROM "events"  ORDER BY "events"."event_date" ASC, "events"."name" ASC
+  [1m[36mTimeslot Load (54.9ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  ORDER BY "timeslots"."start_time" ASC[0m  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 188ms (Views: 43.2ms | ActiveRecord: 95.5ms)
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:29:32 -0600
+Processing by CompaniesController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (for_company = true)
+  [1m[36mCompany Load (43.9ms)[0m  [1mSELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC[0m
+  [1m[35mCompanyevent Load (41.1ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (102.7ms)
+Completed 200 OK in 156ms (Views: 42.3ms | ActiveRecord: 86.9ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:29:32 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:30:10 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Invalid CSS after "...kground-color: ": expected expression (e.g. 1px, bold), was "$$bgHighlight; }}"):
+    2: <html>
+    3:   <head>
+    4:   	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:     <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/custom.scss:28
+  app/assets/stylesheets/application.scss:19
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212757402920'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.1ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:30:22 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 77ms (Views: 74.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-291558b2e56ebf18afd112bddfb3e146b28253952962a1bb0328098eed5be2fb.css?body=1" for ::1 at 2016-11-08 10:30:22 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:30:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:30:22 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:31:02 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:31:02 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:31:02 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:31:23 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:31:23 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:31:23 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:32:42 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 69.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-f1f8180b561bf85592d7d2a74c15afbf2f61d07b5c1efa80d6277c82b82386ad.css?body=1" for ::1 at 2016-11-08 10:32:42 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:32:42 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:32:42 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:33:17 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:33:17 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:33:17 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:33:43 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:33:43 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:33:43 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:34:33 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f4aa12c9424a0ef5bc6eee504233f905e3bc55c35286ed1b882421037eb7fdba.css?body=1" for ::1 at 2016-11-08 10:34:33 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:34:34 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:34:34 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:35:07 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 83ms (Views: 80.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-8dd402d31182360f01e28fee55b5b94c6688428e98993372e5b371f311b2c708.css?body=1" for ::1 at 2016-11-08 10:35:07 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:35:07 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:35:07 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:35:43 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:35:43 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:35:43 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:36:00 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 74ms (Views: 72.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-0f9ad5b5b235e4727e9aad197641a6a50b57d586803c0bfd61eded18941af270.css?body=1" for ::1 at 2016-11-08 10:36:00 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:36:00 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:36:00 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:36:02 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:36:02 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:36:02 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:36:29 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 75ms (Views: 72.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-39d323f3b64fdc6b46e9a508b341149861a41c956ad793974290aa24add3cef5.css?body=1" for ::1 at 2016-11-08 10:36:29 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:36:29 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:36:29 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:36:47 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 73ms (Views: 70.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-ba06d62f186953a05c14cbd62694e49cbb34256eb39fee7e6fa1cb39a0107ba8.css?body=1" for ::1 at 2016-11-08 10:36:47 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:36:47 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:36:47 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:37:04 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-a50496fb3c28d6832145a8b3c418098767f3be9695e722c5bc31d6a43de6a02c.css?body=1" for ::1 at 2016-11-08 10:37:04 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:37:04 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:37:04 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:37:11 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-ccafce4b5c141c5616d86bfe9e10a34ca03d0943f0ede6b136ddef2311531b87.css?body=1" for ::1 at 2016-11-08 10:37:11 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:37:11 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:37:11 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:37:30 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:37:30 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:37:30 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:37:31 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:37:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:37:31 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:37:50 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Invalid CSS after "...om:0; left:45%%": expected expression (e.g. 1px, bold), was ";"):
+    2: <html>
+    3:   <head>
+    4:   	<title>IAP Scheduler - Computer Science and Engineering - Texas A&M Univerity</title>
+    5:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:     <%= csrf_meta_tags %>
+    8:   </head>
+  app/assets/stylesheets/application.scss:136
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2639085856142297114_70212689839100'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.3ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:38:06 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 70.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-cb9cfab8c35431c0a65412b9ebd806f346a29a84c3d64950e6d67a20d76d3207.css?body=1" for ::1 at 2016-11-08 10:38:06 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:38:06 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:38:06 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:38:12 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-f4bf35a2cd79339f6ad0f83d7a77fd3ab00e275a841ed1ae1c90c92c0f3311ad.css?body=1" for ::1 at 2016-11-08 10:38:12 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:38:12 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:38:12 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:38:14 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:38:15 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:38:15 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:38:19 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-d74245ec1ace43ed608bf81f2bca749dedbc17385e22effe842c3960abfa0e59.css?body=1" for ::1 at 2016-11-08 10:38:19 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:38:19 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:38:19 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:38:25 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-9dc792bd4b37e2ffa3f2994879b73b181306a792f1ef1588110262a000f66cfe.css?body=1" for ::1 at 2016-11-08 10:38:25 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:38:25 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:38:25 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:45:35 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 80ms (Views: 77.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-a73c3dbde83cf5591f27c3f24dfc5a1d4d76b5d502e97815c3081ee5434311df.css?body=1" for ::1 at 2016-11-08 10:45:35 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:45:35 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:45:35 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:45:55 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 72ms (Views: 69.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-b62593ae589a1c2eb9f4dbbf57169fab5c9d3d8a2ef37b9110c139b95ced6468.css?body=1" for ::1 at 2016-11-08 10:45:55 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:45:55 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:45:55 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:46:18 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:46:18 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:46:18 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:46:31 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:46:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:46:31 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:47:15 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e4bc2dad325d4f20b6c734cafe3b6e756e50429041514ad568904e435cc671af.css?body=1" for ::1 at 2016-11-08 10:47:15 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:47:15 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:47:15 -0600
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:47:18 -0600
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (for_company = true)[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:47:18 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:47:38 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 68.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-9e8340bb4c735ef19c908706915bfd13c05b946197417a27e616f76229ab6656.css?body=1" for ::1 at 2016-11-08 10:47:38 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:47:38 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:47:38 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:48:53 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:48:53 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:48:53 -0600
+
+
+Started GET "/appointments" for ::1 at 2016-11-08 10:49:03 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (41.4ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 132ms (Views: 23.5ms | ActiveRecord: 41.7ms)
+
+
+Started GET "/appointments" for ::1 at 2016-11-08 10:49:25 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (0.3ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC
+  Rendered appointments/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:49:25 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:49:25 -0600
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:49:54 -0600
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (for_company = true)[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:50:05 -0600
+Processing by CompaniesController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (for_company = true)
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC[0m
+  [1m[35mCompanyevent Load (0.1ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:50:05 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:50:05 -0600
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:50:56 -0600
+Processing by CompaniesController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE (for_company = true)[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:50:56 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:50:56 -0600
+
+
+Started GET "/events" for ::1 at 2016-11-08 10:51:46 -0600
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  ORDER BY "events"."event_date" ASC, "events"."name" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  ORDER BY "timeslots"."start_time" ASC[0m  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:53:03 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:53:25 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-11-08 10:53:27 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZbOr5cuFHXjpHPScF1yJNFubmlMyUPV9e3LVrwIOrQWMz1vZ2s/DkhyzYFWIQvaAaaAmZ78H82XBFMl923myA==", "session"=>{"email"=>"bain607@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUseradd Load (18.2ms)[0m  [1mSELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1[0m  [["email", "bain607@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 126ms (ActiveRecord: 58.5ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-08 10:53:27 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:53:27 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:53:27 -0600
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:53:32 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:54:00 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (0.1ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies" for ::1 at 2016-11-08 10:54:00 -0600
+Processing by CompaniesController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (for_company = true)
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT "companies".* FROM "companies"  ORDER BY "companies"."name" ASC[0m
+  [1m[35mCompanyevent Load (0.3ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered companies/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for ::1 at 2016-11-08 10:54:01 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY "events"."event_date" ASC, "events"."name" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  ORDER BY "timeslots"."start_time" ASC  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/useradds/new" for ::1 at 2016-11-08 10:54:01 -0600
+Processing by UseraddsController#new as HTML
+  Rendered shared/_error_messages.html.erb (2.7ms)
+  Rendered useradds/_form.html.erb (6.6ms)
+  Rendered useradds/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 34ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/useradds/new" for ::1 at 2016-11-08 10:54:04 -0600
+Processing by UseraddsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered useradds/_form.html.erb (2.6ms)
+  Rendered useradds/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/appointments" for ::1 at 2016-11-08 10:54:06 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (0.3ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students" for ::1 at 2016-11-08 10:54:07 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.1ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-08 10:54:08 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-11-08 10:54:59 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck1Xluv45C8MLMWtJ0gDNUjsEVnF9JpYLr/Q88u032SR6KRWG73PVKf6e/4BNHrLmCT/qRfBxkBMVkiAgNEDGA==", "session"=>{"email"=>"bain607@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUseradd Load (0.2ms)[0m  [1mSELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1[0m  [["email", "bain607@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 49ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions" for ::1 at 2016-11-08 10:54:59 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:55:00 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:55:00 -0600
