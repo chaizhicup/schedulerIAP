@@ -96,6 +96,8 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   # View where student information can be updated
   #   Calls update to actually update student
+  #   Security Risk: On disabled event, choice can be
+  #     changed via manually editing the HTML's hidden input
   def edit
     correct_hash = correct_hash(@student.edithash, params[:edithash])
     # Verify login
