@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
   before_filter :authorize, only: [:index, :destroy, :show], :except => :new_session_path
+  
+  # Set flash to html safe when needed, allows links in flash
+  before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
   ## Login page
   def new
