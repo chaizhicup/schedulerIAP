@@ -32,7 +32,7 @@ class CompaniesController < ApplicationController
     @company = Company.new
     @company.companyevents.build
 
-    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time, :careerfair)
     @it = 0         #Apparently an iterator value.
     @new_flag = 1   #Used in the companies _form view
     @reps = @company.companyevents.collect(&:representatives)
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   # Uses the _form company view for the main display logic. The actual display happens in the edit company view.
   def edit
-    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+    @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time, :careerfair)
     @it = 0
     @new_flag = 0
     eve_ids = Event.where("for_company = true").pluck(:id)
@@ -86,7 +86,7 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else
-        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time, :careerfair)
         @it = 0
         @new_flag = 0
         @reps = @company.companyevents.collect(&:representatives)
@@ -117,7 +117,7 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
       else
-        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time)
+        @eves = Event.where("for_company = true").pluck(:id, :name, :event_date, :start_time, :end_time, :careerfair)
         @it = 0
         @new_flag = 0
         @reps = @company.companyevents.collect(&:representatives)

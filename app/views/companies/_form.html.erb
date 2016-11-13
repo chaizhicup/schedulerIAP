@@ -31,11 +31,12 @@
     </div>
 
     <div class="field"><font size="4px"><br>•
-      <%= "Enter the names of your company's representatives that will be attending the events. "%><br>&nbsp;</font>
+      <%= "Enter the names of your company's representatives that will be attending the events. "%><br>&nbsp;
+      <%= "For daytime clinics only: to better match the numbers of representatives to those of students, companies are requested to send up to two (2) reps only to the daytime clinics. Thank you."%></font>
     </div>
 
     <div class = "field"><font size="3.2px">
-      <%= f.text_field :rep_1, :placeholder => "Representative 1 (Mandatory)", class: 'form-control no-radius width_300'  %>
+      <%= f.text_field :rep_1, :placeholder => "Representative 1", class: 'form-control no-radius width_300'  %>
       <%= f.text_field :rep_2, :placeholder => "Representative 2", class: 'form-control no-radius width_300'  %>
     </font></div>
     <div class = "field" id="silver_reps_choice" hidden><font size="3.2px">
@@ -92,7 +93,15 @@
         <% args[0].times do %>
             <%= f.fields_for :companyevents do |ff| %>
                 &nbsp;<%= ff.label :representatives, "#{@eves[@it][1]}" + DateTime.parse("#{@eves[@it][2]}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{@eves[@it][3]}").strftime(" from %I:%M%p") + DateTime.parse("#{@eves[@it][4]}").strftime(" to %I:%M%p") %><br>
-                <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Number of Representatives---" %><br>
+                <% if  @eves[@it][5]%>
+                  &nbsp;&nbsp;&nbsp;<strong><%= "Platinum members may provide up to 6 representatives, Gold 4, Silver 3 and Bronze 2" %></strong><br>
+                  <%= ff.select :representatives, options_for_select(%w[0 1 2 3 4 5 6], @reps[@it] ), :prompt=>"---Number of Representatives---" %><br>
+                <% else %>
+                  <%= ff.select :representatives, options_for_select(%w[0 1 2], @reps[@it] ), :prompt=>"---Number of Representatives---" %><br>
+                <% end %>
+                
+                
+                
                 <% @it = @it + 1 %>
             <% end %>
         <% end %>
