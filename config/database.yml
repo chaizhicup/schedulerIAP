@@ -23,8 +23,11 @@ default: &default
 
 development:
   <<: *default
+  adapter: postgresql
   database: myapp_dev
-  username: ubuntu
+  host: localhost
+  username: user
+  #username: ubuntu
   password: 
   template: template0
   # The specified database role being used to connect to postgres.
