@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @event.editable = true
     @unedit = false
     @button_value ="Create"
   end
