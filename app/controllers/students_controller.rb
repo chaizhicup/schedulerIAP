@@ -79,7 +79,6 @@ class StudentsController < ApplicationController
   # View where a new student can be created
   #   Calls create to actually create student
   def new
-    @logged_in = log_in?
     @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
     @student = Student.new
     
@@ -100,7 +99,6 @@ class StudentsController < ApplicationController
   #   Security Risk: On disabled event, choice can be
   #     changed via manually editing the HTML's hidden input
   def edit
-    @logged_in = log_in?
     correct_hash = correct_hash(@student.edithash, params[:edithash])
     # Verify login
     if log_in? || cus_indentify(get_id) || correct_hash
