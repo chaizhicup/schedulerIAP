@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @event.editable = true
     @unedit = false
     @button_value ="Create"
   end
@@ -112,6 +113,6 @@ class EventsController < ApplicationController
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:name, :event_date, :start_time, :end_time, :for_student, :for_company, :max_students, :timeslot_duration, :editable)
+    params.require(:event).permit(:name, :event_date, :start_time, :end_time, :for_student, :for_company, :max_students, :timeslot_duration, :editable, :careerfair)
   end
 end
