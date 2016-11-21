@@ -89,7 +89,7 @@ class StudentsController < ApplicationController
     @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
       @event, @event_slot = set_menu(id)
-      $selected_slots[id] = -1	
+      $selected_slots[id] = ""
       $event_slots[id] = @event_slot
     end
   end
