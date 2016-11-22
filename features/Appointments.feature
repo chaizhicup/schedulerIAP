@@ -46,7 +46,7 @@ Feature: Administrator can manage Appointments
     And I fill in "company[rep_2]" with "Vaibhav Mittal"
     And I fill in "Name" with "Gao Zhuoyang"
     And I fill in "Email" with "tralblaz@tamu.edu"
-    And I select "Silver" from "Select your company's membership level"
+    And I select "Gold" from "Select your company's membership level"
     And I select "US Citizen Only" from "Select if you hire US citizens only, or not"
     And I select "Internship" from "Select the job type you are offering"
   	And I check "company_student_level_bs"
