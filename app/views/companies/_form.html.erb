@@ -27,7 +27,7 @@
 
     <div class="field"><font size="4px">•
       <%= f.label :sponsor_level, "Select your company's membership level" %><br>
-      <%= f.select :sponsor_level, options_for_select({"Platinum"=>"Platinum", "Gold"=>"Gold", "Silver"=>"Silver", "Bronze"=>"Bronze"}, @company.sponsor_level),{:prompt=>"---Please select---"}, :id =>"sponsor" %></font>
+      <%= f.select :sponsor_level, options_for_select({"Platinum"=>"Platinum", "Gold"=>"Gold", "Silver"=>"Silver", "Bronze"=>"Bronze"}, @company.sponsor_level),{:prompt=>"---Please select---"} %></font>
     </div>
 
     <div class="field"><font size="4px"><br>•
