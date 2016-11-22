@@ -9,6 +9,11 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order(:event_date, :name)
     @event_slots = get_timeslots(@events)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @events.as_csv}
+      format.xls { send_data @events.as_csv(col_sep: "\t") }
+      end
   end
   ## provide students @event_slots of events to select from instead of manually entering
   ## event_slots are defined as slots for all events, may need to change
@@ -16,8 +21,13 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @events = [@event]
+    @events = Event.where(id: @event.id)
     @event_slots = get_timeslots(@events)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @events.as_csv}
+      format.xls { send_data @events.as_csv(col_sep: "\t") }
+      end
   end
 
   # GET /events/new
@@ -91,7 +101,13 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def remove_all
+    Event.destroy_all
+    flash[:notice] = "You have removed all events!"
+    redirect_to events_path
+  end
+  
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_event

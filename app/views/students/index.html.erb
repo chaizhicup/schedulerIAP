@@ -9,6 +9,8 @@
     <%= link_to 'New Student', new_student_path %>
     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <%= link_to 'Back', sessions_url %>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <%= link_to 'Delete All Students', remove_all_students_path, method: :post, data: { confirm: 'Delete All Student Records?' } %>
   </div>
   <br>
 </div>
