@@ -116,7 +116,7 @@
     <script>
       $(document).ready(function(){
         
-          var level = document.getElementById("sponsor").value
+          var level = document.getElementById("company_sponsor_level").value
           if ( level == "Silver")
           {
             $("#silver_reps_choice").show();
@@ -144,7 +144,7 @@
           
         
         
-          $('#sponsor').on('change', function() {
+          $('#company_sponsor_level').on('change', function() {
             if ( this.value == "Silver")
             {
               $("#silver_reps_choice").show();
