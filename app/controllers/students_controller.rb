@@ -89,7 +89,7 @@ class StudentsController < ApplicationController
     @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
       @event, @event_slot = set_menu(id)
-      $selected_slots[id] = -1	
+      $selected_slots[id] = ""
       $event_slots[id] = @event_slot
     end
   end
@@ -230,12 +230,10 @@ class StudentsController < ApplicationController
         # UserMailer.stu_reg(@student).deliver_now
 	      Timeslot.decrease_1(@student.id)
         
-        if log_in? || cus_indentify(get_id)
-          format.html { redirect_to @student, notice: %Q[ Student was successfully updated. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
-        else
-          format.html { redirect_to new_session_path, notice: %Q[ Entry was successfully updated. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
+        if not (log_in? && cus_indentify(get_id))
+          input_session(@student.id)
         end
-        
+        format.html { redirect_to @student, notice: %Q[ Entry was successfully updated. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
         format.json { render :show, status: :ok, location: @student }
       else
       	@events = Event.where("for_student = true").pluck(:id,:name)
@@ -261,6 +259,12 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def remove_all
+    Student.destroy_all
+    flash[:notice] = "You have removed all students!"
+    redirect_to students_path
   end
 
   private

@@ -8,6 +8,8 @@
   <%= link_to 'New Company', new_company_path %>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <%= link_to 'Back', sessions_url %>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to 'Delete All Companies', remove_all_companies_path, method: :post, data: { confirm: 'Delete All Company Records?' } %>
 </div>
 <br>
 

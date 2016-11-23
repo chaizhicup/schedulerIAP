@@ -143,6 +143,11 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def remove_all
+    Company.destroy_all
+    flash[:notice] = "You have removed all companies!"
+    redirect_to companies_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

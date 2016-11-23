@@ -8,6 +8,8 @@
   <%= link_to 'New Event', new_event_path %>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <%= link_to 'Back', sessions_url %>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <%= link_to 'Delete All Events', remove_all_events_path, method: :post, data: { confirm: 'Delete All Event Records?' } %>
 </div>
 <br>
 
@@ -55,4 +57,7 @@
 </table>
 </div>
 <br>
-
+<div align='center'>
+  <%= link_to 'Export to Excel', events_path(format: "xls"), class: 'btn btn-primary btn-sm' %>
+</div>
+<br>
