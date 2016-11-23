@@ -212,10 +212,13 @@ class AppointmentsController < ApplicationController
   def matchappointwithout(timeslot, event, companies)
     stuuin=[];
     totalrep = 0;
+
+    # Parse through companies and count up the total number of representatives
     companies.each do |com, representatives|
       totalrep += representatives
     end
 
+    # Match each student with rep and set up the corresponding appointment
     while @students.length > 0 && totalrep> 0 do
       @students.each do |student|
         companies.each do |item, representatives|
