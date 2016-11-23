@@ -65,7 +65,13 @@ class AppointmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def remove_all
+    Appointment.destroy_all
+    flash[:notice] = "You have removed all appointments!"
+    redirect_to appointments_path
+  end
+  
   # Custom helper method to generate appointments
   helper_method :generate 
 

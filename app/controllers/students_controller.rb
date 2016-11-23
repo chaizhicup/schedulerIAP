@@ -261,6 +261,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def remove_all
+    Student.destroy_all
+    flash[:notice] = "You have removed all students!"
+    redirect_to students_path
+  end
+
   private
     # Creates drop down menus with all time slots
     def set_menu(arg)
