@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   ## Logout function
   def del
         log_out
-        redirect_to new_session_path, notice: 'Successfully Log Out!'
+        redirect_to new_session_path, notice: 'Successfully Logged Out!'
   end
 end
 
