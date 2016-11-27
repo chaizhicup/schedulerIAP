@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     # Login is successful
     if useradd && useradd.authenticate(params[:session][:password])
       session[:useradd_id] = useradd.id
-      flash[:notice] = "Weclome administrator : #{useradd.name}"
+      flash[:notice] = "Welcome #{useradd.name}"
       redirect_to sessions_url
     else # Login is not successful
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
