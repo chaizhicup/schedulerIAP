@@ -92,3 +92,7 @@ heroku open (opens up the app)
 
 Please feel free to use a different markup language if you do not plan to run
 `rake doc:app`.
+
+###MAILER
+If the google's SMTP server denies the request, make sure that "allow less secure apps" is enabled on the account, and also check this page: https://accounts.google.com/DisplayUnlockCaptcha
+
