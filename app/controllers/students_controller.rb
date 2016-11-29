@@ -253,9 +253,9 @@ class StudentsController < ApplicationController
   # DELETE /students/1.json
   # Deletes the current student
   def destroy
+    UserMailer.stu_del(@student).deliver_now
     @student.destroy
     respond_to do |format|
-      UserMailer.stu_del(@student).deliver_now
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end

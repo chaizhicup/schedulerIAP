@@ -134,10 +134,9 @@ class CompaniesController < ApplicationController
   # Deletes a company and emails the old contact.
   def destroy
     @company.companyevents.destroy_all
+    UserMailer.com_del(@company).deliver_now
     @company.destroy
     respond_to do |format|
-      # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-      UserMailer.com_del(@company).deliver_now
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end
