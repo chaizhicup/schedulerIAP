@@ -182,7 +182,7 @@ class StudentsController < ApplicationController
           $stu_slot[x.id] = @arr
         end
 
-        # UserMailer.stu_reg(@student).deliver_now
+        UserMailer.stu_reg(@student).deliver_now
 
         format.html { redirect_to @student, notice: %Q[ Student was successfully created. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
         format.json { render :show, status: :created, location: @student }
@@ -227,7 +227,7 @@ class StudentsController < ApplicationController
       
       # Ensure that the student was updated
       if @student.update(student_params)
-        # UserMailer.stu_reg(@student).deliver_now
+        UserMailer.stu_reg(@student).deliver_now
 	      Timeslot.decrease_1(@student.id)
         
         if not (log_in? && cus_indentify(get_id))
@@ -255,7 +255,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      # UserMailer.stu_del(@student).deliver_now
+      UserMailer.stu_del(@student).deliver_now
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
