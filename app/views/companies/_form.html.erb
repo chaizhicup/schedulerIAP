@@ -27,7 +27,7 @@
 
     <div class="field"><font size="4px">•
       <%= f.label :sponsor_level, "Select your company's membership level" %><br>
-      <%= f.select :sponsor_level, options_for_select({"Platinum"=>"Platinum", "Gold"=>"Gold", "Silver"=>"Silver", "Bronze"=>"Bronze"}, @company.sponsor_level),{:prompt=>"---Please select---"}, :id =>"sponsor" %></font>
+      <%= f.select :sponsor_level, options_for_select({"Platinum"=>"Platinum", "Gold"=>"Gold", "Silver"=>"Silver", "Bronze"=>"Bronze"}, @company.sponsor_level),{:prompt=>"---Please select---"} %></font>
     </div>
 
     <div class="field"><font size="4px"><br>•
@@ -116,7 +116,7 @@
     <script>
       $(document).ready(function(){
         
-          var level = document.getElementById("sponsor").value
+          var level = document.getElementById("company_sponsor_level").value
           if ( level == "Silver")
           {
             $("#silver_reps_choice").show();
@@ -144,7 +144,7 @@
           
         
         
-          $('#sponsor').on('change', function() {
+          $('#company_sponsor_level').on('change', function() {
             if ( this.value == "Silver")
             {
               $("#silver_reps_choice").show();

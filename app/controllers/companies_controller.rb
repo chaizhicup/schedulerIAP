@@ -81,7 +81,7 @@ class CompaniesController < ApplicationController
         end
 
         # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-        # UserMailer.com_reg(@company).deliver_now
+        UserMailer.com_reg(@company).deliver_now
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
@@ -112,7 +112,7 @@ class CompaniesController < ApplicationController
         end
         
         # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-        # UserMailer.com_reg(@company).deliver_now
+        UserMailer.com_reg(@company).deliver_now
         
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
@@ -134,15 +134,19 @@ class CompaniesController < ApplicationController
   # Deletes a company and emails the old contact.
   def destroy
     @company.companyevents.destroy_all
+    UserMailer.com_del(@company).deliver_now
     @company.destroy
     respond_to do |format|
-      # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-      # UserMailer.com_del(@company).deliver_now
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  def remove_all
+    Company.destroy_all
+    flash[:notice] = "You have removed all companies!"
+    redirect_to companies_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
