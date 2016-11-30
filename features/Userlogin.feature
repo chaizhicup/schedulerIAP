@@ -20,7 +20,7 @@ Scenario: Log in with correct user information
 	And I fill in "Password" with "123123"
 	When I press "Log in"
 	Then I should be on the sessions page
-	And I should see "Welcome administrator : Jay"
+	And I should see "Welcome Jay"
 
 	#Then I want to test the student management
 	When I click on "Student Information"
