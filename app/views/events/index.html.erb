@@ -29,7 +29,7 @@
   <tbody>
   <% @events.each do |event| %>
       <tr>
-        <%-If event.editable %>
+        <%if event.editable %>
         <td><%= "✓" %></td>
         <%else%>
         <td><%= "X" %></td>
