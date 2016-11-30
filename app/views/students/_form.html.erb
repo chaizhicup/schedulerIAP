@@ -66,7 +66,7 @@
 
     <div class="field"><font size="3.2px">
       <% @event_details.each do |id,name,date,start,en,editable| %>
-          <%= f.label  "#{name}" , "• " + name + DateTime.parse("#{date}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{start}").strftime(" from %I:%M%p") + DateTime.parse("#{en}").strftime(" to %I:%M%p")  %><br>
+          <%= f.label  "#{name}" , "• " + name + DateTime.parse("#{date}").strftime(" on %A %m-%d-%Y") + DateTime.parse("#{start}").strftime(" from %-I:%M%p") + DateTime.parse("#{en}").strftime(" to %-I:%M%p")  %><br>
           <% if editable %>
             <%= select_tag"#{name}", options_for_select($event_slots[id], $selected_slots[id]), multiple: true %> <br>
           <% elsif @logged_in %>
