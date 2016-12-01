@@ -109,6 +109,29 @@ class AppointmentsController < ApplicationController
   end
 
 
+  def reminder
+    if Appointment.count == 0
+      redirect_to appointments_url, notice: 'test'
+      flash[:notice] = "Error: No appointments!"
+    else
+      @statusmessage = ""
+      @appointments = Appointment.all.order(:section, :time_slot)
+      @appointments.each do |appointment|
+        @app = appointment
+        begin
+        UserMailer.stu_reminder(@app).deliver_now
+        rescue ActiveRecord::RecordNotFound
+        @statusmessage = "Error! Couldn't find student "+@app.student+" in the database!"
+        end
+      
+      end
+      if @statusmessage == ""
+        @statusmessage = 'Reminder emails sent!'
+      end
+      redirect_to appointments_url, notice: @statusmessage
+    end
+  end
+
   ################################################################
   private
   # Use callbacks to share common setup or constraints between actions.
