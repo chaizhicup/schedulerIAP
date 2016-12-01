@@ -19,7 +19,7 @@ class UseraddsController < ApplicationController
       redirect_to @useradd
     else
       # Unsuccessful save, notify and reset the page
-      flash[:notice] = "The format input is not corrent"
+      flash[:notice] = "The input format is not correct"
       render 'new'
 
     end

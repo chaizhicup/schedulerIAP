@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     # Login is successful
     if useradd && useradd.authenticate(params[:session][:password])
       session[:useradd_id] = useradd.id
-      flash[:notice] = "Weclome administrator : #{useradd.name}"
+      flash[:notice] = "Welcome #{useradd.name}"
       redirect_to sessions_url
     else # Login is not successful
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right!
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   ## Logout function
   def del
         log_out
-        redirect_to new_session_path, notice: 'Successfully Log Out!'
+        redirect_to new_session_path, notice: 'Successfully Logged Out!'
   end
 end
 

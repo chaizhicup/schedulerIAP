@@ -26,16 +26,21 @@ class StudentsController < ApplicationController
       @tslots = x.timeslots
       @events.each do |ev|
         @check = FALSE
+        timeTxt = ""
         @tslots.each do |t|
           if(t.event_id == ev[0])
-            @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
+            if (timeTxt != "")
+              timeTxt += ", "
+            end
+            timeTxt += (t.start_time.strftime("%-I:%M%p") + "-" + t.end_time.strftime("%-I:%M%p"))
             @check = TRUE
-            break
+            #break
           end
         end
         if(@check == FALSE)
-          @arr[ev[1]] = ("Not Attend")
+          timeTxt += ("Not Attend")
         end
+        @arr[ev[1]] = timeTxt
       end
       $stu_slot[x.id] = @arr
     end
@@ -60,16 +65,21 @@ class StudentsController < ApplicationController
       @tslots = x.timeslots
       @events.each do |ev|
         @check = FALSE
+        timeTxt = ""
         @tslots.each do |t|
           if(t.event_id == ev[0])
-            @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
+            if (timeTxt != "")
+              timeTxt += ", "
+            end
+            timeTxt += (t.start_time.strftime("%-I:%M%p") + "-" + t.end_time.strftime("%-I:%M%p"))
             @check = TRUE
-            break
+            #break
           end
         end
         if(@check == FALSE)
-          @arr[ev[1]] = ("Not Attend")
+          timeTxt += ("Not Attend")
         end
+        @arr[ev[1]] = timeTxt
       end
       $stu_slot[x.id] = @arr
     end
@@ -108,8 +118,16 @@ class StudentsController < ApplicationController
       @events = Event.where("for_student = true").pluck(:id, :name)
       # Show Timeslots
       $selected_slots = []
-      @student.timeslots.each do |x| 
-        $selected_slots[x.event_id] = x.id
+      @student.timeslots.each do |x|
+        if $selected_slots[x.event_id] != nil
+          if $selected_slots[x.event_id].respond_to?(:push)
+            $selected_slots[x.event_id].push(x.id)
+          else
+            $selected_slots[x.event_id] = [$selected_slots[x.event_id], x.id]
+          end
+        else
+          $selected_slots[x.event_id] = x.id
+        end
       end
       
       # Show Events
@@ -147,37 +165,46 @@ class StudentsController < ApplicationController
       # Try to save new information
       if @student.save
         input_session(@student.id)
-	      Timeslot.decrease_1(@student.id)
-
-      	@events = Event.where("for_student = true").pluck(:id,:name)
-      	@events.each do |id,name|
-          temp1, temp2 = set_menu(id)
-      	  if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
-      	    @student.timeslots << Timeslot.find(params[name])
-      	  end
+        Timeslot.decrease_1(@student.id)
+        
+        @events = Event.where("for_student = true").pluck(:id,:name)
+        @events.each do |id,name|
+          slotnames = params[name]
+          if (!slotnames.nil? && !slotnames.empty?)
+            if (slotnames.include? "0")
+              slotnames.delete("0")
+            end
+            # Convert list of timeslot ids into actual timeslots
+            tempslots = Timeslot.find(slotnames)
+            tempslots.each do |tempslot|
+                @student.timeslots << tempslot
+            end
+          end
         end
-
-	      #@selected_slots.each { |k, v| puts "Key=#{k}, Value=#{v}"}
         
         # Show all students
         @events = Event.where("for_student = true").pluck(:id,:name)
         $students = Student.all.order(:UIN)
+        # Warning: x^3 functionality!
         $students.each do |x|
           @arr = Hash.new([])
           @tslots = x.timeslots
           @events.each do |ev|
             @check = FALSE
-            # Nicely show all time slots
+            timeTxt = ""
             @tslots.each do |t|
               if(t.event_id == ev[0])
-                @arr[ev[1]] = (t.start_time.strftime("%I:%M%p") + "-" + t.end_time.strftime("%I:%M%p"))
+                if (timeTxt != "")
+                  timeTxt += ", "
+                end
+                timeTxt += (t.start_time.strftime("%-I:%M%p") + "-" + t.end_time.strftime("%-I:%M%p"))
                 @check = TRUE
-                break
               end
             end
             if(@check == FALSE)
-              @arr[ev[1]] = ("Not Attend")
+              timeTxt += ("Not Attend")
             end
+            @arr[ev[1]] = timeTxt
           end
           $stu_slot[x.id] = @arr
         end
@@ -216,9 +243,17 @@ class StudentsController < ApplicationController
     	@student.timeslots = []
     	@events = Event.where("for_student = true").pluck(:name)
     	@events.each do |name|
-      	if(params[name] != "0"  && !params[name].nil? && !params[name].empty?)
-      	    @student.timeslots << Timeslot.find(params[name])
-      	end
+      	slotnames = params[name]
+        if (!slotnames.nil? && !slotnames.empty?)
+          if (slotnames.include? "0")
+            slotnames.delete("0")
+          end
+          # Convert list of timeslot ids into actual timeslots
+          tempslots = Timeslot.find(slotnames)
+          tempslots.each do |tempslot|
+              @student.timeslots << tempslot
+          end
+        end
       end
       
       if @student.edithash == nil
@@ -275,7 +310,7 @@ class StudentsController < ApplicationController
       slots['Not Attend'] = 0
 
       result_slots.each do |item|
-        slots[item[1].strftime("%I:%M%p") + "-" + item[2].strftime("%I:%M%p")] = item[0]
+        slots[item[1].strftime("%-I:%M%p") + "-" + item[2].strftime("%-I:%M%p")] = item[0]
       end
 	    slots  = slots.sort
       return result_slots, slots
