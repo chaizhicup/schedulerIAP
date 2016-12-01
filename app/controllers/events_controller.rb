@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @events.as_csv}
-      #format.xls { send_data @events.as_csv(col_sep: "\t") }
+      format.xls { send_data @events.as_csv(col_sep: "\t") }
       end
   end
   ## provide students @event_slots of events to select from instead of manually entering
