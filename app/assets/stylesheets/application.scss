@@ -66,6 +66,16 @@ width: 300px;
     height: 130px;
     background-color: #500000;
 }
+#header_logo {
+  padding: 20px;
+  margin: auto;
+  margin-top: 65px;
+  transform: translateY(-50%);
+}
+.logo {
+  width: 400px;
+  max-width: 100%;
+}
 
 aside {
   section.user_info {
@@ -128,6 +138,26 @@ input {
   }
 }
 
+/* core */
+#core {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.tableholder {
+    overflow-x: auto;
+}
+input {
+  max-width: 300px;
+}
+.actions {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+}
+
+/* footer */
 .footerholder {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
