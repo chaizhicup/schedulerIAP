@@ -35,18 +35,18 @@
   <tbody>
   <% $students.each do |student| %>
       <tr>
-        <td><%= student.name %></td>
-        <td><%= student.UIN %></td>
-        <td><%= student.email %></td>
+        <td data-title="Name" ><%= student.name %></td>
+        <td data-title="UIN" ><%= student.UIN %></td>
+        <td data-title="Email" ><%= student.email %></td>
         <%if student.US_Citizen %>
-        <td><%= "U.S. Citizen" %></td>
+        <td data-title="Citizenship" ><%= "U.S. Citizen" %></td>
         <%else%>
-        <td><%= "International" %></td>
+        <td data-title="Citizenship" ><%= "International" %></td>
         <%end%>
-        <td><%= student.degree %></td>
-        <td><%= student.position_type %></td>
-        <% $stu_slot[student.id].each do |slot| %>
-            <td><%= slot[1] %></td>
+        <td data-title="Degree" ><%= student.degree %></td>
+        <td data-title="Position Type" ><%= student.position_type %></td>
+        <% $stu_slot[student.id].each do |event, slot| %>
+            <td data-title="<%= event %>" ><%= slot %></td>
         <% end %>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>

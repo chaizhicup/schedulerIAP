@@ -32,22 +32,22 @@
   <% @events.each do |event| %>
       <tr>
         <%if event.editable %>
-        <td><%= "✓" %></td>
+        <td data-title="Editable for Students" ><%= "✓" %></td>
         <%else%>
-        <td><%= "X" %></td>
+        <td data-title="Editable for Students" ><%= "X" %></td>
         <%end%>
-        <td><%= event.event_date %></td>
-        <td><%= event.name %></td>
-        <td><table cellspacing="0px", border="0px">
+        <td data-title="Event Date" ><%= event.event_date %></td>
+        <td data-title="Event Name" ><%= event.name %></td>
+        <td data-title="Timeslots" ><table cellspacing="0px", border="0px">
           <% @event_slots[event.id].each do |slot| %>
               <tr>
                 <td> <%= slot %></td>
               </tr>
           <% end %>
         </table></td>
-        <td><%= event.max_students %></td>
-        <td><%= event.start_time.strftime("%I:%M%p") %></td>
-        <td><%= event.end_time.strftime("%I:%M%p") %></td>
+        <td data-title="Max Students" ><%= event.max_students %></td>
+        <td data-title="Start Time" ><%= event.start_time.strftime("%I:%M%p") %></td>
+        <td data-title="End Time" ><%= event.end_time.strftime("%I:%M%p") %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -35,17 +35,17 @@
   <% @companies.each do |company| %>
 
       <tr>
-        <td><%= company.name %></td>
-        <td><%= company.contact_person %></td>
-        <td><%= company.contact_email %></td>
-        <td><%= company.sponsor_level %></td>
-        <td><%= company.citizenship %></td>
-        <td><%= company.job_type %></td>
-        <td><%= company.student_level.join(" , ") %></td>
+        <td data-title="Name" ><%= company.name %></td>
+        <td data-title="Contact Person" ><%= company.contact_person %></td>
+        <td data-title="Contact Email" ><%= company.contact_email %></td>
+        <td data-title="Membership Level" ><%= company.sponsor_level %></td>
+        <td data-title="Citizenship" ><%= company.citizenship %></td>
+        <td data-title="Job Type" ><%= company.job_type %></td>
+        <td data-title="Student Level" ><%= company.student_level.join(" , ") %></td>
         <% @events.each do |e| %>
             <% rep = company.companyevents.where(company_id: company.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %>
             <% if rep.empty? then rep = 0 end %>
-            <td><%= rep %></td>
+            <td data-title="<%= e.name %>" ><%= rep %></td>
         <% end %>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>

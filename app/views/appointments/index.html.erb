@@ -46,11 +46,11 @@
   
     <% @appointments.each do |appointment| %>
         <tr>
-          <td><%= appointment.section %></td>
-          <td><%= appointment.time_slot %></td>
-          <td><%= appointment.company %></td>
-          <td><%= appointment.student %></td>
-          <td><%= appointment.UIN %></td>
+          <td data-title="Section" ><%= appointment.section %></td>
+          <td data-title="Time slot" ><%= appointment.time_slot %></td>
+          <td data-title="Company" ><%= appointment.company %></td>
+          <td data-title="Student" ><%= appointment.student %></td>
+          <td data-title="UIN" ><%= appointment.UIN %></td>
           <td><%= link_to 'Show', appointment %></td>
           <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
           <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

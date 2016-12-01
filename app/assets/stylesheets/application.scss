@@ -35,6 +35,10 @@ html, body {
 		border-radius: 0;
 }
 
+.btn {
+  width: auto;
+  margin-bottom: 10px;
+}
 .btn-primary:hover{
   background: linear-gradient(#a00,#900);
 	box-shadow: 0px 1px 4px -2px #333;
@@ -51,10 +55,6 @@ html, body {
 th, td {
     padding: 4px;
 		text-align: center;
-}
-
-.width_300{
-width: 300px;
 }
 
 #header_back{
@@ -103,6 +103,15 @@ aside {
   }
 }
 /* forms */
+#core > * {
+  max-width: 975px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#core .tableholder {
+  max-width: none;
+}
+
  h1 {
       font-size: 2em;
       text-align: left;
@@ -113,23 +122,19 @@ aside {
  
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: auto;
+  width: 100%;
+  max-width: 300px;
   margin-left: 5px;
   margin-bottom: 5px;
-      margin-top: 5px;
-  /*padding-left: 150;*/
-  /*@include box_sizing;*/
+  margin-top: 5px;
 }
-
 select:disabled {
     color: #999;
 }
-
 input {
   height: auto
   !important;
 }
-
 #error_explanation {
   color: red;
   ul {
@@ -146,9 +151,6 @@ input {
 }
 .tableholder {
     overflow-x: auto;
-}
-input {
-  max-width: 300px;
 }
 .actions {
   margin-bottom: 5px;
@@ -185,4 +187,65 @@ td{
 
 .link-color-all{
     color: #0000FF;
+}
+
+// From http://bootsnipp.com/snippets/featured/no-more-tables-respsonsive-table
+@media only screen and (max-width: 800px) {
+  #core {
+      /* Force table to not be like tables anymore */
+  	.tableholder table, 
+  	.tableholder thead, 
+  	.tableholder tbody, 
+  	.tableholder th, 
+  	.tableholder td, 
+  	.tableholder tr { 
+  		display: block; 
+  	}
+   
+  	/* Hide table headers (but not display: none;, for accessibility) */
+  	.tableholder thead tr { 
+  		position: absolute;
+  		top: -9999px;
+  		left: -9999px;
+  	}
+   
+  	.tableholder tr { border: 1px solid #ccc; }
+   
+  	.tableholder td { 
+  		/* Behave  like a "row" */
+  		border: none;
+  		border-bottom: 1px solid #eee; 
+  		position: relative;
+  		padding-left: 35%; 
+  		white-space: normal;
+  		text-align:left;
+  	}
+   
+  	.tableholder td:before { 
+  		/* Now like a table header */
+  		position: absolute;
+  		/* Top/left values mimic padding */
+  		top: 6px;
+  		left: 6px;
+  		width: 30%; 
+  		padding-right: 10px; 
+  		white-space: nowrap;
+  		text-align:left;
+  		font-weight: bold;
+  		overflow: hidden;
+  	}
+   
+  	/* Label the data */
+  	.tableholder td:before { content: attr(data-title); }
+  	
+  	.tableholder table table {
+  	  tr {
+  	    border-width: 0px;
+  	  }
+  	  td {
+  	    border-width: 0px;
+  	    padding-left: 0px;
+  	  }
+  	}
+  }
 }
