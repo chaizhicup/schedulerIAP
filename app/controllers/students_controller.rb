@@ -185,8 +185,11 @@ class StudentsController < ApplicationController
         begin
           UserMailer.stu_reg(@student).deliver_now
         rescue Net::SMTPAuthenticationError
+          # This will happen when the gmail account we're using denies the credentials or denies the
+          # request because it's from a location it's never seen before. Check the readme for instructions.
           flash[:notice] = "SMTP server denied mail request."
         rescue StandardError
+          # This is for any other unforseen warnings.
           flash[:warning] = "Unexpected Email Error. Please check the logs."
         end
 
@@ -236,8 +239,11 @@ class StudentsController < ApplicationController
         begin
           UserMailer.stu_reg(@student).deliver_now
         rescue Net::SMTPAuthenticationError
+          # This will happen when the gmail account we're using denies the credentials or denies the
+          # request because it's from a location it's never seen before. Check the readme for instructions.
           flash[:notice] = "SMTP server denied mail request."
         rescue StandardError
+          # This is for any other unforseen warnings.
           flash[:warning] = "Unexpected Email Error. Please check the logs."
         end
 	      Timeslot.decrease_1(@student.id)
@@ -268,8 +274,10 @@ class StudentsController < ApplicationController
     begin
       UserMailer.stu_del(@student).deliver_now
     rescue Net::SMTPAuthenticationError
-      flash[:notice] = "SMTP server denied mail request."
+      # This will happen when the gmail account we're using denies the credentials or denies the
+      # request because it's from a location it's never seen before. Check the readme for instructions.
     rescue StandardError
+      # This is for any other unforseen warnings.
       flash[:warning] = "Unexpected Email Error. Please check the logs."
     end
     @student.destroy
