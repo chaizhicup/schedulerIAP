@@ -86,10 +86,10 @@ class CompaniesController < ApplicationController
         rescue Net::SMTPAuthenticationError
           # This will happen when the gmail account we're using denies the credentials or denies the
           # request because it's from a location it's never seen before. Check the readme for instructions.
-          flash[:notice] = "SMTP server denied mail request."
+          log(:info, "SMTP server denied mail request.")
         rescue StandardError
           # This is for any other unforseen warnings.
-          flash[:warning] = "Unexpected Email Error. Please check the logs."
+          log(:info, "Could not send mail.")
         end
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
@@ -126,10 +126,10 @@ class CompaniesController < ApplicationController
         rescue Net::SMTPAuthenticationError
           # This will happen when the gmail account we're using denies the credentials or denies the
           # request because it's from a location it's never seen before. Check the readme for instructions.
-          flash[:notice] = "SMTP server denied mail request."
+          log(:info, "SMTP server denied mail request.")
         rescue StandardError
           # This is for any other unforseen warnings.
-          flash[:warning] = "Unexpected Email Error. Please check the logs."
+          log(:info, "Could not send mail.")
         end
 
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
@@ -157,10 +157,10 @@ class CompaniesController < ApplicationController
     rescue Net::SMTPAuthenticationError
       # This will happen when the gmail account we're using denies the credentials or denies the
       # request because it's from a location it's never seen before. Check the readme for instructions.
-      flash[:notice] = "SMTP server denied mail request."
+      log(:info, "SMTP server denied mail request.")
     rescue StandardError
       # This is for any other unforseen warnings.
-      flash[:warning] = "Unexpected Email Error. Please check the logs."
+      log(:info, "Could not send mail.")
     end
     @company.destroy
     respond_to do |format|
