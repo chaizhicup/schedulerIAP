@@ -187,10 +187,10 @@ class StudentsController < ApplicationController
         rescue Net::SMTPAuthenticationError
           # This will happen when the gmail account we're using denies the credentials or denies the
           # request because it's from a location it's never seen before. Check the readme for instructions.
-          log(:info, "SMTP server denied mail request.")
+          logger.info("SMTP server denied mail request.")
         rescue StandardError
           # This is for any other unforseen warnings.
-          log(:info, "Could not send mail.")
+          logger.info("Could not send mail.")
         end
 
         format.html { redirect_to @student, notice: %Q[ Student was successfully created. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
@@ -241,10 +241,10 @@ class StudentsController < ApplicationController
         rescue Net::SMTPAuthenticationError
           # This will happen when the gmail account we're using denies the credentials or denies the
           # request because it's from a location it's never seen before. Check the readme for instructions.
-          log(:info, "SMTP server denied mail request.")
+          logger.info("SMTP server denied mail request.")
         rescue StandardError
           # This is for any other unforseen warnings.
-          log(:info, "Could not send mail.")
+          logger.info("Could not send mail.")
         end
 	      Timeslot.decrease_1(@student.id)
 
@@ -276,10 +276,10 @@ class StudentsController < ApplicationController
     rescue Net::SMTPAuthenticationError
       # This will happen when the gmail account we're using denies the credentials or denies the
       # request because it's from a location it's never seen before. Check the readme for instructions.
-      log(:info, "SMTP server denied mail request.")
+      logger.info("SMTP server denied mail request.")
     rescue StandardError
       # This is for any other unforseen warnings.
-      log(:info, "Could not send mail.")
+      logger.info("Could not send mail.")
     end
     @student.destroy
     respond_to do |format|
