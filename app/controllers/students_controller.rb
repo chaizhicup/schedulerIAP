@@ -3,9 +3,9 @@ class StudentsController < ApplicationController
   # Before these actions (show, edit, update, and destroy) are run
   #   :set_student will run
 
-  #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
+  #<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!
   before_filter :authorize, only: [:destroy, :index], :except => :new_session_path
-  
+
   # Set flash to html safe when needed, allows links in flash
   before_filter -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
 
@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
       flash[:danger] = "Please Log in!"
       redirect_to new_session_path
     end
-    
+
     @events = Event.where("for_student = true").pluck(:id,:name)
     $students = Student.all.order(:UIN)
     $students.each do |x|
@@ -82,9 +82,9 @@ class StudentsController < ApplicationController
     @logged_in = log_in?
     @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
     @student = Student.new
-    
+
     @event_slot = Hash.new([])
-    
+
     #List Events
     @events = Event.where("for_student = true").pluck(:id)
     @events.each do |id|
@@ -108,10 +108,10 @@ class StudentsController < ApplicationController
       @events = Event.where("for_student = true").pluck(:id, :name)
       # Show Timeslots
       $selected_slots = []
-      @student.timeslots.each do |x| 
+      @student.timeslots.each do |x|
         $selected_slots[x.event_id] = x.id
       end
-      
+
       # Show Events
       @events = Event.where("for_student = true").pluck(:id)
       @events.each do |id|
@@ -131,7 +131,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
-    
+
     # Set edithash
     if @student.edithash == nil
       @student.edithash = SecureRandom.urlsafe_base64
@@ -141,7 +141,7 @@ class StudentsController < ApplicationController
     @events.each do |id,name|
       $selected_slots[id] = params[name]
     end
-    
+
     @event_slots = Hash.new([])
     respond_to do |format|
       # Try to save new information
@@ -158,7 +158,7 @@ class StudentsController < ApplicationController
         end
 
 	      #@selected_slots.each { |k, v| puts "Key=#{k}, Value=#{v}"}
-        
+
         # Show all students
         @events = Event.where("for_student = true").pluck(:id,:name)
         $students = Student.all.order(:UIN)
@@ -182,7 +182,13 @@ class StudentsController < ApplicationController
           $stu_slot[x.id] = @arr
         end
 
-        UserMailer.stu_reg(@student).deliver_now
+        begin
+          UserMailer.stu_reg(@student).deliver_now
+        rescue Net::SMTPAuthenticationError
+          flash[:notice] = "SMTP server denied mail request."
+        rescue StandardError
+          flash[:warning] = "Unexpected Email Error. Please check the logs."
+        end
 
         format.html { redirect_to @student, notice: %Q[ Student was successfully created. #{view_context.link_to("Edit Link", get_edit_url(@student))} ], flash: { html_safe: true } }
         format.json { render :show, status: :created, location: @student }
@@ -192,9 +198,9 @@ class StudentsController < ApplicationController
           @event, @event_slot = set_menu(id)
       	  @event_slots[id] = @event_slot
         end
-      
+
         flash[:notice] = @student.errors.full_messages
-        format.html { render :new } 
+        format.html { render :new }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
@@ -210,7 +216,7 @@ class StudentsController < ApplicationController
       @events.each do |id,name|
         $selected_slots[id] = params[name]
       end
-    
+
       # When updating, temporarily release timeslots
     	Timeslot.increase_1(@student.id)
     	@student.timeslots = []
@@ -220,16 +226,22 @@ class StudentsController < ApplicationController
       	    @student.timeslots << Timeslot.find(params[name])
       	end
       end
-      
+
       if @student.edithash == nil
         @student.edithash = SecureRandom.urlsafe_base64
       end
-      
+
       # Ensure that the student was updated
       if @student.update(student_params)
-        UserMailer.stu_reg(@student).deliver_now
+        begin
+          UserMailer.stu_reg(@student).deliver_now
+        rescue Net::SMTPAuthenticationError
+          flash[:notice] = "SMTP server denied mail request."
+        rescue StandardError
+          flash[:warning] = "Unexpected Email Error. Please check the logs."
+        end
 	      Timeslot.decrease_1(@student.id)
-        
+
         if not (log_in? && cus_indentify(get_id))
           input_session(@student.id)
         end
@@ -241,7 +253,7 @@ class StudentsController < ApplicationController
           temp1, temp2 = set_menu(id)
       	  Timeslot.decrease_1_id(temp1, @student.id, name)
         end
-        
+
         flash[:notice] = @student.errors.full_messages
         format.html { redirect_to edit_student_path}
         format.json { render json: @student.errors, status: :unprocessable_entity }
@@ -253,7 +265,13 @@ class StudentsController < ApplicationController
   # DELETE /students/1.json
   # Deletes the current student
   def destroy
-    UserMailer.stu_del(@student).deliver_now
+    begin
+      UserMailer.stu_del(@student).deliver_now
+    rescue Net::SMTPAuthenticationError
+      flash[:notice] = "SMTP server denied mail request."
+    rescue StandardError
+      flash[:warning] = "Unexpected Email Error. Please check the logs."
+    end
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
@@ -285,7 +303,7 @@ class StudentsController < ApplicationController
     def get_id
       params[:id]
     end
-  
+
     # Stores student in variable
     def set_student
       @student = Student.find(params[:id])
@@ -295,14 +313,14 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:name, :UIN, :email, :US_Citizen, :degree, :position_type, :Mock_1, :edithash)
     end
-    
+
     # Get the non-login student edit link
   	def get_edit_url(student)
   		uri = URI.parse(edit_student_path(student))
   		uri.query = URI.encode_www_form( {'edithash' => student.edithash} )
   		uri.to_s
   	end
-  	
+
   	# Check that edithash is correct
   	def correct_hash(student_hash, test_hash)
   		student_hash == test_hash

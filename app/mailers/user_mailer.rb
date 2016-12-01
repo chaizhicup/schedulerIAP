@@ -8,13 +8,7 @@ class UserMailer < ApplicationMailer
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
 		end
-		begin
-			mail(to: @user.email, subject: 'Confirmation for Registration')
-		rescue Net::SMTPAuthenticationError
-			flash[:notice] = "SMTP server denied mail request."
-		rescue StandardError
-			flash[:warning] = "Unexpected Email Error. Please check the logs."
-		end
+		mail(to: @user.email, subject: 'Confirmation for Registration')
   end
 
 	def com_reg(arg)
@@ -32,13 +26,7 @@ class UserMailer < ApplicationMailer
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
 		end
-		begin
-			mail(to: @user.email, subject: 'Registration Cancelled')
-		rescue Net::SMTPAuthenticationError
-			flash[:notice] = "SMTP server denied mail request."
-		rescue StandardError
-			flash[:warning] = "Unexpected Email Error. Please check the logs."
-		end
+		mail(to: @user.email, subject: 'Registration Cancelled')
 	end
 
 	def com_del(arg)
