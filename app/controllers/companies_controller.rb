@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
-#<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!  
+#<><><><>!!!!!!!!!!!! Comment this out for rspec !!!!!!!!!!!!!!!
   before_filter :authorize, only: [:destroy, :index], :except => :new_session_path
   # GET /companies
   # GET /companies.json
@@ -48,7 +48,7 @@ class CompaniesController < ApplicationController
     eve_ids = Event.where("for_company = true").pluck(:id)
     company_events = @company.companyevents.collect(&:event_id)
     eve_ids.delete_if { |x| company_events.include?(x) }
-    if !eve_ids.empty? 
+    if !eve_ids.empty?
       eve_ids.each do |id|
         @company.companyevents.create(:company_id => @company.id, :event_id => id, :representatives => 0)
       end
@@ -72,7 +72,7 @@ class CompaniesController < ApplicationController
     eve_id = Event.where("for_company = true").pluck(:id)
 
     respond_to do |format|
-      if @company.save 
+      if @company.save
         input_session(@company.id)
         i = 0
         @company.companyevents.where(company_id: @company.id).each do |ce|
@@ -81,7 +81,13 @@ class CompaniesController < ApplicationController
         end
 
         # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-        UserMailer.com_reg(@company).deliver_now
+        begin
+          UserMailer.com_reg(@company).deliver_now
+        rescue Net::SMTPAuthenticationError
+          flash[:notice] = "SMTP server denied mail request."
+        rescue StandardError
+          flash[:warning] = "Unexpected Email Error. Please check the logs."
+        end
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
@@ -110,10 +116,16 @@ class CompaniesController < ApplicationController
           ce.update(event_id: eve_id[it])
           it = it + 1
         end
-        
+
         # This was one use of the previous broken mailer. Replace this with the new mailer, and remove this comment.
-        UserMailer.com_reg(@company).deliver_now
-        
+        begin
+          UserMailer.com_reg(@company).deliver_now
+        rescue Net::SMTPAuthenticationError
+          flash[:notice] = "SMTP server denied mail request."
+        rescue StandardError
+          flash[:warning] = "Unexpected Email Error. Please check the logs."
+        end
+
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { render :show, status: :ok, location: @company }
       else
@@ -134,7 +146,13 @@ class CompaniesController < ApplicationController
   # Deletes a company and emails the old contact.
   def destroy
     @company.companyevents.destroy_all
-    UserMailer.com_del(@company).deliver_now
+    begin
+      UserMailer.com_del(@company).deliver_now
+    rescue Net::SMTPAuthenticationError
+      flash[:notice] = "SMTP server denied mail request."
+    rescue StandardError
+      flash[:warning] = "Unexpected Email Error. Please check the logs."
+    end
     @company.destroy
     respond_to do |format|
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
@@ -154,7 +172,7 @@ class CompaniesController < ApplicationController
     def get_id
       params[:id]
     end
-    
+
     def set_company
       @company = Company.find(params[:id])
     end
