@@ -90,7 +90,7 @@ class StudentsController < ApplicationController
   #   Calls create to actually create student
   def new
     @logged_in = log_in?
-    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
+    @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
     @student = Student.new
     
     @event_slot = Hash.new([])
@@ -114,7 +114,7 @@ class StudentsController < ApplicationController
     correct_hash = correct_hash(@student.edithash, params[:edithash])
     # Verify login
     if log_in? || cus_indentify(get_id) || correct_hash
-      @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
+      @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
       @events = Event.where("for_student = true").pluck(:id, :name)
       # Show Timeslots
       $selected_slots = []
@@ -148,7 +148,7 @@ class StudentsController < ApplicationController
   # New student is created based on parameters
   def create
     @student = Student.new(student_params)
-    @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
+    @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
     
     # Set edithash
     if @student.edithash == nil
@@ -232,7 +232,7 @@ class StudentsController < ApplicationController
   # Student is updated with new information
   def update
     respond_to do |format|
-      @event_details = Event.where("for_student = true").pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
+      @event_details = Event.where("for_student = true").order(:event_date, :start_time, :name).pluck(:id, :name, :event_date, :start_time, :end_time, :editable)
       @events = Event.where("for_student = true").pluck(:id, :name)
       @events.each do |id,name|
         $selected_slots[id] = params[name]
