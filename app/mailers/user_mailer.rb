@@ -3,11 +3,11 @@ class UserMailer < ApplicationMailer
 	default from: '2015_IAP@cse.tamu.edu'
 
   def stu_reg(arg)
-	@user = arg
-	if @user.email.split('@')[1] == "tamu.edu"
-		a = @user.email.split('@')[0]
-		@user.email = a + "@email.tamu.edu"
-	end
+		@user = arg
+		if @user.email.split('@')[1] == "tamu.edu"
+			a = @user.email.split('@')[0]
+			@user.email = a + "@email.tamu.edu"
+		end
 		mail(to: @user.email, subject: 'Confirmation for Registration')
   end
 
@@ -21,13 +21,13 @@ class UserMailer < ApplicationMailer
 	end
 
   def stu_del(arg)
-	@user = arg
-	if @user.email.split('@')[1] == "tamu.edu"
-		a = @user.email.split('@')[0]
-		@user.email = a + "@email.tamu.edu"
-	end
+		@user = arg
+		if @user.email.split('@')[1] == "tamu.edu"
+			a = @user.email.split('@')[0]
+			@user.email = a + "@email.tamu.edu"
+		end
 		mail(to: @user.email, subject: 'Registration Cancelled')
-  end
+	end
 
 	def com_del(arg)
 		@user = arg
