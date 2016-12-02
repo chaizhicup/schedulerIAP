@@ -93,7 +93,7 @@ Feature: Administrator can manage Appointments
     And I check "I am a US-Citizen"
     And I select "B.S." from "Student Level"
     And I select "Internship" from "Job Type"
-    And I select "10:00AM-10:20AM" from "Mock Interview"
+    And I select "10:00AM-10:20AM" from "Mock_Interview"
     When I press "Submit"
     Given I have entered my information
     Then I should be on the view student information page
@@ -105,7 +105,7 @@ Feature: Administrator can manage Appointments
     #And I uncheck "I am a US-Citizen"
     And I select "M.S." from "Student Level"
     And I select "Full-time" from "Job Type"
-    And I select "10:00AM-10:20AM" from "Mock Interview"
+    And I select "10:00AM-10:20AM" from "Mock_Interview"
     When I press "Submit"
     Given I have entered my information
     Then I should be on the view student information page

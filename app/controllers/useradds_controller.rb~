@@ -11,10 +11,10 @@ class UseraddsController < ApplicationController
     @useradd = Useradd.new(user_params)
     if @useradd.save
       # Handle a successful save.
-      flash[:notice] = "Successfully create #{@useradd.name}"  
+      flash[:notice] = "Successfully created #{@useradd.name}"  
       redirect_to @useradd
     else
-      flash[:notice] = "The format input is not corrent"  
+      flash[:notice] = "The input format is not correct"  
       render 'new'
       
     end

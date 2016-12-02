@@ -24,13 +24,13 @@ Scenario: Log in with correct user information
 	And I fill in "Password" with "123123"
 	When I press "Log in"
 	Then I should be on the sessions page
-	And I should see "Weclome administrator : Jay"
+	And I should see "Welcome Jay"
 
 	#Then I want to test the student management
-	When I click on "Student Infomation"
+	When I click on "Student Information"
 	Then I should be on the students page
 	
-	When I click on "Company Infomation"
+	When I click on "Company Information"
 	Then I should be on the companies page
 
 	When I click on "Event Management"

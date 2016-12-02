@@ -203,7 +203,7 @@ class AppointmentsController < ApplicationController
     # Log remaining students/time slots?
     puts @students.length
     if @students.length > 0
-      error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%I:%M%p")}"
+      error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%-I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%-I:%M%p")}"
       #error = arg
       @errormessage << error
     end
@@ -233,7 +233,7 @@ class AppointmentsController < ApplicationController
             appointment = Appointment.new
             getone = student
             appointment.section = event.name
-            appointment.time_slot = timeslot.start_time.strftime("%I:%M%p") + "-" + timeslot.end_time.strftime("%I:%M%p")
+            appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
             appointment.company = item.name
             appointment.student = getone[0]
             appointment.UIN = getone[1]
@@ -273,7 +273,7 @@ class AppointmentsController < ApplicationController
 
             appointment = Appointment.new
             appointment.section = event.name
-            appointment.time_slot = timeslot.start_time.strftime("%I:%M%p") + "-" + timeslot.end_time.strftime("%I:%M%p")
+            appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
             appointment.company = item.name
             appointment.student = getone[0]
             appointment.UIN = getone[1]
