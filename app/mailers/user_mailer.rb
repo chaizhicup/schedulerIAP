@@ -4,7 +4,11 @@ class UserMailer < ApplicationMailer
 
 	def stu_reg(arg)
 		@user = arg
-		@editlink = link_to("Edit Link", get_edit_url(@user))
+		# Get full url, not just path
+		url = Rails.application.routes.url_helpers.edit_student_url(@user)
+		uri = URI.parse(url)
+  		uri.query = URI.encode_www_form( {'edithash' => @user.edithash} )
+  		@editlink = uri.to_s
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
@@ -38,10 +42,4 @@ class UserMailer < ApplicationMailer
 		end
 		mail(to: @user.contact_email, subject: 'Registration Cancelled')
 	end
-	
-	def get_edit_url(student) 
-		uri = URI.parse(edit_student_path(student))
-  		uri.query = URI.encode_www_form( {'edithash' => student.edithash} )
-  		uri.to_s
-  	end
 end

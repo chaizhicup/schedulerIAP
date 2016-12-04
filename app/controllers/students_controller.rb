@@ -271,6 +271,7 @@ class StudentsController < ApplicationController
 
       # Ensure that the student was updated
       if @student.update(student_params)
+	      Timeslot.decrease_1(@student.id)
         begin
           UserMailer.stu_reg(@student).deliver_now
         rescue Net::SMTPAuthenticationError
@@ -281,7 +282,6 @@ class StudentsController < ApplicationController
           # This is for any other unforseen warnings.
           logger.info("Could not send mail.")
         end
-	      Timeslot.decrease_1(@student.id)
 
         if not (log_in? && cus_indentify(get_id))
           input_session(@student.id)
