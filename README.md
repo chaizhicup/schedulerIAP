@@ -1,5 +1,9 @@
-# How to use the app
+# Industrial Affiliates Program Scheduler
+![Ruby 2.2.0p0](https://img.shields.io/badge/Ruby-2.2.0p0-e0115f.svg) ![Rails 4.2.1](https://img.shields.io/badge/Rails-4.2.1-orange.svg)
 
+This is a schedule manager for the [Texas A&M Department of Computer science and Engineering IAP](https://engineering.tamu.edu/cse/iap).
+
+# How to use the app
 ## Ruby version
 We used ruby version 2.2.0p0 and it is recommended that you use [Ruby Version Manager](https://rvm.io/rvm/install) to manage your ruby versions.
 
@@ -73,13 +77,13 @@ In lieu of a permanent solution to sending emails, we use a gmail account set up
 Our client has expressed the desire to continue the development of the app after our team is finished. For the benefit of future teams, the following are things we recommend addressing.
 
 ## A better mail service
+### The problem with Gmail
 The gmail account is inteded for use by one person in one place at a time and Google makes it difficult to use it on a server or deployment. This actually isn't Google actively preventing us from using it, it's just them implementing good security features that make sense for personal usage.
 
-### Gmail
 Our username and password for our gmail account are no longer stored in this repo for the simple fact that the only thing needed to change the password is the current password (another problem using gmail like this causes). If you need the password, it is in the environment variables of our Heroku deployments.
 
 ### Mailgun
-Mailgun is a service designed exactly for what it is we wanted to do. it would solve many of the problems we had with the gmail account implementation, and it would allow for a more professional appearance to the email address and domain. We tried extensively to set up a Mailgun account for this app, but were ultimately unsuccessful.
+Mailgun is a service designed exactly for what it is we need to do. It would solve many of the problems we had with the gmail account implementation, and it would allow for a more professional appearance to the email address and domain. We tried extensively to set up a Mailgun account for this app, but were ultimately unsuccessful.
 
 The way to do this is as follows:
 
