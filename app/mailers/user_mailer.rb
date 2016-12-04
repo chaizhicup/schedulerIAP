@@ -4,9 +4,14 @@ class UserMailer < ApplicationMailer
 
 	def stu_reg(arg)
 		@user = arg
+		puts "Try Stuff"
 		uri = URI.parse(Rails.application.routes.url_helpers.edit_student_path(student))
+		puts "Parsed"
   		uri.query = URI.encode_www_form( {'edithash' => student.edithash} )
+		puts "Encoded"
   		@editlink = uri.to_s
+		puts "Converted"
+		puts @editlink
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
