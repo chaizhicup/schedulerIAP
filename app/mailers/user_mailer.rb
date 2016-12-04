@@ -4,6 +4,7 @@ class UserMailer < ApplicationMailer
 
 	def stu_reg(arg)
 		@user = arg
+		@editlink = link_to("Edit Link", get_edit_url(@user))
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
@@ -13,7 +14,6 @@ class UserMailer < ApplicationMailer
 
 	def com_reg(arg)
 		@user = arg
-		@editlink = link_to("Edit Link", get_edit_url(@user))
 		if @user.contact_email.split('@')[1] == "tamu.edu"
 			a = @user.contact_email.split('@')[0]
 			@user.contact_email = a + "@email.tamu.edu"
