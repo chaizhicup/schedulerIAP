@@ -121,12 +121,14 @@ class AppointmentsController < ApplicationController
         begin
         UserMailer.stu_reminder(@app).deliver_now
         rescue ActiveRecord::RecordNotFound
-        @statusmessage = "Error! Couldn't find student "+@app.student+" in the database!"
+        @statusmessage = "Error: Couldn't find student "+@app.student+" in the database!"
+        rescue Net::SMTPAuthenticationError
+        @statusmessage = "Authentication error! Your server does not appear to be correctly configured to send emails."
         end
       
       end
       if @statusmessage == ""
-        @statusmessage = 'Reminder emails sent!'
+        @statusmessage = 'Student reminder emails sent!'
       end
       redirect_to appointments_url, notice: @statusmessage
     end
