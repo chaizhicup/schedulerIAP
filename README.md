@@ -22,9 +22,24 @@ To configure a new server (such as a local server) have bundler install the gems
     bundle install
 
 ### Database creation
-This app uses PostgreSQL. Versions 8.2 and up are supported.
+This app uses PostgreSQL. Versions 8.2 and up are supported. To install Postgres, follow the steps listed below:
 
-Install the pg driver:
+####Install PostgreSQL 
+
+OS X with Homebrew:
+https://launchschool.com/blog/how-to-install-postgresql-on-a-mac
+
+OS X with Macports:
+https://github.com/codeforamerica/ohana-api/wiki/Installing-PostgreSQL-with-MacPorts-on-OS-X
+
+Windows systems:
+The top response on this thread does a fantastic job of listing all the necessary install steps in detail.
+http://stackoverflow.com/questions/7086654/installing-postgres-on-windows-for-use-with-ruby-on-rails
+
+
+####Install and configure postgres gem
+
+Install the pg driver (if not already installed via bundler):
   gem install pg
 On OS X with Homebrew:
   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
@@ -35,14 +50,13 @@ On Windows:
       Choose the win32 build.
       Install PostgreSQL and put its /bin directory on your path.
 
-Configure Using Gemfile
-gem 'pg'
-
 ### Database initialization
-This is sometimes different depending on the environment, but for the most part its just as follows
 
-    rake db:seed
-    rake db:migrate
+Once you have installed postgres and created your database, run the following commands to initialize the app's database:
+	
+	rake db:migrate
+    rake db:seed 
+    
 
 ### Admin creation
 This must be done on a new deployment before attempting to log in for the first time so this is an account to log in with. After ensuring the database is up and running, open the rails console by typing `rails c` and enter the following:
