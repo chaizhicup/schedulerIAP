@@ -6,8 +6,7 @@ class UserMailer < ApplicationMailer
 		@user = arg
 		uri = URI.parse(Rails.application.routes.url_helpers.edit_student_path(student))
   		uri.query = URI.encode_www_form( {'edithash' => student.edithash} )
-  		link = uri.to_s
-		@editlink = link_to("Edit Link", link)
+  		@editlink = uri.to_s
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
