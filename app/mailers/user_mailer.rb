@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
 		url = Rails.application.routes.url_helpers.edit_student_path(@user)
 		uri = URI.parse(url)
   		uri.query = URI.encode_www_form( {'edithash' => @user.edithash} )
-  		@editlink = ("https://iap-scheduler-live-test.herokuapp.com/" + uri.to_s)
+  		@editlink = ("https://iap-scheduler-live-test.herokuapp.com" + uri.to_s)
 		puts "Converted"
 		puts @editlink
 		if @user.email.split('@')[1] == "tamu.edu"
