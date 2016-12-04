@@ -121,9 +121,13 @@ class AppointmentsController < ApplicationController
         begin
         UserMailer.stu_reminder(@app).deliver_now
         rescue ActiveRecord::RecordNotFound
-        @statusmessage = "Error: Couldn't find student "+@app.student+" in the database!"
+        #This means that the UIN of the student associated with the appointment is no longer in the database.
+        @statusmessage += "Error: Couldn't find student "+@app.student+" in the database!\n"
         rescue Net::SMTPAuthenticationError
+        #This means that the server has a error with the gmail configuration. Check the readme for instructions.
         @statusmessage = "Authentication error! Your server does not appear to be correctly configured to send emails."
+        rescue StandardError
+        @statusmessage += "Error! An unspecified error occurred. Please contact the dev team if restarting the server does not fix the issue.\n"
         end
       
       end
