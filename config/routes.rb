@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :useradds
   resources :sessions
   
+  # Host name - used for emailed link
+  default_url_options :host => "iap-scheduler-csce.herokuapp.com"
+  
   resources :students do
     collection do
       post 'remove_all'
