@@ -2,17 +2,18 @@ class UserMailer < ApplicationMailer
 
 	default from: '2015_IAP@cse.tamu.edu'
 
-  def stu_reg(arg)
+	def stu_reg(arg)
 		@user = arg
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"
 		end
 		mail(to: @user.email, subject: 'Confirmation for Registration')
-  end
+	end
 
 	def com_reg(arg)
 		@user = arg
+		@editlink = link_to("Edit Link", get_edit_url(@user))
 		if @user.contact_email.split('@')[1] == "tamu.edu"
 			a = @user.contact_email.split('@')[0]
 			@user.contact_email = a + "@email.tamu.edu"
@@ -20,7 +21,7 @@ class UserMailer < ApplicationMailer
 		mail(to: @user.contact_email, subject: 'Confirmation for Registration')
 	end
 
-  def stu_del(arg)
+	def stu_del(arg)
 		@user = arg
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
@@ -37,4 +38,10 @@ class UserMailer < ApplicationMailer
 		end
 		mail(to: @user.contact_email, subject: 'Registration Cancelled')
 	end
+	
+	def get_edit_url(student) 
+		uri = URI.parse(edit_student_path(student))
+  		uri.query = URI.encode_www_form( {'edithash' => student.edithash} )
+  		uri.to_s
+  	end
 end
