@@ -42,6 +42,16 @@ class UserMailer < ApplicationMailer
 		@app = arg
 		stu = @app.UIN
 		@user = Student.find_by! UIN: stu
+		begin
+			@event = Event.find_by! name: @app.section
+		rescue ActiveRecord::RecordNotFound
+			raise ArgumentError
+		rescue Exception => e
+			logger.error(e.message)  
+        	puts e.backtrace.inspect
+			raise 'UnknownEventError'
+		end
+		
 		if @user.email.split('@')[1] == "tamu.edu"
 			a = @user.email.split('@')[0]
 			@user.email = a + "@email.tamu.edu"

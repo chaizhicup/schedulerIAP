@@ -15,6 +15,9 @@
         <td>Event:</td><td><%= @app.section %></td>
       </tr>
       <tr>
+        <td>Date:</td><td><%= @event.event_date.strftime('%a %b %d') %></td>
+      </tr>
+      <tr>
         <td>Timeslot:</td><td><%= @app.time_slot %></td>
       </tr>
       
@@ -22,6 +25,6 @@
   </tbody>
 </table>
     <p> If you need to cancel or add an event, please contact the Coordinator.</p>
-    <p>Thank you for participating  and have a great day!</p>
+    <p>Thank you for participating and have a great day!</p>
   </body>
 </html>
