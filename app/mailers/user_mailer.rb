@@ -42,4 +42,15 @@ class UserMailer < ApplicationMailer
 		end
 		mail(to: @user.contact_email, subject: 'Registration Cancelled')
 	end
+	
+	def stu_reminder(arg)
+		@app = arg
+		stu = @app.UIN
+		@user = Student.find_by! UIN: stu
+		if @user.email.split('@')[1] == "tamu.edu"
+			a = @user.email.split('@')[0]
+			@user.email = a + "@email.tamu.edu"
+		end
+			mail(to: @user.email, subject: 'Event Reminder!')
+	end
 end

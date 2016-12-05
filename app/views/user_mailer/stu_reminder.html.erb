@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Reminder:</h1>
+    <p>
+      You have an appointment scheduled for:<br>
+    </p>
+    
+<table>
+  <tbody>
+      <tr>
+        <td>Event:</td><td><%= @app.section %></td>
+      </tr>
+      <tr>
+        <td>Timeslot:</td><td><%= @app.time_slot %></td>
+      </tr>
+      
+
+  </tbody>
+</table>
+    <p> If you need to cancel or add an event, please contact the Coordinator.</p>
+    <p>Thank you for participating  and have a great day!</p>
+  </body>
+</html>

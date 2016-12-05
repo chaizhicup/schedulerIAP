@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   
   get '/del' => 'sessions#del'
   get '/generate' => 'appointments#generate'
+  get '/reminder' => 'appointments#reminder'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

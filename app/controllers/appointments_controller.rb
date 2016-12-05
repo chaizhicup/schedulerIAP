@@ -109,6 +109,35 @@ class AppointmentsController < ApplicationController
   end
 
 
+  def reminder
+    if Appointment.count == 0
+      redirect_to appointments_url, notice: 'test'
+      flash[:notice] = "Error: No appointments!"
+    else
+      @statusmessage = ""
+      @appointments = Appointment.all.order(:section, :time_slot)
+      @appointments.each do |appointment|
+        @app = appointment
+        begin
+        UserMailer.stu_reminder(@app).deliver_now
+        rescue ActiveRecord::RecordNotFound
+        #This means that the UIN of the student associated with the appointment is no longer in the database.
+        @statusmessage += "Error: Couldn't find student "+@app.student+" in the database!\n"
+        rescue Net::SMTPAuthenticationError
+        #This means that the server has a error with the gmail configuration. Check the readme for instructions.
+        @statusmessage = "Authentication error! Your server does not appear to be correctly configured to send emails."
+        rescue StandardError
+        @statusmessage += "Error! An unspecified error occurred. Please contact the dev team if restarting the server does not fix the issue.\n"
+        end
+      
+      end
+      if @statusmessage == ""
+        @statusmessage = 'Student reminder emails sent!'
+      end
+      redirect_to appointments_url, notice: @statusmessage
+    end
+  end
+
   ################################################################
   private
   # Use callbacks to share common setup or constraints between actions.
