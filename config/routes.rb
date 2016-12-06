@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :email_messages
   #resources :companies
   #resources :students
   #resources :appointments

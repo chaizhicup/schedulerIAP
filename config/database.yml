@@ -26,7 +26,7 @@ development:
   adapter: postgresql
   database: myapp_dev
   host: localhost
-  username: user
+  username: NHB
   #username: ubuntu
   password: 
   template: template0
