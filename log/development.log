@@ -3426,3 +3426,2460 @@ Started GET "/assets/bootstrap.css" for ::1 at 2016-11-08 10:55:00 -0600
 
 
 Started GET "/assets/bootstrap.min.css" for ::1 at 2016-11-08 10:55:00 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (51.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'appointments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companyevents'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sessions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students_timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (10.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'useradds'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-12-05 17:53:53 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 485ms (Views: 467.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2207ecc94b5fe205bea6b11f070959d02cd46d919837075fbf7faffc030eebab.css?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/appointments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/timeslots.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/useradds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started GET "/assets/csen-logo-74747ae7bba686fa52723dd820b5c8cc4fd04ac9c3edee827eb83a849b28fd02.png" for ::1 at 2016-12-05 17:53:54 -0600
+
+
+Started POST "/login" for ::1 at 2016-12-05 17:53:55 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UBlrv43mPPZge/NhsPUUveEhun3z1rkQWnYTbLx51NR6iE2BKvYm7Wslo1TSnwNLERNbJ4kHs3H360KzCAOxKQ==", "session"=>{"email"=>"bain607@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUseradd Load (43.6ms)[0m  SELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1  [["email", "bain607@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 128ms (Views: 19.6ms | ActiveRecord: 44.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:53:55 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:53:55 -0600
+
+
+Started POST "/login" for ::1 at 2016-12-05 17:53:58 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GmwZK1usWpVZw/Z9z3QxL9dk4RvhqK09PIg6E6SUmfa+JZaCn6rcV45X+yVV8cyT29y3hVXqNVZb3E3+ug3mg==", "session"=>{"email"=>"bain607@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUseradd Load (41.0ms)[0m  [1mSELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1[0m  [["email", "bain607@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 95ms (ActiveRecord: 42.7ms)
+
+
+Started GET "/sessions" for ::1 at 2016-12-05 17:53:58 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:53:58 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:53:58 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEmailMessages (20161205235442)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (171.7ms)[0m  [1mCREATE TABLE "email_messages" ("id" serial primary key, "email" character varying, "title" character varying, "header" text, "footer" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (40.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161205235442"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'appointments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'companyevents'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'email_messages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'sessions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students_timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'timeslots'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'useradds'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 17:56:53 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 338ms (Views: 330.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/email_messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-05 17:56:53 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:56:53 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:56:53 -0600
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 17:56:59 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (13.3ms)
+  Rendered email_messages/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 77ms (Views: 70.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/email_messages" for ::1 at 2016-12-05 17:58:38 -0600
+Processing by EmailMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y6f4XqxBaxFw7/ksEDq5F0sdEODwNcXqLsmfjhbAndpJNt5gC1FxCnuxqRlyUK7huy/xuorkz4uDVM5Rorr4Jw==", "email_message"=>{"email"=>"Delete Company", "title"=>"Registration Canceled", "header"=>"Your registration has been cancelled. Please contact the coordinator if you did not place this request.", "footer"=>"Thank you for participating and have a great day!"}, "commit"=>"Create Email message"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "Delete Company"], ["title", "Registration Canceled"], ["header", "Your registration has been cancelled. Please contact the coordinator if you did not place this request."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-05 23:58:38.025940"], ["updated_at", "2016-12-05 23:58:38.025940"]]
+  [1m[36m (40.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages/1
+Completed 302 Found in 46ms (ActiveRecord: 41.3ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 17:58:38 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered email_messages/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:58:38 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:58:38 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 17:58:44 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.4ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 17:58:45 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (2.7ms)
+  Rendered email_messages/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/email_messages" for ::1 at 2016-12-05 17:59:47 -0600
+Processing by EmailMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vX4D55uXpe8sM69g5fNnhnVl9cho/7KSdrF0KgoZ4rGX7yXZPIe/9Cdt/1WHmXBwhVcUkhIuuPPbLCX1vmOHTA==", "email_message"=>{"email"=>"Company Register", "title"=>"Confirmation for Registration", "header"=>"You have been successfully registered.", "footer"=>"Thank you for participating and have a great day!"}, "commit"=>"Create Email message"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "Company Register"], ["title", "Confirmation for Registration"], ["header", "You have been successfully registered."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-05 23:59:47.855145"], ["updated_at", "2016-12-05 23:59:47.855145"]]
+  [1m[35m (40.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages/2
+Completed 302 Found in 43ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 17:59:47 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered email_messages/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 17:59:47 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 17:59:47 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 17:59:52 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 17:59:53 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (1.5ms)
+  Rendered email_messages/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:00:02 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.4ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/email_messages/2/edit" for ::1 at 2016-12-05 18:00:08 -0600
+Processing by EmailMessagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.5ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered email_messages/_form.html.erb (2.2ms)
+  Rendered email_messages/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/email_messages/2" for ::1 at 2016-12-05 18:00:22 -0600
+Processing by EmailMessagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uAWlT1HGZlCg3SMrJa+dRI0rojmgnyZTzsnXip1K3ZWSlINx9tZ8S6uDcx5HxYqyfRlDY9pOLDJjVIZVKTC4aA==", "email_message"=>{"email"=>"Register Company", "title"=>"Confirmation for Registration", "header"=>"You have been successfully registered.", "footer"=>"Thank you for participating and have a great day!"}, "commit"=>"Update Email message", "id"=>"2"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "email_messages" SET "email" = $1, "updated_at" = $2 WHERE "email_messages"."id" = $3[0m  [["email", "Register Company"], ["updated_at", "2016-12-06 00:00:22.532461"], ["id", 2]]
+  [1m[35m (40.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages/2
+Completed 302 Found in 43ms (ActiveRecord: 40.8ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:00:22 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered email_messages/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:00:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:00:22 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:00:24 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 18:00:26 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (1.7ms)
+  Rendered email_messages/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/email_messages" for ::1 at 2016-12-05 18:02:21 -0600
+Processing by EmailMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r+Nx0Y1Z/+lWv6MNnXxWJxq4UUorTN7Wb6j07ep5OliFclfvKknl8l3h8zj/FkHR6oqwEFGd1LfCNaUyXgNfpQ==", "email_message"=>{"email"=>"Register Student", "title"=>"Confirmation for Registration", "header"=>"You have been successfully registered.", "footer"=>"Thank you for participating and have a great day!"}, "commit"=>"Create Email message"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "Register Student"], ["title", "Confirmation for Registration"], ["header", "You have been successfully registered."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 00:02:21.333254"], ["updated_at", "2016-12-06 00:02:21.333254"]]
+  [1m[36m (40.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages/3
+Completed 302 Found in 43ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:02:21 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered email_messages/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:02:21 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:02:21 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:02:23 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 18:02:24 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (1.7ms)
+  Rendered email_messages/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/email_messages" for ::1 at 2016-12-05 18:03:44 -0600
+Processing by EmailMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kO+aAT2s7GdkG76t615g5i5FOTKBPspiEWKZlCdv6j66frw/mrz2fG9F7piJNHcQ3nfYaPvvwAO8/8hLkxWPww==", "email_message"=>{"email"=>"Delete Student", "title"=>"Registration Canceled", "header"=>"Your registration has ben cancelled. Please contact the coordinator if you did not place this request.", "footer"=>"Thank you for participating and have a great day!"}, "commit"=>"Create Email message"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "Delete Student"], ["title", "Registration Canceled"], ["header", "Your registration has ben cancelled. Please contact the coordinator if you did not place this request."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 00:03:44.646264"], ["updated_at", "2016-12-06 00:03:44.646264"]]
+  [1m[35m (40.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages/4
+Completed 302 Found in 43ms (ActiveRecord: 40.7ms)
+
+
+Started GET "/email_messages/4" for ::1 at 2016-12-05 18:03:44 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEmailMessage Load (0.1ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered email_messages/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:03:44 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:03:44 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:03:46 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages/new" for ::1 at 2016-12-05 18:03:47 -0600
+Processing by EmailMessagesController#new as HTML
+  Rendered email_messages/_form.html.erb (1.8ms)
+  Rendered email_messages/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/email_messages" for ::1 at 2016-12-05 18:04:46 -0600
+Processing by EmailMessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vwLEnOd1/dlFIegTW3KoFv5lE6+WbZKb7F21zNvK3liVk+KiQGXnwk5/uCY5GL/gDlfy9ey8mPpBwOQTb7C7pQ==", "email_message"=>{"email"=>"Student Reminder", "title"=>"Reminder:", "header"=>"You have an appointment scheduled for:", "footer"=>"If yo uneed to cancel or add an event, please contact the coordinator. Thank you for participating and have a great day!"}, "commit"=>"Create Email message"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "Student Reminder"], ["title", "Reminder:"], ["header", "You have an appointment scheduled for:"], ["footer", "If yo uneed to cancel or add an event, please contact the coordinator. Thank you for participating and have a great day!"], ["created_at", "2016-12-06 00:04:46.455876"], ["updated_at", "2016-12-06 00:04:46.455876"]]
+  [1m[36m (40.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages/5
+Completed 302 Found in 43ms (ActiveRecord: 41.1ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:04:46 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered email_messages/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:04:46 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:04:46 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:04:50 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:07:14 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered email_messages/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:10:53 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.1ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered email_messages/show.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 59706ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (Missing partial user_mailer/_com_del with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views"
+):
+    24: <%= link_to 'Back', email_messages_path %>
+    25: 
+    26: 
+    27: <% render @path %>
+  app/views/email_messages/show.html.erb:27:in `_app_views_email_messages_show_html_erb__1438250415183107678_70266592510700'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.4ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:12:40 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:12:40 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:12:40 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:12:41 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered email_messages/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 71580ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Missing partial user_mailer/_com_del with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views"
+):
+    24: <%= link_to 'Back', email_messages_path %>
+    25: 
+    26: 
+    27: <% render @path %>
+  app/views/email_messages/show.html.erb:27:in `_app_views_email_messages_show_html_erb__1438250415183107678_70266592510700'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.7ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:13:53 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered email_messages/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 1692ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Missing partial user_mailer/_com_del with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views"
+):
+    24: <%= link_to 'Back', email_messages_path %>
+    25: 
+    26: 
+    27: <% render @path %>
+  app/views/email_messages/show.html.erb:27:in `_app_views_email_messages_show_html_erb__1438250415183107678_70266592510700'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.4ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:17:51 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:17:51 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:17:51 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:17:52 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/email_messages/5/edit" for ::1 at 2016-12-05 18:20:45 -0600
+Processing by EmailMessagesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmailMessage Load (0.4ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered email_messages/_form.html.erb (1.7ms)
+  Rendered email_messages/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/email_messages/5" for ::1 at 2016-12-05 18:20:56 -0600
+Processing by EmailMessagesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xNQD1TWg4IC4M9qSVzQ0Xbul6JhK1gg/gg43WcT6YL3uRSXrkrD6m7Ntiqc1XiOrS5cJwjAHAl4vk2aGcIAFQA==", "email_message"=>{"email"=>"Student Reminder", "title"=>"Reminder:", "header"=>"You have an appointment scheduled for:", "footer"=>"If you need to cancel or add an event, please contact the coordinator. Thank you for participating and have a great day!"}, "commit"=>"Update Email message", "id"=>"5"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "email_messages" SET "footer" = $1, "updated_at" = $2 WHERE "email_messages"."id" = $3  [["footer", "If you need to cancel or add an event, please contact the coordinator. Thank you for participating and have a great day!"], ["updated_at", "2016-12-06 00:20:56.742139"], ["id", 5]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages/5
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:20:56 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered email_messages/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:20:56 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:20:56 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:20:58 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:21:29 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    12: <table>
+    13:   <tbody>
+    14:       <tr>
+    15:         <td>Company Name:</td><td><%= @user.name %></td>
+    16:       </tr>
+    17:       <tr>
+    18:         <td>Contact Person:</td><td><%= @user.contact_person %></td>
+  app/views/user_mailer/com_reg.html.erb:15:in `_app_views_user_mailer_com_reg_html_erb___3823911233090748779_70266638178200'
+  app/controllers/email_messages_controller.rb:16:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:21:50 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:21:50 -0600
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:21:54 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    12: <table>
+    13:   <tbody>
+    14:       <tr>
+    15:         <td>Name:</td><td><%= @user.name %></td>
+    16:       </tr>
+    17:       <tr>
+    18:         <td>UIN:</td><td><%= @user.UIN %></td>
+  app/views/user_mailer/stu_reg.html.erb:15:in `_app_views_user_mailer_stu_reg_html_erb__1526847949808483068_70266624318460'
+  app/controllers/email_messages_controller.rb:18:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.7ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:21:55 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:21:55 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:21:57 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:27:03 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views/user_mailer/com_reg.html.erb:80: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/NHB/Documents/TAMU/606/schedulerIAP/app/views/user_mailer/com_reg.html.erb:82: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/user_mailer/com_reg.html.erb:80: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/user_mailer/com_reg.html.erb:82: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/email_messages_controller.rb:16:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.9ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:27:29 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (41.0ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (42.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (152.5ms)
+Completed 200 OK in 177ms (Views: 90.9ms | ActiveRecord: 85.9ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:27:29 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:27:29 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:29:15 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:29:15 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:29:15 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:29:25 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:29:25 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:29:25 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:29:58 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:29:58 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:29:58 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:01 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:01 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:01 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:16 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:17 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:17 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:29 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:29 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:29 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:30 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:31 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:48 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:48 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:48 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:50 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:50 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:50 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:57 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:57 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:57 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:30:59 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:30:59 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:30:59 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:31:19 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:31:19 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:31:19 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:31:20 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:31:20 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:31:20 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:31:36 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:31:36 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:31:36 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:31:37 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:31:37 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:31:37 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:31:56 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:31:56 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:31:56 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:12 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:12 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:12 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:20 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:21 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:21 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:31 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:31 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:40 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:40 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:40 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:42 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:42 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:42 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:56 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:56 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:56 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:32:57 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:32:57 -0600
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:32:57 -0600
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:33:03 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.1ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:33:03 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:33:03 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:33:13 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.6ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:33:16 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mStudent Load (51.1ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (64.4ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 52.3ms)
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    32:       <tr>
+    33:         <td>Position Type:</td><td><%= @user.position_type %></td>
+    34:       </tr>
+    35:       <% $stu_slot[@user.id].each do |slot| %>
+    36:       <tr>
+    37:         <td><%= slot[0] %>:</td><td><%= slot[1] %></td>
+    38:       </tr>
+  app/views/user_mailer/stu_reg.html.erb:35:in `_app_views_user_mailer_stu_reg_html_erb__1526847949808483068_70266568693260'
+  app/controllers/email_messages_controller.rb:18:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.8ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.1ms)
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:33:58 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (10408.4ms)
+Completed 500 Internal Server Error in 10412ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    33:       <tr>
+    34:         <td>Position Type:</td><td><%= @user.position_type %></td>
+    35:       </tr>
+    36:       <% $stu_slot[@user.id].each do |slot| %>
+    37:       <tr>
+    38:         <td><%= slot[0] %>:</td><td><%= slot[1] %></td>
+    39:       </tr>
+  app/views/user_mailer/stu_reg.html.erb:36:in `_app_views_user_mailer_stu_reg_html_erb__1526847949808483068_70266636371100'
+  app/controllers/email_messages_controller.rb:18:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.3ms)
+
+
+Started GET "/students" for ::1 at 2016-12-05 18:34:14 -0600
+Processing by StudentsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC
+  [1m[36mTimeslot Load (1.7ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 2]]
+  [1m[35mTimeslot Load (0.3ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 1]]
+  Rendered students/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 24.3ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/students/1" for ::1 at 2016-12-05 18:34:20 -0600
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KYH0M3wWEHm6p/JjvMdrm62hWUXRznjKIqZ5adT/X7YDENIN2wYKYrH5olberXxtXZO4H6sfcquPOyi2YIU6Sw==", "id"=>"1"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered user_mailer/stu_del.html.erb within layouts/mailer (0.2ms)
+
+UserMailer#stu_del: processed outbound mail in 129.3ms
+
+Sent mail to bain607@email.tamu.edu (29.6ms)
+Date: Mon, 05 Dec 2016 18:34:20 -0600
+From: 2015_IAP@cse.tamu.edu
+To: bain607@email.tamu.edu
+Message-ID: <5846078c76eea_6973fe8393cb5fc425e6@dhcp-10-202-193-70.tamulink.tamu.edu.mail>
+Subject: Registration Cancelled
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Registration Canceled.</h1>
+    <p>
+      Your registration has been canceled. Please contact the Coordinator if you did not place this request.<br>
+    </p>
+    <p>Thank you for participating and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Could not send mail.
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "students" WHERE "students"."id" = $1  [["id", 1]]
+  [1m[36m (40.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 229ms (ActiveRecord: 41.2ms)
+
+
+Started GET "/students" for ::1 at 2016-12-05 18:34:20 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 2]]
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:34:20 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:34:20 -0600
+
+
+Started DELETE "/students/2" for ::1 at 2016-12-05 18:34:22 -0600
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jsqtZOWpZ0MRAb5QdyPoQaWmCwwOL1TQQb0s6gL1omOkW4taQrl9WBpf7mUVSf+3VZTqVnT+XrHsIH01to/Hng==", "id"=>"2"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered user_mailer/stu_del.html.erb within layouts/mailer (0.1ms)
+
+UserMailer#stu_del: processed outbound mail in 8.9ms
+
+Sent mail to bain607@gmail.com (1.7ms)
+Date: Mon, 05 Dec 2016 18:34:22 -0600
+From: 2015_IAP@cse.tamu.edu
+To: bain607@gmail.com
+Message-ID: <5846078e42d7b_6973fe83926774c426ae@dhcp-10-202-193-70.tamulink.tamu.edu.mail>
+Subject: Registration Cancelled
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Registration Canceled.</h1>
+    <p>
+      Your registration has been canceled. Please contact the Coordinator if you did not place this request.<br>
+    </p>
+    <p>Thank you for participating and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Could not send mail.
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "students_timeslots" WHERE "students_timeslots"."student_id" = $1[0m  [["student_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "students" WHERE "students"."id" = $1  [["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 15ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/students" for ::1 at 2016-12-05 18:34:22 -0600
+Processing by StudentsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:34:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:34:22 -0600
+
+
+Started GET "/students/new" for ::1 at 2016-12-05 18:34:23 -0600
+Processing by StudentsController#new as HTML
+  [1m[35m (0.6ms)[0m  SELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time", "events"."editable" FROM "events" WHERE (for_student = true)  ORDER BY "events"."event_date" ASC, "events"."start_time" ASC, "events"."name" ASC
+  [1m[36m (0.2ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (0.9ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE (event_id = 1 AND stunum > 0)
+  Rendered students/_form.html.erb (42.2ms)
+  Rendered students/new.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/students" for ::1 at 2016-12-05 18:34:41 -0600
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dly7rDMsDvTn7EkpoG81jnNPkJfiCjFF3CRHcGBtxG9czZ2SlDwU7+yyGRzCBSJ4g31xzZjbOyRxuRav1Behkg==", "student"=>{"name"=>"Nicolas Bain", "UIN"=>"319006774", "email"=>"bain607@gmail.com", "US_Citizen"=>"1", "degree"=>"M.S.", "position_type"=>"Full-time"}, "Test-1"=>["3"], "commit"=>"Submit"}
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."id", "events"."name", "events"."event_date", "events"."start_time", "events"."end_time", "events"."editable" FROM "events" WHERE (for_student = true)  ORDER BY "events"."event_date" ASC, "events"."start_time" ASC, "events"."name" ASC[0m
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Exists (41.2ms)[0m  SELECT  1 AS one FROM "students" WHERE LOWER("students"."email") = LOWER('bain607@gmail.com') LIMIT 1
+  [1m[36mStudent Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "students" WHERE "students"."email" = 'bain607@gmail.com' LIMIT 1[0m
+  [1m[35mStudent Exists (0.1ms)[0m  SELECT  1 AS one FROM "students" WHERE "students"."UIN" = '319006774' LIMIT 1
+  [1m[36mSQL (9.0ms)[0m  [1mINSERT INTO "students" ("name", "UIN", "email", "US_Citizen", "degree", "position_type", "edithash", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Nicolas Bain"], ["UIN", "319006774"], ["email", "bain607@gmail.com"], ["US_Citizen", "t"], ["degree", "M.S."], ["position_type", "Full-time"], ["edithash", "knma1tYUgz-fTDOYDwwapQ"], ["created_at", "2016-12-06 00:34:41.156656"], ["updated_at", "2016-12-06 00:34:41.156656"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)[0m
+  [1m[35mTimeslot Load (0.7ms)[0m  SELECT  "timeslots".* FROM "timeslots" WHERE "timeslots"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "students_timeslots" ("student_id", "timeslot_id") VALUES ($1, $2)  [["student_id", 3], ["timeslot_id", 3]]
+  [1m[36m (40.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered user_mailer/stu_reg.html.erb within layouts/mailer (0.5ms)
+
+UserMailer#stu_reg: processed outbound mail in 9.2ms
+
+Sent mail to bain607@gmail.com (1.6ms)
+Date: Mon, 05 Dec 2016 18:34:41 -0600
+From: 2015_IAP@cse.tamu.edu
+To: bain607@gmail.com
+Message-ID: <584607a1376dd_6973fe8393f8f84427d3@dhcp-10-202-193-70.tamulink.tamu.edu.mail>
+Subject: Confirmation for Registration
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Confirmation for Registration.</h1>
+    <p>
+      You have been successfully registered.<br>
+    </p>
+<table>
+  <tbody>
+      <tr>
+        <td>Name:</td><td>Nicolas Bain</td>
+      </tr>
+      <tr>
+        <td>UIN:</td><td>319006774</td>
+      </tr>
+      <tr>
+        <td>E-mail:</td><td>bain607@gmail.com</td>
+      </tr>
+      <tr>
+        <td>US Citizen:</td><td>true</td>
+      </tr>
+      <tr>
+        <td>Degree Level:</td><td>M.S.</td>
+      </tr>
+      <tr>
+        <td>Position Type:</td><td>Full-time</td>
+      </tr>
+      <tr>
+        <td>Test-1:</td><td>10:00AM-11:00AM</td>
+      </tr>
+
+      
+
+  </tbody>
+</table>
+    <p> Your chosen timeslots can be changed by selecting the link below:<br>
+      <a href="http://iap-scheduler-csce.herokuapp.com/students/3/edit?edithash=knma1tYUgz-fTDOYDwwapQ">Edit</a>
+    </p>
+    <p>Thank you for participating and have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Could not send mail.
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 146ms (ActiveRecord: 94.4ms)
+
+
+Started GET "/students/3" for ::1 at 2016-12-05 18:34:41 -0600
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT "events"."id", "events"."name" FROM "events" WHERE (for_student = true)
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."UIN" ASC[0m
+  [1m[35mTimeslot Load (0.2ms)[0m  SELECT "timeslots".* FROM "timeslots" INNER JOIN "students_timeslots" ON "timeslots"."id" = "students_timeslots"."timeslot_id" WHERE "students_timeslots"."student_id" = $1  [["student_id", 3]]
+  Rendered students/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:34:41 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:34:41 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:34:59 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:34:59 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:34:59 -0600
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:35:02 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (3485.7ms)
+Completed 200 OK in 3508ms (Views: 3506.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:35:30 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered user_mailer/stu_reminder.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `section' for nil:NilClass):
+    12: <table>
+    13:   <tbody>
+    14:       <tr>
+    15:         <td>Event:</td><td><%= @app.section %></td>
+    16:       </tr>
+    17:       <tr>
+    18:         <td>Timeslot:</td><td><%= @app.time_slot %></td>
+  app/views/user_mailer/stu_reminder.html.erb:15:in `_app_views_user_mailer_stu_reminder_html_erb__2526016314808169594_70266595475540'
+  app/controllers/email_messages_controller.rb:22:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.9ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.2ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:36:15 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAppointment Load (1.0ms)[0m  SELECT  "appointments".* FROM "appointments"  ORDER BY "appointments"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reminder.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `section' for nil:NilClass):
+    15: <table>
+    16:   <tbody>
+    17:       <tr>
+    18:         <td>Event:</td><td><%= @app.section %></td>
+    19:       </tr>
+    20:       <tr>
+    21:         <td>Timeslot:</td><td><%= @app.time_slot %></td>
+  app/views/user_mailer/stu_reminder.html.erb:18:in `_app_views_user_mailer_stu_reminder_html_erb__2526016314808169594_70266642533300'
+  app/controllers/email_messages_controller.rb:22:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.8ms)
+
+
+Started GET "/events" for ::1 at 2016-12-05 18:36:24 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY "events"."event_date" ASC, "events"."name" ASC[0m
+  [1m[35mTimeslot Load (0.4ms)[0m  SELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  ORDER BY "timeslots"."start_time" ASC  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments" for ::1 at 2016-12-05 18:36:25 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (0.3ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for ::1 at 2016-12-05 18:36:27 -0600
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"  ORDER BY "events"."event_date" ASC, "events"."name" ASC
+  [1m[36mTimeslot Load (0.4ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1  ORDER BY "timeslots"."start_time" ASC[0m  [["event_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments" for ::1 at 2016-12-05 18:36:32 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[35mAppointment Load (0.4ms)[0m  SELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC
+  Rendered appointments/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/generate" for ::1 at 2016-12-05 18:36:33 -0600
+Processing by AppointmentsController#generate as HTML
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "appointments"[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mTimeslot Load (0.2ms)[0m  [1mSELECT "timeslots".* FROM "timeslots" WHERE "timeslots"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[35mStudent Load (0.3ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 1]]
+  [1m[35mCompany Load (0.2ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1[0m  [["timeslot_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "appointments" ("section", "time_slot", "company", "student", "UIN", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["section", "Test-1"], ["time_slot", "10:00AM-11:00AM"], ["company", "TAMU"], ["student", "Nicolas Bain"], ["UIN", "319006774"], ["created_at", "2016-12-06 00:36:33.209434"], ["updated_at", "2016-12-06 00:36:33.209434"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students" INNER JOIN "students_timeslots" ON "students"."id" = "students_timeslots"."student_id" WHERE "students_timeslots"."timeslot_id" = $1  [["timeslot_id", 4]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."event_id" = $1 AND (representatives > 0)[0m  [["event_id", 1]]
+  [1m[35mCompany Load (0.2ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/appointments
+Completed 302 Found in 26ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/appointments" for ::1 at 2016-12-05 18:36:33 -0600
+Processing by AppointmentsController#index as HTML
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT "appointments".* FROM "appointments"  ORDER BY "appointments"."section" ASC, "appointments"."time_slot" ASC[0m
+  Rendered appointments/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:36:42 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:36:42 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:36:42 -0600
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:36:44 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mAppointment Load (0.2ms)[0m  SELECT  "appointments".* FROM "appointments"  ORDER BY "appointments"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reminder.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:39:11 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:39:11 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:39:11 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:40:18 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Email):
+    3:   <head>
+    4:     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    5:   </head>
+    6:   <% @email = Email.where(:email => "Delete Company").first %>
+    7:   <body>
+    8:     <h1><%@email.title%></h1>
+    9:     <p>
+  app/views/user_mailer/com_del.html.erb:6:in `_app_views_user_mailer_com_del_html_erb__555510008204202275_70266593141460'
+  app/controllers/email_messages_controller.rb:14:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.6ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:41:57 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:41:57 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:41:57 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:42:00 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:42:00 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:42:00 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:42:13 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (183343.9ms)
+Completed 200 OK in 183371ms (Views: 183371.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:45:16 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.1ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1[0m  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `title' for #<EmailMessage::ActiveRecord_Relation:0x007fd06bda9c90>):
+     5:   </head>
+     6:   <% @email = EmailMessage.where(:email => "Delete Company").first %>
+     7:   <body>
+     8:     <h1><%EmailMessage.where(:email => "Delete Company").title%></h1>
+     9:     <p>
+    10:       <%@email.header%><br>
+    11:     </p>
+  app/views/user_mailer/com_del.html.erb:8:in `_app_views_user_mailer_com_del_html_erb__555510008204202275_70266569654080'
+  app/controllers/email_messages_controller.rb:14:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.4ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:46:12 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Company"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:46:12 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:46:12 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:46:16 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.1ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:46:16 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:46:16 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:46:17 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Company"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:46:17 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:46:17 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:46:50 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `footer' for nil:NilClass):
+     8:     <p>
+     9:       TESTING<br>
+    10:     </p>
+    11:     <p><%@email.footer%></p>
+    12:   </body>
+    13: </html>
+  app/views/user_mailer/com_del.html.erb:11:in `_app_views_user_mailer_com_del_html_erb__555510008204202275_70266635653100'
+  app/controllers/email_messages_controller.rb:14:in `show'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.0ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:47:11 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:47:11 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:47:11 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:47:31 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Company"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:47:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:47:31 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:48:03 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.1ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:48:03 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:48:03 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:48:10 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:48:10 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:48:10 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:48:22 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:48:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:48:22 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:49:44 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.9ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/email_messages/4" for ::1 at 2016-12-05 18:49:47 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Delete Student"]]
+  Rendered user_mailer/stu_del.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:51:10 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Register Student"]]
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:52:23 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Student Reminder"]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1mSELECT  "appointments".* FROM "appointments"  ORDER BY "appointments"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/stu_reminder.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:54:00 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Register Company"]]
+  [1m[35mCompany Load (0.4ms)[0m  SELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[35mCompanyevent Load (0.2ms)[0m  SELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:54:09 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.6ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:57:59 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:57:59 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:57:59 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:58:07 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:58:07 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:58:07 -0600
+
+
+Started GET "/email_messages/1" for ::1 at 2016-12-05 18:58:13 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmailMessage Load (0.7ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Delete Company"]]
+  Rendered user_mailer/com_del.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/email_messages/2" for ::1 at 2016-12-05 18:58:16 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmailMessage Load (0.6ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Register Company"]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  ORDER BY "companies"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" INNER JOIN "companyevents" ON "events"."id" = "companyevents"."event_id" WHERE "companyevents"."company_id" = $1  [["company_id", 1]]
+  [1m[36mCompanyevent Load (0.2ms)[0m  [1mSELECT "companyevents".* FROM "companyevents" WHERE "companyevents"."company_id" = $1 AND "companyevents"."company_id" = $2 AND "companyevents"."event_id" = $3[0m  [["company_id", 1], ["company_id", 1], ["event_id", 1]]
+  Rendered user_mailer/com_reg.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/email_messages/3" for ::1 at 2016-12-05 18:58:18 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1[0m  [["email", "Register Student"]]
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+  Rendered user_mailer/stu_reg.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/email_messages/5" for ::1 at 2016-12-05 18:58:22 -0600
+Processing by EmailMessagesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmailMessage Load (0.3ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."email" = $1  ORDER BY "email_messages"."id" ASC LIMIT 1  [["email", "Student Reminder"]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1mSELECT  "appointments".* FROM "appointments"  ORDER BY "appointments"."id" ASC LIMIT 1[0m
+  Rendered user_mailer/stu_reminder.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 18:58:32 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:58:32 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:58:32 -0600
+
+
+Started GET "/useradds/new" for ::1 at 2016-12-05 18:58:52 -0600
+Processing by UseraddsController#new as HTML
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered useradds/_form.html.erb (3.8ms)
+  Rendered useradds/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-12-05 18:58:54 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-05 18:58:55 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AjmMDrE+AbJc+cmGS4l2P9le1YVJ0EGtvZHsJJsev0UoqKowFi4bqVenmbMp42HJKWw03zMBS8wQDL37L2TauA==", "session"=>{"email"=>"bain607@tamu.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUseradd Load (0.3ms)[0m  [1mSELECT  "useradds".* FROM "useradds" WHERE "useradds"."email" = $1 LIMIT 1[0m  [["email", "bain607@tamu.edu"]]
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 49ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions" for ::1 at 2016-12-05 18:58:55 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 18:58:56 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 18:58:56 -0600
+
+
+Started GET "/sessions" for ::1 at 2016-12-05 19:00:14 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (104.2ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `emailmessages_url' for #<#<Class:0x007fd073ea1208>:0x007fd06bd39378>
+Did you mean?  email_message_url
+               email_messages_url
+               email_messages_path):
+    24:       <td style="text-align:left;font-size:16px"><%= link_to 'Schedule List', appointments_url %></td>
+    25:     </tr>
+    26:     <tr>
+    27:       <td style="text-align:left;font-size:16px"><%= link_to 'Edit Email Messages', emailmessages_url %></td>
+    28:     </tr>
+    29: 
+    30:     </tbody>
+  app/views/sessions/index.html.erb:27:in `_app_views_sessions_index_html_erb___1140481243299643326_70266569465620'
+
+
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.6ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.4ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/NHB/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.6ms)
+
+
+Started GET "/sessions" for ::1 at 2016-12-05 19:00:42 -0600
+Processing by SessionsController#index as HTML
+  Rendered sessions/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:00:42 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:00:42 -0600
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:00:44 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:05:36 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 276ms (Views: 267.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:05:37 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:05:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "Delete Company"], ["title", "Registration Canceled"], ["header", "Your registration has been cancelled. Please contact the coordinator if you did not place this request."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 01:10:03.816783"], ["updated_at", "2016-12-06 01:10:03.816783"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "Delete Student"], ["title", "Registration Canceled"], ["header", "Your registration has been cancelled. Please contact the coordinator if you did not place this request."], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 01:10:03.821208"], ["updated_at", "2016-12-06 01:10:03.821208"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "Register Company"], ["title", "Confirmation for Registration"], ["header", "You have been successfully registered"], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 01:10:03.823098"], ["updated_at", "2016-12-06 01:10:03.823098"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "Register Student"], ["title", "Confirmation for Registration"], ["header", "You have been successfully registered"], ["footer", "Thank you for participating and have a great day!"], ["created_at", "2016-12-06 01:10:03.824773"], ["updated_at", "2016-12-06 01:10:03.824773"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "email_messages" ("email", "title", "header", "footer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "Student Reminder"], ["title", "Reminder:"], ["header", "You have an appoingment scheduled for:"], ["footer", "If you need to cancel or add an event, please contact the coordinator. Thank you for participating and have a great day!"], ["created_at", "2016-12-06 01:10:03.826436"], ["updated_at", "2016-12-06 01:10:03.826436"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.4ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 246ms (Views: 237.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:10 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:10 -0600
+
+
+Started DELETE "/email_messages/10" for ::1 at 2016-12-05 19:10:13 -0600
+Processing by EmailMessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mTWOoT1rGysvAa2w8uZ97qeu+8a6qDVwtohfXc+HWUmzpKifmnsBMCRf/YWQjGoYV5wanMB5PxEbFQ6Ce/08tA==", "id"=>"10"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "email_messages" WHERE "email_messages"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:13 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:13 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:13 -0600
+
+
+Started DELETE "/email_messages/9" for ::1 at 2016-12-05 19:10:22 -0600
+Processing by EmailMessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zoQK8YvLeZWcgG/L2c8cPoznzQlLasV9K9blDZ/tOVDkFSzPLNtjjpfeP/67pQvIfNUsUzG7zxyGS7TSK5dcrQ==", "id"=>"9"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "email_messages" WHERE "email_messages"."id" = $1  [["id", 9]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages
+Completed 302 Found in 2ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:22 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.3ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:22 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:22 -0600
+
+
+Started DELETE "/email_messages/8" for ::1 at 2016-12-05 19:10:24 -0600
+Processing by EmailMessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AgNfa53GQpDndALCh9ejrkk9BWffqfnjnxZzghT3+ggoknlVOtZYi+wqUvflvbRYuQ/kPaV484IyiyJdoI2f9Q==", "id"=>"8"}
+  [1m[36mEmailMessage Load (0.1ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "email_messages" WHERE "email_messages"."id" = $1[0m  [["id", 8]]
+  [1m[35m (39.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages
+Completed 302 Found in 42ms (ActiveRecord: 40.1ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:24 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:24 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:24 -0600
+
+
+Started DELETE "/email_messages/7" for ::1 at 2016-12-05 19:10:26 -0600
+Processing by EmailMessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7swehVhW5kBFnJ5vR48dhq3y0xK5TbaoaGL7cpWP3I3EXTi7/0b8W07Czlol5QpwXcAySMOcvMnF/6qtIfW5cA==", "id"=>"7"}
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "email_messages" WHERE "email_messages"."id" = $1  [["id", 7]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/email_messages
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:26 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[35mEmailMessage Load (0.2ms)[0m  SELECT "email_messages".* FROM "email_messages"
+  Rendered email_messages/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:26 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:26 -0600
+
+
+Started DELETE "/email_messages/6" for ::1 at 2016-12-05 19:10:31 -0600
+Processing by EmailMessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dfNhM2tbEpjZtUXgXXKv1YTsGvGNdfpwIskl/k+I8i5fYkcNzEsIg9LrFdU/GLgjdN77q/ek8BGPVHQh+/KX0w==", "id"=>"6"}
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT  "email_messages".* FROM "email_messages" WHERE "email_messages"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "email_messages" WHERE "email_messages"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/email_messages
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/email_messages" for ::1 at 2016-12-05 19:10:31 -0600
+Processing by EmailMessagesController#index as HTML
+  [1m[36mEmailMessage Load (0.2ms)[0m  [1mSELECT "email_messages".* FROM "email_messages"[0m
+  Rendered email_messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css" for ::1 at 2016-12-05 19:10:31 -0600
+
+
+Started GET "/assets/bootstrap.min.css" for ::1 at 2016-12-05 19:10:31 -0600
