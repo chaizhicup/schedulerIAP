@@ -101,7 +101,7 @@ http://railscasts.com/episodes/209-devise-revised
 
 ## A better mail service
 ### The problem with Gmail
-The gmail account is intended for use by one person in one place at a time and Google makes it difficult to use it on a server or deployment. This actually isn't Google actively preventing us from using it, it's just them implementing good security features that make sense for personal usage. Another problem might be the shear number of emails we send out at once triggering any sort of spam protection. We may have already triggered such a spam flag as of this writing.
+The gmail account is intended for use by one person in one place at a time and Google makes it difficult to use it on a server or deployment. This actually isn't Google actively preventing us from using it, it's just them implementing good security features that make sense for personal usage. Another problem might be the sheer number of emails we send out at once triggering any sort of spam protection. We may have already triggered such a spam flag as of this writing.
 
 Our username and password for our gmail account are no longer stored in this repo for the simple fact that the only thing needed to change the password is the current password (another problem using gmail like this causes). If you need the password, it is in the environment variables of our Heroku deployments.
 
@@ -129,4 +129,3 @@ This could be prevented by making the system only change editable events, so tha
 Based on the implemented algorithm, when the "generate" button is pressed, all existing appointments are removed and then the system generates new appointments.  However, this means that any manual changes will be undone.
 ### Ideal Implementation
 The matching algorithm should take into account previously assigned timeslots and not remove them.  However, as the system now has the ability for students to change selected timeslots, it would need to work around students changing timeslots.
-
