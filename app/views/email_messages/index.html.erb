@@ -20,10 +20,10 @@
     <tbody>
       <% @email_messages.each do |email_message| %>
         <tr>
-          <td><%= email_message.email %></td>
-          <td><%= email_message.title %></td>
-          <td><%= email_message.header %></td>
-          <td><%= email_message.footer %></td>
+          <td data-title="Email" ><%= email_message.email %></td>
+          <td data-title="Title" ><%= email_message.title %></td>
+          <td data-title="Header" ><%= email_message.header %></td>
+          <td data-title="Footer" ><%= email_message.footer %></td>
           <td><%= link_to 'Show', email_message %></td>
           <td><%= link_to 'Edit', edit_email_message_path(email_message) %></td>
           <td><%= link_to 'Destroy', email_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
