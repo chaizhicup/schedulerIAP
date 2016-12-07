@@ -86,9 +86,18 @@ In lieu of a permanent solution to sending emails, we use a gmail account set up
     * If this is the case, log into the account on mail.google.com and change it, there's likely already a message in the inbox telling you of such.
 3. Google does not recognize the server and denies the SMTP request
     * Google does this because the account is intended to be a personal account accessed by one person in one location at a time. If you log into the account, there will be a message in your inbox informing you of a new access. The solution is to go to [this Google website](https://accounts.google.com/DisplayUnlockCaptcha) and log in with the account's credentials, then hit continue. The next time your app tries to send an email it should work.
+    
+##### Editable Emails
+The emails that are currently being sent out include: Register Company, Delete Company, Register Student, Delete Student, and Student Reminder. The required entries for the EmailMessage model that correspond with these messages are implemented in the seed file. As such, you MUST run rake db:seed after your initial migrations for the app. 
 
 # Notes for future development
 Our client has expressed the desire to continue the development of the app after our team is finished. For the benefit of future teams, the following are things we recommend addressing.
+
+## User Authentication
+The app currently uses a custom made user class. I would recommend stripping this out of the app and installing the devise gem. It allows for a number of things, but namely a differentiation between admins and users. The github for the gem and instructions on how to use it are located below. 
+
+https://github.com/plataformatec/devise
+http://railscasts.com/episodes/209-devise-revised
 
 ## A better mail service
 ### The problem with Gmail
