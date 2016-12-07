@@ -85,14 +85,14 @@ In lieu of a permanent solution to sending emails, we use a gmail account set up
 2. The "allow less secure apps" setting is disabled in the account's settings
     * If this is the case, log into the account on mail.google.com and change it, there's likely already a message in the inbox telling you of such.
 3. Google does not recognize the server and denies the SMTP request
-    * Google does this because the account is inteded to be a personal account accessed by one person in one location at a time. If you log into the account, there will be a message in your inbox informing you of a new access. The solution is to go to [this Google website](https://accounts.google.com/DisplayUnlockCaptcha) and log in with the account's credentials, then hit continue. The next time your app tries to send an email it should work.
+    * Google does this because the account is intended to be a personal account accessed by one person in one location at a time. If you log into the account, there will be a message in your inbox informing you of a new access. The solution is to go to [this Google website](https://accounts.google.com/DisplayUnlockCaptcha) and log in with the account's credentials, then hit continue. The next time your app tries to send an email it should work.
 
 # Notes for future development
 Our client has expressed the desire to continue the development of the app after our team is finished. For the benefit of future teams, the following are things we recommend addressing.
 
 ## A better mail service
 ### The problem with Gmail
-The gmail account is inteded for use by one person in one place at a time and Google makes it difficult to use it on a server or deployment. This actually isn't Google actively preventing us from using it, it's just them implementing good security features that make sense for personal usage.
+The gmail account is intended for use by one person in one place at a time and Google makes it difficult to use it on a server or deployment. This actually isn't Google actively preventing us from using it, it's just them implementing good security features that make sense for personal usage.
 
 Our username and password for our gmail account are no longer stored in this repo for the simple fact that the only thing needed to change the password is the current password (another problem using gmail like this causes). If you need the password, it is in the environment variables of our Heroku deployments.
 
@@ -108,3 +108,16 @@ The way to do this is as follows:
 3. Once the plugin is installed, click on the mailgun name to be taken to the app specific mailgun account, and follow the steps for "Getting started".
     * This will involve verifying the account, adding your custom domain, and setting up some things with your DNS server. That last part is why a custom domain is necessary.
 4. Follow [these instructions](https://devcenter.heroku.com/articles/mailgun) to adapt the code to use the proper credentials.
+
+## Disabled Event Security
+### Current Implementation
+If an event is disabled, currently, the event timeslot selector for students is shown but disabled and a hidden input has the existing value.  This is to combat the problem that disabled inputs on forms do not submit anything.  As a result, not including the hidden input would result in the previous value being set to empty.  This means, however, there is a security vulnerability as anyone can change the hidden input's value using an HTMl editor.
+### Preventing This Vulnerability
+This could be prevented by making the system only change editable events, so that when event editing is disabled, students cannot modify it.  However, admins should be able to change the value regardless whether editable or not.
+
+## Appointment Matching Algorithm
+### Current Implementation
+Based on the implemented algorithm, when the "generate" button is pressed, all existing appointments are removed and then the system generates new appointments.  However, this means that any manual changes will be undone.
+### Ideal Implementation
+The matching algorithm should take into account previously assigned timeslots and not remove them.  However, as the system now has the ability for students to change selected timeslots, it would need to work around students changing timeslots.
+
