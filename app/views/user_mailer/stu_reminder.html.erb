@@ -12,7 +12,11 @@
     <% if @app == nil
       @app = Appointment.first
       %>
-      <%end%>
+    <%end%>
+    <% if @event == nil
+      @event = Event.first
+      %>
+    <%end%>
 <table>
   <tbody>
       <tr>
