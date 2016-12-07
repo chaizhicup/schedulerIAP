@@ -1,4 +1,4 @@
-Feature: Companies can enter their Infomation
+Feature: Companies can enter their Information
 
 Background: User is logged in
   Given I am on the home page

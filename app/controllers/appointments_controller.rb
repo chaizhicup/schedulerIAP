@@ -109,6 +109,44 @@ class AppointmentsController < ApplicationController
   end
 
 
+  def reminder
+    if Appointment.count == 0
+      redirect_to appointments_url, notice: 'test'
+      flash[:notice] = "Error: No appointments!"
+    else
+      @statusmessage = ""
+      @appointments = Appointment.all.order(:section, :time_slot)
+      @appointments.each do |appointment|
+        @app = appointment
+        
+        begin
+        
+          UserMailer.stu_reminder(@app).deliver_now
+          
+        rescue ActiveRecord::RecordNotFound
+          #This means that the UIN of the student associated with the appointment is no longer in the database.
+          @statusmessage += "Error: Couldn't find student "+@app.student+" in the database!\n"
+        
+        rescue ArgumentError
+          @statusmessage = "Error: Event "+@app.section+" could not be found in the database. Has its name been changed?"
+          
+        rescue Net::SMTPAuthenticationError
+          #This means that the server has a error with the gmail configuration. Check the readme for instructions.
+          @statusmessage = "Authentication error! Your server does not appear to be correctly configured to send emails."
+          
+        rescue StandardError
+          @statusmessage += "Error! An unspecified error occurred. Please contact the dev team if restarting the server does not fix the issue.\n"
+          
+        end
+        
+      end
+      if @statusmessage == ""
+        @statusmessage = 'Student reminder emails sent!'
+      end
+      redirect_to appointments_url, notice: @statusmessage
+    end
+  end
+
   ################################################################
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -203,7 +241,7 @@ class AppointmentsController < ApplicationController
     # Log remaining students/time slots?
     puts @students.length
     if @students.length > 0
-      error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%I:%M%p")}"
+      error = "#{event.name}"+ ':  '+ "#{timeslot.start_time.strftime("%-I:%M%p")}" + '-' + "#{timeslot.end_time.strftime("%-I:%M%p")}"
       #error = arg
       @errormessage << error
     end
@@ -218,10 +256,13 @@ class AppointmentsController < ApplicationController
   def matchappointwithout(timeslot, event, companies)
     stuuin=[];
     totalrep = 0;
+
+    # Parse through companies and count up the total number of representatives
     companies.each do |com, representatives|
       totalrep += representatives
     end
 
+    # Match each student with rep and set up the corresponding appointment
     while @students.length > 0 && totalrep> 0 do
       @students.each do |student|
         companies.each do |item, representatives|
@@ -230,7 +271,7 @@ class AppointmentsController < ApplicationController
             appointment = Appointment.new
             getone = student
             appointment.section = event.name
-            appointment.time_slot = timeslot.start_time.strftime("%I:%M%p") + "-" + timeslot.end_time.strftime("%I:%M%p")
+            appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
             appointment.company = item.name
             appointment.student = getone[0]
             appointment.UIN = getone[1]
@@ -255,30 +296,42 @@ class AppointmentsController < ApplicationController
   # Standard algorithm for matching students to companies. 
   def matchappoint(timeslot, event, companies)
     stuuin=[];
+    
     @students.each do |student|
       student_scheduled = false
       for comp_degree_count in 1..3
-        companies.each do |item, representatives|
+        for jobtype_count in 1..2
+          for citizenship_count in 1..2
+            companies.each do |item, representatives|
+              usif = item.citizenship=="US Citizen Only"? true:false
+              jobif = (item.job_type=="Full-time"||item.job_type=="Internship")? true:false
 
-          usif= item.citizenship=="US Citizen Only"? true:false
-          conjobtype = item.job_type == student[5] || item.job_type == 'Any' || item.job_type == nil
-          condegree = (item.student_level.length == comp_degree_count) && (item.student_level.include? student[4] || item.student_level.nil? || item.student_level.empty?)
-          concitizen = usif == student[3] || usif == false || usif == nil
-
-          if (representatives > 0 && conjobtype && condegree && concitizen)
-            getone = student
-
-            appointment = Appointment.new
-            appointment.section = event.name
-            appointment.time_slot = timeslot.start_time.strftime("%I:%M%p") + "-" + timeslot.end_time.strftime("%I:%M%p")
-            appointment.company = item.name
-            appointment.student = getone[0]
-            appointment.UIN = getone[1]
-            stuuin = stuuin << getone[1]
-            representatives-=1
-            companies[item] = representatives
-            appointment.save
-            student_scheduled = true
+              conjobtype = (jobif || jobtype_count==2) && (item.job_type == student[5] || item.job_type == 'Any' || item.job_type == nil)
+              condegree = (item.student_level.length == comp_degree_count) && (item.student_level.include? student[4] || item.student_level.nil? || item.student_level.empty?)
+              concitizen = (usif || citizenship_count==2) && (usif == student[3] || usif == false || usif == nil)
+    
+              if (representatives > 0 && conjobtype && condegree && concitizen)
+                getone = student
+    
+                appointment = Appointment.new
+                appointment.section = event.name
+                appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
+                appointment.company = item.name
+                appointment.student = getone[0]
+                appointment.UIN = getone[1]
+                stuuin = stuuin << getone[1]
+                representatives-=1
+                companies[item] = representatives
+                appointment.save
+                student_scheduled = true
+                break
+              end
+            end
+            if (student_scheduled == true)
+              break
+            end
+          end
+          if (student_scheduled == true)
             break
           end
         end

@@ -3,12 +3,17 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
+  <% @email = EmailMessage.where(:email => "Register Company").first %>
   <body>
-    <h1>Confirmation for Registration.</h1>
+    <h1><%=@email.title%></h1>
     <p>
-      You have been successfully registered.<br>
+      <%=@email.header%><br>
     </p>
-    
+    <br>
+    <% if @user == nil
+      @user = Company.first
+      %>
+      <%end%>
 <table>
   <tbody>
       <tr>
@@ -68,9 +73,9 @@
           <td><%= @user.companyevents.where(company_id: @user.id, event_id: e.id).to_yaml.match(/representatives: [ \t]*([^\n\r]*)/).to_s.match(/'(.*)'/).to_s.gsub("'","") %></td>
         </tr>
       <% end %>
-
   </tbody>
 </table>
-    <p>Thank you for participating and have a great day!</p>
+<br>
+    <p><%=@email.footer%></p>
   </body>
 </html>

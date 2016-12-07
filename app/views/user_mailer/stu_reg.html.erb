@@ -3,12 +3,16 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
+  <% @email = EmailMessage.where(:email => "Register Student").first %>
   <body>
-    <h1>Confirmation for Registration.</h1>
+    <h1><%=@email.title%></h1>
     <p>
-      You have been successfully registered.<br>
+      <%=@email.header%><br>
     </p>
-    
+    <% if @user == nil
+      @user = Student.first
+      %>
+      <%end%>
 <table>
   <tbody>
       <tr>
@@ -31,7 +35,7 @@
       </tr>
       <% $stu_slot[@user.id].each do |slot| %>
       <tr>
-        <td><%= slot[0] %></td><td><%= slot[1] %></td>
+        <td><%= slot[0] %>:</td><td><%= slot[1] %></td>
       </tr>
       <% end %>
 
@@ -39,7 +43,9 @@
 
   </tbody>
 </table>
-    <p> If you need to cancel or add an event, please contact the Coordinator.</p>
-    <p>Thank you for participating  and have a great day!</p>
+    <p> Your chosen timeslots can be changed by selecting the link below:<br>
+      <%= link_to 'Edit', @editlink %>
+    </p>
+    <p><%=@email.footer%></p>
   </body>
 </html>
