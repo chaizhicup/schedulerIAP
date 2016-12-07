@@ -27,20 +27,17 @@ Scenario: Log in with correct user information
 	And I should see "Welcome Jay"
 
 	#Then I want to test the student management
-	When I click on "Student Information"
+	When I click on "Students"
 	Then I should be on the students page
 	
-	When I click on "Company Information"
+	When I click on "Companies"
 	Then I should be on the companies page
 
-	When I click on "Event Management"
+	When I click on "Events"
 	Then I should be on the events page
 
-	When I click on "Schedule List"
+	When I click on "Appointments"
 	Then I should be on the appointments page
-
-	When I click on "New Administrator Account"
-	Then I should be on the new useradd page
 
 	When I click on "Log Out"
 	And I confirm to del_path

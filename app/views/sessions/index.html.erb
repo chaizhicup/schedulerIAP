@@ -12,35 +12,28 @@
 
     <tbody >
     <tr>
-      <td style="text-align:left;font-size:16px"><%= link_to 'Student Information', students_url %></td>
+      <td style="text-align:left;font-size:16px"><%= link_to 'Student List', students_url %></td>
     </tr>
     <tr>
-      <td style="text-align:left;font-size:16px"><%= link_to 'Company Information', companies_url %></td>
+      <td style="text-align:left;font-size:16px"><%= link_to 'Company List', companies_url %></td>
     </tr>
     <tr>
-      <td style="text-align:left;font-size:16px"><%= link_to 'Event Management', events_url %></td>
+      <td style="text-align:left;font-size:16px"><%= link_to 'Event List', events_url %></td>
     </tr>
     <tr>
-      <td style="text-align:left;font-size:16px"><%= link_to 'Schedule List', appointments_url %></td>
+      <td style="text-align:left;font-size:16px"><%= link_to 'Appointment List', appointments_url %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align:left;font-size:16px"><%= link_to 'Edit Email Messages', email_messages_url %></td>
     </tr>
-
-    </tbody>
-  </table>
-
-  <br>
- <table>
-    <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-    </thead>
-
-    <tbody >
     <tr>
       <td style="text-align:left;font-size:16px"><%= link_to 'New Administrator Account', new_useradd_path %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align:left;font-size:16px"><%= link_to 'Log Out', del_path, data: { confirm: 'Are you sure?' } %></td>

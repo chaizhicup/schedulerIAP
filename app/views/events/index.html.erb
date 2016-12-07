@@ -12,6 +12,10 @@
   <%= link_to 'Delete All Events', remove_all_events_path, method: :post, data: { confirm: 'Delete All Event Records?' } %>
 </div>
 <br>
+<div align='center'>
+  <%= link_to 'Export to Excel', events_path(format: "csv"), class: 'btn btn-primary btn-sm' %>
+</div>
+<br>
 
 <div class="tableholder">
 <table class="table table-hover table-bordered" align="center">  
@@ -56,8 +60,3 @@
   </tbody>
 </table>
 </div>
-<br>
-<div align='center'>
-  <%= link_to 'Export to Excel', events_path(format: "xls"), class: 'btn btn-primary btn-sm' %>
-</div>
-<br>
