@@ -2,14 +2,19 @@ class UserMailer < ApplicationMailer
 
 	default from: '2015_IAP@cse.tamu.edu'
 
-  def stu_reg(arg)
-	@user = arg
-	if @user.email.split('@')[1] == "tamu.edu"
-		a = @user.email.split('@')[0]
-		@user.email = a + "@email.tamu.edu"
-	end
+	def stu_reg(arg)
+		@user = arg
+		# Get full url, not just path
+		url = Rails.application.routes.url_helpers.edit_student_url(@user)
+		uri = URI.parse(url)
+  		uri.query = URI.encode_www_form( {'edithash' => @user.edithash} )
+  		@editlink = uri.to_s
+		if @user.email.split('@')[1] == "tamu.edu"
+			a = @user.email.split('@')[0]
+			@user.email = a + "@email.tamu.edu"
+		end
 		mail(to: @user.email, subject: 'Confirmation for Registration')
-  end
+	end
 
 	def com_reg(arg)
 		@user = arg
@@ -20,14 +25,14 @@ class UserMailer < ApplicationMailer
 		mail(to: @user.contact_email, subject: 'Confirmation for Registration')
 	end
 
-  def stu_del(arg)
-	@user = arg
-	if @user.email.split('@')[1] == "tamu.edu"
-		a = @user.email.split('@')[0]
-		@user.email = a + "@email.tamu.edu"
-	end
+	def stu_del(arg)
+		@user = arg
+		if @user.email.split('@')[1] == "tamu.edu"
+			a = @user.email.split('@')[0]
+			@user.email = a + "@email.tamu.edu"
+		end
 		mail(to: @user.email, subject: 'Registration Cancelled')
-  end
+	end
 
 	def com_del(arg)
 		@user = arg

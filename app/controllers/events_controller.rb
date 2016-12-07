@@ -122,7 +122,7 @@ class EventsController < ApplicationController
       timeslots = Timeslot.all.where(event_id: event.id).order(:start_time)
       event_slots[event.id]=[]
       timeslots.each do |slot|
-        event_slots[event.id] << slot.start_time.strftime("%I:%M%p") + "-" + slot.end_time.strftime("%I:%M%p")
+        event_slots[event.id] << slot.start_time.strftime("%-I:%M%p") + "-" + slot.end_time.strftime("%-I:%M%p")
       end
     end
     event_slots

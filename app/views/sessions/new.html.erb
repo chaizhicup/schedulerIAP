@@ -1,22 +1,19 @@
-<div id="session" style="margin-left:150px; margin-right:150px">
+<div id="session">
   <% provide(:title, "Log in") %>
 
   <p>Please Log in to continue.</p>
   <div class="notice"><%= flash[:danger] %> <%= notice %></div>
-  <div class="row">
-    <div class="col-xs-4">
-      <%= form_for(:session, url: login_path) do |f| %>
+  <div class="login">
+    <%= form_for(:session, url: login_path) do |f| %>
 
-          <%= f.label :email %><br>
-          <%= f.email_field :email, :placeholder => "Admin Email", class: 'form-control no-radius' %>
-          <br>
-          <%= f.label :password %><br>
-          <%= f.password_field :password, :placeholder => "Admin Password", class: 'form-control no-radius' %>
-          <br>
-          <br>
-          <%= f.submit "Log in", class: "btn btn-primary no-radius" %>
-      <% end %>
-
-    </div>
+        <%= f.label :email %><br>
+        <%= f.email_field :email, :placeholder => "Admin Email", class: 'form-control no-radius' %>
+        <br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password, :placeholder => "Admin Password", class: 'form-control no-radius' %>
+        <br>
+        <br>
+        <%= f.submit "Log in", class: "btn btn-primary no-radius" %>
+    <% end %>
   </div>
 </div>

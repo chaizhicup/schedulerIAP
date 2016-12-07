@@ -3,11 +3,12 @@
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
+  <% @email = EmailMessage.where(:email => "Delete Student").first %>
   <body>
-    <h1>Registration Cancelled.</h1>
+    <h1><%=@email.title%></h1>
     <p>
-      Your registration has been cancelled. Please contact the Coordinator if you did not place this request.<br>
+      <%=@email.header%><br>
     </p>
-    <p>Thank you for participating and have a great day!</p>
+    <p><%=@email.footer%></p>
   </body>
 </html>
