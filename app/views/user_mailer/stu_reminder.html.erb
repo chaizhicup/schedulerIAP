@@ -19,6 +19,9 @@
         <td>Event:</td><td><%= @app.section %></td>
       </tr>
       <tr>
+        <td>Date:</td><td><%= @event.event_date.strftime('%a %b %d') %></td>
+      </tr>
+      <tr>
         <td>Timeslot:</td><td><%= @app.time_slot %></td>
       </tr>
       
