@@ -1,8 +1,9 @@
 <div id="session">
   <% provide(:title, "Log in") %>
 
-  <p>Please Log in to continue.</p>
+  <br>
   <div class="notice"><%= flash[:danger] %> <%= notice %></div>
+  <br>
   <div class="login">
     <%= form_for(:session, url: login_path) do |f| %>
 
