@@ -287,30 +287,42 @@ class AppointmentsController < ApplicationController
   # Standard algorithm for matching students to companies. 
   def matchappoint(timeslot, event, companies)
     stuuin=[];
+    
     @students.each do |student|
       student_scheduled = false
       for comp_degree_count in 1..3
-        companies.each do |item, representatives|
+        for jobtype_count in 1..2
+          for citizenship_count in 1..2
+            companies.each do |item, representatives|
+              usif = item.citizenship=="US Citizen Only"? true:false
+              jobif = (item.job_type=="Full-time"||item.job_type=="Internship")? true:false
 
-          usif= item.citizenship=="US Citizen Only"? true:false
-          conjobtype = item.job_type == student[5] || item.job_type == 'Any' || item.job_type == nil
-          condegree = (item.student_level.length == comp_degree_count) && (item.student_level.include? student[4] || item.student_level.nil? || item.student_level.empty?)
-          concitizen = usif == student[3] || usif == false || usif == nil
-
-          if (representatives > 0 && conjobtype && condegree && concitizen)
-            getone = student
-
-            appointment = Appointment.new
-            appointment.section = event.name
-            appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
-            appointment.company = item.name
-            appointment.student = getone[0]
-            appointment.UIN = getone[1]
-            stuuin = stuuin << getone[1]
-            representatives-=1
-            companies[item] = representatives
-            appointment.save
-            student_scheduled = true
+              conjobtype = (jobif || jobtype_count==2) && (item.job_type == student[5] || item.job_type == 'Any' || item.job_type == nil)
+              condegree = (item.student_level.length == comp_degree_count) && (item.student_level.include? student[4] || item.student_level.nil? || item.student_level.empty?)
+              concitizen = (usif || citizenship_count==2) && (usif == student[3] || usif == false || usif == nil)
+    
+              if (representatives > 0 && conjobtype && condegree && concitizen)
+                getone = student
+    
+                appointment = Appointment.new
+                appointment.section = event.name
+                appointment.time_slot = timeslot.start_time.strftime("%-I:%M%p") + "-" + timeslot.end_time.strftime("%-I:%M%p")
+                appointment.company = item.name
+                appointment.student = getone[0]
+                appointment.UIN = getone[1]
+                stuuin = stuuin << getone[1]
+                representatives-=1
+                companies[item] = representatives
+                appointment.save
+                student_scheduled = true
+                break
+              end
+            end
+            if (student_scheduled == true)
+              break
+            end
+          end
+          if (student_scheduled == true)
             break
           end
         end
