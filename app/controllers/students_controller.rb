@@ -272,6 +272,35 @@ class StudentsController < ApplicationController
       # Ensure that the student was updated
       if @student.update(student_params)
 	      Timeslot.decrease_1(@student.id)
+	      
+	      #Update stu_slot prior to email
+	      @events = Event.where("for_student = true").pluck(:id,:name)
+        $students = Student.all.order(:UIN)
+        $students.each do |x|
+          @arr = Hash.new([])
+          # evaluate timeslots
+          @tslots = x.timeslots
+          @events.each do |ev|
+            @check = FALSE
+            timeTxt = ""
+            @tslots.each do |t|
+              if(t.event_id == ev[0])
+                if (timeTxt != "")
+                  timeTxt += ", "
+                end
+                timeTxt += (t.start_time.strftime("%-I:%M%p") + "-" + t.end_time.strftime("%-I:%M%p"))
+                @check = TRUE
+                #break
+              end
+            end
+            if(@check == FALSE)
+              timeTxt += ("Not Attend")
+            end
+            @arr[ev[1]] = timeTxt
+          end
+          $stu_slot[x.id] = @arr
+        end
+	      
         begin
           UserMailer.stu_reg(@student).deliver_now
         rescue Net::SMTPAuthenticationError
