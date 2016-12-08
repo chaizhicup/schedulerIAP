@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :companyevents, :dependent => :destroy
   has_many :companies, :through => :companyevents
   has_many :students, :through => :timeslots
-  has_many :appointments, :through => :timeslots
+  has_many :appointments, :through => :timeslots, :dependent => :destroy
   validates_uniqueness_of :name
   validates :name, :max_students, :event_date, :start_time, :end_time, :timeslot_duration, presence: true
   
